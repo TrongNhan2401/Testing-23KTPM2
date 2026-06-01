@@ -1015,3 +1015,9 @@ PHẦN 1: 5 LỖI PHẦN MỀM LIÊN QUAN ĐẾN AI / LLM
 Kiểm tra và rà lại nội dung cũng như link bài viết xem đã miêu tả khớp hay chưa
 
 Purpose: Rà lại xem nội dung sau chỉnh sửa đã chính xác hay chưa
+
+## [04:47 01/06/2026]
+
+Prompt: Hãy tạo một mindmap về quy trình kiểm thử phần mềm ISTQB (ISTQB Testing Process). bằng mermaid
+
+Purpose: Tạo mind map
