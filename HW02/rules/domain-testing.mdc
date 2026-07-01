@@ -1,0 +1,74 @@
+---
+description: Quy trình áp dụng kỹ thuật Domain Testing (Binder) cho một chức năng cụ thể trong EShop. Kích hoạt khi người dùng yêu cầu "domain test", "domain testing", hoặc gọi /domain-test.
+alwaysApply: false
+---
+
+# Agent Skill: Kỹ thuật Domain Testing & Boundary Value Analysis (BVA)
+
+**Mô tả:** Hướng dẫn này định hình quy trình từng bước để phân tích và thiết kế Test Case bằng kỹ thuật Domain Testing kết hợp BVA. Agent phải tuân thủ nghiêm ngặt các nguyên tắc cốt lõi và thứ tự các bước dưới đây, không được bỏ qua bất kỳ bước nào.
+
+## Nguyên tắc cốt lõi (Core Rules - Agent BẮT BUỘC tuân thủ)
+
+1. **Tư duy từng bước (Chain of Thought):** Tuyệt đối KHÔNG được in ra kết quả cuối cùng ngay lập tức. Agent phải trình bày rõ quá trình suy luận, phân tích logic đi qua từng bước một theo đúng thứ tự tài liệu này.
+2. **Trích dẫn mã nguồn (Code Citation):** Mọi yếu tố đầu vào/đầu ra, ràng buộc độ dài, kiểu dữ liệu khi được phân tích BẮT BUỘC phải kèm theo trích dẫn nguồn gốc từ mã nguồn. Sử dụng định dạng: `(Tên_File: Dòng_Bao_Nhiêu)`.
+
+---
+
+## Bước 0: Xác định phạm vi yêu cầu (Define Scope)
+
+Nhiệm vụ đầu tiên của Agent là tương tác với người dùng để làm rõ tính năng cần kiểm thử.
+
+- Hỏi người dùng: "Bạn muốn thực hiện kiểm thử cho Feature Requirement (FR) nào?"
+- Đợi người dùng cung cấp thông tin FR cụ thể (ví dụ: FR-01: Đăng ký tài khoản) trước khi tiến hành các bước tiếp theo.
+
+## Bước 1: Xác định Input và Output (Identify I/O)
+
+Dựa vào mã nguồn (source code) hoặc đặc tả, Agent cần phân tích và trích xuất các biến đầu vào, đầu ra.
+
+- Xác định tên biến, kiểu dữ liệu, và các ràng buộc (độ dài, bắt buộc, tính duy nhất,...).
+- Luôn tuân thủ nguyên tắc **Code Citation** đã nêu ở phần Nguyên tắc cốt lõi.
+
+## Bước 2: Phân vùng theo Domain Testing (Identify Equivalence Classes)
+
+Chia tập hợp các giá trị có thể có của mỗi input/output thành các miền tương đương (Equivalence Classes - EC). Áp dụng các nguyên tắc sau:
+
+- Nếu điều kiện là một khoảng giá trị: Tạo 1 miền hợp lệ và 2 miền không hợp lệ.
+- Nếu điều kiện là một tập hợp các giá trị: Tạo 1 miền hợp lệ cho mỗi phần tử và 1 miền không hợp lệ chung.
+- Nếu điều kiện là "bắt buộc phải là" (must be): Tạo 1 miền hợp lệ và 1 miền không hợp lệ.
+- Phân định rõ đâu là VALID EQUIVALENCE CLASSES (hợp lệ) và INVALID EQUIVALENCE CLASSES (không hợp lệ).
+- **Quy tắc chia nhỏ đặc biệt:** Nếu có bất kỳ lý do nào để tin rằng các phần tử trong cùng một Lớp tương đương không được chương trình xử lý theo một cách hoàn toàn giống nhau, BẮT BUỘC phải chia nhỏ EC đó thành hai hoặc nhiều EC nhỏ hơn.
+
+## Bước 3: Lập bảng Lớp tương đương (EC Table)
+
+Trình bày kết quả của Bước 2 dưới dạng bảng chuẩn hóa. Bảng phải bao gồm các cột sau:
+| STT | Biến Input/Output | Các Lớp Tương Đương (Equivalence Classes) | Loại (Valid/Invalid) |
+| --- | --- | --- | --- |
+| EC1 | ... | ... | ... |
+
+## Bước 4: Thiết kế Tổ hợp Test Case (Select Test Cases)
+
+Chọn ít nhất một giá trị đại diện từ mỗi lớp tương đương để tạo Test Case. Phải tuân thủ nghiêm ngặt quy tắc tổ hợp sau:
+
+- Đối với các miền HỢP LỆ: Chọn các test case sao cho bao phủ CÀNG NHIỀU miền hợp lệ càng tốt trong một kịch bản, cho đến khi tất cả các miền hợp lệ đều được bao phủ.
+- Đối với các miền KHÔNG HỢP LỆ: Chọn các test case sao cho mỗi test case CHỈ BAO PHỦ MỘT VÀ CHỈ MỘT miền không hợp lệ, cho đến khi tất cả các miền không hợp lệ được bao phủ.
+- Cung cấp Dữ liệu kiểm thử (Input) và Kết quả mong đợi (Expected Output) rõ ràng cho từng Test Case.
+
+## Bước 5: Bổ sung Test Case với Giá trị biên (Boundary Value Analysis - BVA)
+
+Mở rộng các Test Case bằng cách phân tích ranh giới của các miền giá trị. Với mỗi ranh giới, xem xét và tạo Test Case cho các điểm sau (tùy thuộc vào ngữ cảnh và kiểu dữ liệu):
+
+- Cận dưới (**LB-1**)
+- Ngay biên dưới (**LB**)
+- Trên biên dưới (**LB+1**)
+- Dưới biên trên (**UB-1**)
+- Ngay biên trên (**UB**)
+- Cận trên (**UB+1**)
+- Bổ sung các Test Case này vào danh sách hiện có, ghi rõ Mô tả biên (ví dụ: Biên dưới cùng, Cận trên của số dư) để người dùng dễ theo dõi.
+
+## Bước 6: Review và Hoàn thiện (Review & Coverage Check)
+
+Trước khi xuất kết quả cuối cùng, Agent phải tự rà soát lại toàn bộ quy trình:
+
+- Kiểm tra trùng lặp: Đảm bảo không có Test Case BVA nào bị trùng hoàn toàn với Test Case Domain Testing trước đó. Nếu trùng, hãy gộp lại và ghi chú.
+- Kiểm tra độ phủ (Coverage): Đảm bảo tất cả các Lớp tương đương (EC) trong bảng ở Bước 3 đều đã được gán (map) vào ít nhất một Test Case.
+- Đảm bảo mọi kết quả mong đợi đều rõ ràng, khả thi để Tester con người có thể thực thi.
