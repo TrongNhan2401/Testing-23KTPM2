@@ -445,6 +445,92 @@
   > ## -**Human Review**: Đã hài lòng với Output mà AI đã đưa ra, chỉ thêm phần
   >
   > description: Tự động trích xuất thông tin AI Audit Report (tool, ngày giờ, prompt, output) sau mỗi lần Agent thực hiện một bước trong skill domain-testing hoặc boundary-value-analysis.
-  > alwaysApply: false
+  > alwaysApply: true
   >
   > ***
+
+## Tạo file context.md
+
+- **Tool**: Gemini (model: 3.1 Pro)
+- **Date/time**: 15:30 — 02/07/2026
+- **Prompt**:
+  > Cung cấp cho tôi file context để agent có thể đọc và hiểu nội dung phải làm với dự án eshop
+- **AI-Output**:
+
+  > Chào bạn, việc tạo một file ngữ cảnh (Context File) tổng thể cho toàn bộ dự án là một bước chuẩn bị cực kỳ chuyên nghiệp. Nó đóng vai trò như một "bộ não trung tâm", giúp Agent hiểu rõ mình đang tương tác với hệ thống nào, mục tiêu cuối cùng là gì và phải tuân thủ những quy tắc nào trong suốt quá trình làm bài tập.
+  >
+  > Dưới đây là nội dung file `eshop-project-context.mdc` được tổng hợp dựa trên đề bài HW02 và các kỹ năng bạn đã thiết lập. Bạn có thể sử dụng file này làm System Prompt gốc cho Agent của mình.
+  >
+  > ***
+  >
+  > ### Nội dung file `eshop-project-context.mdc`
+  >
+  > ```markdown
+  > # Ngữ cảnh Dự án: HW02 – Kiểm thử EShop (Domain Testing & BVA)
+  >
+  > **Mô tả:** Đây là tài liệu hướng dẫn ngữ cảnh gốc (Context File) cho Agent. Agent BẮT BUỘC phải đọc hiểu và ghi nhớ thông tin trong file này trước khi thực hiện bất kỳ yêu cầu phân tích hay sinh test case nào từ người dùng.
+  >
+  > ## 1. Thông tin Hệ thống (System Under Test - SUT)
+  >
+  > - [cite_start]**Tên hệ thống:** EShop — một ứng dụng demo thương mại điện tử của Việt Nam được thiết kế để thực hành kiểm thử[cite: 248].
+  > - [cite_start]**Kho lưu trữ mã nguồn (Repository):** `https://github.com/ttbhanh/eshop-sut`[cite: 249].
+  >
+  > ## 2. Phạm vi chức năng (Feature Pools)
+  >
+  > Hệ thống được chia thành 4 nhóm chức năng (Pools). [cite_start]Người dùng sẽ chọn 4 chức năng (mỗi Pool 1 chức năng) để yêu cầu Agent kiểm thử[cite: 253]:
+  >
+  > - [cite_start]**Pool A (Xác thực & Sản phẩm):** FR-01 (Đăng ký), FR-02 (Đăng nhập), FR-03 (Quên/Đặt lại mật khẩu), FR-04 (Hồ sơ), FR-05 (Danh sách/Tìm kiếm), FR-06 (Chi tiết sản phẩm)[cite: 249].
+  > - [cite_start]**Pool B (Giỏ hàng & Thanh toán):** FR-07 (Giỏ hàng), FR-08 (Thanh toán), FR-09 (Mã giảm giá), FR-10 (Máy trạng thái đơn hàng), FR-11 (Lịch sử đơn hàng)[cite: 250].
+  > - [cite_start]**Pool C (Web Admin):** FR-12 (Kiểm soát truy cập), FR-13 (Dashboard), FR-14 đến FR-17 (Quản lý danh mục, sản phẩm, import CSV, mã giảm giá), FR-18 (Quản lý đơn hàng), FR-19 (Quản lý người dùng)[cite: 251].
+  > - [cite_start]**Pool D (Mobile App):** Các chức năng trên ứng dụng di động[cite: 252].
+  >
+  > ## 3. Nhiệm vụ cốt lõi của Agent (Core Missions)
+  >
+  > Đối với mỗi chức năng (FR) được người dùng chọn, Agent phải hỗ trợ thực hiện 4 nhiệm vụ sau:
+  >
+  > 1. [cite_start]**Domain Testing:** Phân tích miền giá trị và thiết kế tập hợp các ca kiểm thử (test cases) toàn diện[cite: 254].
+  > 2. [cite_start]**Boundary Value Analysis (BVA):** Phân tích giá trị biên chi tiết (LB-1, LB, LB+1, UB-1, UB, UB+1) và bổ sung test case[cite: 258, 321].
+  > 3. [cite_start]**Bug Reporting:** Hỗ trợ phát hiện và báo cáo các lỗi (bug) tìm thấy trong source code, cung cấp thông tin để người dùng log lỗi lên GitHub Issues (cần có ảnh chụp màn hình do người dùng tự cung cấp)[cite: 263, 264].
+  > 4. [cite_start]**AI Gap Analysis:** Phân tích những điểm mù mà Agent có thể đã bỏ sót và giải thích lý do tại sao (sự phức tạp của chức năng, giới hạn của prompt, v.v.)[cite: 261, 262].
+  >
+  > ## 4. Nguyên tắc làm việc BẮT BUỘC (Strict Rules)
+  >
+  > - **AI-First & Human Review:** Agent đóng vai trò là một "trợ lý có kỷ luật". [cite_start]Mọi kết quả sinh ra đều phải trải qua tư duy từng bước (Chain of Thought) và chờ con người xem xét (Human Review)[cite: 236, 237]. [cite_start]Tuyệt đối KHÔNG xuất ra kết quả thô mà không có giải thích[cite: 239].
+  > - [cite_start]**Tuân thủ @domain-testing.mdc:** Khi thực hiện thiết kế test case, Agent PHẢI áp dụng nghiêm ngặt 7 bước (Từ Bước 0 đến Bước 6) đã được định nghĩa trong file `domain-testing.mdc`[cite: 313, 314].
+  > - [cite_start]**Trích dẫn Mã nguồn:** Mọi ràng buộc, biến số, hay quy tắc nghiệp vụ khi phân tích đều BẮT BUỘC phải trích dẫn dòng code tương ứng theo format `(Tên_File: Dòng_Bao_Nhiêu)`[cite: 319].
+  > - [cite_start]**Ghi Log Kiểm toán (AI Audit Report):** Sau mỗi phiên trả lời hoàn chỉnh, Agent BẮT BUỘC phải đính kèm khối log theo chuẩn định dạng quy định tại file `@audit-log.mdc` để người dùng làm báo cáo[cite: 240, 327, 328].
+  > - [cite_start]**Tài liệu hóa bằng Markdown:** Toàn bộ quá trình phân tích, bảng Test Case, và báo cáo lỗi phải được định dạng rõ ràng bằng Markdown[cite: 243, 263].
+  > ```
+  >
+  > ***
+  >
+  > Với 3 file `.mdc` (`domain-testing.mdc`, `audit-log.mdc`, và `eshop-project-context.mdc`), bạn đã có một hệ thống Agent Skill cực kỳ mạnh mẽ và sẵn sàng để "cày" bài tập này rồi đấy.
+  >
+  > Bạn đã sẵn sàng chọn tính năng (FR) đầu tiên trong Pool A để chúng ta bắt đầu chạy thử quy trình với các file quy tắc này chưa?
+
+- **Human Review**: Output của Gemini cung cấp được tổng quan yêu cầu và có thể làm file context.md để bắt đầu.
+
+## Xác nhận quy tắc ghi log audit mỗi bước
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 15:48 — 02/07/2026
+- **Prompt**:
+  > @ai-audit-log.md @rules/audit-log.mdc Với mỗi bước làm phải luôn kèm việc ghi log audit
+- **AI-Output**:
+  > Đã đọc file `ai-audit-log.md` và xác nhận yêu cầu. Từ bước tiếp theo, mỗi bước phân tích, bảng đặc tả, domain testing, BVA, bug report hay gap analysis sẽ đều kèm một block audit log rõ ràng. Nếu chưa chọn FR cụ thể, các log tiếp theo sẽ được đánh dấu là phiên làm việc chung cho đến khi bạn chọn đúng 1 FR.
+- **Human Review**: Sẽ theo dõi xem agent có ghi log không.
+
+## [FR-02] Bước 1 — Trích xuất đặc tả Input & Output
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 15:54 — 02/07/2026
+- **Prompt**:
+  > @rules/domain-testing.mdc @rules/audit-log.mdc Bây giờ tôi muốn bạn thực hiện domain testing cho FR-02: Login and account lockout. Hãy thực hiện đúng kĩ thuật đã được nêu ra và ghi log.
+- **AI-Output**:
+  > Đã thực hiện Bước 0 (xác định phạm vi FR-02) và Bước 1 (trích xuất đặc tả input). Kết quả:
+  > - 2 input: `email` (string, bắt buộc, tìm user trong DB) và `password` (string, bắt buộc, so sánh trực tiếp)
+  > - Các output: 200 (thành công), 401 (sai thông tin), 403 (tài khoản bị khóa), 500 (lỗi hệ thống)
+  > - Quy tắc lockout: mỗi lần sai password tăng `login_attempts + 2`, nếu >= 3 thì khóa 180 giây (3 phút)
+  > - Tất cả ràng buộc đều trích dẫn `backend/server.js:line` và `backend/database.js:line`
+  > - Đang chờ bạn xác nhận trước khi sang Bước 2.
+- **Human Review**:

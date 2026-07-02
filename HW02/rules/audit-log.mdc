@@ -1,6 +1,6 @@
 ---
-description: Tự động trích xuất thông tin AI Audit Report (tool, ngày giờ, prompt, output) sau mỗi lần Agent thực hiện một bước trong skill domain-testing hoặc boundary-value-analysis. Kích hoạt khi người dùng gõ "log audit", "ghi log", hoặc /audit-log.
-alwaysApply: false
+description: Tự động trích xuất thông tin AI Audit Report (tool, ngày giờ, prompt, output) sau mỗi lần Agent thực hiện một bước trong skill domain-testing hoặc boundary-value-analysis.
+alwaysApply: true
 ---
 
 # Agent Skill: Auto AI Audit Logger (Tự động ghi Log Kiểm toán AI)
