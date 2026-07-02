@@ -1,0 +1,12 @@
+{
+  "name": "fr-02-login-tests",
+  "version": "1.0.0",
+  "description": "Automated test script for FR-02: User Login",
+  "main": "run-tests.js",
+  "scripts": {
+    "test": "node run-tests.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  }
+}

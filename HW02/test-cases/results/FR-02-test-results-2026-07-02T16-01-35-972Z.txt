@@ -1,0 +1,139 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║          FR-02: User Login — Automated Test Results                 ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📅 Ngày test: 23:01:36 2/7/2026
+🌐 Base URL: http://localhost:3000
+👤 Test User: test@eshop.com
+
+----------------------------------------------------------------------
+TEST EXECUTION LOG
+----------------------------------------------------------------------
+
+======================================================================
+TC01 — Đăng nhập thành công (Valid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC02 — Email không tồn tại (Invalid)
+======================================================================
+[Request] POST http://localhost:3000/api/auth/login
+[Body] {"email": "notexist@eshop.com", "password": "..."}
+[Status] 404
+[Response] "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/auth/login</pre>\n</body>\n</html>\n"
+[Result] ❌ FAILED
+
+======================================================================
+TC03 — Email sai định dạng (Invalid)
+======================================================================
+[Request] POST http://localhost:3000/api/auth/login
+[Body] {"email": "invalid-email", "password": "..."}
+[Status] 404
+[Response] "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot POST /api/auth/login</pre>\n</body>\n</html>\n"
+[Result] ❌ FAILED
+
+======================================================================
+TC04 — Password sai (Invalid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC05 — Tài khoản đang bị khóa (Invalid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC06 — login_attempts >= 3, hết hạn khóa (Valid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC07 — login_attempts = NULL (Invalid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC08 — login_attempts = số âm (Invalid)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC09 — BVA: login_attempts = 0 (LB)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC10 — BVA: login_attempts = 1 (LB+1)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC11 — BVA: login_attempts = 2 (UB-1)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC12 — BVA: login_attempts = 3 (UB)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC13 — BVA: login_attempts = 4 (UB+1)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC14 — BVA: locked_until = future + 1ms
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC15 — BVA: locked_until = past (LB-1)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+======================================================================
+TC16 — BVA: locked_until = now (=)
+======================================================================
+[ERROR] Cannot find module 'better-sqlite3'
+Require stack:
+- E:\Documents\HCMUS\Semester3_Year3\Testing\HW02\test-cases\run-tests.js
+
+----------------------------------------------------------------------
+TEST SUMMARY
+----------------------------------------------------------------------
+✅ Passed: 0/16
+❌ Failed: 16/16
+📋 Failed Tests: TC01, TC02, TC03, TC04, TC05, TC06, TC07, TC08, TC09, TC10, TC11, TC12, TC13, TC14, TC15, TC16
+⏱️  Execution Time: 0.09s
+
+======================================================================
+END OF REPORT
+======================================================================

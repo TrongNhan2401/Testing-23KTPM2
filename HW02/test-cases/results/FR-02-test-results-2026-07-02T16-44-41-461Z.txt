@@ -1,0 +1,191 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║          FR-02: User Login — Automated Test Results                 ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+📅 Ngày test: 23:44:41 2/7/2026
+🌐 Base URL: http://localhost:3000
+👤 Test User: test@eshop.com
+
+----------------------------------------------------------------------
+TEST EXECUTION LOG
+----------------------------------------------------------------------
+
+======================================================================
+TC01 — Đăng nhập thành công (Valid)
+======================================================================
+[Setup] Reset user: login_attempts = 0, locked_until = NULL
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "test@eshop.com", "password": "Test1234!"}
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODF9.CnVtq-_kgAUEEHVzahikYzliOfCjwDAuHJ1JePWfRHU","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":0,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC02 — Email không tồn tại (Invalid)
+======================================================================
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "notexist@eshop.com", "password": "..."}
+[Status] 401
+[Response] {"error":"Invalid email or password"}
+[Result] ✅ PASSED
+
+======================================================================
+TC03 — Email sai định dạng (Invalid)
+======================================================================
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "invalid-email", "password": "..."}
+[Status] 401
+[Response] {"error":"Invalid email or password"}
+[Result] ✅ PASSED
+
+======================================================================
+TC04 — Password sai (Invalid)
+======================================================================
+[Setup] Reset user
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "test@eshop.com", "password": "wrongpassword"}
+[Status] 401
+[Response] {"error":"Invalid email or password"}
+[Result] ✅ PASSED
+
+======================================================================
+TC05 — Tài khoản đang bị khóa (Invalid)
+======================================================================
+[Setup] locked_until = future (+3 min), login_attempts = 2
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "test@eshop.com", "password": "..."}
+[Status] 403
+[Response] {"error":"Tài khoản đã bị khóa. Vui lòng thử lại sau."}
+[Result] ✅ PASSED
+
+======================================================================
+TC06 — login_attempts >= 3, hết hạn khóa (Valid)
+======================================================================
+[Setup] login_attempts = 5, locked_until = past (-1 min)
+[Request] POST http://localhost:3000/api/login
+[Body] {"email": "test@eshop.com", "password": "..."}
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODF9.CnVtq-_kgAUEEHVzahikYzliOfCjwDAuHJ1JePWfRHU","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":5,"locked_until":"2026-07-02 16:43:41","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC07 — login_attempts = NULL (Invalid)
+======================================================================
+[Setup] login_attempts = NULL
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODF9.CnVtq-_kgAUEEHVzahikYzliOfCjwDAuHJ1JePWfRHU","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":null,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Note] Chấp nhận 200 hoặc 500 (tùy DB xử lý NULL)
+[Result] ✅ PASSED
+
+======================================================================
+TC08 — login_attempts = số âm (Invalid)
+======================================================================
+[Setup] login_attempts = -1
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":-1,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Note] Chấp nhận 200 hoặc 500
+[Result] ✅ PASSED
+
+======================================================================
+TC09 — BVA: login_attempts = 0 (LB)
+======================================================================
+[Setup] login_attempts = 0 (Lower Boundary)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":0,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC10 — BVA: login_attempts = 1 (LB+1)
+======================================================================
+[Setup] login_attempts = 1 (LB+1)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":1,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC11 — BVA: login_attempts = 2 (UB-1)
+======================================================================
+[Setup] login_attempts = 2 (UB-1)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":2,"locked_until":null,"reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC12 — BVA: login_attempts = 3 (UB)
+======================================================================
+[Setup] login_attempts = 3, locked_until = past (Upper Boundary)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":3,"locked_until":"2026-07-02 16:43:42","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC13 — BVA: login_attempts = 4 (UB+1)
+======================================================================
+[Setup] login_attempts = 4 (UB+1)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":4,"locked_until":"2026-07-02 16:43:42","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC14 — BVA: locked_until = future + 1ms
+======================================================================
+[Setup] locked_until = future (+1ms) (LB+1)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODJ9.8Yu8WE7eBn0zuxpBqs_uf9etZbJQAPndj9SEiiV-Ck8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":2,"locked_until":"2026-07-02T16:44:42.732Z","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ❌ FAILED
+
+======================================================================
+TC15 — BVA: locked_until = past (LB-1)
+======================================================================
+[Setup] locked_until = past (-1 second) (LB-1)
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODN9.0Bi5VQJhfmjbWZRQHulUFIRdLJ69a_oNORhZtxt6ID8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":0,"locked_until":"2026-07-02 16:44:41","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC16 — BVA: locked_until = now (=)
+======================================================================
+[Setup] locked_until = now (=) (LB)
+[Note] Code dùng < nên now không bị khóa
+[Request] POST http://localhost:3000/api/login
+[Status] 200
+[Response] {"message":"Login successful","token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJpYXQiOjE3ODMwMTA2ODN9.0Bi5VQJhfmjbWZRQHulUFIRdLJ69a_oNORhZtxt6ID8","user":{"id":2,"name":"Test User","email":"test@eshop.com","password":"Test1234!","role":"user","login_attempts":0,"locked_until":"2026-07-02T16:44:43.009Z","reset_token":null,"shipping_address":null,"phone":null}}
+[Result] ✅ PASSED
+
+======================================================================
+TC17 — Bug +2: login_attempts tăng 2 thay vì 1 khi sai
+======================================================================
+[Step 1] Nhập sai password lần 1
+[Check] login_attempts sau lần 1: 2
+[Step 2] Nhập sai password lần 2
+[Check] login_attempts sau lần 2: 2
+[Step 3] Nhập sai password lần 3
+[Check] login_attempts sau lần 3: 2
+[Check] locked_until sau lần 3: null
+
+[Bug Analysis]
+  Sau lần 1: Expected=1, Actual=2
+  Sau lần 2: Expected=2, Actual=2
+  Sau lần 3: Expected=3, Actual=2
+[Result] ❌ FAILED (BUG: +2)
+
+----------------------------------------------------------------------
+TEST SUMMARY
+----------------------------------------------------------------------
+✅ Passed: 15/17
+❌ Failed: 2/17
+📋 Failed Tests: TC14, TC17
+⏱️  Execution Time: 1.78s
+
+======================================================================
+END OF REPORT
+======================================================================

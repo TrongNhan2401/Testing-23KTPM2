@@ -1,0 +1,6 @@
+- 3a95e40 (HEAD -> main, origin/main) Mindmap
+- 0c318ac HW01: Requirement2
+- 4d4f75c HW01: Requirement1 - Content
+- 5d46b83 HW01: Requirement1 - ScreeenShots and Prompt logs
+- 852ce7e HW01: Requirement 3 and prompt log
+- b72f6ba HW01: Format structure
