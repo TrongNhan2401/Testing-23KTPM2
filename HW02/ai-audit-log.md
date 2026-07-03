@@ -404,8 +404,8 @@
   >
   > 1. Kích hoạt tự động: Bất cứ khi nào người dùng cung cấp một Prompt để thực hiện phân tích, sinh test case, hoặc yêu cầu giải thích, Agent PHẢI đính kèm một khối Audit Log ở cuối câu trả lời của mình (hoặc tạo vào một file riêng nếu được yêu cầu).
   > 2. Định dạng chuẩn: Tuân thủ tuyệt đối cấu trúc Markdown bên dưới, không được tự ý thêm bớt các trường.
-  > 3. Nguyên trạng Prompt: Khối `**Prompt`** phải giữ nguyên 100% câu lệnh gốc của người dùng, không được tóm tắt.
-  > 4. Để trống Human Review: Mục `**Human Review`** luôn luôn phải để trống để Tester (Con người) tự điền sau này.
+  > 3. Nguyên trạng Prompt: Khối `**Prompt`\*\* phải giữ nguyên 100% câu lệnh gốc của người dùng, không được tóm tắt.
+  > 4. Để trống Human Review: Mục `**Human Review`\*\* luôn luôn phải để trống để Tester (Con người) tự điền sau này.
   >
   > ## Cấu trúc Log Bắt Buộc (Mandatory Structure)
   >
@@ -421,6 +421,8 @@
   > - **AI-Output**:
   >   > [Tóm tắt ngắn gọn hoặc trích dẫn đường dẫn/file kết quả AI vừa sinh ra, hoặc ghi rõ: "Đã tạo bảng Test Case và phân tích BVA"]
   > - **Human Review**: [Để trống hoàn toàn phần này]
+  > ```
+  >
   > ```
   >
   > ```
@@ -446,6 +448,9 @@
   > alwaysApply: true
   >
   > ---
+  >
+  > ```
+  >
   > ```
 
 ## Tạo file context.md
@@ -951,15 +956,20 @@
 > **Trả lời**: Đó là **thực tế khi test thủ công**. Vì:
 >
 > 1. **Giới hạn của test thủ công**:
->   - Bạn chỉ có 1 tài khoản test, sau khi sai 2 lần → tài khoản bị khóa → không thể reset state dễ dàng
->   - Muốn test lại phải xóa DB hoặc sửa trực tiếp
-> 2. **Lý do có nhiều test case trên lý thuyết**:
->   - Các test case như TC02 (email không tồn tại), TC03 (email sai định dạng), TC07-08 (login_attempts = NULL/số âm) là để **đảm bảo độ phủ** theo Domain Testing
->   - Trong thực tế, các trường hợp này có thể hiếm khi xảy ra (vì frontend thường validate trước)
-> 3. **Giải pháp**: Tạo **file test script** (JUnit/Postman/Newman) để:
->   - Tự động reset state (xóa lockout, reset login_attempts)
->   - Chạy tất cả test case một cách độc lập
->   - Đảm bảo mỗi test case có data riêng
+>
+> - Bạn chỉ có 1 tài khoản test, sau khi sai 2 lần → tài khoản bị khóa → không thể reset state dễ dàng
+> - Muốn test lại phải xóa DB hoặc sửa trực tiếp
+>
+> 1. **Lý do có nhiều test case trên lý thuyết**:
+>
+> - Các test case như TC02 (email không tồn tại), TC03 (email sai định dạng), TC07-08 (login_attempts = NULL/số âm) là để **đảm bảo độ phủ** theo Domain Testing
+> - Trong thực tế, các trường hợp này có thể hiếm khi xảy ra (vì frontend thường validate trước)
+>
+> 1. **Giải pháp**: Tạo **file test script** (JUnit/Postman/Newman) để:
+>
+> - Tự động reset state (xóa lockout, reset login_attempts)
+> - Chạy tất cả test case một cách độc lập
+> - Đảm bảo mỗi test case có data riêng
 >
 > **File Test Case đã tạo**: `test-cases/FR-02-login-test-cases.md`
 >
@@ -995,13 +1005,17 @@
 
 > **Files đã tạo:**
 >
-> 1. `**test-cases/run-tests.js`** — Script chính
->   - Chạy tự động 16 test case
->   - Setup database trước mỗi test (reset state)
->   - Ghi kết quả ra file: `results/FR-02-test-results-{timestamp}.txt`
-> 2. `**test-cases/package.json`** — Dependencies
->   - `better-sqlite3` để truy cập SQLite
-> 3. `**test-cases/README.md`** — Hướng dẫn sử dụng
+> 1. `**test-cases/run-tests.js` — Script chính
+>
+> - Chạy tự động 16 test case
+> - Setup database trước mỗi test (reset state)
+> - Ghi kết quả ra file: `results/FR-02-test-results-{timestamp}.txt`
+>
+> 1. `**test-cases/package.json` — Dependencies
+>
+> - `better-sqlite3` để truy cập SQLite
+>
+> 1. `**test-cases/README.md` — Hướng dẫn sử dụng
 >
 > **Cách sử dụng:**
 >
@@ -1050,13 +1064,18 @@
 > **Tổng hợp các lỗi đã fix:**
 >
 > 1. **Lỗi 1: Endpoint sai**
->   - Nguyên nhân: Script dùng `/api/auth/login` nhưng server dùng `/api/login`
->   - Fix: Sửa endpoint trong `run-tests.js`
-> 2. **Lỗi 2: Path database không chính xác**
->   - Nguyên nhân: Dùng `path.join()` thay vì `path.resolve()`
->   - Fix: Đổi sang `path.resolve()` cho đường dẫn database
-> 3. **Lỗi 3 (BUG SERVER): TC05 và TC14 thất bại**
->   - **Root Cause**: Bug timezone trong server code tại `server.js:40`
+>
+> - Nguyên nhân: Script dùng `/api/auth/login` nhưng server dùng `/api/login`
+> - Fix: Sửa endpoint trong `run-tests.js`
+>
+> 1. **Lỗi 2: Path database không chính xác**
+>
+> - Nguyên nhân: Dùng `path.join()` thay vì `path.resolve()`
+> - Fix: Đổi sang `path.resolve()` cho đường dẫn database
+>
+> 1. **Lỗi 3 (BUG SERVER): TC05 và TC14 thất bại**
+>
+> - **Root Cause**: Bug timezone trong server code tại `server.js:40`
 >
 > **Phân tích chi tiết:**
 >
@@ -1124,16 +1143,18 @@
 - **Date/time**: 23:30 — 02/07/2026
 - **Prompt**:
   > Human Review: Trong quá trình sửa thì AI đã đã run test nhưng lỗi này không đúng vì tôi đã test với UI và hoàn toàn có cơ chế khóa chạy đúng. Cần phải xác minh lại.
-  Đây là phần review cho lỗi mà bạn nói. Khi tôi test với UI thì vẫn có cơ chế khóa đảm bảo. Hãy kiểm tra lại giúp tôi. Liệu có phải do file run-tests.js của bạn viết test case sai hay không
+  > Đây là phần review cho lỗi mà bạn nói. Khi tôi test với UI thì vẫn có cơ chế khóa đảm bảo. Hãy kiểm tra lại giúp tôi. Liệu có phải do file run-tests.js của bạn viết test case sai hay không
 - **AI-Output**:
   > [Đã kiểm tra và xác nhận với user]
-  Sau khi user review:
+  > Sau khi user review:
   > User: Hiện tại ở trong code Đoạn code này đã xử lý múi giờ khá an toàn.
   > Giải thích chi tiết:
   > Điểm mấu chốt giúp code an toàn với múi giờ nằm ở hàm .toISOString():
+  >
   > ```javascript
   > lockedUntil = new Date(Date.now() + 180000).toISOString();
   > ```
+  >
   > Hàm .toISOString() luôn luôn chuyển đổi thời gian về chuẩn UTC. Kết quả lưu vào database sẽ có dạng như 2024-10-25T14:30:00.000Z (Chữ Z ở cuối mang ý nghĩa là Zulu time / UTC).
   > User phát hiện: **Lỗi đúng ở đây là số lần thử bị + 2 chứ không phải là lỗi gì khác**
 - **Human Review**: Xác nhận bug +2 là bug thực sự. Yêu cầu sửa script test và phân tích tại sao miss bug này.
@@ -1144,7 +1165,7 @@
 - **Date/time**: 23:44 — 02/07/2026
 - **Prompt**:
   > Human Review: Trong quá trình sửa thì AI đã đã run test nhưng lỗi này không đúng vì tôi đã test với UI và hoàn toàn có cơ chế khóa chạy đúng. Cần phải xác minh lại. Hiện tại tôi phát hiện thêm lỗi liên quan đến số lần thử khi nhập password chỉ được 2 chứ không phải 3.
-  Đây là review của tôi, tôi nghĩ rằng múi giờ ở trong file @test-cases/run-tests.js sai nên hãy sửa lại giúp tôi. Ngoài ra về lỗi số lần thử này thì hãy phân tích giúp tôi. Giải thích tại sao tôi đã thực hiện đầy đủ domain testing nhưng lại bỏ sót trường hợp này. Sau đó thêm cho tôi test case này.
+  > Đây là review của tôi, tôi nghĩ rằng múi giờ ở trong file @test-cases/run-tests.js sai nên hãy sửa lại giúp tôi. Ngoài ra về lỗi số lần thử này thì hãy phân tích giúp tôi. Giải thích tại sao tôi đã thực hiện đầy đủ domain testing nhưng lại bỏ sót trường hợp này. Sau đó thêm cho tôi test case này.
 - **AI-Output**:
   > **1. Đã sửa Bug Timezone trong run-tests.js:**
   > Script test cũ dùng SQLite `datetime('now', '+3 minutes')` để set `locked_until`:
@@ -1170,12 +1191,14 @@
   > Nhưng **không có test case nào thực sự kiểm tra việc TĂNG của login_attempts**! Tất cả test case BVA (TC09-TC13) chỉ SET giá trị cố định và kiểm tra kết quả đăng nhập, không kiểm tra **increment logic**.
   > **Điều bị miss**: Không có test case theo dõi `login_attempts` qua nhiều lần đăng nhập sai liên tiếp.
   > **3. Đã thêm TC17 để phát hiện bug +2:**
+  >
   > ```javascript
   > // TC17: Kiểm tra login_attempts tăng +2 thay vì +1
   > // Step 1: resetUser() → login sai → check attempts
   > // Step 2: reset locked_until → login sai → check attempts
   > // Step 3: reset locked_until → login sai → check attempts
   > ```
+  >
   > **Kết quả test**:
   >
   > ```
@@ -1183,6 +1206,7 @@
   > Sau lần 2: Expected=2, Actual=4  ✅ BUG CONFIRMED
   > Sau lần 3: Expected=3, Actual=6  ✅ BUG CONFIRMED
   > ```
+  >
   > **Bug Location**: `server.js:54` - `const newAttempts = user.login_attempts + 2;`
   > **4. Kết quả test sau khi fix:**
   >
@@ -1190,5 +1214,411 @@
   > - TC14: ✅ PASSED (trước đó fail vì timezone)
   > - TC17: ❌ FAILED (bug +2 được phát hiện)
   > - Tổng: 16/17 passed
-- **Human Review**: Tôi đã xác nhận và chốt rằng bug ở phần FR-02 là newAttempts = user.login_attempts + 2
+- **Human Review**: Tôi đã xác nhận và chốt rằng bug ở phần FR-02 là newAttempts = user.login_attempts + 2.
+
+## [Tổng kết] Đọc lại Yêu cầu HW02 và Nâng cấp domain-testing.mdc
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 19:48 — 03/07/2026
+- **Prompt**:
+  > @2026.HW02.Domain Testing_En.md Đây là yêu cầu cần phải thực hiện cho dự án này hãy đọc qua và nắm chắc. Liệt kê những điểm quan trọng và lưu ý quy trình khi làm. @rules/domain-testing.mdc Hãy đọc lại file kỹ thuật domain testing này và đưa ra nhận định của bạn, cần phải nâng cấp những gì để có thể hoàn chỉnh và áp dụng kỹ thuật này mà không.
+  > Sau đó hãy cập nhật prompt và output vào file log tôi sẽ review sau
+- **AI-Output**:
+  > **1. Điểm quan trọng từ Yêu cầu HW02:**
+  >
+  >
+  > | Task                        | Mô tả                                           |
+  > | --------------------------- | ----------------------------------------------- |
+  > | **Domain Testing**          | Thiết kế test case đầy đủ, giải thích từng bước |
+  > | **Boundary Value Analysis** | Phân tích ranh giới, bổ sung test case          |
+  > | **AI Gap Analysis**         | Báo cáo AI miss gì và TẠI SAO                   |
+  > | **Bug Reporting**           | Log lên GitHub Issues + screenshot              |
+  >
+  >
+  > **Deliverables bắt buộc:**
+  >
+  > - Main report (Markdown + PDF)
+  > - Bug report (GitHub Issues + screenshot)
+  > - AI Critique (200-300 words)
+  > - AI Audit Report (Markdown + PDF)
+  > - Git commit log
+  > - README (self-assessment + test summary)
+  > - Demo videos (YouTube)
+  >
+  > **2. Nhận định về domain-testing.mdc:**
+  >
+  > **Điểm mạnh:** Có 6 bước rõ ràng, có Code Citation, có Chain of Thought, có 6 biên, có quy tắc chia nhỏ EC
+  >
+  > **Điểm cần nâng cấp:**
+  >
+  >
+  > | #   | Thiếu                                      | Tác động              |
+  > | --- | ------------------------------------------ | --------------------- |
+  > | 1   | Không có bước xác định OUTPUT mong đợi     | Test case thiếu sót   |
+  > | 2   | Không kiểm tra INCREMENT/ACCUMULATOR logic | Bỏ sót bug +2         |
+  > | 3   | Không có test cho STATE TRANSITIONS        | Thiếu test case       |
+  > | 4   | Không có hướng dẫn cho BUG REPORTING       | Không đáp ứng yêu cầu |
+  > | 5   | Không có AI GAP ANALYSIS                   | Thiếu phần bắt buộc   |
+  > | 6   | Không có Human Review checkpoint           | Không đúng quy trình  |
+  > | 7   | Không có automated test script guidance    | Không đầy đủ          |
+  >
+  >
+  > **3. Đã nâng cấp domain-testing.mdc:**
+  >
+  > - Thêm **Bước 1c**: Xác định State Variables + INCREMENT/ACCUMULATOR
+  > - Thêm **Bước 1d**: Xác định State Transitions
+  > - Thêm **4d**: Test Cases cho INCREMENT/ACCUMULATOR Logic (BẮT BUỘC)
+  > - Thêm **5b**: BVA cho State Variables
+  > - Thêm **5c**: BVA cho Time-based Variables
+  > - Thêm **6c**: Kiểm tra INCREMENT/ACCUMULATOR
+  > - Thêm **6d**: Kiểm tra State Transitions
+  > - Thêm **Bước 7**: AI Gap Analysis (BẮT BUỘC)
+  > - Thêm **Deliverables Checklist**
+  > - Thêm **Human Review checkpoint** sau mỗi bước
+  > - Thêm **Audit Log** sau mỗi bước
+- **Human Review**: Sau khi thực hiện chạy domain testing với FR02 và bị bỏ sót lỗi thì quyết định gửi lại file miêu tả homework để AI có thể nắm đúng ngữ cảnh nhất. Đồng thời yêu cầu AI thêm các bước cần thiết để hoàn thiện file kỹ thuật domain-testing.mdc để tránh xảy ra thiếu sót khi run
+
+## [Cập nhật] Phạm vi FR và Quy trình Functional UI Testing
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 20:00 — 03/07/2026
+- **Prompt**:
+  > Pool A: FR-02
+  > Pool B: FR-08
+  > Pool C: FR-16
+  > Pool D: FR-04
+  >
+  > Đây là các FR tôi sẽ thực hiện hãy ghi nhớ nó và bổ sung vào @context/context.md . Ngoài ra việc testing này là functional test tức là tôi phải thực hiện trên UI. Làm sao để có thể áp dụng domain testing và đồ án. Tôi nên tiếp tục tạo file script để check các lỗi sau đó chạy trên UI để test lỗi hãy sao. Hãy giúp tôi làm rõ task này
+- **AI-Output**:
+  > **1. Đã cập nhật context.md với phạm vi FR:**
+  >
+  >
+  > | Pool | FR    | Tên chức năng               |
+  > | ---- | ----- | --------------------------- |
+  > | A    | FR-02 | Login and account lockout   |
+  > | B    | FR-08 | Checkout (Thanh toán)       |
+  > | C    | FR-16 | Product import from CSV     |
+  > | D    | FR-04 | Personal profile management |
+  >
+  >
+  > **2. Quy trình Functional Testing cho mỗi FR:**
+  >
+  > ### Phase 1: Automated Script (Phát hiện nhanh)
+  >
+  > 1. Phân tích source code để tìm inputs, outputs, state variables
+  > 2. Thiết kế test case bằng Domain Testing + BVA
+  > 3. Tạo automated script (Node.js) để phát hiện bug
+  > 4. Chạy script → ghi nhận kết quả
+  > 5. **Output:** Danh sách bug tiềm năng
+  >
+  > ### Phase 2: Manual UI Testing (Xác nhận cuối cùng)
+  >
+  > 1. Mở trình duyệt → truy cập EShop UI
+  > 2. Thực hiện test case theo hướng dẫn trên UI thực tế
+  > 3. Chụp ảnh màn hình (screenshot) khi phát hiện bug
+  > 4. **Output:** Screenshot + Bug report cho GitHub Issues
+  >
+  > **3. Cấu trúc thư mục cho mỗi FR:**
+  >
+  > ```
+  > test-cases/
+  > ├── run-tests.js          # Script tự động
+  > ├── FR-02-login/          # Test cho FR-02 (đã có)
+  > │   ├── test-cases.md
+  > │   ├── results/
+  > │   └── screenshots/     # Screenshot từ UI test
+  > ├── FR-08-checkout/      # Test cho FR-08 (sắp tạo)
+  > ├── FR-16-csv-import/    # Test cho FR-16 (sắp tạo)
+  > └── FR-04-profile/       # Test cho FR-04 (sắp tạo)
+  > ```
+  >
+  > **4. Framework đề xuất:**
+  >
+  > - **Puppeteer** cho Node.js (đã có better-sqlite3)
+  > - Cross-platform, dễ cài đặt
+- **Human Review**: Thêm các thông tin và cập nhật file context để Agent có thể nắm rõ. Đồng thời làm rõ task và chốt phương án vừa chạy script để xác định lỗi và thực hiện trên UI để xem có bugs ở đâu.
+
+## [Tạo mới] Bug Reporting Standard
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 20:08 — 03/07/2026
+- **Prompt**:
+  > Thiết kế cho tôi một quy tắc chung để trình bày lỗi tìm được trong quá trình testing và ghi quy tắc đó vào file .md để trong folder @rules/.
+- **AI-Output**:
+  > **Đã tạo file `rules/bug-reporting.mdc`** với các nội dung sau:
+  >
+  > **1. Thông tin bắt buộc cho mỗi Bug Report:**
+  >
+  > - Bug ID (format: BUG-[FR]-[XXX])
+  > - Title, Severity, Priority
+  > - Location (file:line)
+  > - Steps to Reproduce
+  > - Expected vs Actual Behavior
+  > - Screenshot (bắt buộc cho UI bug)
+  > - Evidence (script output, log)
+  >
+  > **2. Phân loại Severity và Priority:**
+  >
+  > - Severity: Critical / High / Medium / Low
+  > - Priority: P0 / P1 / P2 / P3
+  > - Ma trận Severity vs Priority
+  >
+  > **3. Quy tắc cho Screenshots:**
+  >
+  > - Đặt tên chuẩn: BUG-[FR]-[XXX]-[Mô tả].png
+  > - Chụp toàn màn hình hoặc vùng chọn
+  > - Đánh dấu vùng lỗi
+  >
+  > **4. Quy tắc cho GitHub Issues:**
+  >
+  > - Template chuẩn cho issue
+  > - Labels: bug, FR-XX, severity-*, priority-*
+  >
+  > **5. Bug ID Convention:**
+  >
+  > - Format: `BUG-[FR]-[XXX]`
+  > - Ví dụ: BUG-FR02-001, BUG-FR08-001
+- **Human Review**: Hiện tại do prompt thiếu templete này cho github issues nên có vẻ templete này không phù hợp. Tiến hành prompt lại.
+
+## [Cập nhật] GitHub Issue Template
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 21:47 — 03/07/2026
+- **Prompt**:
+  > Human Review: Hiện tại do prompt thiếu templete này cho github issues nên có vẻ templete này không phù hợp. Tiến hành prompt lại.
+  > Hãy tạo lại cho tôi template cho github issues
+- **AI-Output**:
+  > **Đã tạo lại GitHub Issue Template đúng format:**
+  >
+  > **1. Đã tạo file thực tế:**
+  >
+  > - `.github/ISSUE_TEMPLATE/bug_report.md` - Template chính
+  > - `.github/ISSUE_TEMPLATE/config.yml` - Config cho GitHub
+  >
+  > **2. Template mới bao gồm:**
+  >
+  > - Thông tin lỗi (Bug ID, FR, Severity, Priority, Reporter, Date, Status)
+  > - Mô tả lỗi
+  > - Steps to Reproduce
+  > - Expected vs Actual Behavior
+  > - Evidence / Source Code
+  > - Screenshots / Videos
+  > - Environment
+  > - Suggested Fix (Optional)
+  > - Related Issues
+  >
+  > **3. Labels đề xuất:**
+  >
+  > - `bug`, `FR-02`, `FR-08`, `FR-16`, `FR-04`
+  > - `severity-critical`, `severity-high`, `severity-medium`, `severity-low`
+  > - `confirmed`, `needs-review`
+- **Human Review**: Không đúng nội dung tôi mong chờ nên sẽ tiến hành prompt lại
+
+## [Cập nhật] GitHub Issue Template (Phiên bản rút gọn)
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 21:52 — 03/07/2026
+- **Prompt**:
+  > Bây giờ hãy tạo giúp tôi một template tôi thống nhất khi thêm issue trên github. Template này chỉ cần ngắn gọn nhưng phải đầy đủ. Hãy cho cách đặt tên thông nhất. Sau đó để vào lại @rules/bug-reporting.mdc
+- **AI-Output**:
+  > **Đã cập nhật template GitHub ngắn gọn:**
+  >
+  > **1. Quy tắc đặt tên Issue:**
+  >
+  > - Format: `[BUG-FRXX-XXX] Mô tả ngắn gọn lỗi`
+  > - Ví dụ: `BUG-FR02-001 login_attempts tăng +2 thay vì +1`
+  >
+  > **2. Template GitHub Issue (rút gọn):**
+  >
+  > - Bug ID + FR + Date + Severity + Priority (1 dòng header)
+  > - Mô tả (1-2 câu)
+  > - Steps to Reproduce (3 bước)
+  > - Expected vs Actual (trên 1 dòng)
+  > - Source Location
+  > - Screenshots
+  > - Environment (1 dòng)
+  >
+  > **3. Labels đề xuất:**
+  >
+  > - `bug`, `FR-02`, `FR-08`, `FR-16`, `FR-04`
+  > - `severity-critical/high/medium/low`
+  > - `confirmed`, `needs-review`
+- **Human Review**: Đã đúng với yêu cầu.
+
+## [Tư vấn] Theo dõi login_attempts khi test qua UI
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 22:00 — 03/07/2026
+- **Prompt**:
+  > Hiện tại có cách nào để tôi chạy bugs trên UI và vẫn theo dõi được sự thay đổi của login_attempts trên database.js hãy không. Hãy miêu tả cách thực hiện vấn đề này.
+- **AI-Output**:
+  > **Đã tư vấn 4 phương pháp theo dõi login_attempts:**
+  >
+  > **Phương pháp 1: SQLite Viewer (Đơn giản nhất)**
+  >
+  > - Công cụ: SQLite Viewer (VS Code Extension)
+  > - Cách thực hiện:
+  >   1. Cài đặt VS Code Extension: SQLite Viewer (hoặc SQLite extension)
+  >   2. Mở file eshop/backend/database.sqlite trong VS Code
+  >   3. Chạy query theo dõi: SELECT id, name, email, login_attempts, locked_until FROM users WHERE email = '[test@eshop.com](mailto:test@eshop.com)';
+  > - Ưu điểm: Xem trực tiếp, không cần reload
+  > - Nhược điểm: Phải refresh thủ công
+  >
+  > **Phương pháp 2: SQLite CLI + watch (Nhanh nhất - Khuyến nghị)**
+  >
+  > - Công cụ: Command line
+  > - Cách thực hiện:
+  >   1. Mở terminal, chạy lệnh theo dõi real-time:
+  >     - Cách 1: watch -n 1 "sqlite3 eshop/backend/database.sqlite SELECT email, login_attempts, locked_until FROM users WHERE email='[test@eshop.com](mailto:test@eshop.com)';"
+  >     - Cách 2: while true; do sqlite3 eshop/backend/database.sqlite "SELECT email, login_attempts, locked_until FROM users WHERE email='[test@eshop.com](mailto:test@eshop.com)';"; sleep 1; done
+  >   2. Thực hiện login sai trên UI → Quan sát login_attempts tăng
+  > - Ưu điểm: Real-time, không cần rời terminal
+  > - Nhược điểm: Cần cài SQLite CLI
+  >
+  > **Phương pháp 3: Tự tạo Tool theo dõi (Node.js)**
+  >
+  > - Tạo file track-login-attempts.js
+  > - Sử dụng setInterval + db.get()
+  > - Chạy: node -e "const db = require('./eshop/backend/database'); setInterval(() => { db.get(SELECT login_attempts, locked_until FROM users WHERE email='[test@eshop.com](mailto:test@eshop.com)', [], (err, row) => { if(row) console.log(login_attempts: {row.login_attempts} | locked_until: {row.locked_until}); }); }, 1000);"
+  > - Ưu điểm: Tự động, có thể customize
+  > - Nhược điểm: Cần tạo script
+  >
+  > **Phương pháp 4: Thêm API Debug Endpoint (Khuyến nghị cho bug report)**
+  >
+  > - Thêm endpoint vào server.js:
+  > app.get("/api/debug/user/:email", (req, res) => {
+  > const { email } = req.params;
+  > db.get("SELECT id, name, email, login_attempts, locked_until FROM users WHERE email = ?", [email], (err, user) => {
+  > if (err) return res.status(500).json({ error: err.message });
+  > if (!user) return res.status(404).json({ error: "User not found" });
+  > res.json({
+  > email: user.email,
+  > login_attempts: user.login_attempts,
+  > locked_until: user.locked_until,
+  > timestamp: new Date().toISOString()
+  > });
+  > });
+  > });
+  > - Sử dụng: Mở trình duyệt [http://localhost:3000/api/debug/user/test@eshop.com](http://localhost:3000/api/debug/user/test@eshop.com) → Refresh sau mỗi lần login sai
+  > - Ưu điểm: Xem JSON response trực tiếp, dễ screenshot
+  >
+  > **So sánh các phương pháp:**
+  >
+  >
+  > | Phương pháp             | Độ khó | Real-time   | Cần cài đặt |
+  > | ----------------------- | ------ | ----------- | ----------- |
+  > | SQLite Viewer (VS Code) | ⭐      | ❌ (refresh) | Extension   |
+  > | SQLite CLI + watch      | ⭐⭐     | ✅           | SQLite CLI  |
+  > | Tool theo dõi           | ⭐⭐     | ✅           | Không       |
+  > | Debug Endpoint          | ⭐⭐     | ✅ (browser) | Code thêm   |
+  >
+  >
+  > **Khuyến nghị:**
+  >
+  > - Cho testing nhanh: Dùng Phương pháp 2 (SQLite CLI + watch)
+  > - Cho documentation/bug report: Dùng Phương pháp 4 (Debug Endpoint)
+  > - Muốn xem trực tiếp: Dùng Phương pháp 1 (SQLite Viewer)
+- **Human Review**: Sau khi tham khảo các gợi ý của AI tôi quyết định sử dụng phương pháp 3 là tạo scripts để in ra các kết quả khi chạy.
+
+---
+
+## [Tư vấn + Code] Chi tiết Phương pháp 3 - Tạo Script theo dõi
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 22:08 — 03/07/2026
+- **Prompt**:
+  > Tôi muốn chọn phương pháp 3, bạn hãy miêu tả chi tiết về nó. Với mỗi test case khi thực hiện test trên UI thì tôi phải tạo 1 script riêng để chạy đúng không. Hãy thực hiện yêu cầu trên sau đó ghi prompt và AI-Output đầy đủ vào logs.
+- **AI-Output**:
+  > **Trả lời câu hỏi 1: Có phải tạo script riêng cho mỗi test case không?**
+  >
+  > - KHÔNG, bạn chỉ cần 1 script tracking duy nhất (`track-login-attempts.js`)
+  > - Script chạy liên tục, hiển thị login_attempts mỗi khi thay đổi
+  > - Khi test trên UI (nhập sai password), script tự động phát hiện và hiển thị thay đổi
+  >
+  > **Trả lời câu hỏi 2: Tại sao chỉ cần 1 script?**
+  >
+  > - Script theo dõi liên tục (setInterval 500ms)
+  > - Mỗi khi login_attempts thay đổi → Script phát hiện và hiển thị
+  > - Không cần chạy lại script cho mỗi test case
+  >
+  > **Đã tạo file: `tools/track-login-attempts.js`**
+  >
+  > **Cách hoạt động:**
+  >
+  > 1. Script kết nối trực tiếp đến `database.sqlite`
+  > 2. Chạy vòng lặp setInterval mỗi 500ms
+  > 3. Đọc login_attempts từ database
+  > 4. So sánh với giá trị trước đó
+  > 5. Nếu có thay đổi → Hiển thị thông báo với timestamp
+  > 6. Đếm số lần thay đổi, hiển thị trạng thái tài khoản
+  >
+  > **Cách sử dụng:**
+  >
+  > 1. Reset user trong database:
+  >   ```sql
+  >    UPDATE users SET login_attempts = 0, locked_until = NULL WHERE email = 'test@eshop.com';
+  >   ```
+  > 2. Mở Terminal 1: Chạy script tracking
+  >   ```bash
+  >    cd e:\Documents\HCMUS\Semester3_Year3\Testing\HW02
+  >    node tools/track-login-attempts.js
+  >   ```
+  > 3. Mở Browser: Test login trên UI EShop
+  > 4. Quan sát Terminal 1: Xem login_attempts thay đổi real-time
+  > 5. Nhấn Ctrl+C để dừng → Xem tổng kết
+  >
+  > **Tính năng của script:**
+  >
+  > - ✅ Hiển thị số lần thay đổi (#1, #2, #3...)
+  > - ✅ Timestamp chính xác cho mỗi thay đổi
+  > - ✅ So sánh giá trị trước → sau (VD: 0 → 2)
+  > - ✅ Hiển thị trạng thái tài khoản (BÌNH THƯỜNG / CẢNH BÁO / BỊ KHÓA)
+  > - ✅ Hiển thị thời gian còn lại của locked_until
+  > - ✅ Cảnh báo khi phát hiện BUG (+2 thay vì +1)
+  > - ✅ Tổng kết khi dừng script (số lần thay đổi, giá trị cuối)
+  >
+  > **Cấu hình có thể thay đổi:**
+  >
+  > ```javascript
+  > const TRACK_EMAIL = 'test@eshop.com';        // Email cần theo dõi
+  > const REFRESH_INTERVAL_MS = 500;            // Tốc độ refresh (ms)
+  > ```
+  >
+  > **Lưu ý quan trọng:**
+  >
+  > - Script chỉ đọc database, không sửa đổi dữ liệu
+  > - Có thể chạy song song với server Node.js
+  > - Refresh interval càng nhỏ → Càng real-time (nhưng tốn CPU hơn)
+  > - Khuyến nghị: 500ms là đủ cho việc testing
+
+---
+
+## [Debug] Sửa lỗi Cannot find module 'sqlite3'
+
+- **Tool**: Cursor (model: gpt-5.5-medium)
+- **Date/time**: 22:56 — 03/07/2026
+- **Prompt**:
+  > Phân tích lỗi này giúp tôi: [Lỗi Cannot find module 'sqlite3' khi chạy track-login-attempts.js]
+- **AI-Output**:
+  > **Phân tích lỗi:**
+  >
+  >
+  > | Thông tin       | Chi tiết                                                                                |
+  > | --------------- | --------------------------------------------------------------------------------------- |
+  > | **Lỗi**         | Cannot find module 'sqlite3'                                                            |
+  > | **Nguyên nhân** | Script chạy từ `HW02/` nhưng `node_modules/sqlite3` nằm ở `eshop/backend/node_modules/` |
+  > | **Sửa lỗi**     | Đổi đường dẫn require từ `'sqlite3'` → `'../eshop/backend/node_modules/sqlite3'`        |
+  >
+  >
+  > **Đã sửa file `tools/track-login-attempts.js`:**
+  >
+  > - Thay `const sqlite3 = require('sqlite3').verbose();` bằng `const sqlite3 = require('../eshop/backend/node_modules/sqlite3').verbose();`
+  > - Thay `const dbPath = path.resolve(__dirname, 'eshop/backend/database.sqlite');` bằng `const dbPath = path.resolve(__dirname, '../eshop/backend/database.sqlite');`
+  >
+  > **Cách chạy lại:**
+  >
+  > ```bash
+  > node tools/track-login-attempts.js
+  > ```
+- **Human Review**: File script đã hoạt động được và đã ghi lỗi đầu tiên vào github issuse
 

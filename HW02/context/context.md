@@ -2,10 +2,23 @@
 
 **Mô tả:** Đây là tài liệu hướng dẫn ngữ cảnh gốc (Context File) cho Agent. Agent BẮT BUỘC phải đọc hiểu và ghi nhớ thông tin trong file này trước khi thực hiện bất kỳ yêu cầu phân tích hay sinh test case nào từ người dùng.
 
+## 0. Phạm vi FR được chọn
+
+| Pool | FR | Tên chức năng | Ghi chú |
+|------|-----|---------------|---------|
+| A | FR-02 | Login and account lockout | ✅ Hoàn thành |
+| B | FR-08 | Checkout (Thanh toán) | ⏳ Sắp thực hiện |
+| C | FR-16 | Product import from CSV | ⏳ Sắp thực hiện |
+| D | FR-04 | Personal profile management | ⏳ Sắp thực hiện |
+
+---
+
 ## 1. Thông tin Hệ thống (System Under Test - SUT)
 
-- [cite_start]**Tên hệ thống:** EShop — một ứng dụng demo thương mại điện tử của Việt Nam được thiết kế để thực hành kiểm thử[cite: 248].
-- [cite_start]**Kho lưu trữ mã nguồn (Repository):** `https://github.com/ttbhanh/eshop-sut`[cite: 249].
+- **Tên hệ thống:** EShop — một ứng dụng demo thương mại điện tử của Việt Nam được thiết kế để thực hành kiểm thử.
+- **Kho lưu trữ mã nguồn (Repository):** `https://github.com/ttbhanh/eshop-sut`
+- **Kiểu test:** Functional Testing trên **UI** (giao diện người dùng)
+- **Cách thức:** Script tự động để phát hiện bug → sau đó test thủ công trên UI để xác nhận
 
 ## 2. Phạm vi chức năng (Feature Pools)
 
@@ -27,8 +40,89 @@ Hệ thống được chia thành 4 nhóm chức năng (Pools). [cite_start]Ngư
 
 ## 4. Nguyên tắc làm việc BẮT BUỘC (Strict Rules)
 
-- **AI-First & Human Review:** Agent đóng vai trò là một "trợ lý có kỷ luật". [cite_start]Mọi kết quả sinh ra đều phải trải qua tư duy từng bước (Chain of Thought) và chờ con người xem xét (Human Review)[cite: 236, 237]. [cite_start]Tuyệt đối KHÔNG xuất ra kết quả thô mà không có giải thích[cite: 239].
-- [cite_start]**Tuân thủ @domain-testing.mdc:** Khi thực hiện thiết kế test case, Agent PHẢI áp dụng nghiêm ngặt 7 bước (Từ Bước 0 đến Bước 6) đã được định nghĩa trong file `domain-testing.mdc`[cite: 313, 314].
-- [cite_start]**Trích dẫn Mã nguồn:** Mọi ràng buộc, biến số, hay quy tắc nghiệp vụ khi phân tích đều BẮT BUỘC phải trích dẫn dòng code tương ứng theo format `(Tên_File: Dòng_Bao_Nhiêu)`[cite: 319].
-- [cite_start]**Ghi Log Kiểm toán (AI Audit Report):** Sau mỗi phiên trả lời hoàn chỉnh, Agent BẮT BUỘC phải đính kèm khối log theo chuẩn định dạng quy định tại file `@audit-log.mdc` để người dùng làm báo cáo[cite: 240, 327, 328].
-- [cite_start]**Tài liệu hóa bằng Markdown:** Toàn bộ quá trình phân tích, bảng Test Case, và báo cáo lỗi phải được định dạng rõ ràng bằng Markdown[cite: 243, 263].
+- **AI-First & Human Review:** Agent đóng vai trò là một "trợ lý có kỷ luật". Mọi kết quả sinh ra đều phải trải qua tư duy từng bước (Chain of Thought) và chờ con người xem xét (Human Review). Tuyệt đối KHÔNG xuất ra kết quả thô mà không có giải thích.
+- **Cung cấp AI-Output ĐẦY ĐỦ (BẮT BUỘC):** Khi ghi log vào `ai-audit-log.md`, Agent PHẢI cung cấp đầy đủ toàn bộ nội dung AI-Output mà không được tóm tắt, bỏ bớt hay cắt ngắn bất kỳ phần nào. Nội dung ghi vào log phải giống hệt (100%) với những gì đã xuất ra cho người dùng, bao gồm tất cả code blocks, bảng, ví dụ, và chi tiết. Không được dùng cụm "tóm tắt" hay "chi tiết đã được rút gọn".
+- **Tuân thủ @domain-testing.mdc:** Khi thực hiện thiết kế test case, Agent PHẢI áp dụng nghiêm ngặt các bước đã được định nghĩa trong file `domain-testing.mdc`.
+- **Trích dẫn Mã nguồn:** Mọi ràng buộc, biến số, hay quy tắc nghiệp vụ khi phân tích đều BẮT BUỘC phải trích dẫn dòng code tương ứng theo format `(Tên_File: Dòng_Bao_Nhiêu)`.
+- **Ghi Log Kiểm toán (AI Audit Report):** Sau mỗi phiên trả lời hoàn chỉnh, Agent BẮT BUỘC phải đính kèm khối log theo chuẩn định dạng quy định tại file `@audit-log.mdc` để người dùng làm báo cáo.
+- **Tài liệu hóa bằng Markdown:** Toàn bộ quá trình phân tích, bảng Test Case, và báo cáo lỗi phải được định dạng rõ ràng bằng Markdown.
+- **Functional Test trên UI:** Test thực hiện trên giao diện người dùng, không phải API. Script tự động chỉ để phát hiện và gợi ý, kết quả cuối cùng phải được xác nhận bằng test thủ công trên UI.
+
+---
+
+## 5. Quy trình Testing cho mỗi FR (2-Phase Approach)
+
+### Phase 1: Automated Script (Phát hiện nhanh)
+1. Phân tích source code để tìm inputs, outputs, state variables
+2. Thiết kế test case bằng Domain Testing + BVA
+3. Tạo automated script (Node.js/Puppeteer/Playwright) để phát hiện bug
+4. Chạy script → ghi nhận kết quả (pass/fail)
+5. **Output:** Danh sách bug tiềm năng
+
+### Phase 2: Manual UI Testing (Xác nhận cuối cùng)
+1. Mở trình duyệt → truy cập EShop UI
+2. Thực hiện test case theo hướng dẫn trên UI thực tế
+3. Chụp ảnh màn hình (screenshot) khi phát hiện bug
+4. **Output:** Screenshot + Bug report cho GitHub Issues
+
+### Tại sao cần 2 phase?
+- **Phase 1 (Script):** Nhanh, bao phủ nhiều trường hợp, phát hiện bug nhanh
+- **Phase 2 (UI):** Chính xác, xác nhận bug thực tế, cung cấp screenshot
+
+---
+
+## 6. Framework hỗ trợ cho Functional UI Testing
+
+| Tool | Mục đích | Ghi chú |
+|------|----------|---------|
+| **Puppeteer** | Browser automation cho Node.js | Nhẹ, dễ dùng |
+| **Playwright** | Cross-browser testing | Hỗ trợ nhiều trình duyệt |
+| **Selenium** | Web automation | Phổ biến, nhiều tài liệu |
+
+**Đề xuất:** Sử dụng **Puppeteer** cho EShop vì:
+- Cài đặt đơn giản
+- Tương thích tốt với Node.js (đã có better-sqlite3)
+- Đủ mạnh cho functional testing
+
+---
+
+## 7. Cấu trúc thư mục cho mỗi FR
+
+```
+test-cases/
+├── run-tests.js          # Script tự động
+├── FR-02-login/          # Test cho FR-02 (đã có)
+│   ├── test-cases.md
+│   ├── results/
+│   └── screenshots/     # Screenshot từ UI test
+├── FR-08-checkout/      # Test cho FR-08 (sắp tạo)
+├── FR-16-csv-import/    # Test cho FR-16 (sắp tạo)
+└── FR-04-profile/       # Test cho FR-04 (sắp tạo)
+```
+
+---
+
+## 8. Deliverables cho mỗi FR
+
+| # | Deliverable | Format | Mô tả |
+|---|-------------|--------|--------|
+| 1 | Test Case Report | Markdown | Bảng TC đầy đủ |
+| 2 | EC Table | Markdown | Các lớp tương đương |
+| 3 | BVA Analysis | Markdown | Phân tích ranh giới |
+| 4 | Automated Script | Node.js | Script phát hiện bug |
+| 5 | Test Results | .txt/.json | Kết quả chạy script |
+| 6 | UI Test Screenshots | PNG/JPG | Ảnh chụp khi phát hiện bug |
+| 7 | Bug Report | GitHub Issues | Bug đã xác nhận |
+| 8 | AI Gap Analysis | Markdown | Phân tích AI miss gì |
+| 9 | Audit Log | Markdown | Ghi log từng bước |
+
+---
+
+## 9. Trạng thái hoàn thành
+
+| FR | Pool | Domain Testing | BVA | Script | UI Test | Bug Report | Gap Analysis |
+|----|------|----------------|-----|--------|---------|------------|--------------|
+| FR-02 | A | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| FR-08 | B | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ |
+| FR-16 | C | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ |
+| FR-04 | D | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ | ⏳ |
