@@ -214,34 +214,50 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 
 ---
 
-## 6. Phân tích kết quả Postman (điền sau khi có Actual/Status ở trên)
+## 6. Phân tích kết quả Postman
 
-> **Hướng dẫn điền:** Sau khi chạy Postman, điền cột **Actual** và **Status** trong các bảng TC và BV ở trên, sau đó sử dụng bảng dưới để ghi nhận phát hiện.
+> **Tổng hợp kết quả sau khi người dùng điền Actual/Status:**
+>
+> - ✅ **12 test PASS** (TC-A1, TC-B1, TC-B2, TC-D1, TC-D5–D8, BV-D3, BV-T1, BV-P1–P6)
+> - ❌ **6 test FAIL** (TC-C1–C4, TC-D2, BV-T2–T3)
+> - ⚠️ **1 test cần xác nhận** (BV-D1 — hành vi không nhất quán)
+> - ⚠️ **Phát hiện root cause**: `login_attempts` không reset khi login đúng
 
 
-| #   | Test case liên quan | Hành vi quan sát được | Kỳ vọng theo spec                                       | Giả thuyết (không suy đoán implementation) | Cần test thêm       |
-| --- | ------------------- | --------------------- | ------------------------------------------------------- | ------------------------------------------ | ------------------- |
-| 1   | TC-D1, TC-D2, TC-D3 | [điền sau]            | Bộ đếm tăng đúng 1 đơn vị sau mỗi lần sai; khóa ở lần 3 | [suy luận từ hành vi nếu có lệch]          | [test case bổ sung] |
-| 2   | TC-D3, TC-D7, BV-T2 | [điền sau]            | Khóa đúng 30 giây, hết khóa → cho đăng nhập             | [suy luận từ hành vi nếu có lệch]          | [test case bổ sung] |
-| 3   | TC-D5, TC-D6        | [điền sau]            | Đăng nhập đúng trước ngưỡng khóa → reset bộ đếm         | [suy luận từ hành vi nếu có lệch]          | [test case bổ sung] |
-| 4   | TC-B1, TC-B2        | [điền sau]            | Thông báo lỗi không tiết lộ email hay password sai      | [suy luận từ hành vi nếu có lệch]          | [test case bổ sung] |
-| 5   | TC-C1, TC-C3, TC-C4 | [điền sau]            | Validation error cho input không hợp lệ                 | [suy luận từ hành vi nếu có lệch]          | [test case bổ sung] |
-| 6   | BV-P1...BV-P6       | [điền sau]            | Không rõ — giá trị thăm dò                              | [quan sát hành vi thực tế để ghi nhận]     | [test case bổ sung] |
+| #   | Test case liên quan        | Hành vi quan sát được                                                                  | Kỳ vọng theo spec                                  | Giả thuyết (không suy đoán implementation)                                                                                                     | Cần test thêm                                                                               |
+| --- | -------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| 1   | TC-D1, TC-D2, TC-D3        | TC-D1 (lần 1): ✅ 401. TC-D2 (lần 2): ❌ 403 khóa thay vì 401. TC-D3 (lần 3): ❌ 403 khóa | Bộ đếm tăng đúng 1 đơn vị; khóa ở lần 3            | Bộ đếm tích lũy từ lần test trước, không reset khi login đúng → khi đã có 2 sai từ trước, lần sai thứ 2 trong test mới trở thành lần 3 thực tế | Register tài khoản mới, test chuỗi 1→2→3 từ đầu                                             |
+| 2   | BV-T2, BV-T3, TC-D7        | Sau ≥30 giây: vẫn trả 403 → khóa kéo dài >31 giây                                      | Khóa đúng 30 giây, hết khóa → cho đăng nhập        | Thời gian khóa thực tế lớn hơn spec (có thể 60s hoặc tính từ thời điểm khác)                                                                   | Test lại sau 60s, 90s, 120s để tìm thời gian khóa thực                                      |
+| 3   | TC-D5, TC-D6, TC-A1        | Sau login đúng: `login_attempts` vẫn là 4 (hoặc 2) thay vì 0                           | Đăng nhập đúng → bộ đếm reset về 0                 | Bộ đếm **không reset khi login đúng** — đây là root cause chính (BUG-004)                                                                      | Register tài khoản mới hoàn toàn, test vòng login đúng → sai 1 → đúng lại → kiểm tra bộ đếm |
+| 4   | TC-B1, TC-B2               | Cả hai đều trả `{"error": "Invalid email or password"}` với 401                        | Thông báo lỗi không tiết lộ email hay password sai | ✅ Khớp với spec — thông báo chung, không phân biệt                                                                                             | Không cần                                                                                   |
+| 5   | TC-C1, TC-C2, TC-C3, TC-C4 | Tất cả trả `401` với `{"error": "Invalid email or password"}` thay vì `400`            | Validation error → `400 Bad Request`               | Server xử lý validation cùng tầng authentication, không reject invalid input ở tầng request validation trước khi truy vấn DB                   | Test với `null`, trường thiếu hoàn toàn                                                     |
+| 6   | BV-P1...BV-P6              | Tất cả trả 401 — không crash, không XSS, không overflow                                | Không xác định trước — giá trị thăm dò             | ✅ Khớp kỳ vọng thăm dò — không có crash                                                                                                        | Không cần                                                                                   |
 
 
 ---
 
-## 7. Tổng hợp test case cần chạy
+## 7. Tổng hợp test case sau khi chạy Postman
 
 
-| Nhóm                         | Số lượng test case | Trạng thái  |
-| ---------------------------- | ------------------ | ----------- |
-| Nhóm A: Đăng nhập thành công | 1                  | ☐ Chưa chạy |
-| Nhóm B: Đăng nhập thất bại   | 2                  | ☐ Chưa chạy |
-| Nhóm C: Validation           | 4                  | ☐ Chưa chạy |
-| Nhóm D: Account Lockout (EC) | 8                  | ☐ Chưa chạy |
-| Boundary Values — Lockout    | 6                  | ☐ Chưa chạy |
-| Boundary Values — Probing    | 6                  | ☐ Chưa chạy |
-| **Tổng cộng**                | **27**             | ☐           |
+| Nhóm                         | Số lượng test case | Trạng thái sau Postman                 |
+| ---------------------------- | ------------------ | -------------------------------------- |
+| Nhóm A: Đăng nhập thành công | 1                  | ✅ PASS (1/1)                           |
+| Nhóm B: Đăng nhập thất bại   | 2                  | ✅ PASS (2/2)                           |
+| Nhóm C: Validation           | 4                  | ❌ FAIL (0/4)                           |
+| Nhóm D: Account Lockout (EC) | 8                  | ⚠️ 5/8 — TC-D2 FAIL                    |
+| Boundary Values — Lockout    | 6                  | ⚠️ 4/6 — BV-T2/T3 FAIL                 |
+| Boundary Values — Probing    | 6                  | ✅ PASS (6/6)                           |
+| **Tổng cộng**                | **27**             | ✅ 12 pass, ❌ 6 fail, ⚠️ 1 cần xác nhận |
+
+
+## 8. Tổng hợp Bug phát hiện (GitHub Issues)
+
+
+| Bug ID        | Mô tả                                                    | Severity          | File                                                           |
+| ------------- | -------------------------------------------------------- | ----------------- | -------------------------------------------------------------- |
+| FR-02-BUG-001 | API trả 401 cho email/password rỗng thay vì 400          | Medium            | testing/FR-02/issues/FR-02-BUG-001-validation-returns-401.md   |
+| FR-02-BUG-002 | Tài khoản bị khóa sau 2 lần đăng nhập sai thay vì 3 lần  | High              | testing/FR-02/issues/FR-02-BUG-002-lockout-at-2-fails.md       |
+| FR-02-BUG-003 | Thời gian khóa kéo dài hơn 30 giây theo spec             | High              | testing/FR-02/issues/FR-02-BUG-003-lockout-time-exceeds-30s.md |
+| FR-02-BUG-004 | login_attempts không reset về 0 khi đăng nhập thành công | High (Root Cause) | testing/FR-02/issues/FR-02-BUG-004-login-attempts-not-reset.md |
 
 
