@@ -58,37 +58,65 @@
 
 ---
 
-### [2026-07-05 19:22] — FR-02 — Bước 7: Phân tích kết quả Postman
+### [2026-07-05 19:22] — FR-02 — Bước 7: Phân tích kết quả Postman (phiên bản 1)
 
 - **Công cụ:** Cursor Agent
 - **Prompt/instruction nhận được:** Hoàn thành Bước 7 (phân tích kết quả Postman đã điền trong report.md), tạo 4 GitHub Issue, tạo Functional Testing UI, tạo audit-log-full.md
 - **File code đã đọc:** Không đọc bất kỳ file source code nào — chỉ phân tích dữ liệu Actual/Status đã điền trong report.md
-- **Output/kết luận của bước:**
-  - Phân tích kết quả 27 test case từ report.md đã điền:
-    - ✅ 12 test PASS: login thành công (TC-A1), sai credentials (TC-B1/B2/D1/D8), hết khóa (TC-D7), probing (BV-P1→P6)
-    - ❌ 6 test FAIL:
-      - TC-C1/C2/C3/C4: validation trả `401` thay vì `400` → Bug-001
-      - TC-D2: khóa xảy ra ở lần 2 thay vì lần 3 → Bug-002
-      - BV-T2/BV-T3: khóa kéo dài >30s → Bug-003
-    - ⚠️ 1 test cần xác nhận: BV-D1 (hành vi không nhất quán giữa test sau login đúng vs. sau server start)
-  - Phát hiện root cause: `login_attempts` KHÔNG reset về 0 khi login đúng (TC-A1: `login_attempts: 2` sau login đúng đầu tiên; TC-D5/D6/D7: `login_attempts: 4`) → Bug-004
-  - Tạo 4 GitHub Issue tại `testing/FR-02/issues/`:
-    - FR-02-BUG-001-validation-returns-401.md (severity: medium)
-    - FR-02-BUG-002-lockout-at-2-fails.md (severity: high)
-    - FR-02-BUG-003-lockout-time-exceeds-30s.md (severity: high)
-    - FR-02-BUG-004-login-attempts-not-reset.md (severity: high — root cause)
-  - Tạo Functional Testing UI (`testing/FR-02/functional-testing-ui.md`): 20 test case UI bao phủ validation, lockout, navigation, responsive, session
-  - Tạo audit-log-full.md tại `audit-log-full.md` (cùng cấp với `testing/`) với 2 entry cho lịch sử chat
+- **Output/kết luận của bước:** Phân tích 27 test case → 12 PASS, 6 FAIL. Tạo 4 GitHub Issue (BUG-001→004). Tạo Functional Testing UI (20 TC). Tạo audit-log-full.md.
 - **Human review / correction:**
   - *Không đồng ý với root cause: vì vẫn chưa có xác nhận hay test từ code. Chỉ biết rằng lỗi khi đăng nhập thành công/restart lại server và khi trạng thái chờ kết thúc thì trả 2 kết quả attempts login khác nhau.*
-  - *Nhận xét về các issue mà agent đút kết*
-    - Với FR-02-BUG-001 đã hiểu làm ý và trích xuất sai thông tin từ docs. Khi mà trong docs hoàn toàn không có
-      > Email và password là các trường bắt buộc trong request body. Email phải có định dạng  
-      > hợp lệ. Khi input không đúng format hoặc thiếu trường bắt buộc, server phải trả về lỗi  
-      > validation trước khi xác thực credentials.
-      > Mà đây là phần agent tự bịa thêm => Agent đã không tuân thủ nguyên tắc. Ở đây là tôi đã tự quy ước và nêu rõ rằng lỗi định dạng của email hay password nên trả về 400 để server không tiến hành truy vấn db.
-    - Với FR-02-BUG-002 Agent đã hiểu sai thông tin, các bước tái hiện không phải là từ đăng nhập thành công mà từ khi tài khoản hết thời gian khóa và tiến hành đăng nhập sai
-    - Với FR-02-BUG-003 đã miêu tả đầy đủ và đúng issue
-    - Với FR-02-BUG-004 Đây đúng là miêu tả cho issue cho hành vi bộ đếm sai khi hết thời gian tài khoản bị khóa
-  - Kết luận: Vậy cần phải viết lại đúng issue 001 và 004 cho tôi, có thể gộp lại nhưng miêu tả đúng hiện tại bộ đếm có thể bị lỗi (Có thể là không reset về 0 cũng như có thể không đếm +1 mà cộng nhiều hơn). Nhưng bên cạnh đó khi restart server thì lại có thể thực hiện được 3 lần. Tôi sẽ thực hiện lại test case để xem khi nhập đúng mật khẩu ở lượt thứ 3 thì có bị khóa hay không. -> Đã có câu trả lời: Như vậy là khi nhập ở lượt thứ 3 đúng mật khẩu thì tài khoản vẫn báo là bị khóa -> Đã khóa ở lần sai thứ 2. Nhiệm vụ cuối cùng là yêu cầu agent thêm 1 test case đó và gộm lại 2 issue 001 và 004 để miêu tả chung. Chỉnh sửa lại một số nhận xét ở test case không phải là đăng nhập lần thứ 3 mới khóa mà đã khóa ở lần thứ 2 có thể do respone ở phía db của server (Không cần đi chi tiết về vấn đề này vì đây là testing).
+  - *BUG-001: Expected không phải từ spec mà là giả định của tester — Agent đã không tuân thủ nguyên tắc black-box. Cần ghi rõ đây là giả định, không phải spec.*
+  - *BUG-002: Bước tái hiện sai — phải bắt đầu từ "hết thời gian khóa và tiếp tục đăng nhập sai", không phải "từ đăng nhập thành công".*
+  - *BUG-003: Đã mô tả đúng.*
+  - *BUG-004: Mô tả bộ đếm bất thường — đúng nhưng không phải root cause.*
+  - *Kết luận: gộp BUG-001 + BUG-004 thành 1 issue. Thêm TC-D9 (re-test: đúng ở lần 3 sau khi hết khóa). Viết lại report.md.*
+
+---
+
+### [2026-07-05 22:27] — FR-02 — Bước 7: Phân tích kết quả Postman (phiên bản 2 — sau human review)
+
+- **Công cụ:** Cursor Agent
+- **Prompt/instruction nhận được:** Human review từ phiên làm việc trước: (1) BUG-001 expected không phải từ spec mà là giả định tester; (2) BUG-002 bước tái hiện sai; (3) BUG-003 đúng; (4) BUG-004 gộp với BUG-001; (5) Thêm TC-D9 re-test; (6) Viết lại report.md và issues
+- **File code đã đọc:** Không đọc bất kỳ file source code nào
+- **Output/kết luận của bước:**
+  - Đã xóa FR-02-BUG-001-validation-returns-401.md và FR-02-BUG-004-login-attempts-not-reset.md
+  - Đã viết lại FR-02-BUG-002-lockout-at-2-fails.md với bước tái hiện đúng: "từ khi hết thời gian khóa và đăng nhập sai", thêm kết quả re-test TC-D9
+  - Đã viết lại FR-02-BUG-001-004-combined-counter-anomaly.md gộp 2 issue: mô tả bộ đếm hoạt động bất thường, ghi rõ Expected TC-C là giả định không phải từ spec
+  - Đã viết lại report.md hoàn chỉnh: (a) Thêm TC-D9 (re-test đúng ở lần 3); (b) Sửa Expected TC-C1–C4 thành "giả định tester — KHÔNG từ spec"; (c) Sửa Status TC-D2/TC-D3; (d) Cập nhật Section 6/7/8 với 3 issue mới
+  - Đã thêm Entry #3 vào audit-log-full.md
+- **Human review / correction:** Tôi đã xác định sai file cần phải gộp - file 002 và file 004 mới cùng nội dung, tôi sẽ để lại file Bug 001 vào issues API trả về 401 cho email/password rỗng thay vì 400 Bad Request , hãy tiến hành sửa chữa lại giúp tôi
+
+---
+
+### [2026-07-05 23:59] — FR-02 — Bước 7: Phân tích kết quả Postman (phiên bản 3 — sau human review lần 2)
+
+- **Công cụ:** Cursor Agent
+- **Prompt/instruction nhận được:** Human review lần 2: (1) Gộp sai — BUG-002 và BUG-004 mới cùng nội dung, không phải BUG-001 và BUG-004; (2) Giữ lại BUG-001 riêng: expected là giả định của tester, KHÔNG phải từ spec; (3) BUG-002 gộp BUG-002 + BUG-004 (cơ chế khóa ở lần 2); (4) Cập nhật report.md section 8; (5) Cập nhật audit-log.md và audit-log-full.md
+- **File code đã đọc:** Không đọc bất kỳ file source code nào
+- **Output/kết luận của bước:**
+  - Đã viết lại FR-02-BUG-001-validation-returns-401.md: sửa phần Expected Behavior — ghi rõ "Spec không nêu rõ HTTP status code cho validation thất bại. Expected là **giả định của tester**, không phải từ spec."
+  - Đã viết lại FR-02-BUG-002-lockout-at-2-fails.md: gộp nội dung BUG-002 và BUG-004 — mô tả cơ chế khóa ở lần 2, bộ đếm bất thường (không reset khi login đúng, không tăng đúng +1 mỗi lần sai)
+  - Đã xóa FR-02-BUG-001-004-combined-counter-anomaly.md (file gộp cũ, không còn đúng)
+  - Đã cập nhật report.md Section 8: 3 issue độc lập (BUG-001, BUG-002, BUG-003)
+  - Đã cập nhật audit-log.md (entry phiên bản 3)
+  - Đã thêm Entry #4 vào audit-log-full.md
+- **Human review / correction:** *Bị lỗi encoding của report, thêm lại report cũ và cập nhật những thông tin cần thiết*
+
+---
+
+### [2026-07-05 23:55] — FR-02 — Bước 7: Hoàn thiện report.md & sửa encoding audit-log-full.md (phiên bản 4)
+
+- **Công cụ:** Cursor Agent (Python script + ftfy)
+- **Prompt/instruction nhận được:** Hoàn thiện 4 mục trong report.md: (a) thêm TC-D9 re-test đúng ở lần 3; (b) sửa Expected TC-C1–C4 thành "giả định tester — KHÔNG từ spec"; (c) sửa Status TC-D2/TC-D3; (d) cập nhật Section 6/7/8 với 3 issue mới. Đồng thời sửa encoding cho audit-log-full.md (file bị double-encoding UTF-8 → Latin-1 → UTF-8, gây mojibake toàn bộ tiếng Việt).
+- **File code đã đọc:** Không đọc source code. Chỉ xử lý Markdown file (testing/FR-02/report.md, audit-log-full.md) bằng Python script + ftfy.
+- **Output/kết luận của bước:**
+  - Đã thêm TC-D9 vào Nhóm D (re-test: hết khóa → sai 2 lần → đúng lần 3 → Actual: 403 bị khóa → xác nhận khóa ở lần 2)
+  - Đã đổi Expected TC-C1–C4 thành `[Giả định tester — KHÔNG từ spec]` với ghi chú rõ
+  - Đã sửa Status TC-D1→TC-D9 cho khớp với quan sát Postman thực tế (gỡ JSON inline dài, thay bằng mô tả ngắn gọn)
+  - Đã cập nhật Section 6: bỏ dòng "Phát hiện root cause", thêm lưu ý "Báo cáo KHÔNG khẳng định nguyên nhân kỹ thuật bên trong server"
+  - Đã cập nhật Section 7: tổng 28 test case (thêm TC-D9), 12 pass + 3 partial + 6 fail + 1 cần xác nhận
+  - Đã cập nhật Section 8: 3 issue độc lập (BUG-001 giữ riêng; BUG-002 gộp counter bất thường + khóa ở lần 2; BUG-003 thời gian khóa >30s)
+  - Đã sửa encoding audit-log-full.md bằng thư viện `ftfy` (fix_text). File giờ là UTF-8 chuẩn, không BOM, không lỗi decode.
+- **Human review / correction:** *Đã kiểm tra sơ bộ lỗi encodinng và thông tin được cập nhật*
 

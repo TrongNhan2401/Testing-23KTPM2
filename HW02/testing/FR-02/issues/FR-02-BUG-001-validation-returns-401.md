@@ -12,27 +12,28 @@
 
 ```markdown
 ## 1. Tóm tắt (Summary)
-Khi gửi request đăng nhập với trường `email` hoặc `password` bị rỗng (`""`), server trả về
-`401 Unauthorized` với body `{"error": "Invalid email or password"}` thay vì `400 Bad Request`
-như expected. Điều này cho thấy server chưa thực hiện validation input trước khi truy vấn CSDL.
+Khi gửi request đăng nhập với trường `email` hoặc `password` bị rỗng (`""`) hoặc sai
+định dạng, server trả về `401 Unauthorized` với body `{"error": "Invalid email or password"}`
+thay vì `400 Bad Request`. Spec không nêu rõ HTTP status code cho trường hợp validation
+thất bại — phần Expected bên dưới là **giả định của tester**, không phải từ spec.
 
 ## 2. Nguồn spec / kỳ vọng (Expected Behavior)
 - Tài liệu tham chiếu: `contexts/api_specification.md` §1.2, `contexts/README.md` §2, FR-02
-- Trích đúng nội dung spec liên quan (paraphrase, không copy nguyên văn dài):
-  > Email và password là các trường bắt buộc trong request body. Email phải có định dạng
-  > hợp lệ. Khi input không đúng format hoặc thiếu trường bắt buộc, server phải trả về lỗi
-  > validation trước khi xác thực credentials.
-- Mức độ rõ ràng của spec: `[Rõ ràng từ spec]`
+- Spec không nêu rõ HTTP status code cho trường hợp email/password rỗng hoặc sai định dạng.
+- Phần Expected dưới đây là **giả định của tester**, được đánh dấu rõ ràng — tester tự
+  quy ước rằng nên trả về `400 Bad Request` để server không truy vấn CSDL khi input đã
+  không hợp lệ.
+- Mức độ rõ ràng của spec: `[Spec không nêu rõ — Expected là giả định của tester]`
 
 ## 3. Hành vi thực tế quan sát được (Actual Behavior)
 Mô tả thuần túy dựa trên dữ liệu Postman đã ghi nhận, KHÔNG tham chiếu source code:
 
-| Test Case | Input | Expected | Actual | Status |
+| Test Case | Input | Expected (giả định tester — KHÔNG từ spec) | Actual | Status |
 |---|---|---|---|---|
-| TC-C1 | `email: "khonghople"` | `400` — lỗi validation email | `401` — `{"error": "Invalid email or password"}` | ❌ |
-| TC-C2 | `email: "co@ky-tu-dac-biet-!#$%@eshop.com"` | `400` hoặc `200` | `401` — `{"error": "Invalid email or password"}` | ❌ |
-| TC-C3 | `email: ""` (rỗng) | `400` — trường bắt buộc bị rỗng | `401` — `{"error": "Invalid email or password"}` | ❌ |
-| TC-C4 | `password: ""` (rỗng) | `400` — trường bắt buộc bị rỗng | `401` — `{"error": "Invalid email or password"}` | ❌ |
+| TC-C1 | `email: "khonghople"` | `400 Bad Request` | `401 Unauthorized` — `{"error": "Invalid email or password"}` | ❌ |
+| TC-C2 | `email: "co@ky-tu-dac-biet-!#$%@eshop.com"` | `400` hoặc `200` | `401 Unauthorized` — `{"error": "Invalid email or password"}` | ❌ |
+| TC-C3 | `email: ""` (rỗng) | `400 Bad Request` | `401 Unauthorized` — `{"error": "Invalid email or password"}` | ❌ |
+| TC-C4 | `password: ""` (rỗng) | `400 Bad Request` | `401 Unauthorized` — `{"error": "Invalid email or password"}` | ❌ |
 
 ## 4. Các bước tái hiện (Steps to Reproduce)
 1. Gửi `POST http://localhost:3000/api/login` với body:
@@ -40,7 +41,7 @@ Mô tả thuần túy dựa trên dữ liệu Postman đã ghi nhận, KHÔNG th
    { "email": "", "password": "Test1234!" }
    ```
 2. Quan sát response: `401 Unauthorized` với `{"error": "Invalid email or password"}`
-3. So sánh: kỳ vọng `400 Bad Request` với thông báo validation rõ ràng hơn
+3. So sánh: giả định: `400 Bad Request` với thông báo validation rõ ràng hơn
 
 **Các bước tương tự cho các test case khác:**
 - TC-C1: `{ "email": "khonghople", "password": "Test1234!" }`
@@ -58,7 +59,7 @@ Môi trường test: local, công cụ: Postman, thời gian giữa các request
   (kiểm tra credentials), thay vì ở tầng request validation (trước khi gọi CSDL). Cả 4 test case
   đều trả về đúng 1 response body và status code giống hệt nhau — điều này gợi ý server không
   phân biệt giữa "input không hợp lệ" và "credentials sai".
-- Mức độ tin cậy: `Trung bình` — pattern rõ ràng trên 4 test case khác nhau, nhưng cần thêm
+- Mức độ tin cậy: `Trung bình` — pattern rõ ràng trên 4 test case, nhưng cần thêm
   test để loại trừ trường hợp server đang cố tình treat missing/empty fields là "invalid credentials"
 - Test case bổ sung cần chạy để xác nhận:
   - Test với `null` thay vì `""` cho cả hai trường
