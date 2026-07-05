@@ -120,3 +120,45 @@
   - Đã sửa encoding audit-log-full.md bằng thư viện `ftfy` (fix_text). File giờ là UTF-8 chuẩn, không BOM, không lỗi decode.
 - **Human review / correction:** *Đã kiểm tra sơ bộ lỗi encodinng và thông tin được cập nhật*
 
+---
+
+### [2026-07-06 00:28] — FR-02 — Bước 7: Bổ sung Functional Testing UI & Bug BUG-005 (phiên bản 5)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:** Thêm phần Functional Testing (UI) vào report.md cho FR-02, ghi nhận bug: "Lỗi không hiển thị số lượt thử còn lại gây khó khăn cho user". Sau đó cập nhật audit-log.md và audit-log-full.md.
+- **File code đã đọc:** Không đọc source code React/component. Chỉ tham chiếu spec (README.md §2 FR-02, FR-22, FR-23) và kết quả quan sát UI đã có.
+- **Output/kết luận của bước:**
+  - Đã thêm Section 9 "Functional Testing (UI)" vào testing/FR-02/report.md với 21 test case (4 nhóm A/B/D/N), bảng tổng hợp 15 PASS / 3 FAIL / 2 WARN.
+  - Đã thêm Section 10 "Bug phát hiện từ Functional Testing" mô tả BUG-005 (UI không hiển thị số lần thử còn lại).
+  - Đã tạo file issue đầy đủ testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md theo khung github_issue_template.md.
+  - Đã liệt kê BUG-005 trong bảng Section 8 (Tổng hợp Bug) của report.md.
+- **Human review / correction:** *Tôi chỉ muốn thêm test case functional mà tôi đã test và gặp lỗi*
+
+---
+
+### [2026-07-06 00:34] — FR-02 — Bước 7: Thu gọn Functional Testing UI (phiên bản 6)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:** Chỉnh sửa lại Section 9: chỉ giữ phần sai cho Functional testing (không có hiển thị thêm thông tin về số lần thử còn lại), tránh xuất hiện thêm những test case chưa test.
+- **File code đã đọc:** Không đọc source code. Chỉ sửa Markdown — thu gọn Section 9, bỏ Section 10, cập nhật reference trong bảng Section 8.
+- **Output/kết luận của bước:**
+  - Section 9 thu gọn: chỉ còn 3 test case FAIL (TC-UI-D1, D2, D3) — đúng phần user đã test trên UI.
+  - Section 10 đã xóa (chi tiết BUG-005 vẫn còn đầy đủ trong file issue riêng).
+  - Cập nhật tham chiếu: dòng "xem chi tiết tại Section 10" → "xem chi tiết tại `testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md`".
+  - Thêm ghi chú "Giới hạn test" ở đầu Section 9 để nói rõ phạm vi BUG-005.
+- **Human review / correction:** *Chưa có — đang chờ review.*
+
+
+---
+
+### [2026-07-06 00:44] — FR-02 — Bước 7: Thêm Functional UI Bug BUG-006 (phiên bản 7)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:** Thêm lỗi Functional Testing: không hiện thông báo tài khoản đã bị khóa khi nhập sai đủ số lần. Sau khi hỏi rõ, user xác nhận triệu chứng: UI hiển thị cùng thông báo "Đăng nhập thất bại. Vui lòng kiểm tra lại" thay vì thông báo "Tài khoản đã bị khóa".
+- **File code đã đọc:** Không đọc source code.
+- **Output/kết luận của bước:**
+  - Sửa Actual TC-UI-D3 cho khớp quan sát UI thực tế (thông báo "Đăng nhập thất bại..." thay vì "Tài khoản đã bị khóa...").
+  - Tạo file issue riêng `testing/FR-02/issues/FR-02-BUG-006-no-lockout-notification-on-ui.md` (Severity: High).
+  - Tách thành 2 bug riêng biệt: BUG-005 (thiếu số lần còn lại / đếm ngược, Medium) và BUG-006 (không hiện thông báo khóa, High) vì khác triệu chứng và mức độ ảnh hưởng.
+  - Cập nhật Section 8.2 trong report.md: thêm dòng BUG-006 và cập nhật quan sát chính Section 9.
+- **Human review / correction:** *Chưa có — đang chờ review.*
