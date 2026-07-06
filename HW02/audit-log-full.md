@@ -36,6 +36,7 @@
 | 13 | 2026-07-06 21:45 | Nhân | Claude (Cursor Agent) | FR-16 — Human Review corrections & User Test Execution (18 PASS / 15 FAIL / 33 total) | Tham khảo ý tưởng, tự viết lại |
 | 14 | 2026-07-06 21:45 | Nhân | Claude (Cursor Agent) | FR-16 — Bước 7: Phân tích kết quả Postman, 7 Bug Issues (18 PASS / 15 FAIL) | Tham khảo ý tưởng, tự viết lại |
 | 15 | 2026-07-07 01:16 | Nhân | Claude (Cursor Agent) | FR-16 — Functional Testing Bugs (UI) + Section 8.2/8.3 (2 FUNC bugs: header CSV + non-.csv file) | Tham khảo ý tưởng, tự viết lại |
+| 16 | 2026-07-07 01:28 | Nhân | Claude (Cursor Agent) | FR-04 — Domain Testing Black-box Personal Profile Management (31 test case) | Tham khảo ý tưởng, tự thiết kế lại |
 ---
 
 ## Entry #1
@@ -920,3 +921,57 @@ User đã cung cấp 7 lỗi functional testing. Agent phân tích:
 2. 2/7 lỗi là UI-specific — tạo 2 Functional Bug files mới.
 3. Cập nhật report.md với Section 8.2 + 8.3 + 8.4.
 4. Ghi audit-log.md và audit-log-full.md.
+
+---
+
+## Entry #16
+
+- **Thời gian**: 2026-07-07 01:28
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-04 — Quản lý Hồ sơ Cá nhân (Personal Profile Management)
+- **Mục đích**: Thực hiện Domain Testing Black-box cho FR-04 (Bước 0 → Bước 6): phân tích spec, xây dựng EC/BVA, tạo 31 test case cho Postman, Gap Analysis.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+@domain-testing-agent-blackbox.md hãy giúp tôi thực hiện kĩ thuật domain testing cho FR-04: Personal Profile Management
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã chỉ định rõ FR-04.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Đặc điểm nổi bật của FR-04:**
+- Feature đơn giản: chỉ có PUT /api/users/me để cập nhật hồ sơ.
+- 3 trường có thể cập nhật: `name`, `phone`, `shipping_address`.
+- Validation quan trọng nhất: `phone` phải bắt đầu bằng `0`, 10–11 chữ số (FR-04 dòng 65).
+- Security: không thể thay đổi `email` và `role` (FR-04 dòng 66–67).
+- Nhiều giá trị thăm dò: name max length, phone có bắt buộc không, shipping_address max length.
+
+**Các file đã tạo:**
+- `testing/FR-04/report.md` — Domain Testing Report FR-04 (31 test case)
+- `testing/FR-04/audit-log.md` — Entry #1
+
+**Tóm tắt test case đã thiết kế:**
+
+| Nhóm | Số test case | Mô tả |
+|---|---|---|
+| A. Xác thực | 3 | Token hợp lệ/không có/không hợp lệ |
+| B. Validation `name` | 5 | Hợp lệ, rỗng, space, null, > 255 ký tự |
+| C. Validation `phone` | 10 | 10 số, 11 số, 9 số, 12+ số, không có 0, có chữ, rỗng, null, không gửi, +84 |
+| D. Validation `shipping_address` | 4 | Có nội dung, không gửi, rỗng, null |
+| E. Security (email/role) | 2 | Cố gắng thay đổi email, cố gắng thay đổi role |
+| BV (Boundary) | 7 | name (1/255/256), phone (10/11/9/12 số), phone không có 0 |
+| **Tổng cộng** | **31** | |
+
+**Các điểm đáng chú ý:**
+- FR-04 có ít ràng buộc nghiêm ngặt so với FR-16 (CSV Import) — validation chủ yếu tập trung vào `phone`.
+- Security test (TC-E1, TC-E2) quan trọng để xác nhận không thể thay đổi email/role.
+- Nhiều giá trị thăm dò: name max length, phone có bắt buộc không, shipping_address max length.
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+Agent đã đọc README.md (FR-04) và api_specification.md (§2). Phát hiện spec có nhiều điểm chưa rõ: name max length, phone có bắt buộc không, shipping_address max length. Agent không đọc source code — tuân thủ black-box thuần. Report đã sẵn sàng để user review và chạy Postman.
