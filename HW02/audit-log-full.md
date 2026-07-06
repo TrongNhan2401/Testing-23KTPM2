@@ -33,6 +33,8 @@
 | 10 | 2026-07-06 15:48 | Nhân | Claude (Cursor Agent) | FR-08 — Bước 7: Phân tích kết quả Postman, 5 Bug Issues (9 PASS / 8 FAIL / 17 total) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 | 11 | 2026-07-06 16:18 | Nhân | Claude (Cursor Agent) | FR-08 — Functional Testing Bugs & Cross-Reference (2 FUNC bugs + Cross-ref Domain↔Functional) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 | 12 | 2026-07-06 19:51 | Nhân | Claude (Cursor Agent) | FR-16 — Domain Testing Black-box CSV Import (33 test case) | Tham khảo ý tưởng, tự thiết kế lại |
+| 13 | 2026-07-06 21:45 | Nhân | Claude (Cursor Agent) | FR-16 — Human Review corrections & User Test Execution (18 PASS / 15 FAIL / 33 total) | Tham khảo ý tưởng, tự viết lại |
+| 14 | 2026-07-06 21:45 | Nhân | Claude (Cursor Agent) | FR-16 — Bước 7: Phân tích kết quả Postman, 7 Bug Issues (18 PASS / 15 FAIL) | Tham khảo ý tưởng, tự viết lại |
 ---
 
 ## Entry #1
@@ -731,3 +733,123 @@ Không cần — user đã chỉ định rõ FR-16.
 
 #### Ghi chú sử dụng
 Agent đã đọc README.md (FR-12, FR-15, FR-16) và api_specification.md (§6.3). Phát hiện gap spec quan trọng: README nói CSV, API nhận JSON. Agent không đọc source code — tuân thủ black-box thuần. Report đã sẵn sàng để user review và chạy Postman.
+
+---
+
+## Entry #13
+
+- **Thời gian**: 2026-07-06 21:45
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-16 — Human Review Corrections & User Test Execution
+- **Mục đích**: User review và apply corrections cho EC, sau đó chạy test case và điền Actual/Status.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+Human review / correction:
+
+Ở EC cho name, theo tôi trường name bị thiếu hoặc null là không được (EC - N4) và name chỉ có khoảng trắng cũng là invalid (EC - N3)
+
+Ở EC cho price, theo tôi price là số âm, thiếu trường price đều là invalid (EC - P3) (EC - P4) còn EC - P5, EC - P6 sẽ tiếp tục thăm dò
+
+Đây là review của tôi về human review của tôi. Tôi đã thực hiện các test case mà bạn đề xuất. Ngoài ra tôi phát hiện thêm lỗi là ghi gửi 2 lần import của cùng một nội dung body (cùng 1 sản phẩm 2 lần) thì sẽ đều được import như 2 sản phẩm khác id, đây là 1 bugs không có trong report @testing/FR-16/report.md.
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã điền đầy đủ Actual/Status vào report.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+```
+Human review đã được apply:
+- EC-N3: name chỉ có khoảng trắng → Invalid
+- EC-N4: name null/thiếu → Invalid
+- EC-P3: price âm → Invalid
+- EC-P4: price null/thiếu → Invalid
+- EC-P5: price string → Thăm dò
+- EC-P6: price thập phân → Thăm dò
+
+Kết quả test sau khi user chạy Postman:
+- A (Authorization): 3/4 PASS, 1 FAIL (TC-A3: non-admin import)
+- B (Name validation): 3/6 PASS, 3 FAIL
+- C (Price validation): 3/7 PASS, 4 FAIL
+- D (Category validation): 1/5 PASS, 4 FAIL
+- E (Rollback): 3/4 PASS, 1 FAIL
+- BV (Boundary): 5/7 PASS, 2 FAIL
+Tổng: 18 PASS / 15 FAIL / 33 total (54.5%)
+
+Bug ngoài spec (user phát hiện):
+- Duplicate products: gửi 2 sản phẩm trùng lặp → tạo 2 bản ghi khác id
+```
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ report với corrections
+
+#### Ghi chú sử dụng
+User đã apply corrections cho EC và chạy test case. User phát hiện bug duplicate products (ngoài phạm vi test case AI). Agent tiếp tục với Bước 7 để phân tích và tạo issues.
+
+---
+
+## Entry #14
+
+- **Thời gian**: 2026-07-06 21:45
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-16 — Bước 7: Phân tích kết quả Postman & Bug Issues
+- **Mục đích**: Thực hiện Bước 7 — phân tích kết quả Postman, tổng hợp bug và tạo 7 GitHub issue files.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+@domain-testing-agent-blackbox.md @testing/FR-16/report.md Tôi đã thực hiện việc chạy test case và đưa ra các actual cũng như status. Bây giờ bạn hãy thực hiện bước 7 trong skill của domain testing là phân tích kết quả giúp tôi. Sau đó tổng hợp và viết các file skill isuses theo mẫu @templates/github_issue_template.md. Sau khi hoàn thành hãy tiến hành ghi @testing/FR-16/audit-log.md và đầy đủ prompt cũng như AI-Output vào file @audit-log-full.md.
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã điền đầy đủ Actual/Status trong report.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Phân tích kết quả Postman (Section 6):**
+
+| # | Test case liên quan | Hành vi quan sát được | Kỳ vọng theo spec | Giả thuyết | Cần test thêm |
+|---|---|---|---|---|---|
+| 1 | TC-A3 (Non-admin import) | User thường import thành công | `403 Forbidden` | Backend không kiểm tra `role = 'admin'` | - |
+| 2 | TC-B3 (Name chỉ có space) | `name = " "` được thêm | `400` | Backend không trim và kiểm tra rỗng | Kiểm tra CSDL |
+| 3 | TC-B6 / BV-N3 (Name > 255) | `name = "A"*256` được thêm | `400` | Backend không enforce max length 255 | Kiểm tra CSDL |
+| 4 | TC-C2/C3/C4/C5 (Price validation) | Price = 0, âm, null, thiếu đều được thêm | `400` | Backend không validate price | Kiểm tra CSDL |
+| 5 | TC-D2/D3/D4/D5 (Category validation) | category_id không tồn tại, null, thiếu đều được thêm | `400` | Backend không kiểm tra FK | Kiểm tra CSDL |
+| 6 | TC-E2 (Rollback) | 1 dòng lỗi → dòng hợp lệ vẫn được insert | Rollback toàn bộ | Backend xử lý từng dòng độc lập, không dùng transaction | - |
+| 7 | Duplicate Products (User) | 2 sản phẩm trùng → 2 bản ghi khác id | Không rõ trong spec | Backend không kiểm tra duplicate | Test thêm |
+
+**7 Bug phát hiện:**
+
+1. **FR-16-BUG-001** (Critical): Non-admin import được — vi phạm FR-12 Access Control
+2. **FR-16-BUG-002** (High): Name chỉ có space được thêm
+3. **FR-16-BUG-003** (High): Name > 255 ký tự được thêm
+4. **FR-16-BUG-004** (Critical): Price = 0/âm/null/thiếu được thêm
+5. **FR-16-BUG-005** (Critical): Category không tồn tại/null/thiếu được thêm
+6. **FR-16-BUG-006** (Critical): Không rollback khi có lỗi — vi phạm all-or-nothing
+7. **FR-16-BUG-007** (High): Duplicate products không được xử lý — **AI chưa tìm được test case này** (user phát hiện)
+
+**Các file đã tạo/cập nhật:**
+- `testing/FR-16/report.md` — cập nhật Section 6, 7, 8 với kết quả phân tích
+- `testing/FR-16/issues/FR-16-BUG-001.md` — Bug #1: Non-admin import
+- `testing/FR-16/issues/FR-16-BUG-002.md` — Bug #2: Name space
+- `testing/FR-16/issues/FR-16-BUG-003.md` — Bug #3: Name > 255
+- `testing/FR-16/issues/FR-16-BUG-004.md` — Bug #4: Price validation
+- `testing/FR-16/issues/FR-16-BUG-005.md` — Bug #5: Category validation
+- `testing/FR-16/issues/FR-16-BUG-006.md` — Bug #6: Rollback all-or-nothing
+- `testing/FR-16/issues/FR-16-BUG-007.md` — Bug #7: Duplicate products (user phát hiện)
+- `testing/FR-16/audit-log.md` — Entry #2 (phiên bản 2)
+- `audit-log-full.md` — Entry #13, #14
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+User đã điền đầy đủ Actual/Status vào report. User phát hiện thêm bug duplicate products (ngoài phạm vi test case AI). Agent thực hiện Bước 7 hoàn chỉnh:
+1. Phân tích từng test case, so sánh Expected vs Actual
+2. Đưa ra giả thuyết hành vi (black-box dynamic inference)
+3. Tổng hợp 6 bug từ test case + 1 bug từ user
+4. Tạo 7 GitHub issue files theo template github_issue_template.md
+5. Ghi chú rõ FR-16-BUG-007 là bug user phát hiện, AI chưa có test case
+6. Cập nhật report.md với Section 6, 7, 8 hoàn chỉnh
+7. Ghi audit-log.md và audit-log-full.md
