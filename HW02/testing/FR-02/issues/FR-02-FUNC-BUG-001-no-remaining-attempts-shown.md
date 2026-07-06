@@ -12,6 +12,7 @@
 
 ```markdown
 ## 1. Tóm tắt (Summary)
+
 Khi người dùng nhập sai mật khẩu nhiều lần liên tiếp trên giao diện đăng nhập, hệ thống
 KHÔNG cung cấp bất kỳ phản hồi nào về:
 
@@ -23,6 +24,7 @@ Khi đạt ngưỡng khóa, thông báo đổi thành "Tài khoản đã bị kh
 nhưng không có thông tin về khoảng thời gian chờ.
 
 ## 2. Nguồn spec / kỳ vọng (Expected Behavior)
+
 - Tài liệu tham chiếu: `contexts/README.md` §2, FR-02
 - Trích đúng nội dung spec liên quan (paraphrase):
   > "Sau khi đăng nhập sai từ 3 lần trở lên, tài khoản bị tạm khóa 30 giây. Hệ thống trả
@@ -34,17 +36,19 @@ nhưng không có thông tin về khoảng thời gian chờ.
 - Mức độ rõ ràng của spec: `[Spec không quy định cụ thể — Expected là giả định UX]`
 
 ## 3. Hành vi thực tế quan sát được (Actual Behavior)
+
 Mô tả thuần túy dựa trên quan sát trên giao diện, KHÔNG tham chiếu source code:
 
-| Bước | Thao tác | Expected (giả định UX — KHÔNG từ spec cứng) | Actual | Status |
-|---|---|---|---|---|
-| 1 | Truy cập `/login`, nhập email đúng + password sai lần 1 | Thông báo lỗi + (khuyến nghị) "Bạn còn 2 lần thử trước khi tài khoản bị khóa" | Thông báo: "Email hoặc mật khẩu không chính xác" — không có thông tin số lần còn lại | ❌ |
-| 2 | Sai lần 2 | Tương tự bước 1, với cảnh báo mạnh hơn (khuyến nghị: "Bạn còn 1 lần thử") | Cùng thông báo như lần 1 — không phân biệt | ❌ |
-| 3 | Sai lần 3 (đạt ngưỡng) | "Tài khoản đã bị khóa. Vui lòng thử lại sau khoảng 30 giây." (kèm đếm ngược) | "Tài khoản đã bị khóa. Vui lòng thử lại sau." — không có thời gian cụ thể, không có đếm ngược | ❌ |
-| 4 | Trong lúc đang khóa, thử lại | Duy trì thông báo đang khóa, có thể kèm đếm ngược | Từ chối đúng nhưng thông báo chung chung | ⚠️ |
-| 5 | Sau khi hết thời gian khóa | Báo "Đã hết khóa, bạn có thể đăng nhập" hoặc tự động cho đăng nhập | Cho đăng nhập nhưng UI không chủ động phản hồi | ⚠️ |
+| Bước | Thao tác                                                | Expected (giả định UX — KHÔNG từ spec cứng)                                   | Actual                                                                                        | Status |
+| ---- | ------------------------------------------------------- | ----------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ------ |
+| 1    | Truy cập `/login`, nhập email đúng + password sai lần 1 | Thông báo lỗi + (khuyến nghị) "Bạn còn 2 lần thử trước khi tài khoản bị khóa" | Thông báo: "Email hoặc mật khẩu không chính xác" — không có thông tin số lần còn lại          | ❌     |
+| 2    | Sai lần 2                                               | Tương tự bước 1, với cảnh báo mạnh hơn (khuyến nghị: "Bạn còn 1 lần thử")     | Cùng thông báo như lần 1 — không phân biệt                                                    | ❌     |
+| 3    | Sai lần 3 (đạt ngưỡng)                                  | "Tài khoản đã bị khóa. Vui lòng thử lại sau khoảng 30 giây." (kèm đếm ngược)  | "Tài khoản đã bị khóa. Vui lòng thử lại sau." — không có thời gian cụ thể, không có đếm ngược | ❌     |
+| 4    | Trong lúc đang khóa, thử lại                            | Duy trì thông báo đang khóa, có thể kèm đếm ngược                             | Từ chối đúng nhưng thông báo chung chung                                                      | ⚠️     |
+| 5    | Sau khi hết thời gian khóa                              | Báo "Đã hết khóa, bạn có thể đăng nhập" hoặc tự động cho đăng nhập            | Cho đăng nhập nhưng UI không chủ động phản hồi                                                | ⚠️     |
 
 ## 4. Các bước tái hiện (Steps to Reproduce)
+
 1. Truy cập `http://localhost:5173/login` (Frontend Web EShop).
 2. Nhập `Email = test@eshop.com` + `Password = SaiLan1!` → bấm "Đăng nhập".
 3. Quan sát thông báo lỗi → không thấy số lần thử còn lại.
@@ -55,6 +59,7 @@ Mô tả thuần túy dựa trên quan sát trên giao diện, KHÔNG tham chi�
 Môi trường test: local, công cụ: trình duyệt Chrome (DevTools Network tab để theo dõi request).
 
 ## 5. Giả thuyết hành vi (Behavioral Hypothesis)
+
 > Đây là suy luận **black-box** dựa trên quan sát UI và response API — KHÔNG đọc source code.
 
 - Giả thuyết: Giao diện hiện chỉ hiển thị thông báo lỗi "email hoặc mật khẩu không chính xác"
@@ -69,6 +74,7 @@ Môi trường test: local, công cụ: trình duyệt Chrome (DevTools Network 
   - Quan sát thử sau khi hết khóa: UI có tự thay đổi thông báo khi countdown kết thúc không?
 
 ## 6. Mức độ ảnh hưởng (Severity/Priority)
+
 - Severity: `Medium`
 - Lý do: Không ảnh hưởng bảo mật (server vẫn khóa đúng, chỉ thiếu UX feedback). Tuy nhiên
   gây trải nghiệm kém cho người dùng hợp lệ — họ không biết còn bao nhiêu lần thử hoặc
@@ -76,6 +82,7 @@ Môi trường test: local, công cụ: trình duyệt Chrome (DevTools Network 
   viễn (về mặt tâm lý) trước khi nhớ ra mật khẩu đúng.
 
 ## 7. Traceability
+
 - Test Case ID liên quan (trong report.md):
   - Functional: TC-UI-D1, TC-UI-D2, TC-UI-D3, TC-UI-D6 (FAIL)
   - Functional: TC-UI-D4, TC-UI-D5 (WARN)
@@ -84,6 +91,7 @@ Môi trường test: local, công cụ: trình duyệt Chrome (DevTools Network 
 - Loại test: Functional Testing (UI) — bổ sung cho Domain Testing API ở Bước 7
 
 ## 8. Đính kèm
+
 - [x] Screenshot UI trước/sau khi nhập sai (đã trích trong bảng Section 9)
 - [ ] Export Postman collection run (không áp dụng — test trên UI)
 - [ ] Log DB liên quan (không thuộc phạm vi — bug thuộc tầng UI/UX)

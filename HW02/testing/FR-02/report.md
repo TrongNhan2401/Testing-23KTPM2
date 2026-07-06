@@ -266,9 +266,9 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 ### Bug phát hiện từ Functional Testing (UI) — chi tiết trong 2 file issue: BUG-005 và BUG-006
 
 
-| Bug ID        | Mô tả                                                         | Severity | File                                                              |
-| ------------- | ------------------------------------------------------------- | -------- | ----------------------------------------------------------------- |
-| FR-02-BUG-005 | UI không hiển thị số lần thử còn lại trước khi khóa tài khoản | Medium   | testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md |
+| Bug ID        | Mô tả                                                             | Severity | File                                                                |
+| ------------- | ----------------------------------------------------------------- | -------- | ------------------------------------------------------------------- |
+| FR-02-BUG-005 | UI không hiển thị số lần thử còn lại trước khi khóa tài khoản     | Medium   | testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md   |
 | FR-02-BUG-006 | UI không hiển thị thông báo "tài khoản đã bị khóa" khi đạt ngưỡng | High     | testing/FR-02/issues/FR-02-BUG-006-no-lockout-notification-on-ui.md |
 
 
@@ -292,27 +292,30 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 ### 9.1 Test case — khóa tài khoản qua UI & thông báo số lần thử
 
 
-| STT | Lớp bao phủ | Hành động | Expected (giả định tester — KHÔNG từ spec cứng) | Actual (quan sát được) | Status |
-| --- | --- | --- | --- | --- | --- |
-| TC-UI-D1 | Sai lần 1 | Nhập đúng email + sai password ở lần 1 | Thông báo lỗi + hiển thị "Bạn còn 2 lần thử trước khi tài khoản bị khóa" (giả định UX) | Chỉ hiển thị "Email hoặc mật khẩu không chính xác" — **không thấy số lần còn lại** | ❌ |
-| TC-UI-D2 | Sai lần 2 | Tiếp tục nhập sai password ở lần 2 | Cùng thông báo lỗi + hiển thị "Bạn còn 1 lần thử" (giả định UX) | Cùng thông báo như lần 1 — **không có cảnh báo sắp khóa** | ❌ |
-| TC-UI-D3 | Sai lần 3 (khóa) | Tiếp tục nhập sai password ở lần 3 (đạt ngưỡng) | Thông báo "Tài khoản đã bị khóa" + (khuyến nghị) đồng hồ đếm ngược hoặc "Có thể thử lại sau khoảng X giây" (giả định UX) | "Đăng nhập thất bại. Vui lòng kiểm tra lại." — **thông báo giống sai mật khẩu thông thường, không thông báo tài khoản đã bị khóa** | ❌ |
+| STT      | Lớp bao phủ      | Hành động                                       | Expected (giả định tester — KHÔNG từ spec cứng)                                                                          | Actual (quan sát được)                                                                                                             | Status |
+| -------- | ---------------- | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- | ------ |
+| TC-UI-D1 | Sai lần 1        | Nhập đúng email + sai password ở lần 1          | Thông báo lỗi + hiển thị "Bạn còn 2 lần thử trước khi tài khoản bị khóa" (giả định UX)                                   | Chỉ hiển thị "Email hoặc mật khẩu không chính xác" — **không thấy số lần còn lại**                                                 | ❌      |
+| TC-UI-D2 | Sai lần 2        | Tiếp tục nhập sai password ở lần 2              | Cùng thông báo lỗi + hiển thị "Bạn còn 1 lần thử" (giả định UX)                                                          | Cùng thông báo như lần 1 — **không có cảnh báo sắp khóa**                                                                          | ❌      |
+| TC-UI-D3 | Sai lần 3 (khóa) | Tiếp tục nhập sai password ở lần 3 (đạt ngưỡng) | Thông báo "Tài khoản đã bị khóa" + (khuyến nghị) đồng hồ đếm ngược hoặc "Có thể thử lại sau khoảng X giây" (giả định UX) | "Đăng nhập thất bại. Vui lòng kiểm tra lại." — **thông báo giống sai mật khẩu thông thường, không thông báo tài khoản đã bị khóa** | ❌      |
 
 
 **Quan sát chính:** 3 test case đều FAIL, nhưng có **2 nguyên nhân UX khác nhau** cần tách thành 2 bug riêng:
 
 - **BUG-006 (quan sát từ TC-UI-D3):** Khi đạt ngưỡng khóa, UI vẫn hiển thị thông báo
-  chung "Đăng nhập thất bại. Vui lòng kiểm tra lại" — **không có thông báo riêng
-  nào nói rằng tài khoản đã bị khóa**. Người dùng không biết mình bị khóa, không biết
-  phải đợi, dễ tiếp tục thử và bị bối rối. Xem chi tiết tại
-  `testing/FR-02/issues/FR-02-BUG-006-no-lockout-notification-on-ui.md`.
+chung "Đăng nhập thất bại. Vui lòng kiểm tra lại" — **không có thông báo riêng
+nào nói rằng tài khoản đã bị khóa**. Người dùng không biết mình bị khóa, không biết
+phải đợi, dễ tiếp tục thử và bị bối rối. Xem chi tiết tại
+`testing/FR-02/issues/FR-02-BUG-006-no-lockout-notification-on-ui.md`.
 - **BUG-005 (quan sát từ TC-UI-D1, D2):** UI không hiển thị số lần thử còn lại trước
-  khi bị khóa và không có đếm ngược / thời gian chờ khi bị khóa. Đây là lỗi UX khác,
-  đã có issue riêng — xem chi tiết tại
-  `testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md`.
+khi bị khóa và không có đếm ngược / thời gian chờ khi bị khóa. Đây là lỗi UX khác,
+đã có issue riêng — xem chi tiết tại
+`testing/FR-02/issues/FR-02-BUG-005-no-remaining-attempts-shown.md`.
 
 **Tổng hợp:**
 
-| Nhóm | Test case | PASS | FAIL |
-| --- | --- | --- | --- |
-| D. Khóa tài khoản & số lần thử còn lại | 3 | 0 | 3 |
+
+| Nhóm                                   | Test case | PASS | FAIL |
+| -------------------------------------- | --------- | ---- | ---- |
+| D. Khóa tài khoản & số lần thử còn lại | 3         | 0    | 3    |
+
+

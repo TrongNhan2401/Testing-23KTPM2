@@ -38,6 +38,7 @@
 | 15 | 2026-07-07 01:16 | Nhân | Claude (Cursor Agent) | FR-16 — Functional Testing Bugs (UI) + Section 8.2/8.3 (2 FUNC bugs: header CSV + non-.csv file) | Tham khảo ý tưởng, tự viết lại |
 | 16 | 2026-07-07 01:28 | Nhân | Claude (Cursor Agent) | FR-04 — Domain Testing Black-box Personal Profile Management (31 test case) | Tham khảo ý tưởng, tự thiết kế lại |
 | 17 | 2026-07-07 05:24 | Nhân | Claude (Cursor Agent) | FR-04 — Bước 7: Phân tích kết quả Postman, 5 Bug Issues (14 PASS / 17 FAIL) | Tham khảo ý tưởng, tự viết lại |
+| 18 | 2026-07-07 05:40 | Nhân | Claude (Cursor Agent) | FR-04 — Functional Bug Mobile: Phone 9 chữ số (FR-04-FUNC-BUG-001) | Tham khảo ý tưởng, tự viết lại |
 ---
 
 ## Entry #1
@@ -1044,3 +1045,45 @@ User đã điền đầy đủ Actual/Status vào report. Agent thực hiện B�
 6. Ghi audit-log.md và audit-log-full.md
 
 **Bug nghiêm trọng nhất:** FR-04-BUG-003 — User có thể tự nâng quyền thành admin (Privilege Escalation). Đây là bug bảo mật nghiêm trọng nhất trong FR-04.
+
+---
+
+## Entry #18
+
+- **Thời gian**: 2026-07-07 05:40
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-04 — Functional Bug Mobile: Phone 9 chữ số
+- **Mục đích**: User phát hiện functional bug trên Mobile: cho phép lưu phone 9 chữ số sau khi hiển thị lỗi.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+Hiện tại tôi phát hiện functional testing được báo khi cập nhật trên mobile là từ 9 - 10 chữ số khác trong spec. Hãy ghi lỗi này cho tôi. Khi tôi đổi sđt mà ít hơn 9 chữ số nó sẽ báo
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+- User phát hiện: Mobile hiển thị lỗi khi nhập phone < 9 chữ số.
+- Bug: Sau khi nhập 9 chữ số và nhấn "Lưu", phone 9 chữ số được lưu thành công.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Phân tích functional bug:**
+- User phát hiện: Mobile hiển thị lỗi khi nhập phone < 9 chữ số.
+- Bug: Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi (nếu nhấn Lưu).
+- Root cause: Kết hợp với FR-04-BUG-002 — Backend không validate phone.
+- Cross-reference: FR-04-FUNC-BUG-001 ↔ FR-04-BUG-002.
+
+**Bug đã tạo:**
+- **FR-04-FUNC-BUG-001** (High): Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi — vi phạm FR-04 spec (phone phải 10–11 chữ số).
+
+**Các file đã tạo/cập nhật:**
+- `testing/FR-04/issues/FR-04-FUNC-BUG-001.md` — Functional Bug Mobile
+- `testing/FR-04/report.md` — bổ sung Section 8.2 (Functional Bugs), 8.3 (Cross-Reference), 8.4 (Tổng hợp)
+- `testing/FR-04/audit-log.md` — Entry #3
+- `audit-log-full.md` — Entry #18
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+User phát hiện functional bug trên Mobile: validation hiển thị lỗi nhưng vẫn cho lưu phone 9 chữ số. Bug này có cùng root cause với FR-04-BUG-002 (Backend không validate phone). Cần fix cả backend và Mobile để đảm bảo phone validation hoạt động đúng.

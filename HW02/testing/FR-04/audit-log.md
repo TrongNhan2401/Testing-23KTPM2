@@ -71,3 +71,34 @@
 
 - **Human review / correction:** *(để trống cho đến khi người dùng review)*
 
+---
+
+### [2026-07-07 05:40] — FR-04 — Functional Bug Mobile: Phone 9 chữ số (phiên bản 3)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:**
+  ```
+  Hiện tại tôi phát hiện functional testing được báo khi cập nhật trên mobile là từ 9 - 10 chữ số khác trong spec. Hãy ghi lỗi này cho tôi. Khi tôi đổi sđt mà ít hơn 9 chữ số nó sẽ báo
+  ```
+- **File đã đọc:**
+  - `testing/FR-04/report.md` — Domain Testing Report
+  - `testing/FR-04/issues/FR-04-BUG-002.md` — Backend phone validation bug
+- **Output/kết luận của bước:**
+
+  **Phân tích functional bug:**
+  - User phát hiện: Mobile hiển thị lỗi khi nhập phone < 9 chữ số.
+  - Bug: Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi (nếu nhấn Lưu).
+  - Root cause: Kết hợp với FR-04-BUG-002 — Backend không validate phone.
+  - Cross-reference: FR-04-FUNC-BUG-001 ↔ FR-04-BUG-002.
+
+  **Bug đã tạo:**
+  - **FR-04-FUNC-BUG-001** (High): Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi.
+
+  **Các file đã tạo/cập nhật:**
+  - `testing/FR-04/issues/FR-04-FUNC-BUG-001.md` — Functional Bug Mobile
+  - `testing/FR-04/report.md` — bổ sung Section 8.2 (Functional Bugs), 8.3 (Cross-Reference), 8.4 (Tổng hợp)
+  - `testing/FR-04/audit-log.md` — Entry #3
+  - `audit-log-full.md` — Entry #18
+
+- **Human review / correction:** *(để trống cho đến khi người dùng review)*
+

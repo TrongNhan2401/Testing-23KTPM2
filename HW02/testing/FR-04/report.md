@@ -237,14 +237,27 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 | FR-04-BUG-004 | Backend không validate `shipping_address` rỗng — chấp nhận địa chỉ rỗng và null | Medium | `testing/FR-04/issues/FR-04-BUG-004.md` |
 | FR-04-BUG-005 | Backend không xử lý `phone` — lưu giá trị mà không normalize hoặc validate | High | `testing/FR-04/issues/FR-04-BUG-005.md` |
 
-### 8.2 Tổng hợp
+### 8.2 Functional Testing Bugs (Mobile)
+
+| Bug ID | Mô tả | Severity | File | Cross-ref (Domain) |
+|---|---|---|---|---|
+| FR-04-FUNC-BUG-001 | Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi — vi phạm FR-04 spec | High | `testing/FR-04/issues/FR-04-FUNC-BUG-001.md` | FR-04-BUG-002 |
+
+### 8.3 Cross-Reference: Domain ↔ Functional Bugs
+
+| Domain Bug (API) | Functional Bug (Mobile) | Root cause | Fix recommendation |
+|---|---|---|---|
+| FR-04-BUG-002 | FR-04-FUNC-BUG-001 | Backend không validate phone; Mobile cho phép lưu sau khi hiển thị lỗi | Fix **cả backend** (validate phone) **và Mobile** (disable button khi invalid) |
+
+### 8.4 Tổng hợp
 
 | Bug ID | Mô tả | Severity |
 |---|---|---|
 | FR-04-BUG-001 | Name không được validate | Critical |
-| FR-04-BUG-002 | Phone không được validate | Critical |
+| FR-04-BUG-002 | Phone không được validate (Domain) | Critical |
 | FR-04-BUG-003 | Role có thể tự thay đổi | Critical |
 | FR-04-BUG-004 | Shipping address rỗng/null được chấp nhận | Medium |
 | FR-04-BUG-005 | Phone không được xử lý (normalize) | High |
+| FR-04-FUNC-BUG-001 | Mobile cho phép lưu phone 9 chữ số (Functional) | High |
 
-**Tổng cộng: 5 bugs — 3 Critical, 1 High, 1 Medium**
+**Tổng cộng: 6 bugs (5 Domain + 1 Functional) — 3 Critical, 2 High, 1 Medium**

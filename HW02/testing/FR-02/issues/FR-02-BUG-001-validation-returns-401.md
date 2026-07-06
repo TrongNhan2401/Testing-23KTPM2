@@ -39,11 +39,13 @@ Mô tả thuần túy dựa trên dữ liệu Postman đã ghi nhận, KHÔNG th
 1. Gửi `POST http://localhost:3000/api/login` với body:
    ```json
    { "email": "", "password": "Test1234!" }
-   ```
-2. Quan sát response: `401 Unauthorized` với `{"error": "Invalid email or password"}`
-3. So sánh: giả định: `400 Bad Request` với thông báo validation rõ ràng hơn
+```
+
+1. Quan sát response: `401 Unauthorized` với `{"error": "Invalid email or password"}`
+2. So sánh: giả định: `400 Bad Request` với thông báo validation rõ ràng hơn
 
 **Các bước tương tự cho các test case khác:**
+
 - TC-C1: `{ "email": "khonghople", "password": "Test1234!" }`
 - TC-C2: `{ "email": "co@ky-tu-dac-biet-!#$%@eshop.com", "password": "Test1234!" }`
 - TC-C4: `{ "email": "test@eshop.com", "password": "" }`
@@ -51,34 +53,42 @@ Mô tả thuần túy dựa trên dữ liệu Postman đã ghi nhận, KHÔNG th
 Môi trường test: local, công cụ: Postman, thời gian giữa các request: không cần delay
 
 ## 5. Giả thuyết hành vi (Behavioral Hypothesis)
+
 > Chỉ điền mục này nếu đã quan sát đủ nhiều lần lặp để có cơ sở. Đây là suy luận
 > **black-box động** (dynamic behavioral inference) dựa trên nhiều lần thăm dò qua API,
 > KHÔNG phải đọc source code.
 
 - Giả thuyết: Server hiện tại đang xử lý validation email/password rỗng ở tầng authentication
-  (kiểm tra credentials), thay vì ở tầng request validation (trước khi gọi CSDL). Cả 4 test case
-  đều trả về đúng 1 response body và status code giống hệt nhau — điều này gợi ý server không
-  phân biệt giữa "input không hợp lệ" và "credentials sai".
+(kiểm tra credentials), thay vì ở tầng request validation (trước khi gọi CSDL). Cả 4 test case
+đều trả về đúng 1 response body và status code giống hệt nhau — điều này gợi ý server không
+phân biệt giữa "input không hợp lệ" và "credentials sai".
 - Mức độ tin cậy: `Trung bình` — pattern rõ ràng trên 4 test case, nhưng cần thêm
-  test để loại trừ trường hợp server đang cố tình treat missing/empty fields là "invalid credentials"
+test để loại trừ trường hợp server đang cố tình treat missing/empty fields là "invalid credentials"
 - Test case bổ sung cần chạy để xác nhận:
   - Test với `null` thay vì `""` cho cả hai trường
   - Test với trường hoàn toàn không có trong body (`{}`)
 
 ## 6. Mức độ ảnh hưởng (Severity/Priority)
+
 - Severity: `Medium`
 - Lý do: Không ảnh hưởng bảo mật nghiêm trọng nhưng là bug về validation best practice. Việc
-  trả về `401` cho invalid input khiến client không thể phân biệt giữa "input sai format" và
-  "credentials sai" — vi phạm nguyên tắc fail-fast và tốn tài nguyên server xử lý truy vấn CSDL
-  không cần thiết cho request đã có thể reject sớm ở tầng validation.
+trả về `401` cho invalid input khiến client không thể phân biệt giữa "input sai format" và
+"credentials sai" — vi phạm nguyên tắc fail-fast và tốn tài nguyên server xử lý truy vấn CSDL
+không cần thiết cho request đã có thể reject sớm ở tầng validation.
 
 ## 7. Traceability
+
 - Test Case ID liên quan (trong report.md): TC-C1, TC-C2, TC-C3, TC-C4
 - Feature: FR-02 — Đăng nhập & Khóa tài khoản
 - File report gốc: `testing/FR-02/report.md`
 
 ## 8. Đính kèm
-- [x] Screenshot Postman request/response (đã ghi trong cột Actual của report.md)
-- [ ] Export Postman collection run (nếu có)
-- [ ] Log DB liên quan (nếu có, chỉ mô tả giá trị quan sát được, không đính kèm code)
+
+- Screenshot Postman request/response (đã ghi trong cột Actual của report.md)
+- Export Postman collection run (nếu có)
+- Log DB liên quan (nếu có, chỉ mô tả giá trị quan sát được, không đính kèm code)
+
 ```
+
+```
+
