@@ -27,7 +27,6 @@
   - EC cho total amount chỉ cần xét xem có ignore được giá trị này hay không là được rồi vì spec đã yêu cầu không cho người dùng chỉnh sửa. Ngoài ra việc thêm vào giỏ hàng 1 đơn hàng có giá trị âm hay đơn hàng có giá trị lớn thì việc này sẽ do FR-07 test còn tôi sẽ không thực hiện việc này. Còn lại sẽ thăm dò xem giỏ hàng có xử lý đơn hàng miễn phí (total amount = 0) hay không thôi. 
   - Phát hiện việc sắp xếp test case chưa được login lắm khi việc test ignore trước rất quan trọng để xác định xem liệu có phụ thuộc vào total amount mình nhập hay không. Kết hợp với các api xem chi tiết đơn hàng để xác định.
 
-
 ---
 
 ### [2026-07-06 10:44] — FR-08 — Human Review & Agent Corrections (phiên bản 2)
@@ -36,13 +35,13 @@
 - **Prompt/instruction nhận được:**
   ```
   Human review / correction:
-  
+
   Ở input/output đồng ý thực hiện test case thăm dò với các thông tin như độ dài tối thiểu và tối đa của shipping address và trạng thái giỏ hàng không được trống khi thực hiện thanh toán
-  
+
   EC cho shipping address thì giả định đã đúng, shipping address phải tối thiểu có chứa nội dung
-  
+
   EC cho total amount chỉ cần xét xem có ignore được giá trị này hay không là được rồi vì spec đã yêu cầu không cho người dùng chỉnh sửa. Ngoài ra việc thêm vào giỏ hàng 1 đơn hàng có giá trị âm hay đơn hàng có giá trị lớn thì việc này sẽ do FR-07 test còn tôi sẽ không thực hiện việc này. Còn lại sẽ thăm dò xem giỏ hàng có xử lý đơn hàng miễn phí (total amount = 0) hay không thôi.
-  
+
   Phát hiện việc sắp xếp test case chưa được login lắm khi việc test ignore trước rất quan trọng để xác định xem liệu có phụ thuộc vào total amount mình nhập hay không. Kết hợp với các api xem chi tiết đơn hàng để xác định.
   ```
 - **File code đã đọc:** Không đọc thêm source code.
@@ -55,3 +54,39 @@
   6. Section 6: Cập nhật TC references theo đánh số mới.
   7. Section 7: Tổng test case cập nhật thành 17 (bỏ 5 test case của total_amount âm/lớn và 2 BV-T).
 - **Human review / correction:** *Đã nhận và áp dụng toàn bộ 4 điểm correction.*
+
+---
+
+### [2026-07-06 15:48] — FR-08 — Bước 7: Phân tích kết quả Postman & Tạo Bug Issues
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:** Thực hiện Bước 7 — phân tích kết quả Postman (Actual + Status đã được điền). Sau đó tổng hợp bug và viết GitHub issue files theo template. Cuối cùng ghi đầy đủ prompt + AI output vào audit-log.
+- **File đã đọc:**
+  - `testing/FR-08/report.md` (đã có Actual + Status từ user)
+  - `domain-testing-agent-blackbox.md` — Bước 7
+  - `templates/github_issue_template.md` — cấu trúc issue
+- **Output/kết luận của bước:**
+  **Tổng kết test:**
+  - A (Authorization): 3/3 PASS ✅
+  - B (Total amount): 1/3 PASS, 2/3 FAIL ❌
+  - C (Giỏ hàng): 0/2 PASS, 2/2 FAIL ❌
+  - D (Shipping address): 1/5 PASS, 4/5 FAIL ❌
+  - BV-S (biên): 4/4 PASS ✅
+  - **Tổng: 9 PASS / 8 FAIL trên 17 test case (52.9%)**
+  **5 Bug phát hiện:**
+  1. **FR-08-BUG-001** (Critical): Backend không ignore `total_amount` từ client — vi phạm trực tiếp spec FR-08. TC-B1 cho thấy order lưu `total_amount: 1` (client gửi) thay vì tính lại từ giỏ hàng. Kết hợp với TC-B3, có thể khai thác để thanh toán miễn phí.
+  2. **FR-08-BUG-002** (Critical): Checkout thành công khi giỏ hàng trống — tạo đơn hàng "ma" không có sản phẩm. TC-C1 cho thấy backend không kiểm tra trạng thái giỏ hàng trước khi checkout.
+  3. **FR-08-BUG-003** (High): Giỏ hàng không bị xóa sau checkout thành công — vi phạm spec FR-08. TC-C2 cho thấy sau khi checkout thành công, gọi `GET /api/cart` vẫn thấy sản phẩm trong giỏ.
+  4. **FR-08-BUG-004** (High): `shipping_address` không được validate — chấp nhận rỗng, null, khoảng trắng, thiếu trường. TC-D2/D3/D4/D5 đều trả `200 OK` dù input không hợp lệ.
+  5. **FR-08-BUG-005** (Low): Backend không có max length validation cho `shipping_address` — chấp nhận chuỗi 1000 ký tự mà không báo lỗi.
+  **Các file đã tạo:**
+  - `testing/FR-08/report.md` — cập nhật Section 6, 7, 8 với kết quả phân tích
+  - `testing/FR-08/issues/FR-08-BUG-001.md`
+  - `testing/FR-08/issues/FR-08-BUG-002.md`
+  - `testing/FR-08/issues/FR-08-BUG-003.md`
+  - `testing/FR-08/issues/FR-08-BUG-004.md`
+  - `testing/FR-08/issues/FR-08-BUG-005.md`
+  - `testing/FR-08/audit-log.md` — Entry #3
+  - `audit-log-full.md` — Entry #10
+- **Human review / correction:** *User đã điền Actual + Status vào report trước khi gọi agent. Không có human review bổ sung. Đã đọc qua các issues được liệt kê và đồng ý với các issues đó.* 
+
