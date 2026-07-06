@@ -137,13 +137,13 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 ### 3.4 Nhóm D: Shipping address
 
 
-| STT   | Lớp bao phủ              | Input                                                                                                     | Expected Output                      | Actual                             | Status |
-| ----- | ------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------ | ---------------------------------- | ------ |
-| TC-D1 | EC-S1 (Địa chỉ hợp lệ)   | Body: `{ shipping_address: "123 Lê Lợi, Q.1, TP.HCM" }` (không cần gửi total_amount — để backend tự tính) | `200` — thành công                   | *(điền sau khi test bằng Postman)* | ☐      |
-| TC-D2 | EC-S2 (`""` rỗng)        | Body: `{ shipping_address: "" }`                                                                          | `400 Bad Request` — địa chỉ bắt buộc | *(điền sau khi test bằng Postman)* | ☐      |
-| TC-D3 | EC-S3 (`null`)           | Body: `{ shipping_address: null }`                                                                        | `400 Bad Request`                    | *(điền sau khi test bằng Postman)* | ☐      |
-| TC-D4 | EC-S4 (chỉ khoảng trắng) | Body: `{ shipping_address: " " }`                                                                         | `400` — coi như rỗng                 | *(điền sau khi test bằng Postman)* | ☐      |
-| TC-D5 | EC-S3 (thiếu trường)     | Body: `{}` — không gửi `shipping_address`                                                                 | `400 Bad Request` — trường bắt buộc  | *(điền sau khi test bằng Postman)* | ☐      |
+| STT   | Lớp bao phủ              | Input                                                                                                     | Expected Output                      | Actual                                                       | Status                                                 |
+| ----- | ------------------------ | --------------------------------------------------------------------------------------------------------- | ------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ |
+| TC-D1 | EC-S1 (Địa chỉ hợp lệ)   | Body: `{ shipping_address: "123 Lê Lợi, Q.1, TP.HCM" }` (không cần gửi total_amount — để backend tự tính) | `200` — thành công                   | `200 OK`{ "message": "Checkout successful", "orderId": 6 } | Success                                                |
+| TC-D2 | EC-S2 (`""` rỗng)        | Body: `{ shipping_address: "" }`                                                                          | `400 Bad Request` — địa chỉ bắt buộc | `200 OK`{ "message": "Checkout successful", "orderId": 7 } | Failure - Không có xử lý backend cho trường địa chỉ    |
+| TC-D3 | EC-S3 (`null`)           | Body: `{ shipping_address: null }`                                                                        | `400 Bad Request`                    | `200 OK`{ "message": "Checkout successful", "orderId": 8 } | Failure - Không có xử lý backend cho trường địa chỉ    |
+| TC-D4 | EC-S4 (chỉ khoảng trắng) | Body: `{ shipping_address: " " }`                                                                         | `400` — coi như rỗng                 | `200 OK`{ "message": "Checkout successful", "orderId": 9 }  | Failure - Không có xử lý backend cho trường địa chỉ    |
+| TC-D5 | EC-S3 (thiếu trường)     | Body: `{}` — không gửi `shipping_address`                                                                 | `400 Bad Request` — trường bắt buộc  | `200 OK`{ "message": "Checkout successful", "orderId": 10 } | Failure - Gửi body rỗng nhưng vẫn chập nhận thanh toán |
 
 
 ---
@@ -153,12 +153,12 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 ### 4.1 Biên cho độ dài `shipping_address` (spec không nêu số cụ thể — giá trị thăm dò)
 
 
-| STT   | Điểm biên             | Giá trị                                            | Input                                 | Expected Output                                          | Actual                             | Status |
-| ----- | --------------------- | -------------------------------------------------- | ------------------------------------- | -------------------------------------------------------- | ---------------------------------- | ------ |
-| BV-S1 | Min = 1 ký tự         | `"A"`                                              | `{ shipping_address: "A" }`           | `200` — hợp lệ về mặt độ dài                             | *(điền sau khi test bằng Postman)* | ☐      |
-| BV-S2 | Probing: 500 ký tự    | 500 ký tự `"A"*500`                                | `{ shipping_address: "A"*500 }`       | Không xác định trước — thăm dò max length thực           | *(điền sau khi test bằng Postman)* | ☐      |
-| BV-S3 | Probing: 1000 ký tự   | 1000 ký tự `"A"*1000`                              | `{ shipping_address: "A"*1000 }`      | Không xác định trước — thăm dò max length                | *(điền sau khi test bằng Postman)* | ☐      |
-| BV-S4 | Ký tự đặc biệt / HTML | `"<script>alert(1)</script>"` hoặc `"Le\tLoi\nQ1"` | `{ shipping_address: "<script>..." }` | Không xác định trước — thăm dò sanitization / validation | *(điền sau khi test bằng Postman)* | ☐      |
+| STT   | Điểm biên             | Giá trị                                            | Input                                 | Expected Output                                          | Actual                                                       | Status                                                                                                   |
+| ----- | --------------------- | -------------------------------------------------- | ------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------- |
+| BV-S1 | Min = 1 ký tự         | `"A"`                                              | `{ shipping_address: "A" }`           | `200` — hợp lệ về mặt độ dài                             | `200 OK`{ "message": "Checkout successful", "orderId": 11 } | Success - Tuy nhiên có vẻ backend chỉ nhận thông tin về shipping_address chứ không có xử lý phần backend |
+| BV-S2 | Probing: 500 ký tự    | 500 ký tự `"A"*500`                                | `{ shipping_address: "A"*500 }`       | Không xác định trước — thăm dò max length thực           | `200 OK`{ "message": "Checkout successful", "orderId": 12 } | Success - Tuy nhiên có vẻ backend chỉ nhận thông tin về shipping_address chứ không có xử lý phần backend |
+| BV-S3 | Probing: 1000 ký tự   | 1000 ký tự `"A"*1000`                              | `{ shipping_address: "A"*1000 }`      | Không xác định trước — thăm dò max length                | `200 OK`{ "message": "Checkout successful", "orderId": 14 } | Success - Tuy nhiên có vẻ backend chỉ nhận thông tin về shipping_address chứ không có xử lý phần backend |
+| BV-S4 | Ký tự đặc biệt / HTML | `"<script>alert(1)</script>"` hoặc `"Le\tLoi\nQ1"` | `{ shipping_address: "<script>..." }` | Không xác định trước — thăm dò sanitization / validation | `200 OK`{ "message": "Checkout successful", "orderId": 13 } | Success - Tuy nhiên có vẻ backend chỉ nhận thông tin về shipping_address chứ không có xử lý phần backend |
 
 
 ---
