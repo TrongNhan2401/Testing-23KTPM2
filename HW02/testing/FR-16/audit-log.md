@@ -46,7 +46,7 @@
   - `domain-testing-agent-blackbox.md` — Bước 7
   - `templates/github_issue_template.md`
 - **Output/kết luận của bước:**
-  **Tổng kết test sau khi user chạy Postman:**
+**Tổng kết test sau khi user chạy Postman:**
   - A (Authorization): 3/4 PASS, 1 FAIL (TC-A3: non-admin import)
   - B (Name validation): 3/6 PASS, 3 FAIL (TC-B3: space, TC-B5: thiếu, TC-B6: >255)
   - C (Price validation): 3/7 PASS, 4 FAIL (TC-C2/C3/C4/C5)
@@ -76,4 +76,49 @@
   - `testing/FR-16/audit-log.md` — Entry #2, #3
   - `audit-log-full.md` — Entry #13, #14
 - **Human review / correction:** *User đã đồng ý với corrections và đã chạy test case. User phát hiện thêm bug duplicate products. Không có human review bổ sung. Đồng ý với các issue mà agent đã phân tích*
+
+---
+
+### [2026-07-07 01:16] — FR-16 — Functional Testing Bugs (UI) + Section 8.2 + 8.3 (phiên bản 3)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:**
+  ```
+  Đây là kết quả của functional testing cho FR-16 của tôi:
+  +Lỗi khi sai header (thiếu header category_id) nhưng vãn có thể import sản phẩm
+  + Lỗi không rollback khi có 1 cột bị lỗi mà import cột đúng chỉ không import cột lỗi
+  + Lỗi thêm được sản phầm có giá 0đ, giá âm, giá không phải là số
+  + Lỗi thêm được sản phẩm với category không tồn tại, không điền category
+  + Lỗi Thêm được sản phẩm tên dài hơn 256 ký tự
+  + Lõi Thêm được 2 sản phẩm trùng tên
+  + Lỗi thêm được sản phẩm từ đuôi không phải file .csv
+
+  Hãy trình bày các lỗi functional testing này của UI vào @testing/FR-16/report.md sau đó ghi @testing/FR-16/audit-log.md và đầy đủ prompt AI-Output vào @audit-log-full.md
+  ```
+- **File đã đọc:**
+  - `testing/FR-16/report.md` — Domain Testing Report với 7 Domain bugs
+  - `testing/FR-08/report.md` — để tham khảo cách tổ chức Functional Testing Section
+- **Output/kết luận của bước:**
+**Phân tích 7 lỗi Functional Testing từ user:**
+
+  | #   | Lỗi Functional Testing                                         | Mapping sang Domain Bug | Ghi chú                                                           |
+  | --- | -------------------------------------------------------------- | ----------------------- | ----------------------------------------------------------------- |
+  | 1   | Lỗi thiếu header `category_id` nhưng vẫn import được           | FR-16-BUG-005           | → Tạo **FR-16-FUNC-BUG-001**                                      |
+  | 2   | Không rollback khi có 1 cột lỗi (cột đúng vẫn import)          | FR-16-BUG-006           | → Đã có FR-16-BUG-006 (Domain), không tạo bug mới                 |
+  | 3   | Thêm được sản phẩm giá 0đ, âm, không phải số                   | FR-16-BUG-004           | → Đã có FR-16-BUG-004 (Domain), không tạo bug mới                 |
+  | 4   | Thêm được sản phẩm category không tồn tại, không điền category | FR-16-BUG-005           | → Đã có FR-16-BUG-005 (Domain), không tạo bug mới                 |
+  | 5   | Thêm được sản phẩm tên dài hơn 256 ký tự                       | FR-16-BUG-003           | → Đã có FR-16-BUG-003 (Domain), không tạo bug mới                 |
+  | 6   | Thêm được 2 sản phẩm trùng tên                                 | FR-16-BUG-007           | → Đã có FR-16-BUG-007 (Domain), không tạo bug mới                 |
+  | 7   | Thêm được sản phẩm từ đuôi không phải `.csv`                   | —                       | → **FR-16-FUNC-BUG-002** (UI only, không có Domain bug tương ứng) |
+
+  **Nhận xét:** 5/7 lỗi Functional Testing (bug #2-6) đều đã được phát hiện ở Domain Testing (Backend). Điều này cho thấy bugs ở Backend ảnh hưởng trực tiếp đến UI. Chỉ có 2 bugs là **UI-specific** (không test được ở Domain Testing):
+  - **FR-16-FUNC-BUG-001**: Thiếu header `category_id` (cross-ref với BUG-005)
+  - **FR-16-FUNC-BUG-002**: Import file không phải `.csv` (UI only)
+  **Các file đã tạo/cập nhật:**
+  - `testing/FR-16/issues/FR-16-FUNC-BUG-001.md` — Functional Bug #1: Thiếu header CSV
+  - `testing/FR-16/issues/FR-16-FUNC-BUG-002.md` — Functional Bug #2: Import file không phải .csv
+  - `testing/FR-16/report.md` — bổ sung Section 8.2 (Functional Testing Bugs), 8.3 (Cross-Reference), 8.4 (Human Bugs)
+  - `testing/FR-16/audit-log.md` — Entry #3 (phiên bản 3)
+  - `audit-log-full.md` — Entry #15
+- **Human review / correction:** *Đã đọc qua các file và đồng ý việc gộp lại các isusse xảy ra ở functional testing vì một số lỗi đã miêu tả ở phần domain testing.*
 

@@ -242,6 +242,8 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 
 ## 8. Tổng hợp Bug phát hiện (GitHub Issues)
 
+### 8.1 Domain Testing Bugs (API Level)
+
 | Bug ID | Mô tả | Severity | File |
 |---|---|---|---|
 | FR-16-BUG-001 | User thường (non-admin) có thể import sản phẩm — vi phạm FR-12 Access Control | Critical | `testing/FR-16/issues/FR-16-BUG-001.md` |
@@ -252,14 +254,53 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 | FR-16-BUG-006 | Backend không rollback khi có lỗi — chỉ skip dòng lỗi, dòng hợp lệ vẫn được insert (vi phạm all-or-nothing) | Critical | `testing/FR-16/issues/FR-16-BUG-006.md` |
 | FR-16-BUG-007 | Backend không xử lý duplicate products — cùng 1 sản phẩm import 2 lần tạo 2 bản ghi khác id | High | `testing/FR-16/issues/FR-16-BUG-007.md` |
 
+### 8.2 Functional Testing Bugs (UI Level)
+
+| Bug ID | Mô tả | Severity | File | Cross-ref (Domain) |
+|---|---|---|---|---|
+| FR-16-FUNC-BUG-001 | UI cho phép import file CSV thiếu header `category_id` — chấp nhận import thay vì báo lỗi | Critical | `testing/FR-16/issues/FR-16-FUNC-BUG-001.md` | FR-16-BUG-005 |
+| FR-16-FUNC-BUG-002 | UI cho phép import file không phải đuôi `.csv` — không kiểm tra đuôi file trước khi upload | High | `testing/FR-16/issues/FR-16-FUNC-BUG-002.md` | — (UI only) |
+
+### 8.3 Cross-Reference: Domain ↔ Functional Bugs
+
+| Domain Bug (API) | Functional Bug (UI) | Root cause | Fix recommendation |
+|---|---|---|---|
+| FR-16-BUG-005 | FR-16-FUNC-BUG-001 | Backend không validate `category_id`; UI không validate header CSV | Fix **cả backend** (validate category_id) **và UI** (validate header trước upload) |
+| FR-16-BUG-001 | — | Backend không kiểm tra `role = 'admin'` | Fix **backend** (thêm role check) |
+| FR-16-BUG-002 | — | Backend không trim/validate name | Fix **backend** (thêm trim + validation) |
+| FR-16-BUG-003 | — | Backend không enforce max length 255 | Fix **backend** (thêm max length check) |
+| FR-16-BUG-004 | — | Backend không validate price | Fix **backend** (thêm price validation) |
+| FR-16-BUG-006 | — | Backend không rollback all-or-nothing | Fix **backend** (thêm transaction) |
+| FR-16-BUG-007 | — | Backend không kiểm tra duplicate | Fix **backend** (thêm unique check hoặc upsert) |
+| — | FR-16-FUNC-BUG-002 | UI không kiểm tra đuôi file | Fix **UI** (thêm accept=".csv", validate extension) |
+
+> **Lưu ý phương pháp luận:** Domain Testing (report.md này) test **từ spec ra API** theo phương pháp black-box. Functional Testing bugs được ghi nhận tại đây vì có cùng root cause với Domain bugs hoặc bugs chỉ có ở tầng UI, nhằm phục vụ traceability. Tuy nhiên, functional bugs có chi tiết riêng (user flow, screenshot UI) và nên được test và theo dõi độc lập tại `testing/FR-16/issues/FR-16-FUNC-BUG-*.md`.
+
 ---
 
-### 8.1 Bug được phát hiện bởi AI (trong phạm vi test case đã thiết kế)
-
-Các bug FR-16-BUG-001 đến FR-16-BUG-006 được phát hiện từ các test case trong report này.
-
-### 8.2 Bug được phát hiện bởi Human (ngoài phạm vi test case AI)
+### 8.4 Bug được phát hiện bởi Human (ngoài phạm vi test case AI)
 
 | Bug ID | Mô tả | Phát hiện bởi | Ghi chú |
 |---|---|---|---|
-| FR-16-BUG-007 | Backend không xử lý duplicate products — cùng 1 sản phẩm import 2 lần tạo 2 bản ghi khác id | Human (User) | **AI chưa tìm được test case này** — không có test case trong report để kiểm tra duplicate products trong cùng 1 request. Cần bổ sung test case TC-DUP trong tương lai. |
+| FR-16-BUG-007 | Backend không xử lý duplicate products — cùng 1 sản phẩm import 2 lần tạo 2 bản ghi khác id | Human (User) | **AI chưa tìm được test case này** — không có test case trong report để kiểm tra duplicate products trong cùng 1 request. |
+| FR-16-FUNC-BUG-002 | UI cho phép import file không phải `.csv` — không kiểm tra đuôi file | Human (User) | **AI không thiết kế test case cho đuôi file** — Domain Testing không test được đuôi file (API nhận JSON body). |
+
+---
+
+## 9. Tổng hợp Bug phát hiện (GitHub Issues) — Bảng gộp
+
+*(Giữ lại để tương thích với các công cụ khác)*
+
+| Bug ID | Mô tả | Severity | File |
+|---|---|---|---|
+| FR-16-BUG-001 | User thường (non-admin) có thể import sản phẩm — vi phạm FR-12 Access Control | Critical | `testing/FR-16/issues/FR-16-BUG-001.md` |
+| FR-16-BUG-002 | Backend không validate `name` chỉ có khoảng trắng | High | `testing/FR-16/issues/FR-16-BUG-002.md` |
+| FR-16-BUG-003 | Backend không enforce max length 255 cho `name` | High | `testing/FR-16/issues/FR-16-BUG-003.md` |
+| FR-16-BUG-004 | Backend không validate `price` — chấp nhận price = 0, âm, null, thiếu | Critical | `testing/FR-16/issues/FR-16-BUG-004.md` |
+| FR-16-BUG-005 | Backend không validate `category_id` | Critical | `testing/FR-16/issues/FR-16-BUG-005.md` |
+| FR-16-BUG-006 | Backend không rollback khi có lỗi — vi phạm all-or-nothing | Critical | `testing/FR-16/issues/FR-16-BUG-006.md` |
+| FR-16-BUG-007 | Backend không xử lý duplicate products | High | `testing/FR-16/issues/FR-16-BUG-007.md` |
+| FR-16-FUNC-BUG-001 | UI cho phép import CSV thiếu header `category_id` | Critical | `testing/FR-16/issues/FR-16-FUNC-BUG-001.md` |
+| FR-16-FUNC-BUG-002 | UI cho phép import file không phải `.csv` | High | `testing/FR-16/issues/FR-16-FUNC-BUG-002.md` |
+
+**Tổng cộng: 9 bugs (7 Domain + 2 Functional)**
