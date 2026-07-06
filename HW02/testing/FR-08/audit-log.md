@@ -88,5 +88,55 @@
   - `testing/FR-08/issues/FR-08-BUG-005.md`
   - `testing/FR-08/audit-log.md` — Entry #3
   - `audit-log-full.md` — Entry #10
-- **Human review / correction:** *User đã điền Actual + Status vào report trước khi gọi agent. Không có human review bổ sung. Đã đọc qua các issues được liệt kê và đồng ý với các issues đó.* 
+- **Human review / correction:** *User đã điền Actual + Status vào report trước khi gọi agent. Không có human review bổ sung. Đã đọc qua các issues được liệt kê và đồng ý với các issues đó.*
+
+---
+
+### [2026-07-06 16:18] — FR-08 — Functional Testing Bugs & Cross-Reference (Bổ sung từ user)
+
+- **Công cụ:** Cursor Agent (Claude)
+- **Prompt/instruction nhận được:**
+  ```
+  Có 2 lỗi ở functional testing ở trên UI là
+  + Sau khi thanh toán xong không tiến hành xóa giỏ hàng
+  + User có thể điều tổng số tiền thanh toán và thực hiện thanh toán.
+  Hiện tại 2 lỗi này khá giống bug 001 và bug 003 của FR-08 được test từ domain testing.
+  Hãy cho tôi biết tôi có nên trình bày phần này vào @testing/FR-08/report.md hay không.
+  Đưa ra hướng giải quyết mà bạn xem là đúng.
+  Sau đó trình bày vào @testing/FR-08/audit-log.md và toàn bộ prompt và AI-Output vào file audit-log-full.md
+  ```
+- **File đã đọc:**
+  - `testing/FR-08/report.md` — report hiện tại (Domain Testing)
+  - `testing/FR-08/issues/FR-08-BUG-001.md`
+  - `testing/FR-08/issues/FR-08-BUG-003.md`
+  - `templates/github_issue_template.md`
+- **Output/kết luận của bước:**
+
+  **Hướng giải quyết đề xuất và áp dụng:**
+  Không trình bày trực tiếp vào report.md (vì report.md là Domain Testing theo phương pháp black-box, khác với Functional Testing). Thay vào đó:
+  1. Tạo 2 file Functional Bug riêng: `FR-08-FUNC-BUG-001.md` và `FR-08-FUNC-BUG-002.md`.
+  2. Bổ sung Section 8.2 (Functional Testing Bugs) và Section 8.3 (Cross-Reference) vào report.md để trace giữa 2 tầng.
+
+  **Tại sao không gộp vào report.md:**
+  - Domain Testing (report.md) ≠ Functional Testing. Mỗi loại có mục tiêu, công cụ, đối tượng đọc khác nhau.
+  - Đã có Domain bugs mô tả root cause đúng — Functional bugs là biểu hiện ở tầng cao hơn.
+  - Việc gộp chung sẽ làm mờ ranh giới phương pháp.
+
+  **Lợi ích của cách làm này:**
+  - Traceability: Khi fix backend (BUG-001/BUG-003), cả Domain và Functional bugs đều được giải quyết.
+  - Độc lập: Dev/QA có thể theo dõi bugs theo từng tầng.
+  - Bổ sung giá trị: Functional bugs có chi tiết riêng (user flow, screenshot UI) mà API testing không có.
+
+  **2 Functional Bugs đã tạo:**
+  1. **FR-08-FUNC-BUG-001** (Critical): UI cho phép user nhập/sửa tổng tiền thanh toán. → Cross-ref với FR-08-BUG-001 (cùng root cause: backend nhận total_amount từ client).
+  2. **FR-08-FUNC-BUG-002** (High): UI vẫn hiển thị giỏ hàng sau thanh toán thành công. → Cross-ref với FR-08-BUG-003 (cùng root cause: backend không xóa cart).
+
+  **Các file đã tạo/cập nhật:**
+  - `testing/FR-08/issues/FR-08-FUNC-BUG-001.md` — Functional Bug #1
+  - `testing/FR-08/issues/FR-08-FUNC-BUG-002.md` — Functional Bug #2
+  - `testing/FR-08/report.md` — bổ sung Section 8.2 (Functional Testing Bugs) và Section 8.3 (Cross-Reference)
+  - `testing/FR-08/audit-log.md` — Entry #4 (phiên bản 4)
+  - `audit-log-full.md` — Entry #11
+
+- **Human review / correction:** *User đã đồng ý với hướng giải quyết đề xuất (tạo file riêng cho Functional Bugs + bổ sung Cross-Reference vào report.md). Không có human review bổ sung.*
 

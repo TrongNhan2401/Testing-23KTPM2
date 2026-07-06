@@ -190,6 +190,8 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 
 ## 8. Tổng hợp Bug phát hiện (GitHub Issues)
 
+### 8.1 Domain Testing Bugs (API Level)
+
 | Bug ID          | Mô tả                                                                                          | Severity | File                                  |
 | --------------- | ---------------------------------------------------------------------------------------------- | -------- | ------------------------------------- |
 | FR-08-BUG-001   | Backend không ignore `total_amount` từ client — vi phạm spec FR-08                              | Critical | `testing/FR-08/issues/FR-08-BUG-001.md` |
@@ -197,3 +199,19 @@ logic nghiệp vụ. Các giá trị mà spec không nêu rõ được đánh d�
 | FR-08-BUG-003   | Giỏ hàng không bị xóa sau checkout thành công — vi phạm spec FR-08                             | High     | `testing/FR-08/issues/FR-08-BUG-003.md` |
 | FR-08-BUG-004   | `shipping_address` không được validate (rỗng, null, khoảng trắng, thiếu trường đều chấp nhận)   | High     | `testing/FR-08/issues/FR-08-BUG-004.md` |
 | FR-08-BUG-005   | Backend không có max length cho `shipping_address` (thăm dò: 1000 ký tự vẫn được lưu)          | Low      | `testing/FR-08/issues/FR-08-BUG-005.md` |
+
+### 8.2 Functional Testing Bugs (UI Level)
+
+| Bug ID              | Mô tả                                                                          | Severity | File                                               | Cross-ref (Domain) |
+| ------------------- | ------------------------------------------------------------------------------ | -------- | -------------------------------------------------- | ----------------- |
+| FR-08-FUNC-BUG-001  | UI cho phép user nhập/sửa tổng tiền thanh toán — cùng root cause với BUG-001 | Critical | `testing/FR-08/issues/FR-08-FUNC-BUG-001.md`       | FR-08-BUG-001     |
+| FR-08-FUNC-BUG-002 | UI vẫn hiển thị giỏ hàng sau thanh toán — cùng root cause với BUG-003       | High     | `testing/FR-08/issues/FR-08-FUNC-BUG-002.md`      | FR-08-BUG-003     |
+
+### 8.3 Cross-Reference: Domain ↔ Functional Bugs
+
+| Domain Bug (API)  | Functional Bug (UI) | Root cause | Fix recommendation |
+| ----------------- | ------------------- | ---------- | ------------------ |
+| FR-08-BUG-001     | FR-08-FUNC-BUG-001  | Backend nhận `total_amount` từ client; UI cho phép nhập | Fix **cả backend** (tự tính tổng) **và UI** (readonly field) |
+| FR-08-BUG-003     | FR-08-FUNC-BUG-002  | Backend không xóa giỏ hàng sau checkout; UI hiển thị lại giỏ hàng | Fix **backend** (xóa cart) — UI sẽ tự động đúng |
+
+> **Lưu ý phương pháp luận:** Domain Testing (report.md này) test **từ spec ra API** theo phương pháp black-box. Functional Testing bugs được ghi nhận tại đây vì có cùng root cause với Domain bugs, nhằm phục vụ traceability. Tuy nhiên, functional bugs có chi tiết riêng (user flow, screenshot UI) và nên được test và theo dõi độc lập tại `testing/FR-08/issues/FR-08-FUNC-BUG-*.md`.

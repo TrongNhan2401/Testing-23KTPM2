@@ -31,6 +31,7 @@
 | 8 | 2026-07-06 09:16 | Nhân | Claude (Cursor Agent) | FR-08 — Domain Testing Black-box Checkout (22 test case) | Tham khảo ý tưởng, tự thiết kế lại |
 | 9 | 2026-07-06 10:44 | Nhân | Claude (Cursor Agent) | FR-08 — Human Review corrections (17 test case, Nhóm B lên đầu, bỏ total_amount âm/lớn) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 | 10 | 2026-07-06 15:48 | Nhân | Claude (Cursor Agent) | FR-08 — Bước 7: Phân tích kết quả Postman, 5 Bug Issues (9 PASS / 8 FAIL / 17 total) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
+| 11 | 2026-07-06 16:18 | Nhân | Claude (Cursor Agent) | FR-08 — Functional Testing Bugs & Cross-Reference (2 FUNC bugs + Cross-ref Domain↔Functional) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 ---
 
 ## Entry #1
@@ -614,3 +615,66 @@ User đã điền đầy đủ Actual + Status vào report trước khi gọi ag
 4. Tạo 5 GitHub issue files theo template github_issue_template.md
 5. Cập nhật report.md với Section 6, 7, 8 hoàn chỉnh
 6. Ghi audit-log.md và audit-log-full.md
+
+---
+
+## Entry #11
+
+- **Thời gian**: 2026-07-06 16:18
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-08 — Functional Testing Bugs & Cross-Reference
+- **Mục đích**: User báo có 2 functional bugs trên UI tương tự bug #001 và #003 đã phát hiện ở Domain Testing. Agent đề xuất và áp dụng cách giải quyết: tạo file riêng cho Functional Bugs + bổ sung Cross-Reference vào report.md.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+Có 2 lỗi ở functional testing ở trên UI là
++ Sau khi thanh toán xong không tiến hành xóa giỏ hàng
++ User có thể điều tổng số tiền thanh toán và thực hiện thanh toán.
+Hiện tại 2 lỗi này khá giống bug 001 và bug 003 của FR-08 được test từ domain testing.
+Hãy cho tôi biết tôi có nên trình bày phần này vào @testing/FR-08/report.md hay không.
+Đưa ra hướng giải quyết mà bạn xem là đúng.
+Sau đó trình bày vào @testing/FR-08/audit-log.md và toàn bộ prompt và AI-Output vào file audit-log-full.md
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã mô tả 2 functional bugs rõ ràng.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Phân tích sự khác nhau giữa Domain Testing và Functional Testing:**
+
+| Khía cạnh | Domain Testing (FR-08 report.md) | Functional Testing (UI) |
+|---|---|---|
+| **Tầng** | API / Backend (Postman) | UI / Browser |
+| **Công cụ** | Postman, gọi HTTP endpoint trực tiếp | Giao diện web |
+| **Mục đích** | Xác định EC/BVA trên spec | Xác nhận luồng nghiệp vụ end-to-end |
+| **Bug #001** | Bug phát hiện ở tầng API (`POST /api/checkout` nhận `total_amount` từ client) | Bug phát hiện ở tầng UI (form cho phép nhập tổng tiền, backend/API chấp nhận) |
+| **Bug #003** | Bug phát hiện ở tầng API (sau `POST /api/checkout`, `GET /api/cart` vẫn còn sản phẩm) | Bug phát hiện ở tầng UI (sau click "Thanh toán", giỏ hàng trên UI vẫn hiển thị) |
+
+**Hướng giải quyết đề xuất và áp dụng:**
+- **Không trình bày trực tiếp vào report.md** (vì report.md là Domain Testing, khác với Functional Testing).
+- **Tạo 2 file Functional Bug riêng**: `FR-08-FUNC-BUG-001.md` và `FR-08-FUNC-BUG-002.md`.
+- **Bổ sung Section 8.2** (Functional Testing Bugs) và **Section 8.3** (Cross-Reference) vào report.md để trace giữa 2 tầng.
+
+**2 Functional Bugs đã tạo:**
+1. **FR-08-FUNC-BUG-001** (Critical): UI cho phép user nhập/sửa tổng tiền thanh toán. → Cross-ref với FR-08-BUG-001 (cùng root cause).
+2. **FR-08-FUNC-BUG-002** (High): UI vẫn hiển thị giỏ hàng sau thanh toán thành công. → Cross-ref với FR-08-BUG-003 (cùng root cause).
+
+**Các file đã tạo/cập nhật:**
+- `testing/FR-08/issues/FR-08-FUNC-BUG-001.md` — Functional Bug #1
+- `testing/FR-08/issues/FR-08-FUNC-BUG-002.md` — Functional Bug #2
+- `testing/FR-08/report.md` — bổ sung Section 8.2 và 8.3 (Cross-Reference)
+- `testing/FR-08/audit-log.md` — Entry #4 (phiên bản 4)
+- `audit-log-full.md` — Entry #11
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+User đã đồng ý với hướng giải quyết đề xuất. Không có human review bổ sung. Agent đã:
+1. Phân tích sự khác nhau giữa Domain Testing và Functional Testing.
+2. Đề xuất cách giải quyết đúng (tạo file riêng + Cross-Reference).
+3. Tạo 2 functional bug files với đầy đủ thông tin (user flow, cross-ref, traceability).
+4. Cập nhật report.md với Section 8.2 và 8.3.
+5. Ghi audit-log.md và audit-log-full.md.
