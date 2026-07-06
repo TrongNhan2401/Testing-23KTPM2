@@ -32,6 +32,7 @@
 | 9 | 2026-07-06 10:44 | Nhân | Claude (Cursor Agent) | FR-08 — Human Review corrections (17 test case, Nhóm B lên đầu, bỏ total_amount âm/lớn) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 | 10 | 2026-07-06 15:48 | Nhân | Claude (Cursor Agent) | FR-08 — Bước 7: Phân tích kết quả Postman, 5 Bug Issues (9 PASS / 8 FAIL / 17 total) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
 | 11 | 2026-07-06 16:18 | Nhân | Claude (Cursor Agent) | FR-08 — Functional Testing Bugs & Cross-Reference (2 FUNC bugs + Cross-ref Domain↔Functional) | Tham khảo ý tưởng, tự viết lại | Tham khảo ý tưởng, tự viết lại |
+| 12 | 2026-07-06 19:51 | Nhân | Claude (Cursor Agent) | FR-16 — Domain Testing Black-box CSV Import (33 test case) | Tham khảo ý tưởng, tự thiết kế lại |
 ---
 
 ## Entry #1
@@ -678,3 +679,55 @@ User đã đồng ý với hướng giải quyết đề xuất. Không có huma
 3. Tạo 2 functional bug files với đầy đủ thông tin (user flow, cross-ref, traceability).
 4. Cập nhật report.md với Section 8.2 và 8.3.
 5. Ghi audit-log.md và audit-log-full.md.
+
+---
+
+## Entry #12
+
+- **Thời gian**: 2026-07-06 19:51
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-16 — Import Sản phẩm từ CSV (Domain Testing)
+- **Mục đích**: Thực hiện Domain Testing Black-box cho FR-16: Import Sản phẩm từ CSV.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+@domain-testing-agent-blackbox.md hãy giúp tôi thực hiện kĩ thuật domain testing cho FR-16 CSV import
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã chỉ định rõ FR-16.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Điểm quan trọng phát hiện — Gap SPEC:**
+- `README.md` FR-16 mô tả: Admin tải lên **file CSV** (đuôi .csv, header `name,price,description,imageUrl,category_id`, hỗ trợ RFC 4180).
+- `api_specification.md` §6.3 mô tả: `POST /api/admin/import-products` nhận **JSON array** trong body.
+- → **Đây là gap spec** (G-APP): spec mô tả CSV, API thực tế nhận JSON. → Đánh dấu là giá trị thăm dò.
+
+**Các file đã tạo:**
+- `testing/FR-16/report.md` — Domain Testing Report FR-16 (33 test case)
+- `testing/FR-16/audit-log.md` — Entry #1
+
+**Tóm tắt test case đã thiết kế:**
+
+| Nhóm | Số test case | Mô tả |
+|---|---|---|
+| A. Xác thực & Phân quyền | 4 | Admin/Non-admin/Token hợp lệ/không hợp lệ |
+| B. Validation `name` | 6 | Rỗng, space, null, thiếu trường, > 255 ký tự |
+| C. Validation `price` | 7 | = 0, âm, null, string, thập phân |
+| D. Validation `category_id` | 5 | Không tồn tại, null, thiếu, = 0 |
+| E. Rollback / All-or-nothing | 4 | Tất cả hợp lệ, 1 dòng lỗi, tất cả lỗi, 1 dòng |
+| BV (Boundary) | 7 | name (1/255/256 ký tự), price (0.01/1/0/-1), body rỗng |
+| **Tổng cộng** | **33** | |
+
+**Các điểm đáng chú ý:**
+- Logic rollback (all-or-nothing) là nghiệp vụ cốt lõi — TC-E2 quan trọng nhất.
+- Nhiều giá trị thăm dò: price thập phân, body rỗng, trường không xác định.
+- Không thiết kế test cho CSV parsing (RFC 4180) vì spec ≠ implementation (JSON thay vì CSV).
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+Agent đã đọc README.md (FR-12, FR-15, FR-16) và api_specification.md (§6.3). Phát hiện gap spec quan trọng: README nói CSV, API nhận JSON. Agent không đọc source code — tuân thủ black-box thuần. Report đã sẵn sàng để user review và chạy Postman.
