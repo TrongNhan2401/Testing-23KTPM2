@@ -37,6 +37,7 @@
 | 14 | 2026-07-06 21:45 | Nhân | Claude (Cursor Agent) | FR-16 — Bước 7: Phân tích kết quả Postman, 7 Bug Issues (18 PASS / 15 FAIL) | Tham khảo ý tưởng, tự viết lại |
 | 15 | 2026-07-07 01:16 | Nhân | Claude (Cursor Agent) | FR-16 — Functional Testing Bugs (UI) + Section 8.2/8.3 (2 FUNC bugs: header CSV + non-.csv file) | Tham khảo ý tưởng, tự viết lại |
 | 16 | 2026-07-07 01:28 | Nhân | Claude (Cursor Agent) | FR-04 — Domain Testing Black-box Personal Profile Management (31 test case) | Tham khảo ý tưởng, tự thiết kế lại |
+| 17 | 2026-07-07 05:24 | Nhân | Claude (Cursor Agent) | FR-04 — Bước 7: Phân tích kết quả Postman, 5 Bug Issues (14 PASS / 17 FAIL) | Tham khảo ý tưởng, tự viết lại |
 ---
 
 ## Entry #1
@@ -975,3 +976,71 @@ Không cần — user đã chỉ định rõ FR-04.
 
 #### Ghi chú sử dụng
 Agent đã đọc README.md (FR-04) và api_specification.md (§2). Phát hiện spec có nhiều điểm chưa rõ: name max length, phone có bắt buộc không, shipping_address max length. Agent không đọc source code — tuân thủ black-box thuần. Report đã sẵn sàng để user review và chạy Postman.
+
+---
+
+## Entry #17
+
+- **Thời gian**: 2026-07-07 05:24
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-04 — Bước 7: Phân tích kết quả Postman & Bug Issues
+- **Mục đích**: Thực hiện Bước 7 — phân tích kết quả Postman, tổng hợp bug và tạo 5 GitHub issue files.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+@domain-testing-agent-blackbox.md @testing/FR-04/report.md Tôi đã thực hiện việc chạy test case và đưa ra các actual cũng như status. Bây giờ bạn hãy thực hiện bước 7 trong skill của domain testing là phân tích kết quả giúp tôi. Sau đó tổng hợp và viết các file skill isuses theo mẫu @templates/github_issue_template.md. Sau khi hoàn thành hãy tiến hành ghi @testing/FR-04/audit-log.md và đầy đủ prompt cũng như AI-Output vào file @audit-log-full.md.
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã điền đầy đủ Actual/Status trong report.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+
+**Tổng kết test sau khi user chạy Postman:**
+
+| Nhóm | Số test case | PASS | FAIL |
+|---|---|---|---|
+| A. Xác thực | 3 | 3 | 0 |
+| B. Validation `name` | 5 | 1 | 4 |
+| C. Validation `phone` | 10 | 3 | 7 |
+| D. Validation `shipping_address` | 4 | 4 | 0 |
+| E. Security (email/role) | 2 | 1 | 1 |
+| BV (Boundary) | 7 | 2 | 5 |
+| **Tổng cộng** | **31** | **14** | **17** |
+
+**Tỷ lệ pass: 45.2% (14/31)**
+
+**5 Bug phát hiện:**
+
+1. **FR-04-BUG-001** (Critical): Backend không validate `name` — chấp nhận name rỗng, space, null, và >255 ký tự
+2. **FR-04-BUG-002** (Critical): Backend không validate `phone` — chấp nhận phone không đúng định dạng (9 số, 12+ số, không có 0, có chữ, rỗng, null)
+3. **FR-04-BUG-003** (Critical): Backend cho phép thay đổi `role` — vi phạm nghiêm trọng FR-04 Access Control (User có thể tự nâng quyền thành admin)
+4. **FR-04-BUG-004** (Medium): Backend không validate `shipping_address` rỗng/null
+5. **FR-04-BUG-005** (High): Backend không xử lý `phone` — lưu giá trị mà không normalize
+
+**Bug nghiêm trọng nhất:** FR-04-BUG-003 — User có thể tự nâng quyền thành admin (Privilege Escalation)
+
+**Các file đã tạo/cập nhật:**
+- `testing/FR-04/report.md` — cập nhật Section 6, 7, 8 với kết quả phân tích
+- `testing/FR-04/issues/FR-04-BUG-001.md` — Bug #1: Name validation
+- `testing/FR-04/issues/FR-04-BUG-002.md` — Bug #2: Phone validation
+- `testing/FR-04/issues/FR-04-BUG-003.md` — Bug #3: Role escalation (Critical!)
+- `testing/FR-04/issues/FR-04-BUG-004.md` — Bug #4: Shipping address
+- `testing/FR-04/issues/FR-04-BUG-005.md` — Bug #5: Phone normalize
+- `testing/FR-04/audit-log.md` — Entry #2
+- `audit-log-full.md` — Entry #17
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ
+
+#### Ghi chú sử dụng
+User đã điền đầy đủ Actual/Status vào report. Agent thực hiện Bước 7 hoàn chỉnh:
+1. Phân tích từng test case, so sánh Expected vs Actual
+2. Đưa ra giả thuyết hành vi (black-box dynamic inference)
+3. Tổng hợp 5 bug phát hiện từ test case
+4. Tạo 5 GitHub issue files theo template github_issue_template.md
+5. Cập nhật report.md với Section 6, 7, 8 hoàn chỉnh
+6. Ghi audit-log.md và audit-log-full.md
+
+**Bug nghiêm trọng nhất:** FR-04-BUG-003 — User có thể tự nâng quyền thành admin (Privilege Escalation). Đây là bug bảo mật nghiêm trọng nhất trong FR-04.
