@@ -9,6 +9,7 @@
 ## 1. Authentication (Xác thực)
 
 ### 1.1 Đăng ký tài khoản
+
 - **Endpoint:** `POST /api/register`
 - **Body (JSON):**
   ```json
@@ -21,6 +22,7 @@
 - **Phản hồi thành công (200 OK):** `{"message": "User registered successfully", "id": 1}`
 
 ### 1.2 Đăng nhập
+
 - **Endpoint:** `POST /api/login`
 - **Body (JSON):**
   ```json
@@ -32,6 +34,7 @@
 - **Phản hồi thành công (200 OK):** Trả về chuỗi JWT `token` và thông tin `user`.
 
 ### 1.3 Quên mật khẩu (Lấy OTP)
+
 - **Endpoint:** `POST /api/forgot-password`
 - **Body (JSON):**
   ```json
@@ -42,6 +45,7 @@
 - **Phản hồi thành công (200 OK):** `{"message": "Mã đặt lại mật khẩu đã được tạo", "resetToken": "123456"}`
 
 ### 1.4 Đặt lại mật khẩu
+
 - **Endpoint:** `POST /api/reset-password`
 - **Body (JSON):**
   ```json
@@ -59,9 +63,11 @@
 *Lưu ý: Các API dưới đây yêu cầu truyền Token ở Header: `Authorization: Bearer <token>`*
 
 ### 2.1 Lấy thông tin cá nhân
+
 - **Endpoint:** `GET /api/users/me`
 
 ### 2.2 Cập nhật hồ sơ cá nhân
+
 - **Endpoint:** `PUT /api/users/me`
 - **Mô tả:** Chỉ cho phép cập nhật thông tin cá nhân cơ bản.
 - **Body (JSON):**
@@ -78,13 +84,16 @@
 ## 3. Sản phẩm (Products) & Danh mục (Categories)
 
 ### 3.1 Lấy danh sách sản phẩm
+
 - **Endpoint:** `GET /api/products`
 - **Query string (Tùy chọn):** `?search=keyword` để tìm kiếm sản phẩm theo tên.
 
 ### 3.2 Xem chi tiết một sản phẩm
+
 - **Endpoint:** `GET /api/products/:id`
 
 ### 3.3 Thêm / Sửa / Xóa Sản phẩm (Dành cho Admin)
+
 - **Thêm sản phẩm:** `POST /api/products`
 - **Cập nhật:** `PUT /api/products/:id`
 - **Xóa:** `DELETE /api/products/:id`
@@ -100,6 +109,7 @@
   ```
 
 ### 3.4 Danh mục (Categories)
+
 - **Lấy danh sách:** `GET /api/categories`
 - **Thêm mới:** `POST /api/categories` *(Body: `{"name": "Tên DM"}`)*
 - **Cập nhật:** `PUT /api/categories/:id`
@@ -112,9 +122,11 @@
 *Yêu cầu Header: `Authorization: Bearer <token>`*
 
 ### 4.1 Lấy giỏ hàng
+
 - **Endpoint:** `GET /api/cart`
 
 ### 4.2 Thêm vào giỏ hàng
+
 - **Endpoint:** `POST /api/cart`
 - **Body (JSON):** 
   ```json
@@ -127,6 +139,7 @@
   ```
 
 ### 4.3 Đặt hàng (Checkout)
+
 - **Endpoint:** `POST /api/checkout`
 - **Body (JSON):**
   ```json
@@ -137,20 +150,24 @@
   ```
 
 ### 4.4 Lấy lịch sử đơn hàng cá nhân
+
 - **Endpoint:** `GET /api/orders/my-orders`
 
 ### 4.5 Lấy chi tiết một đơn hàng
+
 - **Endpoint:** `GET /api/orders/:id`
 
 ### 4.6 Hủy đơn hàng
+
 - **Endpoint:** `PUT /api/orders/:id/cancel`
-- **Mô tả:** Chuyển trạng thái đơn hàng sang `canceled`. Chỉ được thực hiện khi đơn hàng chưa giao.
+- **Mô tả:** Chuyển trạng thái đơn hàng sang `canceled`. Chỉ được thực hiện khi đơn  hàng chưa giao.
 
 ---
 
 ## 5. Mã Giảm Giá (Coupons)
 
 ### 5.1 Áp dụng mã giảm giá
+
 - **Endpoint:** `POST /api/apply-coupon`
 - **Mô tả:** Tính toán tổng tiền sau khi giảm. Trả về cấu trúc JSON chứa `discount_amount` và `final_amount`.
 - **Body (JSON):**
@@ -163,6 +180,7 @@
   ```
 
 ### 5.2 Lấy danh sách mã giảm giá (Dành cho Admin)
+
 - **Endpoint:** `GET /api/coupons`
 - **Header:** `Authorization: Bearer <token>`
 
@@ -173,15 +191,18 @@
 *Tất cả API dưới đây yêu cầu `Authorization: Bearer <token>` và tài khoản phải có quyền Admin.*
 
 ### 6.1 Quản lý Người dùng
+
 - **Lấy danh sách người dùng:** `GET /api/admin/users`
 - **Xóa người dùng:** `DELETE /api/admin/users/:id`
 
 ### 6.2 Quản lý Đơn hàng (Toàn hệ thống)
+
 - **Lấy danh sách đơn hàng:** `GET /api/admin/orders`
 - **Cập nhật trạng thái đơn hàng:** `PUT /api/admin/orders/:id/status`
   - **Body (JSON):** `{"status": "confirmed"}` (Các trạng thái: `pending`, `confirmed`, `shipping`, `delivered`, `canceled`).
 
 ### 6.3 Import Sản phẩm từ CSV (JSON Array)
+
 - **Endpoint:** `POST /api/admin/import-products`
 - **Body (JSON):**
   ```json
@@ -199,6 +220,7 @@
   ```
 
 ### 6.4 Quản lý Mã Giảm Giá
+
 - **Thêm mới mã:** `POST /api/admin/coupons`
   - **Body (JSON):**
     ```json
@@ -212,3 +234,4 @@
     }
     ```
 - **Xóa mã:** `DELETE /api/admin/coupons/:id`
+

@@ -28,6 +28,8 @@
 | 5 | 2026-07-06 00:28 | Nhân | Claude (Cursor Agent) | FR-02 — Functional Testing UI + BUG-005 | Tham khảo ý tưởng, tự viết lại |
 | 6 | 2026-07-06 00:34 | Nhân | Claude (Cursor Agent) | FR-02 — Thu gọn Functional Testing UI (theo human review) | Tham khảo ý tưởng, tự viết lại |
 | 7 | 2026-07-06 00:44 | Nhân | Claude (Cursor Agent) | FR-02 — Thêm Functional UI bug BUG-006 (thông báo khóa) | Tham khảo ý tưởng, tự viết lại |
+| 8 | 2026-07-06 09:16 | Nhân | Claude (Cursor Agent) | FR-08 — Domain Testing Black-box Checkout (22 test case) | Tham khảo ý tưởng, tự thiết kế lại |
+| 9 | 2026-07-06 10:44 | Nhân | Claude (Cursor Agent) | FR-08 — Human Review corrections (17 test case, Nhóm B lên đầu, bỏ total_amount âm/lớn) | Tham khảo ý tưởng, tự viết lại |
 ---
 
 ## Entry #1
@@ -412,3 +414,131 @@ Triệu chứng từ prompt ban đầu ("không hiện thông báo tài khoản 
 trước đó trong file (BUG-005 = "thiếu đếm ngược"). Agent đã hỏi rõ triệu chứng thực tế trước
 khi viết — tránh tạo bug trùng lặp hoặc sai. Sau khi user xác nhận, agent tách BUG-006 riêng
 (Severity High) vì ảnh hưởng đến thông báo lỗi cốt lõi, khác với BUG-005 (Medium, UX phụ).
+
+---
+
+## Entry #8
+
+- **Thời gian**: 2026-07-06 09:16
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-08 — Thanh toán (Checkout)
+- **Mục đích**: Thực hiện domain testing black-box hoàn chỉnh cho FR-08 (Bước 0 → Bước 5): phân tích spec, xây dựng EC/BVA, thiết kế 22 test case cho Postman, gap analysis.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+domain-testing-agent-blackbox.md hãy giúp tôi thực hiện kỹ thuật domain-testing cho FR-08: Checkout
+```
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+```
+[Đã thực hiện các thay đổi sau:]
+
+1. Đã tạo thư mục testing/FR-08/.
+
+2. Đã tạo testing/FR-08/report.md với đầy đủ 8 bước:
+   - Section 0: Tài liệu đã khảo sát (README.md §2 FR-07/FR-08, api_specification.md §4.1–4.3)
+   - Section 1: Input & Output (4 input fields, 4 output cases)
+   - Section 2: Equivalence Classes (4 nhóm: Authorization, shipping_address, total_amount, cart status — tổng 13 EC)
+   - Section 3: Test Case EC Partitioning (4 nhóm A/B/C/D — 15 test case)
+   - Section 4: Boundary Value Analysis (2 nhóm BV-S/BV-T — 7 test case thăm dò)
+   - Section 5: Gap Analysis (6 ràng buộc thiếu + 4 giả định hợp lý)
+   - Section 6: Bảng phân tích kết quả Postman (5 dòng, chờ điền sau khi chạy)
+   - Section 7: Tổng hợp test case + bug (format, chờ điền)
+
+3. Đã tạo testing/FR-08/audit-log.md với Entry #1.
+
+4. Đã append Entry #8 vào audit-log-full.md (file này).
+
+[Lưu ý thiết kế domain testing cho FR-08:]
+- FR-08 phụ thuộc giỏ hàng (FR-07): test case phải setup cart có sản phẩm trước khi checkout.
+- TC-D1 đặc biệt quan trọng: gửi total_amount = 1 (sai) để xác nhận backend có thực sự ignore client value không.
+- Spec thiếu nhiều chi tiết (G1–G6): độ dài address, min/max amount, requiredness của total_amount.
+- Tổng 22 test case được thiết kế: 3 (Auth) + 2 (Cart) + 5 (Address) + 5 (Total amount) + 4 (BV-S) + 3 (BV-T).
+```
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự thiết kế lại cấu trúc test case
+
+#### Ghi chú sử dụng
+Đây là domain testing black-box hoàn chỉnh cho FR-08 Checkout. Tất cả EC và BVA được suy ra
+từ spec (README.md FR-08, api_specification.md §4.3). Các giá trị thăm dò (độ dài address, giá trị
+min/max amount) được đánh dấu rõ "CẦN XÁC NHẬN" vì spec không nêu số cụ thể.
+Sau khi chạy Postman và điền Actual/Status, user cần gọi lại agent để thực hiện Bước 6
+(phân tích kết quả Postman) và tạo bug issues nếu phát hiện sai lệch.
+
+---
+
+## Entry #9
+
+- **Thời gian**: 2026-07-06 10:44
+- **Người thực hiện**: Nhân
+- **Công cụ AI**: Claude (Cursor Agent)
+- **Hạng mục liên quan**: FR-08 — Human Review Corrections (Domain Testing)
+- **Mục đích**: Nhận human review từ user và cập nhật lại report FR-08 cho phù hợp với 4 điểm correction.
+
+#### Prompt (nguyên văn, đầy đủ)
+```
+Human review / correction:
+
+Ở input/output đồng ý thực hiện test case thăm dò với các thông tin như độ dài tối thiểu và tối đa của shipping address và trạng thái giỏ hàng không được trống khi thực hiện thanh toán
+
+EC cho shipping address thì giả định đã đúng, shipping address phải tối thiểu có chứa nội dung
+
+EC cho total amount chỉ cần xét xem có ignore được giá trị này hay không là được rồi vì spec đã yêu cầu không cho người dùng chỉnh sửa. Ngoài ra việc thêm vào giỏ hàng 1 đơn hàng có giá trị âm hay đơn hàng có giá trị lớn thì việc này sẽ do FR-07 test còn tôi sẽ không thực hiện việc này. Còn lại sẽ thăm dò xem giỏ hàng có xử lý đơn hàng miễn phí (total amount = 0) hay không thôi.
+
+Phát hiện việc sắp xếp test case chưa được login lắm khi việc test ignore trước rất quan trọng để xác định xem liệu có phụ thuộc vào total amount mình nhập hay không. Kết hợp với các api xem chi tiết đơn hàng để xác định.
+```
+
+#### Làm rõ trước khi viết (agent hỏi → user trả lời)
+Không cần — user đã cung cấp đầy đủ 4 điểm correction rõ ràng.
+
+#### AI Output (nguyên văn, đầy đủ hoặc link chính xác)
+```
+[Đã thực hiện các thay đổi sau:]
+
+1. Section 1 (Input/Output):
+   - Giữ nguyên I1-I4, O1-O4.
+   - O1 bổ sung "final_amount = tổng từ giỏ hàng".
+   - Bổ sung nguồn `api_specification.md` §4.5 cho `GET /api/orders/:id` (dùng để xác nhận final_amount).
+
+2. Section 2 (EC):
+   - EC-S1: mô tả rõ "tối thiểu 1 ký tự có nội dung".
+   - EC-T2: đổi tên thành boundary zero — "đơn hàng miễn phí = 0", bổ sung ghi chú.
+   - EC-T3 (âm) và EC-T4 (lớn): BỎ — thuộc phạm vi FR-07.
+   - EC-T1: ghi chú rõ "backend PHẢI ignore" — đây là bắt buộc theo spec FR-08.
+
+3. Section 3 (Test Case):
+   - Nhóm B (Total amount) đưa lên đầu vì TC-B1 (test ignore) là quan trọng nhất.
+   - TC-D1 → TC-B1: gửi total_amount = 1 (sai), yêu cầu gọi GET /api/orders/:id để xác nhận final_amount.
+   - TC-D2 → TC-B2: gửi total_amount đúng, so sánh kết quả với TC-B1.
+   - TC-B3: boundary zero — thăm dò đơn hàng miễn phí (total_amount = 0).
+   - Nhóm D (Shipping address): sắp xếp lại TC-D1..TC-D5 bắt đầu từ EC-S1.
+   - Tổng: 22 → 17 test case (bỏ 5: D3/D4/D5 total_amount âm/lớn + 2 BV-T).
+
+4. Section 4 (BVA):
+   - Bỏ BV-T1..BV-T3 hoàn toàn (âm/lớn thuộc FR-07).
+   - Giữ BV-S1..BV-S4: thăm dò độ dài address (1, 500, 1000 ký tự + ký tự đặc biệt).
+
+5. Section 5 (Gap Analysis):
+   - G5 (địa chỉ trùng lặp): BỎ.
+   - G6 (ngưỡng sản phẩm): BỎ.
+   - G1-G4 thu gọn theo corrections.
+   - GA1-GA4 giữ nguyên.
+
+6. Section 6: Cập nhật TC references theo đánh số mới (TC-B1, TC-B2, TC-B3, TC-C1...).
+
+7. Section 7: Tổng test case = 17 (A:3 + B:3 + C:2 + D:5 + BV-S:4).
+```
+
+#### Mức độ sử dụng output
+- [x] Tham khảo ý tưởng, tự viết lại toàn bộ report
+
+#### Ghi chú sử dụng
+Human review cung cấp 4 điểm correction rõ ràng, agent đã áp dụng đầy đủ:
+- (1) Giữ nguyên phạm vi thăm dò cho shipping_address và cart trống.
+- (2) EC shipping_address: giả định đúng — tối thiểu có nội dung.
+- (3) EC total_amount: chỉ test ignore (EC-T1) + boundary zero (EC-T2); bỏ âm/lớn (thuộc FR-07).
+- (4) Sắp xếp Nhóm B (Total amount) lên đầu vì test ignore là quan trọng nhất; bổ sung API
+  xác nhận final_amount qua GET /api/orders/:id.
+Tổng test case giảm từ 22 xuống 17. Report FR-08 đã sẵn sàng để chạy Postman.
