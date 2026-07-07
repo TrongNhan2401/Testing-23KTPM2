@@ -21,10 +21,10 @@ Giao diện Mobile cho phép người dùng cập nhật số điện thoại v�
 
 ## 3. Hành vi thực tế quan sát được (Actual Behavior)
 
-| Bước | Input trên Mobile | Expected | Actual | Status |
-|---|---|---|---|---|
-| 1 | Nhập phone 9 chữ số (ví dụ: `091234567`) | Mobile hiển thị thông báo lỗi và không cho lưu | Mobile hiển thị thông báo lỗi | ☐ |
-| 2 | Nhấn "Lưu" sau khi có thông báo lỗi | Hệ thống từ chối lưu vì phone không hợp lệ | Phone 9 chữ số được lưu thành công | ❌ |
+| Bước | Input trên Mobile                        | Expected                                       | Actual                             | Status |
+| ---- | ---------------------------------------- | ---------------------------------------------- | ---------------------------------- | ------ |
+| 1    | Nhập phone 9 chữ số (ví dụ: `091234567`) | Mobile hiển thị thông báo lỗi và không cho lưu | Mobile hiển thị thông báo lỗi      | ☐      |
+| 2    | Nhấn "Lưu" sau khi có thông báo lỗi      | Hệ thống từ chối lưu vì phone không hợp lệ     | Phone 9 chữ số được lưu thành công | ❌     |
 
 ---
 
@@ -32,13 +32,12 @@ Giao diện Mobile cho phép người dùng cập nhật số điện thoại v�
 
 1. Đăng nhập vào ứng dụng Mobile với tài khoản user.
 2. Truy cập trang "Hồ sơ cá nhân" / "Cập nhật thông tin".
-3. Nhập số điện thoại với 9 chữ số (ví dụ: `091234567`).
+3. Nhập số điện thoại dưới 9 chữ số (ví dụ: `09123456`).
 4. Quan sát:
    - Mobile hiển thị thông báo lỗi → **Đúng** (validation client hoạt động).
-5. Nhấn nút "Lưu" / "Cập nhật".
+5. Nhấn nút "OK".
 6. Quan sát kết quả:
-   - Nếu hệ thống báo lỗi và không lưu → Không có bug.
-   - Nếu hệ thống lưu thành công số 9 chữ số → **Bug xác nhận**.
+   -Nhập lại sđt, bugs ở đây là lệch số được nhập vào so với spec.
 
 **Môi trường test:** Mobile (Android/iOS), công cụ: Manual testing
 
@@ -48,7 +47,7 @@ Giao diện Mobile cho phép người dùng cập nhật số điện thoại v�
 
 > Đây là suy luận **functional black-box** dựa trên quan sát hành vi người dùng trên giao diện Mobile.
 
-- **Giả thuyết:** Mobile có validation client-side cho phone (hiển thị lỗi khi nhập 9 chữ số), nhưng khi người dùng nhấn "Lưu", request vẫn được gửi lên backend mà không kiểm tra lại. Backend nhận request và lưu phone 9 chữ số (vì backend không validate phone — đã xác nhận qua FR-04-BUG-002).
+- **Giả thuyết:** Khi nhập dưới 9 chữ số xẻ xuất hiện một bảng thông báo là số lượng số lầ từ 9 - 10 (Thay vì 10 - 11 như trong spec).
 - **Mức độ tin cậy:** `Cao` — hành vi quan sát được qua các bước trên Mobile.
 - **Test case bổ sung cần chạy để xác nhận:**
   - Thử nhập phone 9 chữ số + nhấn Lưu → xem kết quả.
@@ -69,12 +68,13 @@ Giao diện Mobile cho phép người dùng cập nhật số điện thoại v�
 
 ## 7. Cross-Reference
 
-| Tầng test | Bug ID | Mô tả | Ghi chú |
-|---|---|---|---|
-| **Domain Testing (API)** | FR-04-BUG-002 | Backend không validate `phone` — chấp nhận phone 9 số | Root cause gốc |
+| Tầng test                       | Bug ID             | Mô tả                                                   | Ghi chú                             |
+| ------------------------------- | ------------------ | ------------------------------------------------------- | ----------------------------------- |
+| **Domain Testing (API)**        | FR-04-BUG-002      | Backend không validate `phone` — chấp nhận phone 9 số   | Root cause gốc                      |
 | **Functional Testing (Mobile)** | FR-04-FUNC-BUG-001 | Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi | Biểu hiện của BUG-002 ở tầng Mobile |
 
 > **Khi fix:** Cần fix **cả 2 tầng** để đảm bảo:
+>
 > - **Backend (BUG-002):** Validate `phone` phải 10–11 chữ số, bắt đầu bằng 0.
 > - **Mobile (FUNC-BUG-001):** Kiểm tra lại phone trước khi gửi request, không chỉ hiển thị lỗi.
 

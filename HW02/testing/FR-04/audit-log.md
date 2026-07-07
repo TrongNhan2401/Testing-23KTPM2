@@ -39,8 +39,7 @@
   - `domain-testing-agent-blackbox.md` — Bước 7
   - `templates/github_issue_template.md`
 - **Output/kết luận của bước:**
-
-  **Tổng kết test sau khi user chạy Postman:**
+**Tổng kết test sau khi user chạy Postman:**
   - A (Authorization): 3/3 PASS ✅
   - B (Name validation): 1/5 PASS, 4 FAIL ❌
   - C (Phone validation): 3/10 PASS, 7 FAIL ❌
@@ -48,17 +47,13 @@
   - E (Security): 1/2 PASS, 1 FAIL ❌
   - BV (Boundary): 2/7 PASS, 5 FAIL ❌
   - **Tổng: 14 PASS / 17 FAIL trên 31 test case (45.2%)**
-
   **5 Bug phát hiện:**
-
   1. **FR-04-BUG-001** (Critical): Backend không validate `name` — chấp nhận name rỗng, space, null, và >255 ký tự
   2. **FR-04-BUG-002** (Critical): Backend không validate `phone` — chấp nhận phone không đúng định dạng (9 số, 12+ số, không có 0, có chữ, rỗng, null)
   3. **FR-04-BUG-003** (Critical): Backend cho phép thay đổi `role` — vi phạm nghiêm trọng FR-04 Access Control
   4. **FR-04-BUG-004** (Medium): Backend không validate `shipping_address` rỗng/null
   5. **FR-04-BUG-005** (High): Backend không xử lý `phone` — lưu giá trị mà không normalize
-
   **Bug nghiêm trọng nhất:** FR-04-BUG-003 — User có thể tự nâng quyền thành admin (Privilege Escalation)
-
   **Các file đã tạo/cập nhật:**
   - `testing/FR-04/report.md` — cập nhật Section 6, 7, 8 với kết quả phân tích
   - `testing/FR-04/issues/FR-04-BUG-001.md`
@@ -68,8 +63,7 @@
   - `testing/FR-04/issues/FR-04-BUG-005.md`
   - `testing/FR-04/audit-log.md` — Entry #2
   - `audit-log-full.md` — Entry #17
-
-- **Human review / correction:** *(để trống cho đến khi người dùng review)*
+- **Human review / correction:** *Loại bỏ FR-04-BUG-005 vì đó chỉ là quá trình thăm dò, trong spec không miêu tả rõ*
 
 ---
 
@@ -84,21 +78,17 @@
   - `testing/FR-04/report.md` — Domain Testing Report
   - `testing/FR-04/issues/FR-04-BUG-002.md` — Backend phone validation bug
 - **Output/kết luận của bước:**
-
-  **Phân tích functional bug:**
+**Phân tích functional bug:**
   - User phát hiện: Mobile hiển thị lỗi khi nhập phone < 9 chữ số.
   - Bug: Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi (nếu nhấn Lưu).
   - Root cause: Kết hợp với FR-04-BUG-002 — Backend không validate phone.
   - Cross-reference: FR-04-FUNC-BUG-001 ↔ FR-04-BUG-002.
-
   **Bug đã tạo:**
   - **FR-04-FUNC-BUG-001** (High): Mobile cho phép lưu phone 9 chữ số sau khi hiển thị lỗi.
-
   **Các file đã tạo/cập nhật:**
   - `testing/FR-04/issues/FR-04-FUNC-BUG-001.md` — Functional Bug Mobile
   - `testing/FR-04/report.md` — bổ sung Section 8.2 (Functional Bugs), 8.3 (Cross-Reference), 8.4 (Tổng hợp)
   - `testing/FR-04/audit-log.md` — Entry #3
   - `audit-log-full.md` — Entry #18
-
-- **Human review / correction:** *(để trống cho đến khi người dùng review)*
+- **Human review / correction:** *Không đồng ý với phần giả thuyết hành vi và tiến hành sửa lại*
 
