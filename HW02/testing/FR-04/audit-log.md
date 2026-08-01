@@ -90,5 +90,5 @@
   - `testing/FR-04/report.md` — bổ sung Section 8.2 (Functional Bugs), 8.3 (Cross-Reference), 8.4 (Tổng hợp)
   - `testing/FR-04/audit-log.md` — Entry #3
   - `audit-log-full.md` — Entry #18
-- **Human review / correction:** *Không đồng ý với phần giả thuyết hành vi và tiến hành sửa lại*
+- **Human review / correction:** *Không đồng ý với phần giả thuyết hành vi và đã tiến hành sửa lại*
 
