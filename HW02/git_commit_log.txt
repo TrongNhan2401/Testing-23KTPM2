@@ -1,0 +1,165 @@
+git log --all --graph --decorate
+* commit f4d5063847138b4f65a8e56ed27a85e7f9866d92 (HEAD -> HW02, origin/HW02)
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 07:22:43 2026 +0700
+| 
+|     Update docs functional testing bug 001
+| 
+* commit 826acc2f2a68b7136917b21742038fa1b67f70d2
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 06:52:20 2026 +0700
+|
+|     docs: Functional testing FR-04 Mobile
+|
+* commit 7b6f1bcf807a403ad4f45a7dd1d5f20fd1083373
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 05:38:58 2026 +0700
+|
+|     issues for FR-04
+|
+* commit da9588f5368f4a71ca1d73682e644435187e9303
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 05:23:04 2026 +0700
+|
+|     run all test case in FR-04
+|
+* commit 533c25200e25748b75b96016b950fc3dacf5c72a
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 01:26:55 2026 +0700
+|
+|     Functional testing for FR-16
+|
+* commit ed89717d89462b8cc7bba649511d58f2c60cff13
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Tue Jul 7 00:53:32 2026 +0700
+|
+|     issues for FR-16
+|
+* commit 45b76fe890d30327141020efc5642d4a7d4414b1
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 21:33:40 2026 +0700
+|
+|     docs: audit-log, report for FR-16, run all test case
+|
+* commit a53de4578f741009426dc055495483de43bb2d3e
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 16:27:57 2026 +0700
+|
+|     docs: functional testing
+|
+* commit 9041c4732d6b7844a459a73adf7283b7e70e875d
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 16:08:42 2026 +0700
+|
+|     run step 7 in domain testing skill and create issues for domain testing
+|
+* commit 5cf310fac781c577b769cadc5e842f75a8cf066a
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 15:39:20 2026 +0700
+|
+|     run test case in groud D and BVA
+|
+* commit b3bca72d6c9ac8a0d8e953d23997b8e46f44e3a5
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 11:40:19 2026 +0700
+|
+|     docs: audit log and report for FR-08 and run test case group A, B, C
+|
+* commit 24b22bc872c377d68e11fd3307ddb5a54dc97b7e
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 00:56:05 2026 +0700
+|
+|     docs functional testing isusses
+|
+* commit 20bc93044da84b07d7aa78b888651234cf6ce011
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Mon Jul 6 00:22:44 2026 +0700
+|
+|     docs: update issues and report
+|
+* commit a8660a8c63fa287eaacb9a7af4b3ea8ca7c619c3
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sun Jul 5 22:23:52 2026 +0700
+|
+|     docs: delete functional templete, generate and describe issues for FR-02, write audit-log full for chat and comment for step 7 in domain skill
+|
+* commit 291e06c6eaedf332f712677404f0b5556c0363c3
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sun Jul 5 19:18:33 2026 +0700
+|
+|     docs: audit_log_full, functional_testing, github_issue templete and test: test BVA test case
+|
+* commit 50053202eac99aa0c3a25d29fcaf453f7723e8c5
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sun Jul 5 17:07:58 2026 +0700
+|
+|     FR-02: audit-log review step 1, 2, 3, 4 and run test case group A, B, C, D in session 3
+|
+* commit a715633e9f202075df67dbfd98c2c887f5f0ee9a
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sat Jul 4 23:27:03 2026 +0700
+|
+|     docs: update for black-box technical
+|
+* commit e7d105ca31c143d514d5b1b6d2301bb2c3d1a034
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sat Jul 4 22:50:37 2026 +0700
+|
+|     setup: eshop-sut
+|
+* commit 583edced13e8b8743c3ad86ada0472a20e7a2208
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Sat Jul 4 22:35:35 2026 +0700
+|
+|     docs: domain testing agent skill, audit log templete and report templete        
+|
+* commit 5c4e041c5d6171c9b121a5dd4bf58716d4c5ea76 (origin/main, main)
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Fri Jul 3 23:10:38 2026 +0700
+|
+|     feat: bug-reporting, script for testing functional, update context and domain testing technical for agent
+|
+* commit d9a773e2b3bfe8685458153d96969ccf743da78b
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Thu Jul 2 23:56:25 2026 +0700
+|
+|     Testing: AI domain testing, xác định bug
+|
+* commit 655d91f14ef099da68f641a8e2608555da7f81a2
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Thu Jul 2 17:12:07 2026 +0700
+|
+|     feat: FR-02 Step 1 — Input Specification for Login and account lockout
+|
+|     - Add audit log entry for step 1 of FR-02 domain testing
+|     - Document 2 inputs: email, password with constraints from source code
+|     - Document 4 output statuses: 200, 401, 403, 500
+|     - Document lockout rule: login_attempts +2 per failed attempt, lock at >= 3     
+|
+|     Co-authored-by: Cursor <cursoragent@cursor.com>
+|
+* commit 963395f46f28fd3024fef154ae34c969a9d5fb74
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Thu Jul 2 15:21:45 2026 +0700
+|
+|     feat: Add audit-log.mdc
+| 
+* commit 2a79d95d5413914cbbb130c65378efef2bd32c06
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Wed Jul 1 22:27:22 2026 +0700
+|
+|     feat: domain-testing.mdc for agent
+|
+* commit 8ec95e4456a0e4b09bfd1a96c477f2ed3e40a40f
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Fri Jun 19 18:51:45 2026 +0700
+|
+|     Eshop setup
+|
+* commit 8c989129c3cd7b3b1607e611a51b4f0099955a18
+| Author: Tran Pham Trong Nhan <nhantm2401@gmail.com>
+| Date:   Fri Jun 19 18:49:41 2026 +0700
+|
+|     Eshop Project
+|
+END
