@@ -27,16 +27,19 @@ Report trong các bài tập/báo cáo yêu cầu khai báo đầy đủ prompt 
 ## Quy trình
 
 ### Bước 1 — Xác định file log đích
+
 Nếu người dùng chưa nói rõ, hỏi đường dẫn file log. Nếu file đã tồn tại, đọc nội dung hiện có
 để append tiếp (không ghi đè, không xóa log cũ).
 
 ### Bước 2 — Lấy nguyên văn prompt và output cần log
+
 Copy **nguyên văn** — không diễn giải lại, không tóm tắt, không rút gọn output dù dài. Nếu
 output có bảng, giữ nguyên toàn bộ bảng.
 
 ### Bước 3 — Append entry mới vào cuối file log theo format bên dưới
 
 ### Bước 4 — Xác nhận với người dùng
+
 Báo lại đã ghi entry số mấy, vào file nào, để người dùng có thể mở kiểm tra lại.
 
 ## Nguyên tắc bắt buộc
@@ -62,5 +65,8 @@ Báo lại đã ghi entry số mấy, vào file nào, để người dùng có t
 **Output của AI (nguyên văn, đầy đủ):**
 
 [toàn bộ output — copy nguyên văn, không rút gọn, giữ nguyên bảng/định dạng]
+
+**Mục đích và nhận xét** 
+[không điền phần này, user sẽ tự điền]
 ---
 ```
