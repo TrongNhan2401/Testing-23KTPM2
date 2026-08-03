@@ -1010,3 +1010,111 @@ File `HW03/Bug reports/A2_bugs.md` đã được cập nhật với các thay đ
 Đã review và đồng ý với output của Agent. tiến hành việc thay đổi và cập nhật cho phần A3
 ```
 
+### AI Interaction Log #14
+
+- Công cụ AI: Claude
+- Thời gian: 2026-08-03 15:05
+
+**Prompt của người dùng (nguyên văn):**
+
+```
+@HW03/Bug reports/A3_bugs.md Tôi đã tiến hành bổ sung thêm một số ảnh cho phần A3: Panel cấu hình Registration & Roles — Max Slots / Waitlist Để đảm bảo phần nào là N/A phần nào là Not verified để tôi giảm thời gian review hơn.
+```
+
+**Output của AI (nguyên văn, đầy đủ):**
+
+```
+Đã đọc file A3_bugs.md và 11 ảnh A3 (6 ảnh cũ + 5 ảnh mới: A3_allow_guest.png, A3_allow_lecturer.png, A3_allow_student.png, A3_allow_waitlist.png, A3_public_event.png).
+
+## Tổng hợp ảnh mới
+
+### A3_allow_guest.png
+- Toggle "Allow guest registration" ON
+- Hiển thị input "Maximum slots for guest" với giá trị 1000
+- Không có toast hiện ra khi bật toggle
+
+### A3_allow_lecturer.png
+- 3 roles: Học sinh (500), Sinh viên (1000), Giảng viên (300)
+- Toggle "Allow waitlist registration" ON → input "Maximum waitlist slots" (100)
+- Toggle "Allow team registration" ON
+- Toggle "Allow guest registration" OFF
+- Nút X (Xóa) màu xám/đỏ trên mỗi role
+
+### A3_allow_student.png
+- Toggle "Allow student registration" OFF (nút có màu xám)
+
+### A3_allow_waitlist.png
+- Toggle "Allow waitlist registration" ON
+- Hiển thị input "Maximum waitlist slots" với giá trị 100
+- Toggle ON có highlight rõ ràng
+
+### A3_public_event.png
+- Privacy: "Public event" selected
+- 3 roles, Waitlist ON, Guest OFF
+- Không có dialog xác nhận khi xóa role
+
+## Phân loại N/A vs Not Verified — Xác nhận từ User
+
+Đã hỏi user qua AskQuestion và nhận được xác nhận:
+
+### User xác nhận:
+
+1. **Toast (IA04-01, IA04-02, IA04-03)**: Chuyển sang N/A vì panel không có tính năng toast
+2. **IA04-07 (Active/Pressed)**: Chuyển sang Passed vì ảnh cho thấy toggle ON có hiệu ứng active (background xanh, icon checkmark)
+3. **IA01-06 (Empty State)**: Giữ Passed vì khi toggle OFF, các nút có màu xám
+4. **IA01-08 (Responsive)**: Failed — user đã bổ sung ảnh mới
+5. **IA02-04/05/06/07/10/11/12**: N/A — panel cấu hình Registration chỉ là config, không phải full form
+6. **IA03 (tất cả)**: N/A — ảnh crop không thấy, panel không có filter/search/pagination/drag-drop
+7. **IA04-08 (Cursor)**: Passed
+8. **IA04-10/11**: N/A
+9. **IA01-04**: N/A — panel không có i18n riêng
+
+## Thay đổi trong file A3_bugs.md
+
+### 1. Bảng chi tiết
+
+Đã cập nhật trạng thái cho 30+ mục:
+- Chuyển 20 mục từ Not Verified → N/A
+- Chuyển IA04-01/02/03 → N/A (Toast)
+- Chuyển IA04-07 → Passed (Active/Pressed)
+- Giữ IA01-06 → Passed (Empty State)
+- Chuyển IA01-04 → N/A
+- Giữ IA02-04/05/06/07/10/11/12 → N/A
+- Giữ IA03 (tất cả) → N/A
+- Giữ IA04-08 → Passed
+- Giữ IA04-10/11 → N/A
+
+### 2. Bảng tổng hợp
+
+| Chỉ số | Giá trị |
+| --- | --- |
+| Passed | 17 |
+| Failed | 5 |
+| N/A | 35 |
+| Not Verified | 0 |
+| Tổng | 57 |
+
+### 3. Bug Report
+
+- Giữ nguyên 4 bug cũ (Bug #A3-001 đến #A3-004)
+- Thêm Bug #A3-005 (Responsive mobile)
+
+### 4. Lưu ý cuối
+
+Bổ sung nguyên tắc phân loại N/A: "Panel cấu hình Registration chỉ là config, không phải full form/page. Nhiều mục không áp dụng được cho panel này → N/A thay vì Not Verified."
+
+## File hoàn chỉnh
+
+File `HW03/Bug reports/A3_bugs.md` đã được cập nhật với:
+- 57/57 mục đã verified (100%)
+- 5 bug Failed (2 High + 1 Medium + 2 Low)
+- 17 Passed, 35 N/A, 0 Not Verified
+- Bug Report đầy đủ với 5 bug
+```
+
+**Mục đích và nhận xét**
+
+```
+Đã review và bỏ bug A3-003 Là bug về placeholder và text hiển thị khá rõ ràng nên phải là passed.
+```
+
