@@ -1118,3 +1118,75 @@ File `HW03/Bug reports/A3_bugs.md` đã được cập nhật với:
 Đã review và bỏ bug A3-003 Là bug về placeholder và text hiển thị khá rõ ràng nên phải là passed.
 ```
 
+### AI Interaction Log #15
+
+- Công cụ AI: Claude
+- Thời gian: 2026-08-03 16:35
+
+**Prompt của người dùng (nguyên văn):**
+
+```
+Bây giờ bạn hãy tổng hợp các bugs của A1, A2, A3 sau đó tạo cho tôi thành 1 file bugs task 1 hoàn chỉnh
+```
+
+**Output của AI (nguyên văn, đầy đủ):**
+
+```
+Đã đọc 3 file bug reports: A1_bugs.md (209 lines), A2_bugs.md (190 lines), A3_bugs.md (159 lines).
+
+## Tổng hợp số liệu
+
+| Chỉ số | A1 | A2 | A3 | Tổng |
+| --- | ---: | ---: | ---: | ---: |
+| Tổng số mục | 57 | 57 | 57 | 171 |
+| Passed | 27 | 29 | 17 | 73 |
+| Failed | 7 | 4 | 5 | 16 |
+| N/A | 23 | 24 | 35 | 82 |
+| Not Verified | 0 | 0 | 0 | 0 |
+
+## Bug Reports tổng hợp
+
+### A1: Danh sách Events (7 bug)
+- Bug #A1-001: Responsive mobile — sidebar đúp (High)
+- Bug #A1-002: Bảng hiển thị quá nhiều cột (Medium)
+- Bug #A1-003: Thiếu Export Excel/CSV (Medium)
+- Bug #A1-004: Search box/Filter thiếu Label (Medium)
+- Bug #A1-005: Search trả kết quả không khớp (High)
+- Bug #A1-006: Empty State không thân thiện (Medium)
+- Bug #A1-007: Không hỗ trợ Deep Linking (High)
+
+### A2: Modal Chỉnh sửa Event (4 bug)
+- Bug #A2-001: Dấu `*` màu đen thay vì đỏ (Medium)
+- Bug #A2-002: Upload thiếu thông số kỹ thuật (Medium)
+- Bug #A2-003: Responsive mobile — sidebar đúp (High)
+- Bug #A2-004: Không thể nhấn Enter submit (High)
+
+### A3: Panel Cấu hình Registration (5 bug)
+- Bug #A3-001: Input thiếu label/hướng dẫn (Low)
+- Bug #A3-002: Thiếu dấu `*` bắt buộc (Medium)
+- Bug #A3-003: Placeholder không cung cấp ví dụ (Low)
+- Bug #A3-004: Xóa role không có confirmation (High)
+- Bug #A3-005: Responsive mobile (High)
+
+## Bug Reports Cross-cutting (2 bug)
+- Bug #C-001: Sidebar đúp trên Mobile (A1, A2, A3) — High
+- Bug #C-002: Dấu `*` màu đen (A2, A3) — Medium
+
+## File hoàn chỉnh
+
+Đã tạo file `HW03/Bug reports/Task1_BugReports.md` với:
+- Mục lục đầy đủ
+- Tổng quan (phạm vi, checklist, quá trình review)
+- Tổng hợp toàn cục (số liệu, phân tích theo khía cạnh, phân bố bug)
+- Bug Reports theo từng màn hình (A1, A2, A3)
+- Bug Reports Cross-cutting
+- Kết luận và Khuyến nghị (ưu tiên sửa, điểm tích cực)
+- Phụ lục (bảng chi tiết, thư mục ảnh, lịch sử thay đổi)
+```
+
+**Mục đích và nhận xét**
+
+```
+[không điền phần này, user sẽ tự điền]
+```
+
