@@ -29,32 +29,38 @@
 
 Testing tập trung vào giao diện Admin của hệ thống Quản lý Sự kiện, bao gồm 3 màn hình chính:
 
-| Mã | Màn hình | Mô tả |
-| --- | --- | --- |
-| **A1** | Danh sách Events | Bảng danh sách sự kiện với bộ lọc trạng thái, search, phân trang, và chấm thông báo |
-| **A2** | Modal Chỉnh sửa Event | Form chỉnh sửa sự kiện với 5 tab: Thông tin cơ bản, Ngày giờ, Địa điểm, Danh mục, Tùy chọn bổ sung |
-| **A3** | Panel Cấu hình Registration | Cấu hình Roles, Max Slots, Waitlist, Vai trò phụ cho đăng ký sự kiện |
+
+| Mã     | Màn hình                    | Mô tả                                                                                              |
+| ------ | --------------------------- | -------------------------------------------------------------------------------------------------- |
+| **A1** | Danh sách Events            | Bảng danh sách sự kiện với bộ lọc trạng thái, search, phân trang, và chấm thông báo                |
+| **A2** | Modal Chỉnh sửa Event       | Form chỉnh sửa sự kiện với 5 tab: Thông tin cơ bản, Ngày giờ, Địa điểm, Danh mục, Tùy chọn bổ sung |
+| **A3** | Panel Cấu hình Registration | Cấu hình Roles, Max Slots, Waitlist, Vai trò phụ cho đăng ký sự kiện                               |
+
 
 ### Checklist sử dụng
 
 Sử dụng checklist `Shared_GUI_Checklist.md` với **57 mục kiểm tra** chia thành 4 khía cạnh:
 
-| Khía cạnh | Mô tả |
-| --- | --- |
-| **IA-01: Chuẩn UI** | Typography, màu sắc, tương phản, i18n, empty state, responsive, icon |
-| **IA-02: Forms** | Label, placeholder, validation, upload, rich-text, input defaults |
+
+| Khía cạnh             | Mô tả                                                                    |
+| --------------------- | ------------------------------------------------------------------------ |
+| **IA-01: Chuẩn UI**   | Typography, màu sắc, tương phản, i18n, empty state, responsive, icon     |
+| **IA-02: Forms**      | Label, placeholder, validation, upload, rich-text, input defaults        |
 | **IA-03: Navigation** | Sidebar, breadcrumb, pagination, filter, search, deep linking, drag-drop |
-| **IA-04: Feedback** | Toast, dialog, hover/active, tooltip, progress, modality, real-time |
+| **IA-04: Feedback**   | Toast, dialog, hover/active, tooltip, progress, modality, real-time      |
+
 
 ### Quá trình review
 
-| Vòng | Thời gian | Người thực hiện | Kết quả |
-| --- | --- | --- | --- |
-| Lần 1 | 2026-08-01 | Agent (Claude) | Chạy checklist lần đầu |
-| Vòng 1 | 2026-08-02 (sáng) | User | Review, bổ sung ảnh |
-| Vòng 2 | 2026-08-02 (sáng) | Agent | Cập nhật theo review |
-| Vòng 3 | 2026-08-02 (trưa) | User | Review lần 2 |
-| Vòng 4 | 2026-08-03 | User + Agent | Tổng hợp A1, A2, A3 |
+
+| Vòng   | Thời gian         | Người thực hiện | Kết quả                |
+| ------ | ----------------- | --------------- | ---------------------- |
+| Lần 1  | 2026-08-01        | Agent (Claude)  | Chạy checklist lần đầu |
+| Vòng 1 | 2026-08-02 (sáng) | User            | Review, bổ sung ảnh    |
+| Vòng 2 | 2026-08-02 (sáng) | Agent           | Cập nhật theo review   |
+| Vòng 3 | 2026-08-02 (trưa) | User            | Review lần 2           |
+| Vòng 4 | 2026-08-03        | User + Agent    | Tổng hợp A1, A2, A3    |
+
 
 ---
 
@@ -62,42 +68,50 @@ Sử dụng checklist `Shared_GUI_Checklist.md` với **57 mục kiểm tra** ch
 
 ### Số liệu tổng hợp
 
-| Chỉ số | A1 | A2 | A3 | **Tổng** |
-| --- | ---: | ---: | ---: | ---: |
-| Tổng số mục | 57 | 57 | 57 | **171** |
-| Passed | 27 | 29 | 17 | **73** |
-| Failed | 7 | 4 | 5 | **16** |
-| N/A | 23 | 24 | 35 | **82** |
-| Not Verified | 0 | 0 | 0 | **0** |
+
+| Chỉ số         | A1   | A2   | A3   | **Tổng** |
+| -------------- | ---- | ---- | ---- | -------- |
+| Tổng số mục    | 57   | 57   | 57   | **171**  |
+| Passed         | 27   | 29   | 17   | **73**   |
+| Failed         | 7    | 4    | 5    | **16**   |
+| N/A            | 23   | 24   | 35   | **82**   |
+| Not Verified   | 0    | 0    | 0    | **0**    |
 | Tỷ lệ verified | 100% | 100% | 100% | **100%** |
+
 
 ### Phân tích theo khía cạnh
 
-| Khía cạnh | Tổng | Passed | Failed | N/A |
-| --- | ---: | ---: | ---: | ---: |
-| IA-01: Chuẩn UI | 45 | 30 | 5 | 10 |
-| IA-02: Forms | 45 | 12 | 7 | 26 |
-| IA-03: Navigation | 33 | 8 | 3 | 22 |
-| IA-04: Feedback | 48 | 23 | 1 | 24 |
-| **Tổng** | **171** | **73** | **16** | **82** |
+
+| Khía cạnh         | Tổng    | Passed | Failed | N/A    |
+| ----------------- | ------- | ------ | ------ | ------ |
+| IA-01: Chuẩn UI   | 45      | 30     | 5      | 10     |
+| IA-02: Forms      | 45      | 12     | 7      | 26     |
+| IA-03: Navigation | 33      | 8      | 3      | 22     |
+| IA-04: Feedback   | 48      | 23     | 1      | 24     |
+| **Tổng**          | **171** | **73** | **16** | **82** |
+
 
 ### Phân bố Bug theo mức độ nghiêm trọng
 
-| Mức độ | Số lượng | Mô tả |
-| --- | ---: | --- |
-| **Critical** | 0 | Không có bug nghiêm trọng ảnh hưởng đến toàn hệ thống |
-| **High** | 6 | Ảnh hưởng đáng kể đến usability cốt lõi |
-| **Medium** | 6 | Giảm usability nhưng không ngăn cản sử dụng |
-| **Low** | 4 | Giảm trải nghiệm nhẹ |
+
+| Mức độ       | Số lượng | Mô tả                                                 |
+| ------------ | -------- | ----------------------------------------------------- |
+| **Critical** | 0        | Không có bug nghiêm trọng ảnh hưởng đến toàn hệ thống |
+| **High**     | 6        | Ảnh hưởng đáng kể đến usability cốt lõi               |
+| **Medium**   | 6        | Giảm usability nhưng không ngăn cản sử dụng           |
+| **Low**      | 4        | Giảm trải nghiệm nhẹ                                  |
+
 
 ### Phân bố Bug theo màn hình
 
-| Màn hình | High | Medium | Low | Tổng |
-| --- | ---: | ---: | ---: | ---: |
-| A1: Danh sách Events | 4 | 3 | 0 | **7** |
-| A2: Modal Chỉnh sửa | 2 | 2 | 0 | **4** |
-| A3: Panel Registration | 2 | 1 | 2 | **5** |
-| **Tổng** | **8** | **6** | **2** | **16** |
+
+| Màn hình               | High  | Medium | Low   | Tổng   |
+| ---------------------- | ----- | ------ | ----- | ------ |
+| A1: Danh sách Events   | 4     | 3      | 0     | **7**  |
+| A2: Modal Chỉnh sửa    | 2     | 2      | 0     | **4**  |
+| A3: Panel Registration | 2     | 1      | 2     | **5**  |
+| **Tổng**               | **8** | **6**  | **2** | **16** |
+
 
 ---
 
@@ -241,21 +255,7 @@ Sử dụng checklist `Shared_GUI_Checklist.md` với **57 mục kiểm tra** ch
 - **Bằng chứng:** `A3_default.png`, `A3_student_roles.png`, `A3_add_role.png`
 - **Đề xuất:** Thêm dấu `*` đỏ cho tất cả trường bắt buộc. Nếu một số trường thực sự optional (ví dụ: vai trò phụ), cần ghi rõ "(tùy chọn)" sau label.
 
-### Bug #A3-003: Placeholder cho input không cung cấp ví dụ định dạng hữu ích
-
-- **Mã ID:** IA02-03
-- **Mức độ:** Low
-- **Mô tả:**
-  - Input "Vai trò phụ" có placeholder "BCH khoa, BTC..." nhưng KHÔNG cho biết định dạng phân cách giữa các vai trò.
-  - Input "Max slots" có placeholder "500" — đây là giá trị mặc định chứ không phải ví dụ định dạng.
-  - Input tên role KHÔNG có placeholder cho role mới (ví dụ: "VD: Giảng viên, Cựu sinh viên").
-- **Bằng chứng:** `A3_default.png`, `A3_student_roles.png`, `A3_add_role.png`
-- **Đề xuất:**
-  - Placeholder cho "Vai trò phụ": "BCH khoa, BTC, Tình nguyện viên (phân cách bằng dấu phẩy)"
-  - Placeholder cho Max slots: "VD: 500" thay vì chỉ "500"
-  - Placeholder cho tên role: "VD: Giảng viên, Cựu sinh viên"
-
-### Bug #A3-004: Xóa role KHÔNG có dialog xác nhận — nguy cơ xóa nhầm
+### Bug #A3-003: Xóa role KHÔNG có dialog xác nhận — nguy cơ xóa nhầm
 
 - **Mã ID:** IA04-04
 - **Mức độ:** High
@@ -267,12 +267,12 @@ Sử dụng checklist `Shared_GUI_Checklist.md` với **57 mục kiểm tra** ch
   - Nút "Hủy" (màu trắng) và nút "Xóa" (màu đỏ)
   - Có overlay mờ phía sau để đảm bảo modality
 
-### Bug #A3-005: Giao diện không responsive trên Mobile
+### Bug #A3-004: Giao diện không responsive trên Mobile
 
 - **Mã ID:** IA01-08
 - **Mức độ:** High
 - **Mô tả:** Panel cấu hình Registration không hiển thị tốt trên thiết bị mobile.
-- **Bằng chứng:** (user đã bổ sung ảnh)
+- **Bằng chứng:** A3_role_mobile.jpg
 - **Đề xuất:** Thiết kế lại responsive cho panel cấu hình trên mobile.
 
 ---
@@ -308,25 +308,29 @@ Các bug sau xuất hiện ở nhiều màn hình và cần được sửa đồ
 
 ### Tổng kết số liệu
 
-| Chỉ số | Giá trị |
-| --- | --- |
-| Tổng số mục tested | 171 |
-| Tổng Passed | 73 (42.7%) |
-| Tổng Failed (Bug) | 16 (9.4%) |
-| Tổng N/A | 82 (47.9%) |
-| Tổng Not Verified | 0 (0%) |
+
+| Chỉ số             | Giá trị    |
+| ------------------ | ---------- |
+| Tổng số mục tested | 171        |
+| Tổng Passed        | 73 (42.7%) |
+| Tổng Failed (Bug)  | 16 (9.4%)  |
+| Tổng N/A           | 82 (47.9%) |
+| Tổng Not Verified  | 0 (0%)     |
+
 
 ### Bug cần ưu tiên sửa (theo thứ tự)
 
-| Ưu tiên | Bug | Mức độ | Mô tả |
-| --- | --- | --- | --- |
-| **1** | #A1-001, #A2-003, #A3-005, #C-001 | High | Responsive mobile — sidebar đúp |
-| **2** | #A1-005 | High | Search trả kết quả sai |
-| **3** | #A1-007 | High | Không hỗ trợ Deep Linking |
-| **4** | #A2-004 | High | Không thể nhấn Enter submit |
-| **5** | #A3-004 | High | Xóa role không có confirmation |
-| **6** | #A1-002, #A1-003, #A1-004, #A1-006, #A2-001, #A2-002, #A3-002 | Medium | Usability/Accessibility |
-| **7** | #A3-001, #A3-003 | Low | Placeholder/Label |
+
+| Ưu tiên | Bug                                                           | Mức độ | Mô tả                           |
+| ------- | ------------------------------------------------------------- | ------ | ------------------------------- |
+| **1**   | #A1-001, #A2-003, #A3-005, #C-001                             | High   | Responsive mobile — sidebar đúp |
+| **2**   | #A1-005                                                       | High   | Search trả kết quả sai          |
+| **3**   | #A1-007                                                       | High   | Không hỗ trợ Deep Linking       |
+| **4**   | #A2-004                                                       | High   | Không thể nhấn Enter submit     |
+| **5**   | #A3-004                                                       | High   | Xóa role không có confirmation  |
+| **6**   | #A1-002, #A1-003, #A1-004, #A1-006, #A2-001, #A2-002, #A3-002 | Medium | Usability/Accessibility         |
+| **7**   | #A3-001, #A3-003                                              | Low    | Placeholder/Label               |
+
 
 ### Điểm tích cực của hệ thống
 
@@ -354,26 +358,31 @@ Các bug sau xuất hiện ở nhiều màn hình và cần được sửa đồ
 ### A. Bảng chi tiết checklist (tham khảo)
 
 Bảng chi tiết 171 mục kiểm tra cho 3 màn hình (A1, A2, A3) đã được lưu trong các file riêng:
+
 - `HW03/Bug reports/A1_bugs.md`
 - `HW03/Bug reports/A2_bugs.md`
 - `HW03/Bug reports/A3_bugs.md`
 
 ### B. Thư mục ảnh bằng chứng
 
-| Màn hình | Thư mục | Số lượng ảnh |
-| --- | --- | ---: |
-| A1 | `HW03/Screenshots/A1/` | ~15 |
-| A2 | `HW03/Screenshots/A2/` | ~20 |
-| A3 | `HW03/Screenshots/A3/` | ~11 |
+
+| Màn hình | Thư mục                | Số lượng ảnh |
+| -------- | ---------------------- | ------------ |
+| A1       | `HW03/Screenshots/A1/` | ~15          |
+| A2       | `HW03/Screenshots/A2/` | ~20          |
+| A3       | `HW03/Screenshots/A3/` | ~11          |
+
 
 ### C. Lịch sử thay đổi
 
-| Ngày | Phiên bản | Mô tả |
-| --- | --- | --- |
-| 2026-08-01 | v1.0 | Chạy checklist lần đầu (Agent) |
-| 2026-08-02 | v2.0 | User review vòng 1, bổ sung ảnh |
-| 2026-08-02 | v3.0 | User review vòng 2 |
-| 2026-08-03 | v4.0 | Tổng hợp A1, A2, A3 thành file hoàn chỉnh |
+
+| Ngày       | Phiên bản | Mô tả                                     |
+| ---------- | --------- | ----------------------------------------- |
+| 2026-08-01 | v1.0      | Chạy checklist lần đầu (Agent)            |
+| 2026-08-02 | v2.0      | User review vòng 1, bổ sung ảnh           |
+| 2026-08-02 | v3.0      | User review vòng 2                        |
+| 2026-08-03 | v4.0      | Tổng hợp A1, A2, A3 thành file hoàn chỉnh |
+
 
 ---
 
