@@ -313,13 +313,13 @@ Các bug sau xuất hiện ở nhiều màn hình và cần được sửa đồ
 
 | Ưu tiên | Bug                                                           | Mức độ | Mô tả                           |
 | ------- | ------------------------------------------------------------- | ------ | ------------------------------- |
-| **1**   | #A1-001, #A2-003, #A3-005, #C-001                             | High   | Responsive mobile — sidebar đúp |
+| **1**   | #A1-001, #A2-003, #A3-004, #C-001                             | High   | Responsive mobile — sidebar đúp |
 | **2**   | #A1-005                                                       | High   | Search trả kết quả sai          |
 | **3**   | #A1-007                                                       | High   | Không hỗ trợ Deep Linking       |
 | **4**   | #A2-004                                                       | High   | Không thể nhấn Enter submit     |
-| **5**   | #A3-004                                                       | High   | Xóa role không có confirmation  |
+| **5**   | #A3-003                                                       | High   | Xóa role không có confirmation  |
 | **6**   | #A1-002, #A1-003, #A1-004, #A1-006, #A2-001, #A2-002, #A3-002 | Medium | Usability/Accessibility         |
-| **7**   | #A3-001, #A3-003                                              | Low    | Placeholder/Label               |
+| **7**   | #A3-001                                                       | Low    | Placeholder/Label               |
 
 
 #### Điểm tích cực
