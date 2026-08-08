@@ -1,0 +1,7 @@
+Trong quá trình áp dụng các Agent Skills và nhờ AI assistant phân tích để hoàn thành HW03, nhóm đã gặp không ít khó khăn và hạn chế. Nhìn nhận một cách khách quan, những vấn đề này đến từ cả hai phía.
+
+Về phía AI assistant, trong quá trình phân tích và đánh giá giao diện người dùng, agent đôi khi còn thiếu sót khi bỏ qua một số mục kiểm tra quan trọng, nhầm lẫn giữa các mức độ nghiêm trọng của bug, hoặc đưa ra nhận định chưa chính xác về một số thành phần UI. Điều này cho thấy mô hình ngôn ngữ vẫn còn giới hạn trong việc nhận diện và đánh giá chi tiết các vấn đề trên giao diện thực tế.
+
+Về phía người dùng (user), việc cung cấp screenshots không phải lúc nào cũng đầy đủ và chính xác - một số ảnh chụp không thể hiện đủ các trạng thái cần kiểm tra theo checklist, dẫn đến kết quả phân tích bị thiếu hoặc không đáng tin cậy. Bên cạnh đó, việc test giao diện phụ thuộc rất nhiều vào khả năng nhận diện hình ảnh của model AI, và đây vẫn là một lĩnh vực chưa hoàn thiện. 
+
+Do đó, các kết quả từ AI chỉ nên được xem là cơ sở để double-check thông tin, hỗ trợ quá trình kiểm thử, chứ chưa thể thay thế hoàn toàn cho việc review thủ công bởi con người. Tuy nhiên, AI vẫn đóng vai trò quan trọng trong việc tăng tốc độ làm việc và đề xuất các khía cạnh cần lưu ý.
