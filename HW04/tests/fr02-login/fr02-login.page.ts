@@ -46,9 +46,7 @@ export class Fr02LoginPage {
     // Error message — DOM không có data-testid cố định.
     // Selector fallback: phần tử có class chứa "text-red" hoặc role="alert".
     // Selector này FRAGILE — sẽ được note trong gap analysis.
-    this.formErrorMessage = page
-      .locator('[role="alert"], .text-red-500, .text-red-600, .error, .error-message')
-      .first();
+    this.formErrorMessage = page.locator('[role="alert"], .text-red-500, .text-red-600, .error, .error-message').first();
 
     // Header locators — dùng để verify sau login đúng
     this.headerLoginLink = page.locator("header nav").getByRole("link", { name: "Đăng nhập" });
