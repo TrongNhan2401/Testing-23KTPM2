@@ -85,7 +85,7 @@ Testing toàn diện giao diện Admin của hệ thống Quản lý Sự kiện
 | -------------- | ---- | ---- | ---- | -------- |
 | Tổng số mục    | 57   | 57   | 57   | **171**  |
 | Passed         | 27   | 29   | 17   | **73**   |
-| Failed         | 7    | 4    | 5    | **16**   |
+| Failed         | 7    | 4    | 4    | **15**   |
 | N/A            | 23   | 24   | 35   | **82**   |
 | Not Verified   | 0    | 0    | 0    | **0**    |
 | Tỷ lệ verified | 100% | 100% | 100% | **100%** |
@@ -97,10 +97,10 @@ Testing toàn diện giao diện Admin của hệ thống Quản lý Sự kiện
 | Khía cạnh         | Tổng    | Passed | Failed | N/A    |
 | ----------------- | ------- | ------ | ------ | ------ |
 | IA-01: Chuẩn UI   | 45      | 30     | 5      | 10     |
-| IA-02: Forms      | 45      | 12     | 7      | 26     |
+| IA-02: Forms      | 45      | 12     | 6      | 26     |
 | IA-03: Navigation | 33      | 8      | 3      | 22     |
 | IA-04: Feedback   | 48      | 23     | 1      | 24     |
-| **Tổng**          | **171** | **73** | **16** | **82** |
+| **Tổng**          | **171** | **73** | **15** | **82** |
 
 
 #### Phân bố Bug theo mức độ nghiêm trọng
@@ -109,9 +109,9 @@ Testing toàn diện giao diện Admin của hệ thống Quản lý Sự kiện
 | Mức độ       | Số lượng | Mô tả                                                 |
 | ------------ | -------- | ----------------------------------------------------- |
 | **Critical** | 0        | Không có bug nghiêm trọng ảnh hưởng đến toàn hệ thống |
-| **High**     | 6        | Ảnh hưởng đáng kể đến usability cốt lõi               |
+| **High**     | 8        | Ảnh hưởng đáng kể đến usability cốt lõi               |
 | **Medium**   | 6        | Giảm usability nhưng không ngăn cản sử dụng           |
-| **Low**      | 4        | Giảm trải nghiệm nhẹ                                  |
+| **Low**      | 1        | Giảm trải nghiệm nhẹ                                  |
 
 
 #### Phân bố Bug theo màn hình
@@ -121,8 +121,8 @@ Testing toàn diện giao diện Admin của hệ thống Quản lý Sự kiện
 | ---------------------- | ----- | ------ | ----- | ------ |
 | A1: Danh sách Events   | 4     | 3      | 0     | **7**  |
 | A2: Modal Chỉnh sửa    | 2     | 2      | 0     | **4**  |
-| A3: Panel Registration | 2     | 1      | 2     | **5**  |
-| **Tổng**               | **8** | **6**  | **2** | **16** |
+| A3: Panel Registration | 2     | 1      | 1     | **4**  |
+| **Tổng**               | **8** | **6**  | **1** | **15** |
 
 
 ### BUG REPORTS — A1: Danh sách Events
@@ -289,7 +289,7 @@ Các bug sau xuất hiện ở nhiều màn hình và cần được sửa đồ
 
 - **Mã ID:** IA01-08 (A1, A2, A3)
 - **Mức độ:** High
-- **Bug liên quan:** Bug #A1-001, Bug #A2-003, Bug #A3-005
+- **Bug liên quan:** Bug #A1-001, Bug #A2-003, Bug #A3-004
 - **Mô tả:** Bug này xuất hiện ở cả 3 màn hình (A1, A2, A3). Nguyên nhân gốc: sidebar chính và overlay sidebar chồng lên nhau trên mobile.
 - **Đề xuất toàn cục:**
   - Sửa ở mức layout/component sidebar thay vì sửa riêng từng màn hình.
@@ -493,7 +493,7 @@ Các bug sau xuất hiện ở nhiều màn hình và cần được sửa đồ
 3. **M08** - iOS Safari Phone → Failed (không responsive)
 4. **M10** - iOS Chrome Phone → Failed (không responsive)
 
-**Pattern Fail:** Sidebar chồng lên main content trên màn hình admin — trùng với Bug #A1-001, #A2-003, #A3-005 trong Task1_BugReports.md.
+**Pattern Fail:** Sidebar chồng lên main content trên màn hình admin — trùng với Bug #A1-001, #A2-003, #A3-004 trong Task1_BugReports.md.
 
 **Desktop và Tablet không bị ảnh hưởng** — chỉ riêng Phone là bị lỗi responsive trên cả 4 OS × Browser combo (Android Chrome, Android Samsung, iOS Safari, iOS Chrome).
 
@@ -514,7 +514,7 @@ Các bug dưới đây được phát hiện bởi **nhiều task khác nhau**, 
 
 | Bug                | Task 1 (GUI)              | Task 2 (Usability)      | Task 3 (Cross-Platform) | Mức độ hợp lệ        |
 | ------------------ | ------------------------- | ----------------------- | ----------------------- | -------------------- |
-| Sidebar đúp Mobile | #A1-001, #A2-003, #A3-005 | Discoverability score 3 | M05, M06, M08, M10 Fail | **Rất cao** — 3 task |
+| Sidebar đúp Mobile | #A1-001, #A2-003, #A3-004 | Discoverability score 3 | M05, M06, M08, M10 Fail | **Rất cao** — 3 task |
 | Time Picker UX     | (không test)              | Severity 3              | (không test)            | Trung bình           |
 | Waitlist phức tạp  | (chỉ panel cấu hình)      | Severity 2              | (không test)            | Trung bình           |
 | Thiếu Preview      | (không test)              | Severity 1              | (không test)            | Trung bình           |
@@ -555,7 +555,7 @@ Các bug dưới đây được phát hiện bởi **nhiều task khác nhau**, 
 | Chỉ số                             | Giá trị               |
 | ---------------------------------- | --------------------- |
 | Tổng mục GUI checklist             | 171                   |
-| Tổng bug GUI (Task 1)              | 16                    |
+| Tổng bug GUI (Task 1)              | 15                    |
 | Tổng severity usability (Task 2)   | 5 (3 + 2 + 2 + 1 + 1) |
 | Tổng cells cross-platform (Task 3) | 10                    |
 | Tổng cells Failed (Task 3)         | 4                     |
@@ -567,7 +567,7 @@ Các bug dưới đây được phát hiện bởi **nhiều task khác nhau**, 
 
 ### Bug ưu tiên cao nhất (P1-P7)
 
-Tổng cộng **7 bug High** cần xử lý trước khi release:
+Tổng cộng **8 bug High** cần xử lý trước khi release:
 
 1. Responsive mobile (sidebar đúp) — xác nhận bởi cả Task 1 & Task 3
 2. Time Picker UX tồi — xác nhận bởi Task 2 (Severity 3)
@@ -579,7 +579,7 @@ Tổng cộng **7 bug High** cần xử lý trước khi release:
 
 ### Khuyến nghị tổng thể
 
-1. **Ưu tiên sửa 7 bug High trước release** — ảnh hưởng trực tiếp đến trải nghiệm user
+1. **Ưu tiên sửa 8 bug High trước release** — ảnh hưởng trực tiếp đến trải nghiệm user
 2. **Sửa bug Responsive Mobile ở mức component** — đây là bug duy nhất được xác nhận bởi cả 3 task, là ưu tiên #1
 3. **Cải thiện Time Picker** — ảnh hưởng đến tất cả user nhập liệu thời gian (Task 2 severity 3)
 4. **Cải thiện CTA "Tạo sự kiện"** — tăng discoverability (Task 2 severity 3)
@@ -656,7 +656,3 @@ Tổng cộng **7 bug High** cần xử lý trước khi release:
 
 ---
 
-**Ngày tạo:** 2026-08-04
-**Phiên bản:** v1.0
-**Trạng thái:** Hoàn thành
-**Người thực hiện:** Tester (User) + AI Assistant (Claude)

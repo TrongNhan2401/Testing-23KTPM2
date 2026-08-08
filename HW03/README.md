@@ -44,7 +44,7 @@
 | Số mục thiết kế    | 57       | 57       | 57       | **57** (dùng chung)       |
 | Số mục đã chạy     | 57       | 57       | 57       | **171** (57 × 3 màn hình) |
 | Passed             | 27       | 29       | 17       | **73**                    |
-| Failed             | 7        | 4        | 5        | **16**                    |
+| Failed             | 7        | 4        | 4        | **15**                    |
 | N/A                | 23       | 24       | 35       | **82**                    |
 | Not Verified       | 0        | 0        | 0        | **0**                     |
 | **Tỷ lệ verified** | **100%** | **100%** | **100%** | **100%**                  |
@@ -61,8 +61,8 @@
 | ---------------------- | -------- | ----- | ------ | ----- | ------ |
 | A1: Danh sách Events   | 0        | 4     | 3      | 0     | **7**  |
 | A2: Modal Chỉnh sửa    | 0        | 2     | 2      | 0     | **4**  |
-| A3: Panel Registration | 0        | 2     | 1      | 2     | **5**  |
-| **Tổng**               | **0**    | **8** | **6**  | **2** | **16** |
+| A3: Panel Registration | 0        | 2     | 1      | 1     | **4**  |
+| **Tổng**               | **0**    | **8** | **6**  | **1** | **15** |
 
 
 ### Số người tham gia User-Testing (Task 2)
@@ -163,20 +163,9 @@
 
 ### 3. Skills sử dụng trong HW03
 
-1. **HW03/skills/gui-checklist-runner-SKILL.md** — Skill áp dụng checklist GUI và sinh bug report.
-2. **HW03/skills/ai-audit-logger-SKILL.md** — Skill ghi log tương tác AI theo định dạng verbatim (prompt nguyên văn + output nguyên văn).
-3. **HW03/skills/cross-platform-matrix-runner-SKILL.md** — Skill 2 phases (Plan + Verify) cho cross-platform testing.
+1. **gui-checklist-runner-SKILL.md** — Skill áp dụng checklist GUI và sinh bug report.
+2. **ai-audit-logger-SKILL.md** — Skill ghi log tương tác AI theo định dạng verbatim (prompt nguyên văn + output nguyên văn).
+3. **cross-platform-matrix-runner-SKILL.md** — Skill 2 phases (Plan + Verify) cho cross-platform testing.
 
 ---
 
-## Thông tin liên hệ
-
-**Sinh viên:** Trần Phạm Trọng Nhân
-**MSSV:** 21127641
-**Email:** (xem trong `ai_audit_log.md` — được overlay trên các ảnh test theo skill)
-
----
-
-**Ngày tạo:** 2026-08-04
-**Phiên bản:** v1.0
-**Trạng thái:** Hoàn thành
