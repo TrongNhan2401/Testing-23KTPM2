@@ -413,3 +413,31 @@
   - **`formErrorMessage` selector** là multi-fallback CSS, không có `data-testid` — đề xuất scope theo form
   - **Test chỉ verify "có lỗi"** chứ không verify "lỗi gì" → 5 bug Postman đã biết không phát hiện được
 
+
+---
+
+### Buoc 7 (Nâng cấp SKILL.md) — 2026-08-09 (Sunday, ~11:15 UTC+7)
+
+- **AI tool:** Claude
+- **Người dùng yêu cầu:**
+  - "Qua các vấn đề như xác định sai selector hay locator thì bạn có đề xuất nào để nâng cấp cho SKILL.md hay không"
+- **Đề xuất nhóm A+B (user đã chọn qua AskQuestion):**
+  - **Nhóm A (Selector):** Robustness Rubric + Debug DOM khi thiếu testid
+  - **Nhóm B (Assertion):** Strict vs Best-effort + Anti-patterns
+- **Nội dung output đã thêm vào SKILL.md (4 sections mới, ~150 dòng):**
+  1. **Selector Robustness Rubric** (sau Bước 2) — bảng 4 mức stable/medium/fragile/break + quy tắc vàng
+  2. **Cách tìm selector khi DOM thiếu data-testid** — quy trình 4 bước, bảng inspect mẫu, code probe
+  3. **Strict vs Best-effort** (sau Assertion Patterns) — bảng 5 tình huống + công thức quyết định
+  4. **Anti-patterns THƯỜNG GẶP** — 6 anti-patterns có code ❌/✅
+- **Phạm vi KHÔNG làm (user chọn giới hạn):**
+  - Nhóm C (Quy trình & Quản lý state): Setup backend state, idempotent test, pre-flight check
+  - Đã có trong đề xuất ban đầu nhưng không implement
+- **Verify:**
+  - SKILL.md từ 138 dòng → 260 dòng (+122 dòng)
+  - Cấu trúc rõ ràng, các section mới ở vị trí hợp lý (sau các bước tương ứng)
+- **Tác động dự kiến:**
+  - Lần sau áp dụng skill cho FR-01/FR-03, AI sẽ:
+    1. Tự phân loại selector robustness và ghi chú vào Page Object
+    2. Không dùng silent warn cho network assertion (dùng expect.soft)
+    3. Có checklist anti-patterns khi review
+
