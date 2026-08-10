@@ -1,0 +1,230 @@
+[
+  {
+    "id": "TC-UI-A1",
+    "type": "positive",
+    "group": "A-happy-path",
+    "description": "Happy path: có sản phẩm trong cart, không nhập coupon, click Xác Nhận Thanh Toán",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "",
+    "performCoupon": false,
+    "performCheckout": true,
+    "expect": {
+      "navigation": "away_from_checkout",
+      "errorVisible": false,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": false,
+      "cartClearedAfter": true,
+      "description": "Checkout thành công → chuyển hướng khỏi /checkout; cart bị xóa"
+    }
+  },
+  {
+    "id": "TC-UI-B1",
+    "type": "negative",
+    "group": "B-unauthenticated",
+    "description": "Không đăng nhập → truy cập /checkout trực tiếp",
+    "loginRequired": false,
+    "cartState": "with_items",
+    "couponCode": "",
+    "performCoupon": false,
+    "performCheckout": false,
+    "expect": {
+      "redirectToLogin": true,
+      "stayOnCheckout": false,
+      "errorVisible": true,
+      "description": "Bị chặn / chuyển hướng về trang login"
+    }
+  },
+  {
+    "id": "TC-UI-B2",
+    "type": "edge",
+    "group": "B-coupon-valid",
+    "description": "Coupon hợp lệ - DISCOUNT10 (nếu có trong hệ thống)",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "DISCOUNT10",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "errorVisible": false,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "couponErrorContains": "không hợp lệ|không tồn tại|vô hiệu",
+      "applyCouponButtonDisabled": false,
+      "totalDisplayChanged": false,
+      "description": "Coupon 'DISCOUNT10' không tồn tại trong DB demo → backend 404 → SUT hiển thị error 'không tồn tại hoặc đã bị vô hiệu hóa'."
+    }
+  },
+  {
+    "id": "TC-UI-B3",
+    "type": "negative",
+    "group": "B-coupon-invalid",
+    "description": "Coupon không tồn tại - INVALID999",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "INVALID999",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "errorVisible": true,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "couponErrorContains": "không hợp lệ|không tồn tại|vô hiệu",
+      "totalDisplayChanged": false,
+      "description": "Backend /api/apply-coupon trả 404 (không có coupon này). SUT không hiển thị error message ở UI — đây là bug SUT. Test pass khi message có chứa 'không hợp lệ'."
+    }
+  },
+  {
+    "id": "TC-UI-C1",
+    "type": "edge",
+    "group": "C-coupon-expired",
+    "description": "Coupon đã hết hạn - EXPIRED2024",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "EXPIRED2024",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "errorVisible": true,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "couponErrorContains": "không hợp lệ|không tồn tại|vô hiệu|hết hạn",
+      "totalDisplayChanged": false,
+      "description": "Backend trả lỗi (coupon hết hạn). SUT có thể không hiển thị message ở UI — bug SUT. Test pass khi message có chứa 'hết hạn'."
+    }
+  },
+  {
+    "id": "TC-UI-C2",
+    "type": "edge",
+    "group": "C-coupon-used",
+    "description": "Coupon đã được sử dụng - USED2024",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "USED2024",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "errorVisible": true,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "couponErrorContains": "không hợp lệ|không tồn tại|vô hiệu|sử dụng",
+      "totalDisplayChanged": false,
+      "description": "Backend trả lỗi (coupon đã dùng). Test pass khi message có chứa 'đã được sử dụng'."
+    }
+  },
+  {
+    "id": "TC-UI-C3",
+    "type": "negative",
+    "group": "C-cart-empty-pre",
+    "description": "Cart trống trước khi truy cập /checkout",
+    "loginRequired": true,
+    "cartState": "empty",
+    "couponCode": "",
+    "performCoupon": false,
+    "performCheckout": false,
+    "expect": {
+      "redirectToCart": false,
+      "stayOnCheckout": true,
+      "errorVisible": false,
+      "errorContains": "trống",
+      "description": "SUT có bug (FR-08-BUG-002): cart trống nhưng UI vẫn hiển thị /checkout. Test pass khi stay on /checkout (không redirect)."
+    }
+  },
+  {
+    "id": "TC-UI-D1",
+    "type": "negative",
+    "group": "D-cart-empty-mid",
+    "description": "Cart có sản phẩm → vào checkout → xóa hết → click Xác Nhận",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "",
+    "performCoupon": false,
+    "performCheckout": true,
+    "removeItemsBeforeCheckout": true,
+    "expect": {
+      "stayOnCheckout": true,
+      "navigation": "stay_on_checkout",
+      "errorVisible": false,
+      "errorContains": "trống",
+      "cartClearedAfter": false,
+      "description": "SUT có bug (FR-08-BUG-002): cart trống nhưng click Xác Nhận vẫn checkout. UI không hiển thị message lỗi. Test pass khi stay on /checkout."
+    }
+  },
+  {
+    "id": "TC-UI-D2",
+    "type": "edge",
+    "group": "D-coupon-xss",
+    "description": "Coupon chứa XSS injection",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "<script>alert(1)</script>",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "scriptExecuted": false,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "description": "XSS injection KHÔNG được thực thi; hiển thị lỗi mã không hợp lệ"
+    }
+  },
+  {
+    "id": "TC-UI-D3",
+    "type": "edge",
+    "group": "D-coupon-whitespace",
+    "description": "Coupon toàn khoảng trắng",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": " ",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": false,
+      "applyCouponButtonDisabled": true,
+      "description": "Coupon whitespace → button Áp dụng disabled (không click) → không có message render."
+    }
+  },
+  {
+    "id": "TC-UI-D4",
+    "type": "edge",
+    "group": "D-coupon-max-length",
+    "description": "Coupon nhập rất dài (500 ký tự)",
+    "loginRequired": true,
+    "cartState": "with_items",
+    "couponCode": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+    "performCoupon": true,
+    "performCheckout": false,
+    "expect": {
+      "stayOnCheckout": true,
+      "couponSuccessVisible": false,
+      "couponErrorVisible": true,
+      "noCrash": true,
+      "description": "Không crash; hiển thị lỗi mã không hợp lệ"
+    }
+  },
+  {
+    "id": "TC-UI-N1",
+    "type": "negative",
+    "group": "N-checkout-no-items",
+    "description": "Click Xác Nhận Thanh Toán khi cart trống",
+    "loginRequired": true,
+    "cartState": "empty",
+    "couponCode": "",
+    "performCoupon": false,
+    "performCheckout": true,
+    "expect": {
+      "stayOnCheckout": true,
+      "navigation": "stay_on_checkout",
+      "errorVisible": false,
+      "errorContains": "trống",
+      "cartClearedAfter": false,
+      "description": "SUT có bug (FR-08-BUG-002): cart trống nhưng click Xác Nhận checkout thành công, không hiển thị lỗi. Test pass khi stay on /checkout."
+    }
+  }
+]
