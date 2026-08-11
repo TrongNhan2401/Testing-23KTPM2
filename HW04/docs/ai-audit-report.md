@@ -1585,4 +1585,15 @@ Theo SKILL.md: dừng sau Bước 4 để người dùng chạy thử và báo c
   - Selector robustness: 0 mức 1 (Stable), 5 mức 2 (Medium), 5 mức 3 (Fragile)
   - Assertion patterns: 6 patterns (đạt ≥3 yêu cầu) — UI state, element state, network, business rule, dialog, download
   - Technical debt: 3 fix cấp thấp (TC-A2, TC-UI-9, data-testid), 2 fix cấp trung bình (baseURL isolation, SUT modification)
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T11:00:00+07:00
+- **Prompt (tóm tắt):** "Tạo folder submission và viết README.md với self-assessment table và test summary, kèm theo tất cả files cần thiết cho việc nộp bài."
+- **Output (tóm tắt):**
+  - Tạo `submission/` folder với cấu trúc: scripts/, data/, reports/, docs/
+  - Tạo `submission/README.md` với self-assessment table (Task 1: 75pts, Task 2: 15pts, Agent Skills: 10pts, Self: 7pts)
+  - Tạo `submission/git-commit-log.txt` từ git log
+  - Tạo `submission/demo-video.txt` (placeholder cho link video)
+  - Tạo `submission/docs/ai-critique.md` (AI critique đầy đủ)
+  - Copy tất cả scripts, data, reports, docs vào submission folder
 - **Người dùng đã sửa gì (nếu có):** Chưa có
+
