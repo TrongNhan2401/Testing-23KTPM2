@@ -1436,3 +1436,153 @@ Theo SKILL.md: dừng sau Bước 4 để người dùng chạy thử và báo c
 - **Prompt (tóm tắt):** "Bây giờ bạn hãy thực hiện bước 5 trong SKILL.md và tạo file gap trong folder docs"
 - **Output (tóm tắt):** Đọc lại test case gốc (12 case) + Page Object + spec + testdata → review theo Selector Robustness Rubric + Anti-patterns checklist + Strict vs Best-effort → viết `docs/gap-analysis-fr08-checkout.md`.
 - **Người dùng đã sửa gì (nếu có):** Không — review thuần túy.
+
+---
+
+# AI Audit Report — FR-16 Import CSV (Admin)
+
+> **Feature:** FR-16 Import Sản phẩm từ CSV
+> **SUT URL:** `http://localhost:5174/` (admin panel — port riêng biệt với FR-02/FR-08 là 5173)
+> **Skill áp dụng:** `docs/SKILL.md` — Web Automation Generator
+> **AI tool:** Claude (Cursor)
+> **Người thực hiện:** Auto AI-first strategy
+> **MSSV:** 23127443
+> **Note quan trọng:** FR-02/FR-08 chạy trên `localhost:5173` (frontend-web), FR-16 chạy trên `localhost:5174` (frontend-admin). Phải tạo `playwright.config.js` riêng cho admin project hoặc dùng baseURL qua env var.
+
+---
+
+### [Bước 1] FR-16 — Chuẩn hóa bảng test case — 2026-08-11 (~08:55 UTC+7)
+
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T08:55:00+07:00
+- **Prompt (tóm tắt):**
+  - Đọc `sources_testcase/FR16.md` (33 case Domain/Postman) + `docs/SKILL.md`
+  - Trích xuất đúng 12 case UI Automation (positive/negative/edge)
+  - Lập bảng Markdown với cột: id, type, input, expected, note
+  - Mapping trỏ về case gốc để truy vết
+- **Output (tóm tắt):**
+  - File `tests/fr16-import/testcases-fr16-import.md` được tạo
+  - **12 case** chia thành:
+    - 3 case Authorization (TC-A1 happy, TC-A2 session expire, TC-A3 non-admin)
+    - 2 case E (TC-UI-6 boundary 1 dòng, TC-UI-7 happy path multi-row)
+    - 7 case UI-Only (TC-UI-1 đến TC-UI-5 + TC-UI-8 đến TC-UI-10): file extension, alias header tiếng Việt, header thiếu, file rỗng, mixed valid/invalid, download template, change file
+  - Cross-ref bug: TC-UI-1 (FR-16-FUNC-BUG-002), TC-UI-4 (FR-16-FUNC-BUG-001), TC-UI-8 (FR-16-BUG-006)
+- **Lý do chọn 12 case cụ thể:**
+  - **GIỮ:** TC-A1, TC-A2, TC-A3 (Authorization UI) + TC-UI-6 (boundary 1 sản phẩm) + TC-UI-7 (multi-row happy path)
+  - **BỔ SUNG 7 case UI-Only** vì App.jsx dòng 341-481 có UI riêng (file input, preview table, button, result box) chưa được FR16.md cover
+  - **BỎ:** toàn bộ TC-B (6), TC-C (7), TC-D (5), BV-N (3), BV-P (4), BV-B (4), TC-E2/E3 (rollback all-or-nothing — đã cover ở domain) — UI không thể test được những case này mà không replicate API call, thuộc scope Domain Testing
+- **Người dùng đã sửa gì (nếu có):** Chưa — chờ review
+
+---
+
+### [Bước 2] FR-16 — Inspect Element + Page Object — 2026-08-11 (~08:55 UTC+7)
+
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T08:55:00+07:00
+- **Prompt (tóm tắt):**
+  - Quét trực tiếp `eshop/frontend-admin/src/App.jsx` (33KB, không có thư mục `pages/`) để trích xuất DOM
+  - Đối chiếu với tiêu chí selector theo SKILL.md: data-testid → role → label → CSS/text
+  - Đánh dấu FRAGILE cho selector không có data-testid
+  - Tạo file `tests/fr16-import/fr16-import.page.ts`
+- **Output (tóm tắt):**
+  - File `tests/fr16-import/fr16-import.page.ts` được tạo (~250 dòng)
+  - Class `Fr16ImportPage` với **18 locators** + **10 action/read methods**
+  - **Khảo sát DOM (kết quả quan trọng):**
+    - ❌ Frontend-admin **KHÔNG CÓ** bất kỳ `data-testid` nào
+    - ❌ **KHÔNG CÓ** `id` attribute cho bất kỳ input/button nào
+    - ❌ **KHÔNG CÓ** `aria-*` attribute
+    - ⚠️ Input chỉ có `placeholder` (placeholder không stable — dev đổi text là selector chết)
+    - ⚠️ Class Tailwind dài, có thể thay đổi theo redesign
+    - ⚠️ Navigation dùng `onClick` (state-based), không có semantic role — đây là antipattern
+  - **Selector breakdown:**
+    - **Mức 2 (Medium — OK):** `emailInput`, `passwordInput`, `loginButton`, `importSectionHeading`, `templateDownloadLink`, `importButton`, `previewHeading`, `resultBox`, `resultMessage` — dùng placeholder hoặc accessible text
+    - **Mức 3 (Fragile — cảnh báo):** `csvFileInput`, `previewTable`, `previewRows` — phải dùng class Tailwind hoặc input[type=file] không có label
+    - **Mức 4 (Break — đã chú thích):** `productsTab` (nth-of-type trong sidebar)
+- **Action methods (không có assertion):**
+  - `goto()`, `login(email, password)`, `openProductsTab()`, `uploadCsv(filePath)`, `submitImport()`, `waitForImportDone()`, `logout()`
+- **Read methods (chỉ query):**
+  - `getPreviewRowCount()`, `getResultMessage()`, `getResultErrors()`, `isImportButtonDisabled()`, `getImportButtonText()`, `isImportSectionVisible()`
+- **Người dùng đã sửa gì (nếu có):** Chưa — chờ review
+
+---
+
+### ⚠️ Đề xuất trước khi tiếp Bước 3+
+
+| Vấn đề | Đề xuất |
+| --- | --- |
+| `playwright.config.js` hiện tại hardcode `baseURL=http://localhost:5173` | Cần config riêng cho FR-16 dùng `localhost:5174` (env var `BASE_URL` hoặc file config riêng cho admin project) |
+| Fixture: cần tạo file CSV mẫu trong `tests/fr16-import/fixtures/` (vd `valid-2-rows.csv`, `empty.csv`, `missing-category.csv`, `vietnamese-headers.csv`, `non-csv.txt`) | Bước 3 sẽ tạo + map vào test data |
+| Auth admin: cần `.auth/admin.json` để reuse session (tương tự FR-08) | Bước 3 sẽ đề cập |
+| Cân nhắc: TC-A2 (clear token) và TC-A3 (non-admin) cần **2 session khác nhau** hoặc reset giữa test | Test design ở Bước 4 sẽ quyết định dùng `beforeEach` reset state |
+
+**DỪNG LẠI — Chờ user review Bước 1 + 2 trước khi qua Bước 3 (test data) và Bước 4 (script).**
+
+### [Bước 3] FR-16 — Tách test data ra file JSON (2026-08-11 ~09:32 UTC+7)
+
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T09:32:00+07:00
+- **Prompt (tóm tắt):** "Thực hiện Bước 3: Đọc 12 test case từ bảng trên và tạo file dữ liệu tests/fr16-import/data/fr16-testdata.json. Đảm bảo mỗi phần tử trong mảng map 1-1 với từng test case. Tuyệt đối không hardcode mảng dữ liệu này vào file script. Lưu ý riêng cho FR-16: Vì đây là tính năng upload, trong JSON hãy thêm thuộc tính fileName hoặc filePath để định tuyến đến các mock file."
+- **Output (tóm tắt):**
+  - Tạo 10 file CSV fixture trong `tests/fr16-import/data/` (valid-1/2/3rows.csv, vietnamese-headers.csv, missing-category-header.csv, empty-data.csv, mixed-valid-invalid.csv, invalid.txt, first-upload.csv, second-upload.csv)
+  - Tạo `tests/fr16-import/data/fr16-testdata.json` với 12 records map 1-1 với bảng testcases:
+    - TC-A1 (login admin), TC-A2 (clear token → 401), TC-A3 (non-admin alert)
+    - TC-UI-1 (.txt upload), TC-UI-2 (CSV 2 rows header chuẩn), TC-UI-3 (header tiếng Việt), TC-UI-4 (thiếu category_id), TC-UI-5 (empty CSV)
+    - TC-UI-6 (boundary 1 row), TC-UI-7 (3 rows happy path), TC-UI-8 (mixed valid/invalid), TC-UI-9 (template download), TC-UI-10 (re-upload state reset)
+  - Mỗi record có `id`, `group`, `type`, `description`, `credential`, `setup` (flags + fileName/filePath), `expect` (assertion patterns)
+  - Schema `_schema` ở đầu file giải thích các field
+- **Credential setup:**
+  - Admin: `admin@eshop.com / Admin123!` (từ `eshop/backend/database.js:92`)
+  - User: `test@eshop.com / Test1234!` (từ `eshop/backend/database.js:93`)
+- **Lưu ý selector:** localStorage key = `adminToken` (App.jsx dòng 188-215); endpoint = `POST /api/admin/import-products` (api_specification.md §6.3)
+- **Người dùng đã sửa gì (nếu có):** Chưa có — chờ review
+
+### [Bước 4] FR-16 — Sinh script .spec.ts (2026-08-11 ~09:35 UTC+7)
+
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T09:35:00+07:00
+- **Prompt (tóm tắt):** "Thực hiện Bước 4: Viết script kiểm thử chính vào file tests/fr16-import/fr16-import.spec.ts. Import test data từ file JSON vừa tạo và lặp for...of để chạy Data-Driven. Sử dụng các action method từ class Page Object. Chú ý dùng đúng hàm setInputFiles() của Playwright. BẮT BUỘC ÁP DỤNG ÍT NHẤT 3 ASSERTION PATTERNS KHÁC NHAU."
+- **Output (tóm tắt):**
+  - Tạo `tests/fr16-import/fr16-import.spec.ts` (460 dòng)
+  - Import testdata JSON → filter chỉ lấy records có `id` (loại bỏ `_schema`)
+  - Loop `for (const tc of testCases)` → `test(...)` cho mỗi case
+  - Helper `setupForCase(page, po, tc)` xử lý flow:
+    - Login admin/non-admin
+    - Clear adminToken (TC-A2)
+    - Open Products tab
+    - Upload file (single + second file cho TC-UI-10)
+    - Click Import + capture response từ `POST /api/admin/import-products`
+  - Helper `assertExpect(page, po, tc)` verify:
+    - Navigation pattern (login form visible/not)
+    - UI state (importSectionHeading visible)
+    - Element state (button disabled, button text match regex)
+    - Business rule (preview row count = N)
+    - UI result (resultMessageContains, resultErrorsContains)
+  - Special handlers:
+    - TC-A3: Setup `page.once("dialog")` để dismiss alert
+    - TC-UI-9: Setup `page.waitForEvent("download")` để verify template download
+    - TC-A2: Capture network response trước click → assert status = 401
+- **Assertion patterns áp dụng (6 patterns đạt yêu cầu ≥3):**
+  1. UI state — `expect(po.importSectionHeading).toBeVisible()`
+  2. Element state — `expect(importButton.isDisabled).toBe(true)`
+  3. Network/API response — `waitForResponse(/api\/admin\/import-products/)` + status check
+  4. Business rule — `expect(previewRowCount).toBe(2)`
+  5. Alert/Dialog — `page.once("dialog", async d => await d.dismiss())` (TC-A3)
+  6. Navigation — login form visible/not visible
+- **Người dùng đã sửa gì (nếu có):** Chưa có — chờ user chạy thử
+
+### [Bước 5] FR-16 — Review & Gap Analysis (2026-08-11 ~10:35 UTC+7)
+
+- **AI tool:** Claude
+- **Ngày giờ:** 2026-08-11T10:35:00+07:00
+- **Prompt (tóm tắt):** "Hãy thực hiện Bước 5 của SKILL.md. Dựa vào file reports/index.html để trình bày gap là được và không cần phải phân tích lại đồ án eshop của admin."
+- **Output (tóm tắt):**
+  - Tạo `docs/gap-analysis-fr16-import.md` (Gap Analysis đầy đủ)
+  - Tổng kết: **30 PASS / 9 FAIL** trên 3 browsers (chromium + firefox + webkit)
+  - 3 test cases fail nhất quán trên cả 3 browsers:
+    - **TC-A2** (script bug): `clear localStorage` không đồng bộ với React state → networkStatus = null
+    - **TC-UI-1** (SUT bug = FR-16-FUNC-BUG-002): Upload .txt → button ENABLED thay vì disabled → đúng behavior SUT, test đúng khi fail
+    - **TC-UI-9** (script bug): `waitForEvent("download")` không phù hợp với cách download thực tế của SUT
+  - Selector robustness: 0 mức 1 (Stable), 5 mức 2 (Medium), 5 mức 3 (Fragile)
+  - Assertion patterns: 6 patterns (đạt ≥3 yêu cầu) — UI state, element state, network, business rule, dialog, download
+  - Technical debt: 3 fix cấp thấp (TC-A2, TC-UI-9, data-testid), 2 fix cấp trung bình (baseURL isolation, SUT modification)
+- **Người dùng đã sửa gì (nếu có):** Chưa có

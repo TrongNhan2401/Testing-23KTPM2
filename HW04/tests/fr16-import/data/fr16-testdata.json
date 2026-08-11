@@ -1,0 +1,355 @@
+{
+  "_schema": {
+    "description": "FR-16 Import CSV — Data-Driven Test Data (12 UI cases)",
+    "fields": {
+      "id": "Test case ID (map 1-1 với testcases-fr16-import.md)",
+      "group": "Nhóm (A/UI)",
+      "type": "positive | negative | edge",
+      "description": "Mô tả ngắn",
+      "credential": {
+        "email": "Email đăng nhập admin hoặc user",
+        "password": "Mật khẩu"
+      },
+      "setup": {
+        "loginAsAdmin": "true = login admin hợp lệ",
+        "loginAsNonAdmin": "true = login user thường (verify alert + không set token)",
+        "clearAdminTokenAfterLogin": "true = sau khi login, set localStorage adminToken = rỗng để mô phỏng session expire",
+        "openProductsTab": "true = click tab 'Sản phẩm' trên sidebar",
+        "uploadFile": "true = upload file CSV qua file input",
+        "fileName": "Tên file trong thư mục data/ (vd: valid-2rows.csv, invalid.txt)",
+        "filePath": "Đường dẫn tương đối tới file (vd: tests/fr16-import/data/valid-2rows.csv) — sẽ resolve thành absolute",
+        "clickImport": "true = click button 'Import N sản phẩm'",
+        "waitForImportDone": "true = đợi button text hết 'Đang import...'",
+        "uploadSecondFile": "true = upload file CSV thứ 2 sau khi upload file đầu (TC-UI-10)",
+        "secondFileName": "Tên file thứ 2",
+        "secondFilePath": "Path file thứ 2"
+      },
+      "expect": {
+        "assertionPatterns": "Các pattern áp dụng (ít nhất 3 khác nhau trong cả bộ)",
+        "expectImportSectionVisible": "true = box Import CSV phải render",
+        "expectImportButtonDisabled": "true = button Import phải disabled (khi chưa có file hoặc file rỗng)",
+        "expectImportButtonTextMatches": "Regex match text của button (vd '^Import 2 sản phẩm$')",
+        "expectPreviewRowCount": "Số dòng preview phải bằng N",
+        "expectResultMessageContains": "Result message phải chứa substring (✅ success / ❌ error)",
+        "expectResultErrorsContains": "Trong errors list phải có substring này (vd 'Thiếu tên')",
+        "expectNetworkImportStatus": "200 = success, 4xx = error từ POST /api/admin/import-products",
+        "expectStayOnLoginPage": "true = URL vẫn ở / (form login, không có token = không vào được admin)",
+        "expectAlertShown": "true = window.alert() được gọi (TC-A3 non-admin)",
+        "expectDownloadTriggered": "true = download event được kích hoạt (TC-UI-9 template)",
+        "expectTemplateContainsHeader": "true = file template.csv có header 'name,price,...'"
+      }
+    },
+    "credentials": {
+      "admin": "admin@eshop.com / Admin123!",
+      "user": "test@eshop.com / Test1234!"
+    }
+  },
+
+  "testCases": [
+    {
+      "id": "TC-A1",
+      "group": "A-authorization",
+      "type": "positive",
+      "description": "Login admin hợp lệ → vào /admin → click tab Sản phẩm → thấy box Import CSV",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state", "Navigation"],
+        "expectImportSectionVisible": true,
+        "expectImportButtonDisabled": true,
+        "expectStayOnLoginPage": false
+      }
+    },
+
+    {
+      "id": "TC-A2",
+      "group": "A-authorization",
+      "type": "negative",
+      "description": "Login admin → set localStorage adminToken = rỗng → upload file CSV → click Import → response lỗi 401/403 + result box đỏ",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "clearAdminTokenAfterLogin": true,
+        "uploadFile": true,
+        "fileName": "valid-1row.csv",
+        "filePath": "tests/fr16-import/data/valid-1row.csv",
+        "clickImport": true,
+        "waitForImportDone": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state"],
+        "expectNetworkImportStatus": 401,
+        "expectResultMessageContains": "Unauthorized"
+      }
+    },
+
+    {
+      "id": "TC-A3",
+      "group": "A-authorization",
+      "type": "negative",
+      "description": "Login bằng user thường (role=user) → frontend alert 'Bạn không phải là admin!' → không set token → không thấy tab admin",
+      "credential": {
+        "email": "test@eshop.com",
+        "password": "Test1234!"
+      },
+      "setup": {
+        "loginAsNonAdmin": true
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state"],
+        "expectAlertShown": true,
+        "expectImportSectionVisible": false
+      }
+    },
+
+    {
+      "id": "TC-UI-1",
+      "group": "UI-preflight",
+      "type": "negative",
+      "description": "Upload file .txt thay vì .csv → preview KHÔNG render + button vẫn disabled (FR-16-FUNC-BUG-002)",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "invalid.txt",
+        "filePath": "tests/fr16-import/data/invalid.txt"
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state"],
+        "expectPreviewRowCount": 0,
+        "expectImportButtonDisabled": true
+      }
+    },
+
+    {
+      "id": "TC-UI-2",
+      "group": "UI-csv-parse",
+      "type": "positive",
+      "description": "Upload file .csv header chuẩn (name,price,description,imageUrl,category_id) + 2 dòng → preview 2 dòng + button enabled với text 'Import 2 sản phẩm'",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "valid-2rows.csv",
+        "filePath": "tests/fr16-import/data/valid-2rows.csv"
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state", "Accessibility"],
+        "expectPreviewRowCount": 2,
+        "expectImportButtonDisabled": false,
+        "expectImportButtonTextMatches": "^Import 2 sản phẩm$"
+      }
+    },
+
+    {
+      "id": "TC-UI-3",
+      "group": "UI-csv-parse",
+      "type": "positive",
+      "description": "Upload file .csv header tiếng Việt (ten,gia,mo_ta,danh_muc) → preview vẫn render + button enabled (UI alias mapping)",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "vietnamese-headers.csv",
+        "filePath": "tests/fr16-import/data/vietnamese-headers.csv"
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state"],
+        "expectPreviewRowCount": 2,
+        "expectImportButtonDisabled": false
+      }
+    },
+
+    {
+      "id": "TC-UI-4",
+      "group": "UI-csv-parse",
+      "type": "negative",
+      "description": "Upload file .csv thiếu header category_id → UI không validate, backend default category_id=1 (FR-16-FUNC-BUG-001)",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "missing-category-header.csv",
+        "filePath": "tests/fr16-import/data/missing-category-header.csv",
+        "clickImport": true,
+        "waitForImportDone": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state", "Business rule"],
+        "expectNetworkImportStatus": 200,
+        "expectResultMessageContains": "Import hoàn tất"
+      }
+    },
+
+    {
+      "id": "TC-UI-5",
+      "group": "UI-preflight",
+      "type": "negative",
+      "description": "Upload file .csv chỉ có header, không có dòng data → preview KHÔNG render + button vẫn disabled",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "empty-data.csv",
+        "filePath": "tests/fr16-import/data/empty-data.csv"
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Element state"],
+        "expectPreviewRowCount": 0,
+        "expectImportButtonDisabled": true
+      }
+    },
+
+    {
+      "id": "TC-UI-6",
+      "group": "UI-happy-path",
+      "type": "positive",
+      "description": "Upload file .csv 1 dòng (boundary) → click Import → result '✅ Import hoàn tất: 1/1 sản phẩm được thêm'",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "valid-1row.csv",
+        "filePath": "tests/fr16-import/data/valid-1row.csv",
+        "clickImport": true,
+        "waitForImportDone": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state", "Business rule"],
+        "expectNetworkImportStatus": 200,
+        "expectResultMessageContains": "1/1 sản phẩm được thêm"
+      }
+    },
+
+    {
+      "id": "TC-UI-7",
+      "group": "UI-happy-path",
+      "type": "positive",
+      "description": "Upload file .csv 3 dòng hợp lệ → click Import → result '✅ Import hoàn tất: 3/3 sản phẩm được thêm'",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "valid-3rows.csv",
+        "filePath": "tests/fr16-import/data/valid-3rows.csv",
+        "clickImport": true,
+        "waitForImportDone": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state", "Business rule"],
+        "expectNetworkImportStatus": 200,
+        "expectResultMessageContains": "3/3 sản phẩm được thêm"
+      }
+    },
+
+    {
+      "id": "TC-UI-8",
+      "group": "UI-mixed",
+      "type": "positive",
+      "description": "Upload file .csv 5 dòng: 4 hợp lệ + 1 dòng name='' → click Import → result có 'inserted: 4' + errors 'Hàng X: Thiếu tên' (FR-16-BUG-006)",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "mixed-valid-invalid.csv",
+        "filePath": "tests/fr16-import/data/mixed-valid-invalid.csv",
+        "clickImport": true,
+        "waitForImportDone": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state", "Business rule"],
+        "expectNetworkImportStatus": 200,
+        "expectResultMessageContains": "4",
+        "expectResultErrorsContains": "Thiếu tên"
+      }
+    },
+
+    {
+      "id": "TC-UI-9",
+      "group": "UI-template",
+      "type": "positive",
+      "description": "Click link 'Tải file mẫu (template.csv)' → download file template_import.csv có header name,price,description,imageUrl,category_id",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true
+      },
+      "expect": {
+        "assertionPatterns": ["Network/API response", "UI state"],
+        "expectDownloadTriggered": true,
+        "expectTemplateContainsHeader": true
+      }
+    },
+
+    {
+      "id": "TC-UI-10",
+      "group": "UI-state-reset",
+      "type": "positive",
+      "description": "Upload file A → preview → upload lại file B khác → preview update với file B (không bị append)",
+      "credential": {
+        "email": "admin@eshop.com",
+        "password": "Admin123!"
+      },
+      "setup": {
+        "loginAsAdmin": true,
+        "openProductsTab": true,
+        "uploadFile": true,
+        "fileName": "first-upload.csv",
+        "filePath": "tests/fr16-import/data/first-upload.csv",
+        "uploadSecondFile": true,
+        "secondFileName": "second-upload.csv",
+        "secondFilePath": "tests/fr16-import/data/second-upload.csv"
+      },
+      "expect": {
+        "assertionPatterns": ["UI state", "Business rule"],
+        "expectPreviewRowCount": 4,
+        "expectImportButtonTextMatches": "^Import 4 sản phẩm$"
+      }
+    }
+  ]
+}

@@ -52,7 +52,7 @@ export default defineConfig({
       {
         outputFolder: "reports",
         open: "never",
-        title: "23127443 - Tran Pham Trong Nhan",
+        title: "Run by: 23127443",
       },
     ],
     ["list"],
