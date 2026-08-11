@@ -52,7 +52,7 @@ export default defineConfig({
       {
         outputFolder: "reports",
         open: "never",
-        title: "HW04 - All FRs",
+        title: "23127443 - Tran Pham Trong Nhan",
       },
     ],
     ["list"],
