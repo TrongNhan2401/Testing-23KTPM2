@@ -1,0 +1,166 @@
+[
+  {
+    "id": "TC-UI-A1",
+    "type": "positive",
+    "group": "A-login-success",
+    "username": "test@eshop.com",
+    "password": "Test1234!",
+    "expect": {
+      "navigation": "away_from_login",
+      "errorVisible": false,
+      "headerShouldNotContainLoginLink": true,
+      "description": "Login thành công → URL chuyển khỏi /login; header đổi từ 'Đăng nhập/Đăng ký' sang tên user"
+    }
+  },
+  {
+    "id": "TC-UI-B1",
+    "type": "negative",
+    "group": "B-wrong-password",
+    "username": "test@eshop.com",
+    "password": "SaiMatKhau123!",
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "errorContains": "Email hoặc mật khẩu không chính xác",
+      "description": "Sai password — error message hiển thị, không tiết lộ password sai"
+    }
+  },
+  {
+    "id": "TC-UI-B2",
+    "type": "negative",
+    "group": "B-email-not-exist",
+    "username": "khongtonTai@eshop.com",
+    "password": "BatKy123!",
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "errorContains": "Email hoặc mật khẩu không chính xác",
+      "errorMustMatchTCB1": true,
+      "description": "Email không tồn tại — cùng error message với TC-UI-B1 (anti-enumeration)"
+    }
+  },
+  {
+    "id": "TC-UI-C1",
+    "type": "negative",
+    "group": "C-invalid-email-format",
+    "username": "khonghople",
+    "password": "Test1234!",
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "errorContains": "Email hoặc mật khẩu không chính xác",
+      "description": "Email sai format (Username là type=text, không có HTML5 email validation → submit được)"
+    }
+  },
+  {
+    "id": "TC-UI-C2",
+    "type": "edge",
+    "group": "C-xss-injection",
+    "username": "<script>alert(1)</script>@eshop.com",
+    "password": "Test1234!",
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "noScriptExecuted": true,
+      "description": "XSS injection — KHÔNG có popup script chạy; error hiển thị an toàn (escaped)"
+    }
+  },
+  {
+    "id": "TC-UI-C3",
+    "type": "edge",
+    "group": "C-whitespace-only",
+    "username": " ",
+    "password": "Test1234!",
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "description": "Whitespace-only username — error message hiển thị"
+    }
+  },
+  {
+    "id": "TC-UI-C4",
+    "type": "negative",
+    "group": "C-empty-username",
+    "username": "",
+    "password": "Test1234!",
+    "expect": {
+      "html5RequiredBlocked": true,
+      "stayOnLogin": true,
+      "description": "Username rỗng — HTML5 required chặn submit (nếu có), URL không đổi"
+    }
+  },
+  {
+    "id": "TC-UI-D1",
+    "type": "edge",
+    "group": "D-lockout-third-attempt",
+    "username": "test@eshop.com",
+    "password": "SaiLan3!",
+    "setup": {
+      "wrongAttemptsBefore": 2,
+      "note": "Cần 2 lần login sai trước (không thể tự reset login_attempts từ UI — xem gap analysis)"
+    },
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "description": "Sai password lần thứ 3 (sau 2 lần trước) — error message hiển thị (có thể là khóa hoặc sai pass, tùy state)"
+    }
+  },
+  {
+    "id": "TC-UI-D2",
+    "type": "edge",
+    "group": "D-lockout-expires",
+    "username": "test@eshop.com",
+    "password": "Test1234!",
+    "setup": {
+      "wrongAttemptsBefore": 3,
+      "waitAfterLockoutMs": 35000,
+      "note": "Sau khi bị khóa, đ�i ~35s (>30s theo spec) rồi login đúng"
+    },
+    "expect": {
+      "navigation": "away_from_login",
+      "errorVisible": false,
+      "description": "Sau khi hết thời gian khóa → login đúng thành công"
+    }
+  },
+  {
+    "id": "TC-UI-D3",
+    "type": "edge",
+    "group": "D-during-lockout",
+    "username": "test@eshop.com",
+    "password": "SaiTrongKhiKhoa!",
+    "setup": {
+      "wrongAttemptsBefore": 3,
+      "note": "Cần bị khóa trước (3 lần sai), rồi thử tiếp ngay không đợi"
+    },
+    "expect": {
+      "stayOnLogin": true,
+      "errorVisible": true,
+      "description": "Trong thời gian khóa, thử tiếp → bị từ chối, error message hiển thị"
+    }
+  },
+  {
+    "id": "TC-UI-D4",
+    "type": "edge",
+    "group": "D-after-successful-login-header-changes",
+    "username": "test@eshop.com",
+    "password": "Test1234!",
+    "expect": {
+      "navigation": "away_from_login",
+      "errorVisible": false,
+      "headerShouldNotContainLoginLink": true,
+      "description": "Sau login đúng, header đổi (không còn link Đăng nhập/Đăng ký)"
+    }
+  },
+  {
+    "id": "TC-UI-N1",
+    "type": "negative",
+    "group": "C-both-fields-empty",
+    "username": "",
+    "password": "",
+    "expect": {
+      "html5RequiredBlocked": true,
+      "stayOnLogin": true,
+      "description": "Cả 2 trường rỗng — HTML5 required chặn submit"
+    }
+  }
+]

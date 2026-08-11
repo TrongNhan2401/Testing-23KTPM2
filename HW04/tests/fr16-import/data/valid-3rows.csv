@@ -1,0 +1,4 @@
+name,price,description,imageUrl,category_id
+SP 1,100000,Mo ta 1,https://example.com/1.jpg,1
+SP 2,200000,Mo ta 2,https://example.com/2.jpg,2
+SP 3,300000,Mo ta 3,https://example.com/3.jpg,3

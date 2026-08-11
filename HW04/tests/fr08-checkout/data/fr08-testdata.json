@@ -1,0 +1,326 @@
+{
+  "_schema_version": "1.0",
+  "_description": "Test data cho FR-08 Checkout (UI Automation). Mỗi phần tử map 1-1 với 1 test case trong testcases-fr08-checkout.md. KHÔNG hardcode vào spec.ts.",
+  "_fields": {
+    "id": "Test case ID — map 1-1 với bảng test cases",
+    "type": "positive | negative | edge",
+    "group": "A-Auth | B-TotalAmount | C-CartState | UI-Only",
+    "title": "Tên test (hiện trong Playwright report)",
+    "precondition": {
+      "hasItemsInCart": "true → giỏ phải có SP trước khi test; false → giỏ trống",
+      "editTotalAmount": "Giá trị (number|string|null) user nhập vào input Tổng tiền. null = giữ nguyên cartTotal.",
+      "authContext": "valid → dùng storageState .auth/user.json; cleared → xóa localStorage.token trước khi test; invalid → giữ valid storageState rồi overwrite token giả"
+    },
+    "action": {
+      "submit": "true → bấm 'Xác Nhận Thanh Toán'",
+      "checkoutWaitResponse": "true → assert network response từ /api/checkout (dùng khi submit=true)"
+    },
+    "expect": {
+      "successHeadingVisible": "true → kỳ vọng UI hiển thị 'Thanh toán thành công!'",
+      "networkStatus": "Kỳ vọng status code HTTP (200/401/403/...). null = skip network assertion",
+      "alertShown": "true → kỳ vọng window.alert() được gọi (mở dialog)",
+      "alertContains": "Substring kỳ vọng trong alert message (regex)",
+      "cartItemRows": "Kỳ vọng số <li> trong cart list. number = assert bằng; null = skip",
+      "expectedCartItemTextContains": "Substring phải có trong text của từng <li>",
+      "totalAmountInputValue": "Kỳ vọng giá trị input 'Tổng tiền thanh toán' sau khi load. number | regex | null",
+      "finalTotalTextContains": "Substring (regex) phải có trong 'Tổng thanh toán: X ₫'",
+      "totalAmountEditable": "Kỳ vọng input total có thể sửa được không. true | false | null (skip)",
+      "bugTrackingId": "ID bug liên quan trong FR08.md (vd 'FR-08-BUG-001')"
+    },
+    "metadata": {
+      "caseSource": "FR08.md §3.x — case gốc trong domain testing report",
+      "note": "Ghi chú ngắn"
+    }
+  },
+
+  "testCases": [
+    {
+      "id": "TC-A1",
+      "type": "positive",
+      "group": "A-Auth",
+      "title": "Happy path: User hợp lệ, cart có SP, total đúng → checkout thành công",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "cartItemRows": null,
+        "expectedCartItemTextContains": null,
+        "totalAmountInputValue": null,
+        "finalTotalTextContains": null,
+        "totalAmountEditable": null,
+        "bugTrackingId": null
+      },
+      "metadata": { "caseSource": "FR08.md §3.1 TC-A1", "note": "End-to-end happy path" }
+    },
+    {
+      "id": "TC-A2",
+      "type": "negative",
+      "group": "A-Auth",
+      "title": "Không có JWT token → Backend trả 401, UI alert lỗi",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "cleared"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": false,
+        "networkStatus": 401,
+        "alertShown": true,
+        "alertContains": "Lỗi khi thanh toán|Unauthorized",
+        "bugTrackingId": null
+      },
+      "metadata": { "caseSource": "FR08.md §3.1 TC-A2", "note": "Clear localStorage.token trước khi test" }
+    },
+    {
+      "id": "TC-A3",
+      "type": "negative",
+      "group": "A-Auth",
+      "title": "Token không hợp lệ (giả 'invalid-token-xyz') → Backend trả 401, UI alert lỗi",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "invalid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": false,
+        "networkStatus": 401,
+        "alertShown": true,
+        "alertContains": "Lỗi khi thanh toán|Unauthorized|Invalid token",
+        "bugTrackingId": null
+      },
+      "metadata": { "caseSource": "FR08.md §3.1 TC-A3", "note": "Overwrite token với 'invalid-token-xyz' trước khi test. Backend thực tế trả 401 (không phải 403 như FR08.md mô tả) — đã điều chỉnh." }
+    },
+    {
+      "id": "TC-B1",
+      "type": "negative",
+      "group": "B-TotalAmount",
+      "title": "User sửa input total thành 1 (khác tổng cart) → Backend PHẢI ignore, UI success",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": 1,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "bugTrackingId": "FR-08-BUG-001"
+      },
+      "metadata": {
+        "caseSource": "FR08.md §3.2 TC-B1",
+        "note": "Bug đã biết: input total editable. Test verify hành vi backend qua network. Đơn hàng phải final_amount = tổng cart, KHÔNG = 1."
+      }
+    },
+    {
+      "id": "TC-B2",
+      "type": "positive",
+      "group": "B-TotalAmount",
+      "title": "User nhập đúng total_amount (khớp cartTotal) → 200 OK",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "bugTrackingId": null
+      },
+      "metadata": {
+        "caseSource": "FR08.md §3.2 TC-B2",
+        "note": "Baseline so sánh với TC-B1. editTotalAmount=null → giữ nguyên pre-fill = cartTotal."
+      }
+    },
+    {
+      "id": "TC-B3",
+      "type": "edge",
+      "group": "B-TotalAmount",
+      "title": "User nhập total = 0 → Đơn miễn phí: Backend 200 OK",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": 0,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "bugTrackingId": null
+      },
+      "metadata": {
+        "caseSource": "FR08.md §3.2 TC-B3",
+        "note": "Thăm dò: đơn hàng miễn phí có được tạo không. Hiện backend 200 OK (do lấy total từ client)."
+      }
+    },
+    {
+      "id": "TC-C1",
+      "type": "negative",
+      "group": "C-CartState",
+      "title": "Cart trống → bấm thanh toán: tài liệu hóa FR-08-BUG-002",
+      "precondition": {
+        "hasItemsInCart": false,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "bugTrackingId": "FR-08-BUG-002"
+      },
+      "metadata": {
+        "caseSource": "FR08.md §3.3 TC-C1",
+        "note": "Bug đã biết: backend vẫn trả 200 khi cart trống. Test STRICTLY assert hành vi này (không best-effort). UI success heading xuất hiện + network 200."
+      }
+    },
+    {
+      "id": "TC-C2",
+      "type": "positive",
+      "group": "C-CartState",
+      "title": "Cart có SP → thanh toán: tài liệu hóa FR-08-BUG-003 (giỏ phải trống sau)",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": {
+        "submit": true,
+        "checkoutWaitResponse": true
+      },
+      "expect": {
+        "successHeadingVisible": true,
+        "networkStatus": 200,
+        "alertShown": false,
+        "bugTrackingId": "FR-08-BUG-003"
+      },
+      "metadata": {
+        "caseSource": "FR08.md §3.3 TC-C2",
+        "note": "Verify: GET /api/cart sau success phải trả [] (assert network/API level theo FR08.md §6.1)."
+      }
+    },
+    {
+      "id": "TC-UI-1",
+      "type": "positive",
+      "group": "UI-Only",
+      "title": "Trang /checkout hiển thị đúng danh sách SP (tên, số lượng, thành tiền từng item)",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": { "submit": false, "checkoutWaitResponse": false },
+      "expect": {
+        "successHeadingVisible": false,
+        "alertShown": false,
+        "cartItemRows": 2,
+        "expectedCartItemTextContains": ".+\\s+x\\s+\\d+\\s+—\\s+[\\d,.]+\\s*₫",
+        "bugTrackingId": null
+      },
+      "metadata": {
+        "caseSource": "UI-Only (FR08.md không có case này)",
+        "note": "Verify Checkout.jsx dòng 86-90 render <li>. Selector FRAGILE: ul.list-disc."
+      }
+    },
+    {
+      "id": "TC-UI-2",
+      "type": "positive",
+      "group": "UI-Only",
+      "title": "Input 'Tổng tiền thanh toán' được pre-fill đúng = cartTotal khi load /checkout",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": { "submit": false, "checkoutWaitResponse": false },
+      "expect": {
+        "successHeadingVisible": false,
+        "alertShown": false,
+        "totalAmountInputValue": "^\\d+(\\.\\d+)?$",
+        "bugTrackingId": null
+      },
+      "metadata": {
+        "caseSource": "UI-Only",
+        "note": "Verify Checkout.jsx dòng 95-102: useState(cartTotal)."
+      }
+    },
+    {
+      "id": "TC-UI-3",
+      "type": "positive",
+      "group": "UI-Only",
+      "title": "Dòng 'Tổng thanh toán: X ₫' hiển thị đúng = cartTotal khi chưa có coupon",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": null,
+        "authContext": "valid"
+      },
+      "action": { "submit": false, "checkoutWaitResponse": false },
+      "expect": {
+        "successHeadingVisible": false,
+        "alertShown": false,
+        "finalTotalTextContains": "Tổng thanh toán:",
+        "bugTrackingId": null
+      },
+      "metadata": {
+        "caseSource": "UI-Only",
+        "note": "Verify Checkout.jsx dòng 134-141. Selector FRAGILE: span text-match."
+      }
+    },
+    {
+      "id": "TC-UI-4",
+      "type": "negative",
+      "group": "UI-Only",
+      "title": "Sửa input total thành 999.999 → dòng 'Tổng thanh toán' reactive cập nhật (BUG-001 UI)",
+      "precondition": {
+        "hasItemsInCart": true,
+        "editTotalAmount": 999999,
+        "authContext": "valid"
+      },
+      "action": { "submit": false, "checkoutWaitResponse": false },
+      "expect": {
+        "successHeadingVisible": false,
+        "alertShown": false,
+        "finalTotalTextContains": "999[\\.,]999\\s*₫",
+        "totalAmountEditable": true,
+        "bugTrackingId": "FR-08-FUNC-BUG-001"
+      },
+      "metadata": {
+        "caseSource": "UI-Only (Bug UI từ FR08.md §8.2)",
+        "note": "Tài liệu hóa bug UI: spec FR-08 yêu cầu readonly nhưng code cho phép sửa. Verify 2 hệ quả: (1) input chấp nhận giá trị mới; (2) dòng 'Tổng thanh toán' update reactive. Locale VN dùng dấu phẩy (999,999) nên regex chấp cả '999.999' và '999,999'."
+      }
+    }
+  ]
+}
