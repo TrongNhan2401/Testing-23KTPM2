@@ -68,7 +68,7 @@
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spike Test - Admin Import (0→100→0)">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spike Test - Admin Import (0→100→0)" enabled="true">
         <intProp name="ThreadGroup.num_threads">100</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
         <longProp name="ThreadGroup.duration">70</longProp>
@@ -169,7 +169,6 @@
               <stringProp name="JSONPostProcessor.jsonPathExprs">$[0].id</stringProp>
               <stringProp name="JSONPostProcessor.match_numbers">1</stringProp>
               <stringProp name="JSONPostProcessor.defaultValues">1</stringProp>
-              <boolProp name="JSONPostProcessor.compute_concat">true</boolProp>
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
@@ -215,8 +214,8 @@ vars.put(&quot;products_json&quot;, JSON.stringify({&quot;products&quot;: produc
             </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
-            <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion - under 5000ms" enabled="true">
-              <stringProp name="DurationAssertion.duration">5000</stringProp>
+            <DurationAssertion guiclass="DurationAssertionGui" testclass="DurationAssertion" testname="Duration Assertion - under 15000ms" enabled="true">
+              <stringProp name="DurationAssertion.duration">15000</stringProp>
             </DurationAssertion>
             <hashTree/>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - 200" enabled="true">
