@@ -1,166 +1,92 @@
-2026-08-17 20:05:26,364 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
-2026-08-17 20:05:26,373 INFO o.a.j.JMeter: Loading user properties from: user.properties
-2026-08-17 20:05:26,373 INFO o.a.j.JMeter: Loading system properties from: system.properties
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: Version 5.6.3
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: java.version=1.8.0_491
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: os.name=Windows 11
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: os.arch=amd64
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: os.version=10.0
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: file.encoding=Cp1258
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: java.awt.headless=null
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: Max memory     =1073741824
-2026-08-17 20:05:26,379 INFO o.a.j.JMeter: Available Processors =20
-2026-08-17 20:05:26,382 INFO o.a.j.JMeter: Default Locale=English (EN)
-2026-08-17 20:05:26,382 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
-2026-08-17 20:05:26,382 INFO o.a.j.JMeter: JMeterHome=E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter
-2026-08-17 20:05:26,382 INFO o.a.j.JMeter: user.dir  =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
-2026-08-17 20:05:26,382 INFO o.a.j.JMeter: PWD       =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
-2026-08-17 20:05:26,383 INFO o.a.j.JMeter: IP: 192.168.1.157 Name: NhanTran FullName: NhanTran
-2026-08-17 20:05:26,393 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
-2026-08-17 20:05:26,539 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
-2026-08-17 20:05:35,919 INFO o.a.j.s.FileServer: Default base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin'
-2026-08-17 20:05:35,921 INFO o.a.j.g.a.Load: Loading file: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\23127443_Load_OrdersMyOrders_20260817.jmx
-2026-08-17 20:05:35,921 INFO o.a.j.s.FileServer: Set new base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05'
-2026-08-17 20:05:36,030 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
-2026-08-17 20:05:36,058 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
-2026-08-17 20:05:36,059 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
-2026-08-17 20:05:36,061 INFO o.a.j.s.SaveService: Loading file: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\23127443_Load_OrdersMyOrders_20260817.jmx
-2026-08-17 20:05:36,092 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2026-08-17 20:05:36,093 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2026-08-17 20:05:36,093 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2026-08-17 20:05:36,093 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
-2026-08-17 20:05:36,093 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
-2026-08-17 20:05:36,093 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
-2026-08-17 20:05:36,372 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
-2026-08-17 20:05:36,372 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
-2026-08-17 20:05:36,372 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
-2026-08-17 20:05:36,372 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
-2026-08-17 20:05:36,509 INFO o.a.j.s.FileServer: Set new base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05'
-2026-08-17 20:05:45,130 INFO o.a.j.e.StandardJMeterEngine: Running the test!
-2026-08-17 20:05:45,131 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2026-08-17 20:05:45,131 INFO o.a.j.s.SampleEvent: List of sample_variables: []
-2026-08-17 20:05:45,132 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
-2026-08-17 20:05:45,132 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
-2026-08-17 20:05:45,310 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
-2026-08-17 20:05:45,310 INFO o.a.j.e.StandardJMeterEngine: Starting setUp thread groups
-2026-08-17 20:05:45,310 INFO o.a.j.e.StandardJMeterEngine: Starting setUp ThreadGroup: 1 : Setup - Register Users 
-2026-08-17 20:05:45,311 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Setup - Register Users.
-2026-08-17 20:05:45,311 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
-2026-08-17 20:05:45,311 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
-2026-08-17 20:05:45,314 INFO o.a.j.t.ThreadGroup: Started thread group number 1
-2026-08-17 20:05:45,314 INFO o.a.j.e.StandardJMeterEngine: Waiting for all setup thread groups to exit
-2026-08-17 20:05:45,317 INFO o.a.j.t.JMeterThread: Thread started: Setup - Register Users 1-1
-2026-08-17 20:05:45,320 INFO o.a.j.s.FileServer: Stored: E:/Documents/HCMUS/Semester3_Year3/KTPM/Testing/HW05/test-data/load_orders.csv
-2026-08-17 20:05:45,341 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = NhanTran
-2026-08-17 20:05:45,347 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
-2026-08-17 20:05:45,521 INFO o.a.j.t.JMeterThread: Thread is done: Setup - Register Users 1-1
-2026-08-17 20:05:45,521 INFO o.a.j.t.JMeterThread: Thread finished: Setup - Register Users 1-1
-2026-08-17 20:05:45,522 INFO o.a.j.e.StandardJMeterEngine: All Setup Threads have ended
-2026-08-17 20:05:45,599 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Load Test - Orders My-Orders
-2026-08-17 20:05:45,599 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Load Test - Orders My-Orders.
-2026-08-17 20:05:45,599 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
-2026-08-17 20:05:45,599 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=60 delayedStart=false
-2026-08-17 20:05:45,602 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-1
-2026-08-17 20:05:45,625 INFO o.a.j.t.ThreadGroup: Started thread group number 1
-2026-08-17 20:05:45,625 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
-2026-08-17 20:05:46,202 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-2
-2026-08-17 20:05:46,803 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-3
-2026-08-17 20:05:47,401 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-4
-2026-08-17 20:05:48,001 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-5
-2026-08-17 20:05:48,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-6
-2026-08-17 20:05:49,202 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-7
-2026-08-17 20:05:49,808 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-8
-2026-08-17 20:05:50,414 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-9
-2026-08-17 20:05:51,005 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-10
-2026-08-17 20:05:51,606 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-11
-2026-08-17 20:05:52,205 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-12
-2026-08-17 20:05:52,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-13
-2026-08-17 20:05:53,401 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-14
-2026-08-17 20:05:54,001 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-15
-2026-08-17 20:05:54,601 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-16
-2026-08-17 20:05:55,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-17
-2026-08-17 20:05:55,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-18
-2026-08-17 20:05:56,399 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-19
-2026-08-17 20:05:57,014 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-20
-2026-08-17 20:05:57,603 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-21
-2026-08-17 20:05:58,204 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-22
-2026-08-17 20:05:58,807 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-23
-2026-08-17 20:05:59,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-24
-2026-08-17 20:06:00,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-25
-2026-08-17 20:06:00,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-26
-2026-08-17 20:06:01,201 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-27
-2026-08-17 20:06:01,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-28
-2026-08-17 20:06:02,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-29
-2026-08-17 20:06:03,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-30
-2026-08-17 20:06:03,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-31
-2026-08-17 20:06:04,201 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-32
-2026-08-17 20:06:04,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-33
-2026-08-17 20:06:05,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-34
-2026-08-17 20:06:06,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-35
-2026-08-17 20:06:06,599 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-36
-2026-08-17 20:06:07,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-37
-2026-08-17 20:06:07,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-38
-2026-08-17 20:06:08,401 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-39
-2026-08-17 20:06:09,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-40
-2026-08-17 20:06:09,599 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-41
-2026-08-17 20:06:10,199 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-42
-2026-08-17 20:06:10,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-43
-2026-08-17 20:06:11,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-44
-2026-08-17 20:06:12,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-45
-2026-08-17 20:06:12,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-46
-2026-08-17 20:06:13,199 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-47
-2026-08-17 20:06:13,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-48
-2026-08-17 20:06:14,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-49
-2026-08-17 20:06:15,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-50
-2026-08-17 20:06:15,601 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-51
-2026-08-17 20:06:16,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-52
-2026-08-17 20:06:16,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-53
-2026-08-17 20:06:17,399 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-54
-2026-08-17 20:06:17,999 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-55
-2026-08-17 20:06:18,599 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-56
-2026-08-17 20:06:19,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-57
-2026-08-17 20:06:19,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-58
-2026-08-17 20:06:20,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-59
-2026-08-17 20:06:21,001 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-60
-2026-08-17 20:06:21,601 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-61
-2026-08-17 20:06:22,199 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-62
-2026-08-17 20:06:22,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-63
-2026-08-17 20:06:23,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-64
-2026-08-17 20:06:23,999 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-65
-2026-08-17 20:06:24,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-66
-2026-08-17 20:06:25,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-67
-2026-08-17 20:06:25,799 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-68
-2026-08-17 20:06:26,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-69
-2026-08-17 20:06:27,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-70
-2026-08-17 20:06:27,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-71
-2026-08-17 20:06:28,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-72
-2026-08-17 20:06:28,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-73
-2026-08-17 20:06:29,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-74
-2026-08-17 20:06:29,999 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-75
-2026-08-17 20:06:30,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-76
-2026-08-17 20:06:31,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-77
-2026-08-17 20:06:31,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-78
-2026-08-17 20:06:32,399 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-79
-2026-08-17 20:06:33,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-80
-2026-08-17 20:06:33,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-81
-2026-08-17 20:06:34,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-82
-2026-08-17 20:06:34,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-83
-2026-08-17 20:06:35,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-84
-2026-08-17 20:06:36,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-85
-2026-08-17 20:06:36,600 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-86
-2026-08-17 20:06:37,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-87
-2026-08-17 20:06:37,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-88
-2026-08-17 20:06:38,401 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-89
-2026-08-17 20:06:39,001 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-90
-2026-08-17 20:06:39,599 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-91
-2026-08-17 20:06:40,199 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-92
-2026-08-17 20:06:40,800 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-93
-2026-08-17 20:06:41,400 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-94
-2026-08-17 20:06:42,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-95
-2026-08-17 20:06:42,599 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-96
-2026-08-17 20:06:43,200 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-97
-2026-08-17 20:06:43,801 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-98
-2026-08-17 20:06:44,401 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-99
-2026-08-17 20:06:45,000 INFO o.a.j.t.JMeterThread: Thread started: Load Test - Orders My-Orders 1-100
+2026-08-17 20:15:35,833 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2026-08-17 20:15:35,841 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2026-08-17 20:15:35,841 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: Version 5.6.3
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: java.version=1.8.0_491
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: os.name=Windows 11
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: os.arch=amd64
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: os.version=10.0
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: file.encoding=Cp1258
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: java.awt.headless=true
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: Max memory     =3730309120
+2026-08-17 20:15:35,845 INFO o.a.j.JMeter: Available Processors =20
+2026-08-17 20:15:35,848 INFO o.a.j.JMeter: Default Locale=English (United States)
+2026-08-17 20:15:35,848 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2026-08-17 20:15:35,848 INFO o.a.j.JMeter: JMeterHome=E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter
+2026-08-17 20:15:35,848 INFO o.a.j.JMeter: user.dir  =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-17 20:15:35,848 INFO o.a.j.JMeter: PWD       =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-17 20:15:35,849 INFO o.a.j.JMeter: IP: 192.168.1.157 Name: NhanTran FullName: NhanTran
+2026-08-17 20:15:35,860 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report'
+2026-08-17 20:15:35,863 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2026-08-17 20:15:35,863 INFO o.a.j.r.d.ReportGenerator: Will only generate report from results file: E:/Documents/HCMUS/Semester3_Year3/KTPM/Testing/HW05/Results/load-orders-summary.jtl
+2026-08-17 20:15:35,863 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin\reportgenerator.properties
+2026-08-17 20:15:35,863 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2026-08-17 20:15:35,866 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.temp_dir' not found, using default value 'temp' instead.
+2026-08-17 20:15:35,868 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2026-08-17 20:15:35,874 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction is empty, not APDEX per transaction customization
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2026-08-17 20:15:35,875 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.totalTPS.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,878 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.filters_only_sample_series' not found, using default value 'true' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.series_filter' not found, using default value '' instead.
+2026-08-17 20:15:35,879 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.json.show_controllers_only' not found, using default value 'false' instead.
+2026-08-17 20:15:35,880 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2026-08-17 20:15:35,880 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2026-08-17 20:15:35,880 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2026-08-17 20:15:35,980 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-08-17 20:15:36,004 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-08-17 20:15:36,009 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-08-17 20:15:36,036 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2026-08-17 20:15:36,338 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2026-08-17 20:15:36,338 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2026-08-17 20:15:36,339 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2026-08-17 20:15:36,340 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2026-08-17 20:15:36,346 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2026-08-17 20:15:36,352 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2026-08-17 20:15:36,353 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2026-08-17 20:15:36,353 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2026-08-17 20:15:36,398 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2026-08-17 20:15:36,400 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2026-08-17 20:15:36,400 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2026-08-17 20:15:36,400 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2026-08-17 20:15:36,427 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2026-08-17 20:15:36,428 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 6846 samples
+2026-08-17 20:15:36,428 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TotalTPSGraphConsumer#stopProducing(): totalTPS produced 0 samples
+2026-08-17 20:15:36,428 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2026-08-17 20:15:36,428 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2026-08-17 20:15:36,429 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2026-08-17 20:15:36,429 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2026-08-17 20:15:36,429 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2026-08-17 20:15:36,430 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 22395 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 4479 samples
+2026-08-17 20:15:36,431 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 1493 samples
+2026-08-17 20:15:36,432 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 1493 samples produced in 375ms on channel 0
+2026-08-17 20:15:36,432 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'json' of className:'org.apache.jmeter.report.dashboard.JsonExporter'
+2026-08-17 20:15:36,521 INFO o.a.j.r.d.JsonExporter: Found data for consumer statisticsSummary in context
+2026-08-17 20:15:36,521 INFO o.a.j.r.d.JsonExporter: Creating statistics for overall
+2026-08-17 20:15:36,522 INFO o.a.j.r.d.JsonExporter: Creating statistics for other transactions
+2026-08-17 20:15:36,522 INFO o.a.j.r.d.JsonExporter: Checking output folder
+2026-08-17 20:15:36,523 INFO o.a.j.r.d.JsonExporter: Writing statistics JSON to E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report\statistics.json
+2026-08-17 20:15:36,554 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2026-08-17 20:15:36,556 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report
+2026-08-17 20:15:36,637 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report, creating folder structure
+2026-08-17 20:15:36,639 INFO o.a.j.r.d.TemplateVisitor: Copying folder from 'E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin\report-template' to 'E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report', got message: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report, found non empty folder with following content [E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\Results\load-orders-html-report\statistics.json], will be ignored

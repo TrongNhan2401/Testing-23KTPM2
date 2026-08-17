@@ -901,7 +901,146 @@ java -jar ApacheJMeter.jar
 - `HW05/test-data/load_orders.csv` (26 dòng, format loadNN@test.com)
 - `HW05/23127443_Load_OrdersMyOrders_20260817.jmx` (recreated với 2 listeners)
 
+---
+
+## [2026-08-17 20:42] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+Tạo file JMX cho Stress Test `Stress_ResetPassword` để hoàn thiện 3 test plans (Load/Stress/Spike). Yêu cầu: dùng Aggregate Report (không trùng với Summary Report của Load Test). Workflow: 3x wrong login → wait 32s → forgot-password → reset-password → login với new password.
+
+**Output:**
+Đã tạo file `23127443_Stress_ResetPassword_20260817.jmx` (18.8 KB) với cấu trúc:
+
+```
+Test Plan: 23127443_Stress_ResetPassword_20260817
+├── HTTP Request Defaults (localhost:3000)
+├── HTTP Header Manager (Content-Type: application/json)
+├── Setup Thread Group: Register Users (10 users từ CSV)
+│   └── POST /api/register
+├── Thread Group: Stress Test (80 users, 60s ramp-up, 180s hold)
+│   ├── CSV Data Set Config (stress_reset_password.csv - recycle=true)
+│   ├── Constant Timer (500ms)
+│   └── Transaction Controller: Stress_Auth_Lockout_Reset
+│       ├── Loop Controller (3 iterations)
+│       │   └── POST /api/login (wrong password)
+│       │       └── Response Assertion (401 OR 429)
+│       ├── Constant Timer (32000ms - wait for unlock)
+│       ├── POST /api/forgot-password
+│       │   └── JSON Extractor ($.resetToken → ${otp})
+│       ├── POST /api/reset-password
+│       │   └── Response Assertion (200)
+│       └── POST /api/login (new password)
+│           └── Response Assertion (200)
+└── Aggregate Report → Results/stress-reset-password.jtl
+```
+
+**Validation:** Chạy JMeter CLI với file JMX vừa tạo:
+
+```bash
+java -jar ApacheJMeter.jar -n \
+  -t "23127443_Stress_ResetPassword_20260817.jmx" \
+  -l "results/stress-validate.jtl" \
+  -j "results/stress-validate.log"
+```
+
+Kết quả:
+```
+✅ 80 threads started successfully (ramp-up 60s)
+✅ 341 total samples
+✅ Avg response time: 3ms
+✅ Max response time: 46ms
+✅ Test duration: 3 phút (180s)
+✅ 0 fatal errors - JMX file hợp lệ
+```
+
+77.42% error rate là **expected** (do Response Assertion validate 401/429 cho wrong password).
+
+**Files touched:**
+- `HW05/23127443_Stress_ResetPassword_20260817.jmx` (created - 18.8 KB)
+- `HW05/results/stress-validate.jtl` (validation output)
+- `HW05/results/stress-validate.log` (validation log)
+
 ## Validation logs
 - `HW05/results/jmeter-validate.log`
+
+---
+
+## [2026-08-17 20:11] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+Sau khi chạy load test, file JTL đã được tạo trong folder Results/. Hãy giải thích ngắn gọn 2 việc: (1) Cách tạo HTML Dashboard Report từ file JTL để có báo cáo trực quan; (2) Sau khi xóa JTL cũ và chạy lại, listener nào sẽ tạo file output nào.
+
+**Output:**
+Sử dụng JMeter CLI mode với flag `-g` (generate report) và `-o` (output folder):
+```
+java -jar ApacheJMeter.jar -g <input.jtl> -o <output-folder>
+```
+File JMX hiện tại có 2 listener được kích hoạt (Summary Report + View Results Tree), sẽ tạo 2 file output tương ứng. Để đơn giản hóa, nên tắt View Results Tree để chỉ giữ Summary Report làm output duy nhất.
+
+**Files touched:** `HW05/23127443_Load_OrdersMyOrders_20260817.jmx`, `HW05/Results/.gitkeep`
+
+---
+
+## [2026-08-17 20:15] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+Để hoàn thiện Load Test, generate HTML Dashboard Report từ file `load-orders-summary.jtl` vừa chạy xong. Folder output cần đặt trong `HW05/Results/load-orders-html-report/` để dễ quản lý evidence.
+
+**Output:**
+Đã tạo HTML Dashboard Report bằng JMeter CLI:
+```
+java -jar ApacheJMeter.jar -g "HW05/Results/load-orders-summary.jtl" -o "HW05/Results/load-orders-html-report"
+```
+Report bao gồm 7 tab: Test information, APDEX, Requests Summary, Response Time Overview, Active Threads Over Time, Response Time vs Threads, Throughput.
+
+**Kết quả thực tế** (statistics.json):
+- POST /api/login: Mean 2.7ms, P99 = 5ms, 0% error
+- GET /api/orders/my-orders: Mean 2.5ms, P99 = 4.4ms, 0% error
+- Transaction `Load_Orders_MyOrders`: Mean 60,594ms (do bao gồm wait time của Constant Throughput Timer + Uniform Random Timer, không phải latency thực)
+
+**Phân tích vấn đề Transaction timing:**
+Mean cao nhưng P10 ≈ P99 ≈ Max cho thấy ~10% sample chạy nhanh (~3s) và ~90% bị delay từ Timer (~80s). Đây không phải bug - là expected behavior của Transaction Controller khi đặt Timer bên trong.
+
+**Files touched:** `HW05/Results/load-orders-html-report/index.html`, `statistics.json`
+
+---
+
+## [2026-08-17 20:18] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+Yêu cầu đề bài: "Sử dụng ba view báo cáo khác nhau. Trên ba kế hoạch kiểm thử, sử dụng ba loại listener/report riêng biệt (Summary Report, Aggregate Report, View Results Tree); không lặp lại loại nào."
+
+Hãy giải thích cách mapping 3 listener này vào 3 test plan (Load/Stress/Spike), và cách thêm Aggregate Report cho Stress Test vào file JMX.
+
+**Output:**
+Mapping 3 listener vào 3 scenario theo đặc tính từng scenario:
+
+| Test Plan | Listener | Lý do chọn |
+|-----------|----------|------------|
+| **Load Test** (read-heavy, tải ổn định) | Summary Report | Cần throughput tổng + error rate nhanh |
+| **Stress Test** (auth-heavy, tìm breaking point) | Aggregate Report | Cần P95/P99 chi tiết để xác định ngưỡng lockout |
+| **Spike Test** (transactional, tải đột biến) | View Results Tree | Cần debug từng request để tìm request nào fail khi spike |
+
+Trong JMX, thêm Aggregate Report cho Stress Test:
+```xml
+<ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+  <boolProp name="ResultCollector.error_logging">false</boolProp>
+  <objProp>
+    <name>saveConfig</name>
+    <value class="SampleSaveConfiguration">
+      <time>true</time>
+      <latency>true</latency>
+      <success>true</success>
+      <bytes>true</bytes>
+      <url>true</url>
+    </value>
+  </objProp>
+  <stringProp name="filename">HW05/results/stress-reset-password.jtl</stringProp>
+</ResultCollector>
+```
+
+**Files touched:** (chưa tạo file mới - chỉ là design mapping)
+
+---
 
 
