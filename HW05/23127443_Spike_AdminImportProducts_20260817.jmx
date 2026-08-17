@@ -6,8 +6,10 @@
 - WORKFLOW: login admin → get categories → bulk import products → verify
 - SPIKE PATTERN: 0 users (30s idle) → 100 users (5s ramp-up) → 100 users (60s hold) → 0 users (5s ramp-down)
 - Data-driven from CSV spike_import_products.csv
-- BSF PreProcessor generates dynamic product payload
-- Listener: View Results Tree (3rd type - khac Summary Report and Aggregate Report)</stringProp>
+- JSR223 PreProcessor (Groovy) generates dynamic product payload
+- Listener: View Results Tree
+- FIX: Header Manager local REPLACES global -> re-declare Content-Type
+- FIX: Groovy script uses Groovy syntax (not JavaScript)</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">false</boolProp>
       <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
@@ -147,6 +149,10 @@
                 <stringProp name="Header.name">Authorization</stringProp>
                 <stringProp name="Header.value">Bearer ${admin_token}</stringProp>
               </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
             </collectionProp>
           </HeaderManager>
           <hashTree/>
@@ -172,27 +178,29 @@
             </JSONPostProcessor>
             <hashTree/>
           </hashTree>
-          <BSFPreProcessor guiclass="TestBeanGUI" testclass="BSFPreProcessor" testname="BSF PreProcessor - Generate Products JSON" enabled="true">
-            <stringProp name="scriptLanguage">javascript</stringProp>
+          <JSR223PreProcessor guiclass="TestBeanGUI" testclass="JSR223PreProcessor" testname="JSR223 PreProcessor - Generate Products JSON" enabled="true">
+            <stringProp name="cacheKey">true</stringProp>
             <stringProp name="parameters"></stringProp>
-            <stringProp name="filename"></stringProp>
-            <stringProp name="script">var count = parseInt(vars.get(&quot;product_count&quot;)) || 5;
-var prefix = vars.get(&quot;product_prefix&quot;) || &quot;ImportProduct&quot;;
-var categoryId = parseInt(vars.get(&quot;category_id&quot;)) || 1;
+            <stringProp name="script">import groovy.json.JsonOutput
 
-var products = [];
-for (var i = 1; i &lt;= count; i++) {
-    products.push({
-        &quot;name&quot;: prefix + &quot;_&quot; + i + &quot;_&quot; + System.currentTimeMillis(),
-        &quot;price&quot;: Math.floor(Math.random() * 900000) + 100000,
-        &quot;description&quot;: &quot;Spike test product &quot; + i,
+def count = (vars.get(&quot;product_count&quot;) ?: &quot;5&quot;) as int
+def prefix = vars.get(&quot;product_prefix&quot;) ?: &quot;ImportProduct&quot;
+def categoryId = (vars.get(&quot;category_id&quot;) ?: &quot;1&quot;) as int
+
+def products = []
+for (def i = 1; i &lt;= count; i++) {
+    products.push([
+        &quot;name&quot;: &quot;${prefix}_${i}_${System.currentTimeMillis()}&quot;,
+        &quot;price&quot;: (Math.random() * 900000).intValue() + 100000,
+        &quot;description&quot;: &quot;Spike test product ${i}&quot;,
         &quot;imageUrl&quot;: &quot;&quot;,
         &quot;category_id&quot;: categoryId
-    });
+    ])
 }
 
-vars.put(&quot;products_json&quot;, JSON.stringify({&quot;products&quot;: products}));</stringProp>
-          </BSFPreProcessor>
+vars.put(&quot;products_json&quot;, JsonOutput.toJson([&quot;products&quot;: products]))</stringProp>
+            <stringProp name="scriptLanguage">groovy</stringProp>
+          </JSR223PreProcessor>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/admin/import-products" enabled="true">
             <stringProp name="HTTPSampler.domain">localhost</stringProp>
