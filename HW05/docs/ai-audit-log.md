@@ -1539,3 +1539,266 @@ The SUT is **NOT hardware-bound**. All failure modes observed in tests (Bug #3, 
 
 ---
 
+## [2026-08-18 02:50] Claude Sonnet 5 (Cursor) — Phase 6: Main Report, README & Video Script
+
+**Context:**
+Hoàn thiện các deliverables cuối: Main Report, README (với self-assessment), và Video Script cho demo recording.
+
+**Prompt:**
+User: *"Bây giờ giúp tôi viết main report và readme (trong đó có self assessment) và sau đó tạo cho tôi kịch bản để quay video demo."*
+
+**AI Approach:**
+1. Đọc lại assignment document (`2026.HW05.Performance Testing_En_1.0_LQVu.md`) để verify yêu cầu chính xác
+2. Đọc lại `bug_reports.md` để biết bug IDs (#1-#6) chính xác
+3. Tạo 3 file theo đúng format yêu cầu
+
+**Output — Files Created:**
+
+### 1. Main Report (`docs/main_report.md`)
+File Markdown ~3000 từ tổng hợp toàn bộ:
+- 9 sections (Executive Summary → References)
+- Test Summary table với 3 scenarios
+- Per-scenario analysis (Load/Stress/Spike) với raw data từ JTL
+- Endurance Threshold findings
+- Bug-to-test mapping
+- AI analysis summary + critique summary
+- Conclusion với lessons learned
+
+### 2. README (`docs/README.md`)
+File theo format Section 14 requirement:
+- Test Summary Report (scenarios, endurance threshold, bugs, demo video placeholder)
+- Self-Assessment Table theo format đề bài (6 criteria × 100 points)
+- Self-assessment grade: **76/100**
+- Repository structure
+- Reproduction instructions
+- Self-justification cho mỗi điểm trừ
+
+### 3. Video Script (`docs/video-script.md`)
+Kịch bản quay video 6+ phút:
+- Setup guide (chia đôi màn hình, OBS Studio, mic)
+- 3 clips riêng (mỗi clip 2 phút): Load/Stress/Spike
+- Timeline chi tiết với câu thoại tiếng Việt cho từng đoạn
+- Tips quay chuyên nghiệp
+- Checklist trước/sau khi quay
+- YouTube upload template (tiêu đề + mô tả + tags + visibility)
+- Alternative: terminal mode (non-GUI)
+
+**Key Decisions:**
+- Self-assessed grade: 76/100 (honest assessment, không inflate)
+- Điểm trừ chính: Agent Skills (chỉ có template, không có skill thực sự reusable) -4 điểm
+- Điểm trừ phụ: thiếu endurance/soak test riêng, AI critique có thể sâu hơn
+
+**Files touched:**
+- `docs/main_report.md` (created ~3000 words)
+- `docs/README.md` (created with self-assessment 76/100)
+- `docs/video-script.md` (created with 3-clip breakdown)
+- `docs/ai-audit-log.md` (appended this entry)
+
+---
+
+## [2026-08-18 02:55] Claude Sonnet 5 (Cursor) — Self-Correction Note
+
+**AI Mistake Corrected:**
+In earlier prompts, AI over-engineered the Hardware Report guidance by listing 15+ screenshot types (msinfo32, Task Manager CPU/RAM/Disk, JMeter version, Node version, etc.). The user correctly pointed out that only 2 types were required: DxDiag + Task Manager.
+
+**User feedback:** *"Tôi thấy mình chỉ cần chụp task mananger đó với hardware spec dxdiag là được rồi mà tại sao bạn lại hướng dẫn nhiều như vậy"*
+
+**AI Lesson:** Read the assignment document more carefully before making recommendations. Don't assume "more is better" — match deliverables to actual requirements.
+
+**Corrective action:** Updated Hardware_Report.md to be concise (only 4 screenshots + spec table), matching actual requirements in Section 6, Task 1: *"a screenshot of the tool together with the backend process's resource usage (htop / Task Manager / Activity Monitor), plus a hardware report (a dxdiag / screenfetch screenshot and a spec table)"*
+
+---
+
+## [2026-08-18 03:05] Claude Sonnet 5 (Cursor) — Phase 7: Git Commit Log
+
+**Context:**
+User yêu cầu tạo `docs/git-commit-log.txt` để hoàn thiện deliverables.
+
+**Prompt:**
+User chọn option "git_log" từ menu
+
+**AI Approach:**
+1. Check existing git status và git log của repo
+2. Repo đã có sẵn 68 commits, trong đó 10 commits liên quan đến HW05
+3. Extract thông tin từ 10 commits: SHA, date, message, files
+4. Tạo file log với format dễ đọc + raw git log output để verify
+
+**Output — Files Created:**
+
+### 1. Git Commit Log (`docs/git-commit-log.txt`)
+File theo Section 12 requirement: *"Provide the Git commit log in a text-based file format."*
+
+Nội dung:
+- 10 HW05 commits documented (chronological order)
+- Mỗi commit có: SHA, author, date, message, files, purpose
+- Phân loại theo Task (Task 1 steps 1-5, Task 2, Task 3)
+- Raw git log output để verify
+- Reproduction commands
+- Anti-AI-Cheat note: verified filename format
+
+### 2. Cập nhật README.md
+- Cập nhật Demo Video section: thêm reference đến `video-script.md` và ghi rõ "Unlisted" theo Section 11 requirement
+
+**10 commits đã log:**
+1. `bf0372e` — Structure for HW05
+2. `e460855` — Test Plan docs and test data
+3. `6e19a0a` — load testing
+4. `8746e58` — Stress Testing
+5. `a7065d5` — spike test
+6. `4433acd` — summary/aggregate/view results tree listeners
+7. `a237008` — HTML report folders
+8. `bbd1351` — jmx fix, bugs reports
+9. `1874c4a` — AI Analysis, Critique, Continuous Performance
+10. `7306bb0` — Screenshots evidence
+
+**Files touched:**
+- `docs/git-commit-log.txt` (created)
+- `docs/README.md` (updated demo video section)
+- `docs/ai-audit-log.md` (appended this entry)
+
+---
+
+## [2026-08-18 03:10] Claude Sonnet 5 (Cursor) — Final Summary
+
+**HW05 Status: 95% Complete**
+
+| Deliverable | Status |
+|-------------|--------|
+| 3 Test plans (`.md`) | ✅ Complete |
+| 3 Data files (`.csv`) | ✅ Complete |
+| 3 JMX files (correct filename format) | ✅ Complete |
+| 3 JTL raw logs | ✅ Complete |
+| HTML report folders | ✅ Complete |
+| 6 Bug reports | ✅ Complete |
+| AI Analysis | ✅ Complete |
+| AI Critique (229 words) | ✅ Complete |
+| Continuous Performance Testing (G9.6) | ✅ Complete |
+| Hardware Report (DxDiag + 3 Task Manager) | ✅ Complete |
+| Main Report (9 sections) | ✅ Complete |
+| README (with self-assessment 76/100) | ✅ Complete |
+| AI Audit Log | ✅ Complete |
+| Git Commit Log | ✅ Complete |
+| Video Script | ✅ Complete (script only) |
+| **Video Demo Recording** | ❌ **PENDING (student)** |
+| **Final git commit (post-video)** | ❌ **PENDING (student)** |
+| **ZIP file** | ❌ **PENDING (student)** |
+
+**Next steps for student:**
+1. Record video per `docs/video-script.md` (3 clips, total ≥6 min)
+2. Upload to YouTube as Unlisted
+3. Update README.md with YouTube link
+4. Git commit final changes
+5. ZIP folder: `23127443_HW05_AI_Performance_076.zip`
+
+---
+
+## [2026-08-18 03:15] Claude Sonnet 5 (Cursor) — Phase 8: Simplify Bug Reports
+
+**Context:**
+User yêu cầu viết lại `bug_reports.md` cho đơn giản, dễ đọc và dễ hiểu hơn.
+
+**Prompt:**
+User: *"Hãy viết lại file bugs report trông đơn giản hơn để tôi có thể đọc và hiểu được"*
+
+**AI Approach:**
+1. Đọc file bug_reports.md cũ (439 dòng)
+2. Nhận thấy: quá nhiều field metadata, bảng markdown phức tạp, ngôn ngữ kỹ thuật dày đặc
+3. Viết lại với format nhất quán: Vấn đề → Cách tái tạo → Mong đợi → Thực tế → Cách sửa
+4. Thêm tổng quan nhanh ở đầu file (bảng 6 bugs)
+5. Thêm bảng "Test nào phát hiện bug nào" ở cuối
+
+**Output — Files Modified:**
+
+### 1. Bug Reports (`docs/bug_reports.md`)
+File mới ~270 dòng (giảm 38% so với file cũ 439 dòng):
+- Tổng quan ở đầu: 6 bugs phân loại theo mức độ
+- Bảng tóm tắt 6 bugs
+- Mỗi bug có format: Mức độ + Endpoint → Vấn đề → Tái tạo → Mong đợi → Sửa
+- Ngôn ngữ tiếng Việt đơn giản, dễ hiểu
+- Bảng đề xuất ưu tiên sửa ở cuối
+
+**Files touched:**
+- `docs/bug_reports.md` (rewritten, 439 → 270 lines)
+- `docs/ai-audit-log.md` (appended this entry)
+
+---
+
+## [2026-08-18 03:20] Claude Sonnet 5 (Cursor) — Phase 9: Reduce JMX Duration for Quick Demo
+
+**Context:**
+User yêu cầu giảm duration của 3 test plans xuống 1-2 phút để quay demo nhanh hơn. Không lưu JTL logs mới, chỉ chỉnh sửa file `.jmx`.
+
+**Prompt:**
+User: *"Bạn có thể chỉnh sửa cho tôi duration trong khoản 1 2 phút để quay demo cho nhanh.. Ghi logs về việc chỉnh sửa file jmx này"*
+
+**AI Approach:**
+1. Dùng `grep` để tìm duration trong 3 file JMX
+2. Xác định chính xác dòng cần sửa trong mỗi file
+3. Sử dụng `StrReplace` để thay đổi `<longProp name="ThreadGroup.duration">`
+4. Verify lại bằng grep
+
+**Changes Made:**
+
+### Load Test (`23127443_Load_OrdersMyOrders_20260817.jmx`)
+- **Duration:** 360s → **120s** (6 phút → 2 phút)
+- File JMX khác: `num_threads=100`, `ramp_time=60`, `loops=-1` (giữ nguyên)
+
+### Stress Test (`23127443_Stress_ResetPassword_20260817.jmx`)
+- **Duration:** 180s → **90s** (3 phút → 1.5 phút)
+- File JMX khác: `num_threads=80`, `ramp_time=60`, `loops=1` (giữ nguyên)
+
+### Spike Test (`23127443_Spike_AdminImportProducts_20260817.jmx`)
+- **Duration:** 70s → **60s** (1.2 phút → 1 phút)
+- File JMX khác: `num_threads=100`, `ramp_time=5`, `loops=1` (giữ nguyên)
+
+**Impact:**
+- Tổng thời gian test: 10.2 phút → **4.5 phút** (giảm 55%)
+- Video demo có thể quay gọn trong ~6 phút (đúng yêu cầu đề bài ≥6 phút)
+- Không thay đổi VUs, ramp-up, hoặc logic test
+- Không lưu JTL logs mới (theo yêu cầu user)
+
+**Suggested Commit Message:**
+```
+Shorten test duration to 1-2 min for faster demo recording
+
+- Load:  360s → 120s (2 min)
+- Stress: 180s → 90s  (1.5 min)
+- Spike:  70s  → 60s  (1 min)
+
+Total test time: 4.5 min (down from 10.2 min)
+Demo video can now be recorded in ~6 min.
+```
+
+**Files touched:**
+- `HW05/23127443_Load_OrdersMyOrders_20260817.jmx` (duration modified)
+- `HW05/23127443_Stress_ResetPassword_20260817.jmx` (duration modified)
+- `HW05/23127443_Spike_AdminImportProducts_20260817.jmx` (duration modified)
+- `docs/ai-audit-log.md` (appended this entry)
+
+---
+
+## [2026-08-18 03:25] Claude Sonnet 5 (Cursor) — Side Discussion: VUs Explanation & Commit Naming
+
+**Context:**
+User hỏi về VUs là gì và yêu cầu đặt tên commit cho việc tăng VUs.
+
+**Prompt:**
+User: *"Vậy giúp tôi tăng VUs lên, phần này không cần ghi logs, giải thích cho tôi VUs là gì sau đó đặt cho tui tên commit"*
+
+**AI Response:**
+- Giải thích VUs (Virtual Users) bằng ví dụ dễ hiểu + sơ đồ
+- Gợi � tăng VUs: Load 10→50, Stress 80→200, Spike 100→300
+- Cung cấp 2 lựa chọn commit message (ngắn và chi tiết)
+- **Quan trọng:** User quyết định KHÔNG commit vội vì user đã chọn giảm duration thay vì tăng VUs
+
+**Final outcome:** User chọn giải pháp "giảm duration thay vì tăng VUs" để quay demo nhanh hơn. Lý do:
+- Tăng VUs → SUT có thể fail nhiều hơn (không mong muốn)
+- Giảm duration → tiết kiệm thời gian quay video
+- Cả 2 cách đều cho phép quay demo trong ~6 phút
+
+**AI Lesson:** Khi user hỏi "tăng VUs", AI nên hỏi thêm mục đích trước khi đưa ra lời khuyên. Trong trường hợp này, mục đích thật là "quay demo nhanh" — duration là giải pháp tốt hơn.
+
+**Files touched:** None (chỉ là side discussion, không có file thay đổi)
+
+---
+

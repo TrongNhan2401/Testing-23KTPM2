@@ -1,1101 +1,1101 @@
 timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
-1786995990234,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,640,269,11,11,http://localhost:3000/api/login,4,0,1
-1786995990295,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,640,269,12,12,http://localhost:3000/api/login,3,0,1
-1786995990342,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,640,269,13,13,http://localhost:3000/api/login,2,0,1
-1786995990389,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,640,269,14,14,http://localhost:3000/api/login,2,0,0
-1786995990497,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,640,269,16,16,http://localhost:3000/api/login,3,0,1
-1786995990436,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,640,269,15,15,http://localhost:3000/api/login,2,0,0
-1786995990544,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,640,269,17,17,http://localhost:3000/api/login,3,0,1
-1786995990590,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,640,269,18,18,http://localhost:3000/api/login,4,0,0
-1786995990637,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,640,269,19,19,http://localhost:3000/api/login,2,0,1
-1786995990684,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,640,269,20,20,http://localhost:3000/api/login,3,0,1
-1786995990745,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,358,324,21,21,http://localhost:3000/api/categories,2,0,0
-1786995990746,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,640,269,21,21,http://localhost:3000/api/login,3,0,1
-1786995990792,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,640,269,22,22,http://localhost:3000/api/login,4,0,0
-1786995990806,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,358,324,22,22,http://localhost:3000/api/categories,2,0,0
-1786995990839,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,640,269,23,23,http://localhost:3000/api/login,2,0,0
-1786995990853,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,358,324,23,23,http://localhost:3000/api/categories,2,0,0
-1786995990885,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,640,269,24,24,http://localhost:3000/api/login,2,0,0
-1786995990900,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,358,324,24,24,http://localhost:3000/api/categories,2,0,0
-1786995990992,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,640,269,26,26,http://localhost:3000/api/login,3,0,1
-1786995990931,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,640,269,25,25,http://localhost:3000/api/login,2,0,1
-1786995991039,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,640,269,27,27,http://localhost:3000/api/login,2,0,1
-1786995991055,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,358,324,27,27,http://localhost:3000/api/categories,1,0,0
-1786995991055,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,358,324,27,27,http://localhost:3000/api/categories,2,0,0
-1786995991055,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,358,324,27,27,http://localhost:3000/api/categories,2,0,0
-1786995991086,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,640,269,28,28,http://localhost:3000/api/login,2,0,1
-1786995991101,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,358,324,28,28,http://localhost:3000/api/categories,2,0,0
-1786995991132,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,640,269,29,29,http://localhost:3000/api/login,2,0,1
-1786995991148,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,358,324,29,29,http://localhost:3000/api/categories,1,0,0
-1786995991193,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,358,324,30,30,http://localhost:3000/api/categories,1,0,0
-1786995991193,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,640,269,30,30,http://localhost:3000/api/login,3,0,1
-1786995991239,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,640,269,31,31,http://localhost:3000/api/login,3,0,1
-1786995991250,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-1,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,31,31,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991251,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,358,324,31,31,http://localhost:3000/api/categories,1,0,0
-1786995991279,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,640,269,32,32,http://localhost:3000/api/login,2,0,0
-1786995991297,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,358,324,32,32,http://localhost:3000/api/categories,1,0,0
-1786995991309,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-2,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,32,32,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991325,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,640,269,32,32,http://localhost:3000/api/login,2,0,0
-1786995991344,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,358,324,33,33,http://localhost:3000/api/categories,1,0,0
-1786995991358,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-3,text,false,"Test failed: code expected to equal /
+1787004705625,7,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,640,269,13,13,http://localhost:3000/api/login,7,0,2
+1787004705633,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,640,269,13,13,http://localhost:3000/api/login,2,0,1
+1787004705625,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,640,269,13,13,http://localhost:3000/api/login,5,0,2
+1787004705684,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,640,269,14,14,http://localhost:3000/api/login,4,0,1
+1787004705732,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,640,269,15,15,http://localhost:3000/api/login,3,0,1
+1787004705782,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,640,269,16,16,http://localhost:3000/api/login,4,0,1
+1787004705830,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,640,269,17,17,http://localhost:3000/api/login,3,0,1
+1787004705882,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,640,269,18,18,http://localhost:3000/api/login,4,0,1
+1787004705934,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,640,269,19,19,http://localhost:3000/api/login,2,0,0
+1787004705983,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,640,269,20,20,http://localhost:3000/api/login,2,0,0
+1787004706032,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,640,269,21,21,http://localhost:3000/api/login,3,0,1
+1787004706082,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,640,269,22,22,http://localhost:3000/api/login,4,0,1
+1787004706131,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,640,269,23,23,http://localhost:3000/api/login,2,0,0
+1787004706157,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,358,324,23,23,http://localhost:3000/api/categories,1,0,0
+1787004706157,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,358,324,23,23,http://localhost:3000/api/categories,1,0,0
+1787004706158,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,358,324,23,23,http://localhost:3000/api/categories,1,0,0
+1787004706181,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,640,269,24,24,http://localhost:3000/api/login,3,0,0
+1787004706192,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,358,324,24,24,http://localhost:3000/api/categories,1,0,0
+1787004706231,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,640,269,25,25,http://localhost:3000/api/login,2,0,1
+1787004706241,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,358,324,25,25,http://localhost:3000/api/categories,1,0,0
+1787004706281,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,640,269,26,26,http://localhost:3000/api/login,2,0,1
+1787004706290,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,358,324,26,26,http://localhost:3000/api/categories,0,0,0
+1787004706331,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,640,269,27,27,http://localhost:3000/api/login,3,0,1
+1787004706337,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,358,324,27,27,http://localhost:3000/api/categories,1,0,0
+1787004706381,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,640,269,28,28,http://localhost:3000/api/login,2,0,0
+1787004706391,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,358,324,28,28,http://localhost:3000/api/categories,1,0,0
+1787004706431,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,640,269,29,29,http://localhost:3000/api/login,2,0,0
+1787004706438,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,358,324,29,29,http://localhost:3000/api/categories,2,0,0
+1787004706482,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,640,269,30,30,http://localhost:3000/api/login,2,0,0
+1787004706488,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,358,324,30,30,http://localhost:3000/api/categories,1,0,0
+1787004706532,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,640,269,31,31,http://localhost:3000/api/login,3,0,0
+1787004706539,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,358,324,31,31,http://localhost:3000/api/categories,0,0,0
+1787004706582,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,640,269,32,32,http://localhost:3000/api/login,4,0,2
+1787004706589,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,358,324,32,32,http://localhost:3000/api/categories,0,0,0
+1787004706632,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,640,269,33,33,http://localhost:3000/api/login,3,0,1
+1787004706635,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,358,324,33,33,http://localhost:3000/api/categories,0,0,0
+1787004706663,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-3,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,33,33,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991370,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,640,269,33,33,http://localhost:3000/api/login,2,0,1
-1786995991390,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,358,324,34,34,http://localhost:3000/api/categories,2,0,0
-1786995991403,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-4,text,false,"Test failed: code expected to equal /
+1787004706663,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-1,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,34,34,http://localhost:3000/api/admin/import-products,2,0,0
-1786995991478,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,640,269,36,36,http://localhost:3000/api/login,2,0,1
-1786995991433,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,640,269,35,35,http://localhost:3000/api/login,2,0,0
-1786995991497,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,358,324,36,36,http://localhost:3000/api/categories,1,0,0
-1786995991497,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,358,324,36,36,http://localhost:3000/api/categories,1,0,0
-1786995991525,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,640,269,36,36,http://localhost:3000/api/login,2,0,1
-1786995991544,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,358,324,37,37,http://localhost:3000/api/categories,0,0,0
-1786995991558,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-6,text,false,"Test failed: code expected to equal /
+/",2703,372,33,33,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706664,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-2,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,37,37,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991558,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-7,text,false,"Test failed: code expected to equal /
+/",2703,372,33,33,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706681,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,640,269,34,34,http://localhost:3000/api/login,3,0,1
+1787004706686,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,358,324,34,34,http://localhost:3000/api/categories,1,0,0
+1787004706696,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-4,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,37,37,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991558,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-5,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,37,37,http://localhost:3000/api/admin/import-products,2,0,0
-1786995991573,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,640,269,37,37,http://localhost:3000/api/login,2,0,1
-1786995991590,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,358,324,38,38,http://localhost:3000/api/categories,2,0,0
-1786995991605,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-8,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,38,38,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991634,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,640,269,39,39,http://localhost:3000/api/login,3,0,1
-1786995991636,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,358,324,39,39,http://localhost:3000/api/categories,2,0,0
-1786995991651,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-9,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,39,39,http://localhost:3000/api/admin/import-products,2,0,0
-1786995991680,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,640,269,40,40,http://localhost:3000/api/login,4,0,0
-1786995991696,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-10,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991698,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,358,324,40,40,http://localhost:3000/api/categories,0,0,0
-1786995991726,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995991744,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995991753,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-11,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991753,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995989722,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-1,,false,,4939,1287,41,41,null,9,2024,1
-1786995991772,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995991782,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995991799,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-12,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995991812,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995989784,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-2,,false,,4939,1287,41,41,null,8,2022,1
-1786995991829,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995991834,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995991846,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-13,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995991862,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995989830,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-3,,false,,4939,1287,41,41,null,7,2027,1
-1786995991874,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995991879,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995991893,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-14,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995991905,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995989877,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-4,,false,,4939,1287,41,41,null,8,2022,0
-1786995991973,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,640,269,42,42,http://localhost:3000/api/login,3,0,0
-1786995991928,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995991995,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,358,324,42,42,http://localhost:3000/api/categories,2,0,0
-1786995991995,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,358,324,42,42,http://localhost:3000/api/categories,3,0,0
-1786995992000,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-15,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,2,0,0
-1786995992000,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-16,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,2,0,0
-1786995992029,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,358,324,43,43,http://localhost:3000/api/categories,2,0,0
-1786995992035,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,640,269,43,43,http://localhost:3000/api/login,3,0,0
-1786995992047,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-17,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,43,43,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992061,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,1238,322,43,43,http://localhost:3000/api/products,3,0,0
-1786995989984,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-6,,false,,4939,1287,43,43,null,9,2071,1
-1786995992061,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,1238,322,43,43,http://localhost:3000/api/products,3,0,0
-1786995989922,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-5,,false,,4939,1287,43,43,null,9,2133,0
-1786995992061,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,1238,322,42,42,http://localhost:3000/api/products,3,0,0
-1786995990031,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-7,,false,,4939,1287,42,42,null,8,2025,1
-1786995992076,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992082,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992094,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-18,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995992108,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990078,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-8,,false,,4939,1287,41,41,null,9,2023,0
-1786995992129,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992139,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-19,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992139,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992155,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990125,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-9,,false,,4939,1287,41,41,null,7,2025,1
-1786995992176,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995992184,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992199,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-20,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992198,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
-1786995990171,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-10,,false,,4939,1287,41,41,null,8,2022,1
-1786995992233,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992233,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
-1786995992248,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-21,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
-1786995992255,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990234,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-11,,false,,4939,1287,41,41,null,6,2016,1
-1786995992269,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992276,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992285,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-22,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992302,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990280,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-12,,false,,4939,1287,41,41,null,9,2015,0
-1786995992319,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995992332,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-23,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992339,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992348,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990326,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-13,,false,,4939,1287,41,41,null,7,2017,0
-1786995992369,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992379,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-24,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992383,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992396,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990373,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-14,,false,,4939,1287,41,41,null,6,2017,0
-1786995992418,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992469,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,640,269,42,42,http://localhost:3000/api/login,2,0,1
-1786995992499,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,358,324,42,42,http://localhost:3000/api/categories,1,0,0
-1786995992499,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-26,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992499,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-25,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,2,0,0
-1786995992499,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,358,324,42,42,http://localhost:3000/api/categories,2,0,0
-1786995992504,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,1238,322,42,42,http://localhost:3000/api/products,1,0,0
-1786995990481,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-16,,false,,4939,1287,42,42,null,7,2017,1
-1786995992504,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990420,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-15,,false,,4939,1287,41,41,null,6,2079,1
-1786995992519,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
-1786995992532,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-27,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992539,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992549,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
-1786995990528,3,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-17,,false,,4939,1287,41,41,null,3,2019,1
-1786995992570,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992579,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-28,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992585,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992597,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990574,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-18,,false,,4939,1287,41,41,null,7,2017,1
-1786995992619,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995992633,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995992641,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990621,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-19,,false,,4939,1287,41,41,null,6,2016,1
-1786995992642,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-29,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992669,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
-1786995992680,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992687,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-30,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992702,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990683,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-20,,false,,4939,1287,41,41,null,5,2015,1
-1786995992721,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992736,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-31,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992739,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
-1786995992749,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995990731,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-21,,false,,4939,1287,41,41,null,5,2014,1
-1786995992770,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
-1786995992773,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992777,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-32,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992788,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990777,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-22,,false,,4939,1287,41,41,null,6,2007,0
-1786995992819,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995992824,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995992834,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995990823,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-23,,false,,4939,1287,41,41,null,6,2007,0
-1786995992842,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-33,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,0,0,0
-1786995992883,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,358,324,41,41,http://localhost:3000/api/categories,3,0,0
-1786995992883,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
-1786995990869,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-24,,false,,4939,1287,41,41,null,7,2010,1
-1786995992884,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,640,269,40,40,http://localhost:3000/api/login,4,0,0
-1786995992898,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-34,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995992992,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,358,324,42,42,http://localhost:3000/api/categories,1,0,0
-1786995992977,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,640,269,42,42,http://localhost:3000/api/login,3,0,0
-1786995992931,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995992930,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993007,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-36,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993007,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-35,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993007,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,1238,322,42,42,http://localhost:3000/api/products,3,0,0
-1786995990977,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-26,,false,,4939,1287,42,42,null,8,2026,1
-1786995993006,5,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,1238,322,41,41,http://localhost:3000/api/products,5,0,0
-1786995990931,12,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-25,,false,,4939,1287,41,41,null,12,2068,0
-1786995993022,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995993037,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995993037,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995991023,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-27,,false,,4939,1287,41,41,null,7,2009,1
-1786995993053,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-37,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993069,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
-1786995993084,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991071,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-28,,false,,4939,1287,41,41,null,5,2009,1
-1786995993084,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993100,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-38,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993130,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995993131,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
-1786995993146,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-39,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993146,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
-1786995991132,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-29,,false,,4939,1287,41,41,null,8,2009,1
-1786995993177,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995993177,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995993192,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-40,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993192,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
-1786995991178,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-30,,false,,4939,1287,41,41,null,9,2008,0
-1786995993223,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
-1786995993239,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991225,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-31,,false,,4939,1287,41,41,null,5,2010,0
-1786995993239,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993241,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-41,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993268,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993273,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993275,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-42,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993280,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991270,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-32,,false,,4939,1287,41,41,null,5,2006,0
-1786995993319,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993323,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993327,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-43,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993345,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991332,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-33,,false,,4939,1287,41,41,null,5,2009,0
-1786995993368,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993388,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-44,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993389,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,358,324,41,41,http://localhost:3000/api/categories,3,0,0
-1786995993401,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991378,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-34,,false,,4939,1287,41,41,null,5,2020,0
-1786995993418,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995993467,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,640,269,42,42,http://localhost:3000/api/login,2,0,1
-1786995993497,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-46,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993497,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-45,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993497,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,358,324,42,42,http://localhost:3000/api/categories,3,0,0
-1786995993497,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,358,324,42,42,http://localhost:3000/api/categories,3,0,0
-1786995993509,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,1238,322,42,42,http://localhost:3000/api/products,2,0,0
-1786995991472,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-36,,false,,4939,1287,42,42,null,7,2033,0
-1786995993509,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,1238,322,42,42,http://localhost:3000/api/products,3,0,0
-1786995991425,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-35,,false,,4939,1287,42,42,null,8,2079,0
-1786995993517,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995993526,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993540,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-47,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993555,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991532,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-37,,false,,4939,1287,41,41,null,6,2018,0
-1786995993568,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993575,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
-1786995993587,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-48,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993602,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995991579,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-38,,false,,4939,1287,41,41,null,6,2019,0
-1786995993616,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995993635,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-49,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993638,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
-1786995993650,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995991626,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-39,,false,,4939,1287,41,41,null,8,2018,0
-1786995993670,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995993681,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-50,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993682,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995993695,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991674,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-40,,false,,4939,1287,41,41,null,7,2015,1
-1786995993718,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993728,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993743,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-51,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993744,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
-1786995991721,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-41,,false,,4939,1287,41,41,null,5,2018,0
-1786995993768,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995993772,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993775,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-52,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993777,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991767,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-42,,false,,4939,1287,41,41,null,5,2006,0
-1786995993818,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,640,269,41,41,http://localhost:3000/api/login,5,0,1
-1786995993823,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995993826,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-53,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995993830,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995991818,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-43,,false,,4939,1287,41,41,null,6,2008,1
-1786995993868,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995993872,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995993892,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995991867,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-44,,false,,4939,1287,41,41,null,9,2018,0
-1786995993894,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-54,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993916,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,640,269,41,41,http://localhost:3000/api/login,5,0,1
-1786995993923,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994022,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,358,324,43,43,http://localhost:3000/api/categories,1,0,0
-1786995994017,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,640,269,43,43,http://localhost:3000/api/login,2,0,0
-1786995994001,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-56,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994001,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-55,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
-1786995993999,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,1238,322,42,42,http://localhost:3000/api/products,2,0,0
-1786995991916,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-45,,false,,4939,1287,42,42,null,6,2106,0
-1786995993999,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,1238,322,42,42,http://localhost:3000/api/products,1,0,0
-1786995993992,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,358,324,42,42,http://localhost:3000/api/categories,1,0,0
-1786995993967,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,640,269,42,42,http://localhost:3000/api/login,3,0,0
-1786995991967,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-46,,false,,4939,1287,42,42,null,5,2057,1
-1786995994030,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-57,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994043,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992017,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-47,,false,,4939,1287,41,41,null,7,2020,1
-1786995994067,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
-1786995994072,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995994078,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-58,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994090,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992067,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-48,,false,,4939,1287,41,41,null,5,2019,0
-1786995994117,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995994121,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994138,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995992117,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-49,,false,,4939,1287,41,41,null,8,2015,1
-1786995994141,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-59,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994167,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995994175,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994184,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995992168,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-50,,false,,4939,1287,41,41,null,8,2010,1
-1786995994186,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-60,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994229,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994229,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995994245,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-61,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994245,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
-1786995992218,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-51,,false,,4939,1287,41,41,null,6,2023,0
-1786995994266,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
-1786995994271,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994275,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-62,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994278,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992268,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-52,,false,,4939,1287,41,41,null,5,2006,1
-1786995994316,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995994324,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994326,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-63,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994329,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992317,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-53,,false,,4939,1287,41,41,null,7,2006,1
-1786995994365,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
-1786995994372,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994374,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-64,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994397,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992368,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-54,,false,,4939,1287,41,41,null,9,2021,0
-1786995994415,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
-1786995994423,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
-1786995994424,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-65,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994539,5,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,1238,322,43,43,http://localhost:3000/api/products,5,0,0
-1786995992467,13,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-56,,false,,4939,1287,43,43,null,13,2076,0
-1786995994540,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,358,324,43,43,http://localhost:3000/api/categories,4,0,0
-1786995994540,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,358,324,43,43,http://localhost:3000/api/categories,4,0,0
-1786995994539,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,1238,322,43,43,http://localhost:3000/api/products,4,0,0
-1786995994539,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,1238,322,43,43,http://localhost:3000/api/products,4,0,0
-1786995992416,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-55,,false,,4939,1287,43,43,null,10,2130,0
-1786995992516,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-57,,false,,4939,1287,43,43,null,10,2030,1
-1786995994539,3,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-67,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,43,43,http://localhost:3000/api/admin/import-products,3,0,0
-1786995994539,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-66,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,43,43,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994524,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,640,269,43,43,http://localhost:3000/api/login,3,0,0
-1786995994478,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,640,269,42,42,http://localhost:3000/api/login,2,0,1
-1786995994571,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
-1786995994586,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-68,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994586,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
-1786995994586,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
-1786995992566,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-58,,false,,4939,1287,41,41,null,8,2015,0
-1786995994618,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
-1786995994633,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-69,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994633,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,358,324,41,41,http://localhost:3000/api/categories,3,0,0
-1786995994649,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992616,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-59,,false,,4939,1287,41,41,null,6,2029,0
-1786995994679,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-70,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
-1786995994679,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,358,324,41,41,http://localhost:3000/api/categories,4,0,0
-1786995994680,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
-1786995994696,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
-1786995992666,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-60,,false,,4939,1287,41,41,null,7,2024,0
-1786995994727,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,640,269,40,40,http://localhost:3000/api/login,3,0,1
-1786995994742,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-71,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994742,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,358,324,40,40,http://localhost:3000/api/categories,2,0,0
-1786995994758,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,1238,322,40,40,http://localhost:3000/api/products,1,0,0
-1786995992717,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-61,,false,,4939,1287,40,40,null,7,2035,1
-1786995994773,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,358,324,39,39,http://localhost:3000/api/categories,0,0,0
-1786995994773,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,640,269,39,39,http://localhost:3000/api/login,2,0,0
-1786995994788,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-72,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,39,39,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994788,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,1238,322,39,39,http://localhost:3000/api/products,1,0,0
-1786995992767,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-62,,false,,4939,1287,39,39,null,5,2017,0
-1786995994820,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,640,269,38,38,http://localhost:3000/api/login,2,0,0
-1786995994835,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-73,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,38,38,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994835,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,1238,322,38,38,http://localhost:3000/api/products,3,0,0
-1786995992817,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-63,,false,,4939,1287,38,38,null,8,2013,0
-1786995994835,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,358,324,38,38,http://localhost:3000/api/categories,3,0,0
-1786995994867,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,640,269,37,37,http://localhost:3000/api/login,2,0,0
-1786995994882,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-74,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,37,37,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994882,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,1238,322,37,37,http://localhost:3000/api/products,2,0,0
-1786995992866,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-64,,false,,4939,1287,37,37,null,6,2012,0
-1786995994882,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,358,324,37,37,http://localhost:3000/api/categories,2,0,0
-1786995994929,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-75,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,36,36,http://localhost:3000/api/admin/import-products,1,0,0
-1786995994929,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,358,324,36,36,http://localhost:3000/api/categories,3,0,0
-1786995994929,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,1238,322,36,36,http://localhost:3000/api/products,3,0,0
-1786995992915,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-65,,false,,4939,1287,36,36,null,8,2009,0
-1786995994929,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,640,269,35,35,http://localhost:3000/api/login,4,0,1
-1786995995023,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,640,269,35,35,http://localhost:3000/api/login,4,0,1
-1786995994977,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,640,269,35,35,http://localhost:3000/api/login,3,0,1
-1786995995071,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-76,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,35,35,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995071,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-77,text,false,"Test failed: code expected to equal /
+/",2703,372,34,34,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706732,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,640,269,35,35,http://localhost:3000/api/login,5,0,0
+1787004706736,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,358,324,35,35,http://localhost:3000/api/categories,2,0,0
+1787004706744,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-5,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,35,35,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995071,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,358,324,35,35,http://localhost:3000/api/categories,4,0,0
-1786995995071,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,1238,322,35,35,http://localhost:3000/api/products,4,0,0
-1786995993016,11,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-67,,false,,4939,1287,35,35,null,11,2048,1
-1786995995071,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,1238,322,35,35,http://localhost:3000/api/products,4,0,0
-1786995992965,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-66,,false,,4939,1287,35,35,null,9,2100,1
-1786995995071,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,358,324,34,34,http://localhost:3000/api/categories,4,0,0
-1786995995071,7,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,640,269,33,33,http://localhost:3000/api/login,7,0,0
-1786995995085,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,358,324,33,33,http://localhost:3000/api/categories,1,0,0
-1786995995101,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-78,text,false,"Test failed: code expected to equal /
+1787004706781,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,640,269,36,36,http://localhost:3000/api/login,2,0,0
+1787004706786,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,358,324,36,36,http://localhost:3000/api/categories,2,0,0
+1787004706793,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-6,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,33,33,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995101,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,1238,322,33,33,http://localhost:3000/api/products,2,0,0
-1786995993065,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-68,,false,,4939,1287,33,33,null,8,2030,0
-1786995995117,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,640,269,32,32,http://localhost:3000/api/login,2,0,0
-1786995995132,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,358,324,32,32,http://localhost:3000/api/categories,1,0,0
-1786995995147,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-79,text,false,"Test failed: code expected to equal /
+/",2703,372,36,36,http://localhost:3000/api/admin/import-products,2,0,0
+1787004706830,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,640,269,37,37,http://localhost:3000/api/login,3,0,1
+1787004706837,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,358,324,37,37,http://localhost:3000/api/categories,1,0,0
+1787004706840,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-7,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,32,32,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995147,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,1238,322,32,32,http://localhost:3000/api/products,2,0,0
-1786995993115,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-69,,false,,4939,1287,32,32,null,8,2026,1
-1786995995163,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,640,269,31,31,http://localhost:3000/api/login,2,0,1
-1786995995194,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-80,text,false,"Test failed: code expected to equal /
+/",2703,372,37,37,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706881,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,640,269,38,38,http://localhost:3000/api/login,2,0,1
+1787004706886,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,358,324,38,38,http://localhost:3000/api/categories,1,0,0
+1787004706894,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-8,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,31,31,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995194,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,1238,322,31,31,http://localhost:3000/api/products,2,0,0
-1786995993166,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-70,,false,,4939,1287,31,31,null,8,2022,0
-1786995995194,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,358,324,31,31,http://localhost:3000/api/categories,3,0,0
-1786995995240,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,358,324,30,30,http://localhost:3000/api/categories,2,0,0
-1786995995256,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-81,text,false,"Test failed: code expected to equal /
+/",2703,372,38,38,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706930,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,640,269,39,39,http://localhost:3000/api/login,3,0,0
+1787004706936,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,358,324,39,39,http://localhost:3000/api/categories,1,0,0
+1787004706942,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-9,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,30,30,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995256,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,1238,322,30,30,http://localhost:3000/api/products,2,0,0
-1786995993216,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-71,,false,,4939,1287,30,30,null,6,2036,0
-1786995995288,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-82,text,false,"Test failed: code expected to equal /
+/",2703,372,39,39,http://localhost:3000/api/admin/import-products,1,0,0
+1787004706981,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,640,269,40,40,http://localhost:3000/api/login,4,0,0
+1787004706985,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,358,324,40,40,http://localhost:3000/api/categories,1,0,0
+1787004706992,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-10,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,29,29,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995288,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,358,324,29,29,http://localhost:3000/api/categories,2,0,0
-1786995995303,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,1238,322,29,29,http://localhost:3000/api/products,2,0,0
-1786995993266,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-72,,false,,4939,1287,29,29,null,6,2033,0
-1786995995334,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,358,324,28,28,http://localhost:3000/api/categories,1,0,0
-1786995995349,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-83,text,false,"Test failed: code expected to equal /
+/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707031,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707037,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707041,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-11,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,28,28,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995349,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,1238,322,28,28,http://localhost:3000/api/products,2,0,0
-1786995993316,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-73,,false,,4939,1287,28,28,null,9,2026,1
-1786995995380,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,358,324,27,27,http://localhost:3000/api/categories,1,0,0
-1786995995395,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-84,text,false,"Test failed: code expected to equal /
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707082,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,640,269,42,42,http://localhost:3000/api/login,4,0,0
+1787004707088,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,358,324,42,42,http://localhost:3000/api/categories,2,0,0
+1787004707092,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-12,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,27,27,http://localhost:3000/api/admin/import-products,0,0,0
-1786995995395,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,1238,322,27,27,http://localhost:3000/api/products,1,0,0
-1786995993367,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-74,,false,,4939,1287,27,27,null,6,2023,0
-1786995995441,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-85,text,false,"Test failed: code expected to equal /
+/",2703,372,42,42,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707130,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,640,269,43,43,http://localhost:3000/api/login,2,0,1
+1787004707136,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,43,43,http://localhost:3000/api/admin/import-products,2,0,0
+1787004707136,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,358,324,43,43,http://localhost:3000/api/categories,3,0,0
+1787004707167,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,1238,322,43,43,http://localhost:3000/api/products,2,0,0
+1787004705128,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-3,,false,,4939,1287,43,43,null,6,2035,1
+1787004707167,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,1238,322,43,43,http://localhost:3000/api/products,2,0,0
+1787004705036,11,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-1,,false,,4939,1287,43,43,null,11,2122,2
+1787004707167,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,1238,322,43,43,http://localhost:3000/api/products,2,0,0
+1787004705078,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-2,,false,,4939,1287,43,43,null,9,2082,2
+1787004707181,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707185,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707189,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707199,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705178,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-4,,false,,4939,1287,41,41,null,7,2015,1
+1787004707231,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707239,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707240,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004707248,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705227,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-5,,false,,4939,1287,41,41,null,7,2015,1
+1787004707280,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,640,269,41,41,http://localhost:3000/api/login,5,0,1
+1787004707286,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707290,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707297,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705277,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-6,,false,,4939,1287,41,41,null,8,2014,1
+1787004707332,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707335,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707340,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707344,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705327,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-7,,false,,4939,1287,41,41,null,6,2013,1
+1787004707381,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004707385,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707390,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707397,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705377,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-8,,false,,4939,1287,41,41,null,8,2014,1
+1787004707430,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707435,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707439,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707444,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705427,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-9,,false,,4939,1287,41,41,null,7,2012,0
+1787004707481,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707487,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004707488,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707494,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004705477,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-10,,false,,4939,1287,41,41,null,4,2014,0
+1787004707535,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707535,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707539,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-21,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004707543,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705528,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-11,,false,,4939,1287,41,41,null,5,2011,1
+1787004707580,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707589,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004707593,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-22,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707596,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705578,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-12,,false,,4939,1287,41,41,null,6,2013,1
+1787004707629,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
+1787004707634,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004707640,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705627,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-13,,false,,4939,1287,41,41,null,6,2009,0
+1787004707642,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-23,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,40,40,http://localhost:3000/api/admin/import-products,2,0,0
+1787004707679,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707684,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004707688,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-24,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
+1787004707692,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705677,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-14,,false,,4939,1287,41,41,null,7,2010,0
+1787004707730,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707735,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707742,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-25,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707742,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004705727,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-15,,false,,4939,1287,41,41,null,6,2011,1
+1787004707780,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707786,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707789,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-26,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707793,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705777,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-16,,false,,4939,1287,41,41,null,6,2011,1
+1787004707830,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004707837,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707838,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-27,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707846,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705827,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-17,,false,,4939,1287,41,41,null,6,2014,1
+1787004707881,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004707885,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707888,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-28,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707893,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705877,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-18,,false,,4939,1287,41,41,null,5,2012,0
+1787004707930,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707935,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004707938,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-29,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707941,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705928,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-19,,false,,4939,1287,41,41,null,5,2009,0
+1787004707980,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004707985,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707991,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-30,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004707991,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004705978,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-20,,false,,4939,1287,41,41,null,5,2009,0
+1787004708030,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708039,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-31,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708040,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708042,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004706029,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-21,,false,,4939,1287,41,41,null,4,2009,0
+1787004708080,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708086,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708093,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-32,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708098,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706078,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-22,,false,,4939,1287,41,41,null,8,2013,2
+1787004708130,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708136,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708138,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-33,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
+1787004708147,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706128,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-23,,false,,4939,1287,41,41,null,9,2012,1
+1787004708181,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004708186,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708189,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-34,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708192,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706178,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-24,,false,,4939,1287,41,41,null,7,2008,1
+1787004708229,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,640,269,41,41,http://localhost:3000/api/login,5,0,2
+1787004708235,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708238,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-35,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
+1787004708246,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004706228,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-25,,false,,4939,1287,41,41,null,9,2011,0
+1787004708280,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
+1787004708285,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708289,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-36,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708292,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004706278,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-26,,false,,4939,1287,41,41,null,6,2010,0
+1787004708328,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
+1787004708335,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708339,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-37,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708341,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706328,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-27,,false,,4939,1287,41,41,null,6,2008,1
+1787004708380,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004708387,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004708388,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-38,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004708390,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706378,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-28,,false,,4939,1287,41,41,null,5,2008,1
+1787004708430,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004708433,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708437,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-39,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004708441,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706428,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-29,,false,,4939,1287,41,41,null,6,2008,0
+1787004708481,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004708484,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708488,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-40,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708494,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706478,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-30,,false,,4939,1287,41,41,null,8,2009,0
+1787004708537,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708537,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
+1787004708542,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706529,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-31,,false,,4939,1287,41,41,null,5,2009,0
+1787004708544,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-41,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708580,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004708586,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708588,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-42,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708596,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706578,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-32,,false,,4939,1287,41,41,null,8,2011,0
+1787004708634,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004708628,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708640,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-43,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708642,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706628,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-33,,false,,4939,1287,41,41,null,7,2009,1
+1787004708679,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708686,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004708689,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-44,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708691,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706677,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-34,,false,,4939,1287,41,41,null,6,2009,0
+1787004708733,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004708736,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004708739,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-45,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004708742,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004706728,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-35,,false,,4939,1287,41,41,null,5,2009,0
+1787004708781,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
+1787004708787,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-46,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708786,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,358,324,41,41,http://localhost:3000/api/categories,3,0,0
+1787004708791,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706778,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-36,,false,,4939,1287,41,41,null,8,2006,1
+1787004708831,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004708835,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708839,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-47,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708843,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706828,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-37,,false,,4939,1287,41,41,null,5,2010,0
+1787004708882,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004708886,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004708891,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-48,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708891,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706878,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-38,,false,,4939,1287,41,41,null,4,2009,1
+1787004708930,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004708935,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004708937,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-49,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004708940,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706928,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-39,,false,,4939,1287,41,41,null,4,2008,1
+1787004708981,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
+1787004708985,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004708988,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-50,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708992,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004706978,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-40,,false,,4939,1287,41,41,null,5,2009,0
+1787004709031,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004709042,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-51,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004709042,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709048,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707029,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-41,,false,,4939,1287,41,41,null,6,2013,1
+1787004709081,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
+1787004709086,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709090,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-52,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709092,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707078,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-42,,false,,4939,1287,41,41,null,6,2008,1
+1787004709144,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004709142,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004707127,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-43,,false,,4939,1287,41,41,null,6,2014,1
+1787004709142,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-53,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709131,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709181,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
+1787004709186,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709191,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-54,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709193,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707177,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-44,,false,,4939,1287,41,41,null,7,2009,1
+1787004709230,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709238,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004709239,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-55,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004709241,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004707228,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-45,,false,,4939,1287,41,41,null,4,2008,1
+1787004709281,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,640,269,41,41,http://localhost:3000/api/login,5,0,1
+1787004709288,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709291,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-56,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
+1787004709291,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
+1787004707277,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-46,,false,,4939,1287,41,41,null,8,2008,1
+1787004709330,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,1
+1787004709335,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709337,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-57,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709341,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707328,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-47,,false,,4939,1287,41,41,null,5,2008,1
+1787004709381,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
+1787004709388,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-58,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709387,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004709393,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707378,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-48,,false,,4939,1287,41,41,null,6,2010,1
+1787004709431,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709435,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004709437,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-59,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,0,0,0
+1787004709441,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,1238,322,41,41,http://localhost:3000/api/products,0,0,0
+1787004707427,3,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-49,,false,,4939,1287,41,41,null,3,2011,0
+1787004709481,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004709486,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709487,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-60,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709491,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707477,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-50,,false,,4939,1287,41,41,null,5,2009,0
+1787004709536,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004709537,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709545,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-61,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,2,0,0
+1787004709545,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,1238,322,41,41,http://localhost:3000/api/products,4,0,0
+1787004707528,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-51,,false,,4939,1287,41,41,null,8,2012,1
+1787004709581,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004709587,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709589,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-62,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709593,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707577,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-52,,false,,4939,1287,41,41,null,7,2010,1
+1787004709651,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004709651,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707628,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-53,,false,,4939,1287,41,41,null,8,2017,1
+1787004709651,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-63,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709630,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,0
+1787004709682,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709687,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709689,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-64,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709694,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707677,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-54,,false,,4939,1287,41,41,null,6,2011,1
+1787004709731,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709734,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,358,324,41,41,http://localhost:3000/api/categories,0,0,0
+1787004709741,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-65,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709741,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707727,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-55,,false,,4939,1287,41,41,null,7,2008,2
+1787004709780,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004709787,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004709790,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-66,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709794,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707777,11,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-56,,false,,4939,1287,41,41,null,11,2007,1
+1787004709830,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,0
+1787004709834,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787004709837,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-67,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709839,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707827,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-57,,false,,4939,1287,41,41,null,7,2005,1
+1787004709881,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,640,269,41,41,http://localhost:3000/api/login,3,0,1
+1787004709886,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709891,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-68,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709891,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,1238,322,41,41,http://localhost:3000/api/products,3,0,0
+1787004707877,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-58,,false,,4939,1287,41,41,null,6,2010,1
+1787004709931,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709934,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709936,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-69,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709939,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,1238,322,41,41,http://localhost:3000/api/products,1,0,0
+1787004707928,3,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-59,,false,,4939,1287,41,41,null,3,2008,0
+1787004709982,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,640,269,41,41,http://localhost:3000/api/login,2,0,0
+1787004709987,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,358,324,41,41,http://localhost:3000/api/categories,1,0,0
+1787004709989,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-70,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,41,41,http://localhost:3000/api/admin/import-products,1,0,0
+1787004709989,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,1238,322,41,41,http://localhost:3000/api/products,2,0,0
+1787004707978,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-60,,false,,4939,1287,41,41,null,6,2006,0
+1787004710031,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,640,269,40,40,http://localhost:3000/api/login,2,0,0
+1787004710039,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-71,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,40,40,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710040,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,358,324,40,40,http://localhost:3000/api/categories,1,0,0
+1787004710048,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,1238,322,40,40,http://localhost:3000/api/products,0,0,0
+1787004708031,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-61,,false,,4939,1287,40,40,null,6,2010,0
+1787004710080,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,640,269,39,39,http://localhost:3000/api/login,2,0,1
+1787004710086,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,358,324,39,39,http://localhost:3000/api/categories,1,0,0
+1787004710090,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-72,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,39,39,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710091,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,1238,322,39,39,http://localhost:3000/api/products,1,0,0
+1787004708077,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-62,,false,,4939,1287,39,39,null,5,2009,0
+1787004710156,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,358,324,38,38,http://localhost:3000/api/categories,2,0,0
+1787004710156,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,1238,322,38,38,http://localhost:3000/api/products,2,0,0
+1787004708127,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-63,,false,,4939,1287,38,38,null,7,2039,1
+1787004710156,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-73,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,38,38,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710131,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,640,269,38,38,http://localhost:3000/api/login,2,0,0
+1787004710181,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,640,269,37,37,http://localhost:3000/api/login,2,0,0
+1787004710186,0,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,358,324,37,37,http://localhost:3000/api/categories,0,0,0
+1787004710190,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-74,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,37,37,http://localhost:3000/api/admin/import-products,0,0,0
+1787004710192,0,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,1238,322,37,37,http://localhost:3000/api/products,0,0,0
+1787004708177,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-64,,false,,4939,1287,37,37,null,5,2009,1
+1787004710230,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,640,269,36,36,http://localhost:3000/api/login,3,0,1
+1787004710234,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,358,324,36,36,http://localhost:3000/api/categories,1,0,0
+1787004710236,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-75,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,36,36,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710243,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,1238,322,36,36,http://localhost:3000/api/products,1,0,0
+1787004708228,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-65,,false,,4939,1287,36,36,null,4,2011,0
+1787004710279,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,640,269,35,35,http://localhost:3000/api/login,3,0,1
+1787004710285,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,358,324,35,35,http://localhost:3000/api/categories,1,0,0
+1787004710291,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-76,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,35,35,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710293,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,1238,322,35,35,http://localhost:3000/api/products,1,0,0
+1787004708277,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-66,,false,,4939,1287,35,35,null,7,2009,0
+1787004710331,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,640,269,34,34,http://localhost:3000/api/login,2,0,1
+1787004710335,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,358,324,34,34,http://localhost:3000/api/categories,1,0,0
+1787004710338,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-77,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,34,34,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710340,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,1238,322,34,34,http://localhost:3000/api/products,1,0,0
+1787004708327,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-67,,false,,4939,1287,34,34,null,5,2008,1
+1787004710381,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,640,269,33,33,http://localhost:3000/api/login,4,0,0
+1787004710385,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,358,324,33,33,http://localhost:3000/api/categories,2,0,0
+1787004710388,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-78,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,33,33,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710394,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,1238,322,33,33,http://localhost:3000/api/products,1,0,0
+1787004708378,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-68,,false,,4939,1287,33,33,null,6,2009,0
+1787004710432,1,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,640,269,32,32,http://localhost:3000/api/login,1,0,0
+1787004710435,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,358,324,32,32,http://localhost:3000/api/categories,1,0,0
+1787004710437,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-79,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,32,32,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710438,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,1238,322,32,32,http://localhost:3000/api/products,1,0,0
+1787004708428,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-69,,false,,4939,1287,32,32,null,5,2005,1
+1787004710482,2,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,640,269,31,31,http://localhost:3000/api/login,2,0,0
+1787004710497,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-80,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,31,31,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710497,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,1238,322,31,31,http://localhost:3000/api/products,2,0,0
+1787004708478,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-70,,false,,4939,1287,31,31,null,7,2013,0
+1787004710497,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,358,324,31,31,http://localhost:3000/api/categories,2,0,0
+1787004710545,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-81,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,30,30,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710545,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,1238,322,30,30,http://localhost:3000/api/products,3,0,0
+1787004708528,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-71,,false,,4939,1287,30,30,null,8,2011,1
+1787004710545,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,358,324,30,30,http://localhost:3000/api/categories,3,0,0
+1787004710591,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-82,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,29,29,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710591,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,358,324,29,29,http://localhost:3000/api/categories,2,0,0
+1787004710606,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,1238,322,29,29,http://localhost:3000/api/products,2,0,0
+1787004708578,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-72,,false,,4939,1287,29,29,null,8,2021,0
+1787004710683,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,358,324,28,28,http://localhost:3000/api/categories,2,0,0
+1787004710683,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,1238,322,28,28,http://localhost:3000/api/products,2,0,0
+1787004710683,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-83,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,28,28,http://localhost:3000/api/admin/import-products,1,0,0
+1787004708627,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-73,,false,,4939,1287,28,28,null,7,2062,0
+1787004710698,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-84,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,27,27,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710698,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,1238,322,27,27,http://localhost:3000/api/products,3,0,0
+1787004708677,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-74,,false,,4939,1287,27,27,null,8,2015,0
+1787004710698,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,358,324,27,27,http://localhost:3000/api/categories,3,0,0
+1787004710745,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-85,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,26,26,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995441,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,1238,322,26,26,http://localhost:3000/api/products,3,0,0
-1786995993414,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-75,,false,,4939,1287,26,26,null,10,2020,1
-1786995995441,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,358,324,26,26,http://localhost:3000/api/categories,3,0,0
-1786995995580,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-86,text,false,"Test failed: code expected to equal /
+1787004710745,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,358,324,26,26,http://localhost:3000/api/categories,4,0,0
+1787004710745,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,1238,322,26,26,http://localhost:3000/api/products,4,0,0
+1787004708728,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-75,,false,,4939,1287,26,26,null,7,2013,0
+1787004710792,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-86,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,25,25,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995580,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-87,text,false,"Test failed: code expected to equal /
+/",2703,372,25,25,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710792,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,358,324,25,25,http://localhost:3000/api/categories,3,0,0
+1787004710807,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,1238,322,25,25,http://localhost:3000/api/products,2,0,0
+1787004708777,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-76,,false,,4939,1287,25,25,null,10,2021,1
+1787004710837,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,358,324,24,24,http://localhost:3000/api/categories,2,0,0
+1787004710852,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-87,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,25,25,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995580,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,358,324,25,25,http://localhost:3000/api/categories,4,0,0
-1786995995580,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,358,324,25,25,http://localhost:3000/api/categories,4,0,0
-1786995995581,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,358,324,25,25,http://localhost:3000/api/categories,3,0,0
-1786995995580,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,1238,322,25,25,http://localhost:3000/api/products,4,0,0
-1786995993515,12,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-77,,false,,4939,1287,25,25,null,12,2057,0
-1786995995580,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,1238,322,25,25,http://localhost:3000/api/products,4,0,0
-1786995993465,12,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-76,,false,,4939,1287,25,25,null,12,2108,0
-1786995995596,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-88,text,false,"Test failed: code expected to equal /
+/",2703,372,24,24,http://localhost:3000/api/admin/import-products,1,0,0
+1787004710852,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,1238,322,24,24,http://localhost:3000/api/products,3,0,0
+1787004708829,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-77,,false,,4939,1287,24,24,null,8,2018,1
+1787004710897,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-88,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,23,23,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995611,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,1238,322,23,23,http://localhost:3000/api/products,2,0,0
-1786995993565,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-78,,false,,4939,1287,23,23,null,9,2038,1
-1786995995627,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,358,324,22,22,http://localhost:3000/api/categories,1,0,0
-1786995995641,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-89,text,false,"Test failed: code expected to equal /
+1787004710897,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,1238,322,23,23,http://localhost:3000/api/products,2,0,0
+1787004708879,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-78,,false,,4939,1287,23,23,null,8,2012,0
+1787004710897,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,358,324,22,22,http://localhost:3000/api/categories,2,0,0
+1787004710944,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-89,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,22,22,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995657,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,1238,322,22,22,http://localhost:3000/api/products,1,0,0
-1786995993615,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-79,,false,,4939,1287,22,22,null,9,2034,1
-1786995995672,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,358,324,21,21,http://localhost:3000/api/categories,1,0,0
-1786995995704,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-90,text,false,"Test failed: code expected to equal /
+/",2703,372,22,22,http://localhost:3000/api/admin/import-products,2,0,0
+1787004710944,3,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,358,324,22,22,http://localhost:3000/api/categories,3,0,0
+1787004710944,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,1238,322,22,22,http://localhost:3000/api/products,4,0,0
+1787004708929,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-79,,false,,4939,1287,22,22,null,8,2011,0
+1787004710992,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,358,324,21,21,http://localhost:3000/api/categories,1,0,0
+1787004711007,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-90,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,21,21,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995704,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,1238,322,21,21,http://localhost:3000/api/products,2,0,0
-1786995993665,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-80,,false,,4939,1287,21,21,null,9,2032,0
-1786995995750,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-91,text,false,"Test failed: code expected to equal /
+/",2703,372,21,21,http://localhost:3000/api/admin/import-products,2,0,0
+1787004711007,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,1238,322,21,21,http://localhost:3000/api/products,3,0,0
+1787004708978,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-80,,false,,4939,1287,21,21,null,9,2023,1
+1787004711053,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-91,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,20,20,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995766,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,1238,322,20,20,http://localhost:3000/api/products,1,0,0
-1786995993715,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-81,,false,,4939,1287,20,20,null,7,2045,1
-1786995995796,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-92,text,false,"Test failed: code expected to equal /
+1787004711053,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,1238,322,20,20,http://localhost:3000/api/products,2,0,0
+1787004709030,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-81,,false,,4939,1287,20,20,null,7,2018,0
+1787004711098,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-92,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,19,19,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995796,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,1238,322,19,19,http://localhost:3000/api/products,3,0,0
-1786995993765,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-82,,false,,4939,1287,19,19,null,8,2027,1
-1786995995844,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-93,text,false,"Test failed: code expected to equal /
+/",2703,372,19,19,http://localhost:3000/api/admin/import-products,1,0,0
+1787004711098,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,1238,322,19,19,http://localhost:3000/api/products,2,0,0
+1787004709079,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-82,,false,,4939,1287,19,19,null,7,2014,1
+1787004711207,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-93,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,18,18,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995860,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,1238,322,18,18,http://localhost:3000/api/products,2,0,0
-1786995993814,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-83,,false,,4939,1287,18,18,null,10,2038,0
-1786995995891,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-94,text,false,"Test failed: code expected to equal /
+1787004711207,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-94,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,17,17,http://localhost:3000/api/admin/import-products,2,0,0
-1786995995906,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,1238,322,17,17,http://localhost:3000/api/products,2,0,0
-1786995993864,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-84,,false,,4939,1287,17,17,null,6,2038,0
-1786995995954,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-95,text,false,"Test failed: code expected to equal /
+/",2703,372,18,18,http://localhost:3000/api/admin/import-products,1,0,0
+1787004711207,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,1238,322,18,18,http://localhost:3000/api/products,2,0,0
+1787004709128,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-83,,false,,4939,1287,18,18,null,9,2072,0
+1787004711207,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,1238,322,18,18,http://localhost:3000/api/products,2,0,0
+1787004709179,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-84,,false,,4939,1287,18,18,null,6,2024,0
+1787004711252,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-95,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,16,16,http://localhost:3000/api/admin/import-products,1,0,0
-1786995995954,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,1238,322,16,16,http://localhost:3000/api/products,3,0,0
-1786995993913,12,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-85,,false,,4939,1287,16,16,null,12,2032,1
-1786995996095,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-96,text,false,"Test failed: code expected to equal /
-
-****** received  : [[[4]]]00
-
-****** comparison: [[[2]]]00
-
-/",2703,372,15,15,http://localhost:3000/api/admin/import-products,1,0,0
-1786995996095,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-97,text,false,"Test failed: code expected to equal /
+/",2703,372,16,16,http://localhost:3000/api/admin/import-products,2,0,0
+1787004711252,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,1238,322,16,16,http://localhost:3000/api/products,2,0,0
+1787004709229,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-85,,false,,4939,1287,16,16,null,7,2018,0
+1787004711299,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-96,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,15,15,http://localhost:3000/api/admin/import-products,1,0,0
-1786995996095,2,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-98,text,false,"Test failed: code expected to equal /
+1787004711299,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,1238,322,15,15,http://localhost:3000/api/products,1,0,0
+1787004709279,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-86,,false,,4939,1287,15,15,null,7,2015,1
+1787004711345,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-97,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,15,15,http://localhost:3000/api/admin/import-products,2,0,0
-1786995996095,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,1238,322,15,15,http://localhost:3000/api/products,3,0,0
-1786995996095,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,1238,322,15,15,http://localhost:3000/api/products,3,0,0
-1786995993963,11,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-86,,false,,4939,1287,15,15,null,10,2124,1
-1786995994014,11,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-87,,false,,4939,1287,15,15,null,11,2073,0
-1786995996110,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,1238,322,13,13,http://localhost:3000/api/products,1,0,0
-1786995994064,6,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-88,,false,,4939,1287,13,13,null,6,2041,0
-1786995996141,0,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-99,text,false,"Test failed: code expected to equal /
+/",2703,372,14,14,http://localhost:3000/api/admin/import-products,1,0,0
+1787004711361,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,1238,322,14,14,http://localhost:3000/api/products,2,0,0
+1787004709328,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-87,,false,,4939,1287,14,14,null,7,2028,0
+1787004711408,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-98,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
-/",2703,372,12,12,http://localhost:3000/api/admin/import-products,0,0,0
-1786995996157,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,1238,322,12,12,http://localhost:3000/api/products,1,0,0
-1786995994114,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-89,,false,,4939,1287,12,12,null,5,2039,1
-1786995996187,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-100,text,false,"Test failed: code expected to equal /
+/",2703,372,13,13,http://localhost:3000/api/admin/import-products,1,0,0
+1787004711408,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,1238,322,13,13,http://localhost:3000/api/products,3,0,0
+1787004709379,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-88,,false,,4939,1287,13,13,null,9,2023,1
+1787004711455,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-99,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]00
+
+****** comparison: [[[2]]]00
+
+/",2703,372,12,12,http://localhost:3000/api/admin/import-products,1,0,0
+1787004711455,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,1238,322,12,12,http://localhost:3000/api/products,2,0,0
+1787004709429,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-89,,false,,4939,1287,12,12,null,7,2021,0
+1787004711500,1,POST /api/admin/import-products,400,Bad Request,Spike Test - Admin Import (0→100→0) 1-100,text,false,"Test failed: code expected to equal /
 
 ****** received  : [[[4]]]00
 
 ****** comparison: [[[2]]]00
 
 /",2703,372,11,11,http://localhost:3000/api/admin/import-products,1,0,0
-1786995996219,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,1238,322,11,11,http://localhost:3000/api/products,2,0,0
-1786995994163,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-90,,false,,4939,1287,11,11,null,10,2048,1
-1786995996266,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,1238,322,10,10,http://localhost:3000/api/products,1,0,0
-1786995994214,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-91,,false,,4939,1287,10,10,null,7,2046,1
-1786995996313,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,1238,322,9,9,http://localhost:3000/api/products,1,0,0
-1786995994264,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-92,,false,,4939,1287,9,9,null,7,2043,0
-1786995996359,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,1238,322,8,8,http://localhost:3000/api/products,1,0,0
-1786995994311,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-93,,false,,4939,1287,8,8,null,5,2044,0
-1786995996405,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,1238,322,7,7,http://localhost:3000/api/products,2,0,0
-1786995994361,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-94,,false,,4939,1287,7,7,null,7,2039,0
-1786995996465,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,1238,322,6,6,http://localhost:3000/api/products,1,0,0
-1786995994411,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-95,,false,,4939,1287,6,6,null,9,2046,1
-1786995996605,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,1238,322,5,5,http://localhost:3000/api/products,2,0,0
-1786995994562,15,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-98,,false,,4939,1287,5,5,null,15,2031,0
-1786995996605,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,1238,322,4,4,http://localhost:3000/api/products,3,0,0
-1786995994461,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-96,,false,,4939,1287,4,4,null,10,2137,1
-1786995996605,4,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,1238,322,3,3,http://localhost:3000/api/products,3,0,0
-1786995994511,13,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-97,,false,,4939,1287,3,3,null,12,2085,1
-1786995996651,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,1238,322,2,2,http://localhost:3000/api/products,1,0,0
-1786995994611,4,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-99,,false,,4939,1287,2,2,null,4,2037,0
-1786995996699,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,1238,322,1,1,http://localhost:3000/api/products,1,0,0
-1786995994661,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-100,,false,,4939,1287,1,1,null,5,2034,1
+1787004711516,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,1238,322,11,11,http://localhost:3000/api/products,1,0,0
+1787004709478,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-90,,false,,4939,1287,11,11,null,7,2033,0
+1787004711562,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,1238,322,10,10,http://localhost:3000/api/products,2,0,0
+1787004709529,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-91,,false,,4939,1287,10,10,null,8,2027,0
+1787004711607,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,1238,322,9,9,http://localhost:3000/api/products,2,0,0
+1787004709578,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-92,,false,,4939,1287,9,9,null,7,2024,1
+1787004711713,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,1238,322,8,8,http://localhost:3000/api/products,2,0,0
+1787004709629,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-93,,false,,4939,1287,8,8,null,7,2084,0
+1787004711713,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,1238,322,8,8,http://localhost:3000/api/products,2,0,0
+1787004709679,8,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-94,,false,,4939,1287,8,8,null,8,2034,0
+1787004711761,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,1238,322,6,6,http://localhost:3000/api/products,1,0,0
+1787004709728,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-95,,false,,4939,1287,6,6,null,10,2024,1
+1787004711807,3,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,1238,322,5,5,http://localhost:3000/api/products,3,0,0
+1787004709778,10,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-96,,false,,4939,1287,5,5,null,10,2022,1
+1787004711854,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,1238,322,4,4,http://localhost:3000/api/products,2,0,0
+1787004709829,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-97,,false,,4939,1287,4,4,null,7,2021,1
+1787004711916,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,1238,322,3,3,http://localhost:3000/api/products,2,0,0
+1787004709878,9,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-98,,false,,4939,1287,3,3,null,9,2031,0
+1787004711963,2,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,1238,322,2,2,http://localhost:3000/api/products,2,0,0
+1787004709929,7,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-99,,false,,4939,1287,2,2,null,7,2029,0
+1787004712009,1,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,1238,322,1,1,http://localhost:3000/api/products,1,0,0
+1787004709978,5,Spike_Admin_Import_Products,,"Number of samples in transaction : 4, number of failing samples : 1",Spike Test - Admin Import (0→100→0) 1-100,,false,,4939,1287,1,1,null,5,2027,0
