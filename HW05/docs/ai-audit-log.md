@@ -1487,3 +1487,55 @@ Task 3 - G9.6 Disrupt - đề xuất pipeline hoàn toàn mới:
 
 ---
 
+## [2026-08-18 02:42] Claude Sonnet 5 (Cursor) — Phase 5: Hardware Report Evidence
+
+**Context:**
+Sau khi nhận được screenshots từ user (Task Manager 3 ảnh + DxDiag), AI tạo Hardware Report hoàn chỉnh.
+
+**Prompt:**
+User: *"Tôi đã chụp screen shot xong, bạn hãy cho biết tôi đã chụp đúng hay chưa và các screenshots này để làm gì"*
+
+**AI Response:**
+Đánh giá screenshots:
+- Đã đúng — 3 ảnh Task Manager cho Load/Stress/Spike tests
+- Phát hiện: file `03-task-manager-stress..png` có 2 dấu chấm (sau đó user đã đổi tên thành `03-task-manager-stress.png`)
+- Thiếu DxDiag → user đã cung cấp `01-dxdiag.png` + `DxDiag.txt`
+
+**Output — Files Created:**
+
+### 1. Hardware Spec Table (`Evidence/hardware-spec.txt`)
+Tổng hợp thông tin từ dxdiag:
+- Hostname: NHANTRAN
+- OS: Windows 11 Home SL 64-bit (Build 26200)
+- CPU: Intel Core i7-12700H (20 logical CPUs), ~2.3 GHz
+- RAM: 16384 MB (16 GB)
+- Manufacturer: ASUSTeK, Model: ASUS TUF Gaming F15 FX507ZC4
+- Software stack: JMeter 5.6.3, OpenJDK 17, Node.js 18.x, SQLite 3.x
+
+### 2. Hardware Report (`Evidence/Hardware_Report.md`)
+File tổng hợp với:
+- Spec table (8 rows)
+- Evidence file list (6 files)
+- 4 screenshot embeds với annotations
+- Endurance threshold analysis:
+  - CPU: 6% used / 94% headroom
+  - Memory: 6 GB / 16 GB used
+  - Max stable VUs (theoretical): 500-800
+  - Max stable RPS: 2000-3000
+  - **Bottleneck: Functional bugs > Hardware capacity**
+
+**Key Insight:**
+The SUT is **NOT hardware-bound**. All failure modes observed in tests (Bug #3, #4, #6) are caused by code logic errors, not by hardware exhaustion. This validates the finding in `docs/ai-analysis.md`.
+
+**Files touched:**
+- `Evidence/hardware-spec.txt` (created)
+- `Evidence/Hardware_Report.md` (created)
+- `Evidence/DxDiag.txt` (provided by user, referenced)
+- `Evidence/screenshots/01-dxdiag.png` (provided by user)
+- `Evidence/screenshots/02-task-manager-load.png` (provided by user)
+- `Evidence/screenshots/03-task-manager-stress.png` (provided by user, renamed from `..png`)
+- `Evidence/screenshots/04-task-manager-spike.png` (provided by user)
+- `docs/ai-audit-log.md` (appended this entry)
+
+---
+
