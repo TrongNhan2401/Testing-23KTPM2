@@ -60,26 +60,28 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&quot;email&quot;:&quot;admin@eshop.com&quot;,&quot;password&quot;:&quot;Admin123!&quot;,&quot;name&quot;:&quot;Admin User&quot;,&quot;role&quot;:&quot;admin&quot;}</stringProp>
-                <stringProp name="Argument.metadata">=</stringProp>
+                <stringProp name="Argument.value">{"email":"admin@eshop.com","password":"Admin123!","name":"Admin User","role":"admin"}</stringProp>
+                <stringProp name="HTTPArgument.use_equals">true</stringProp>
+                <stringProp name="HTTPArgument.name"></stringProp>
               </elementProp>
             </collectionProp>
           </elementProp>
         </HTTPSamplerProxy>
         <hashTree/>
       </hashTree>
-      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spike Test - Admin Import (0→100→0)">
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spike Test - Admin Import (0→100→0)" enabled="true">
         <intProp name="ThreadGroup.num_threads">100</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
-        <longProp name="ThreadGroup.duration">70</longProp>
-        <longProp name="ThreadGroup.delay">30</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
-        <boolProp name="ThreadGroup.scheduler">true</boolProp>
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller">
+          <intProp name="LoopController.loops">1</intProp>
           <stringProp name="LoopController.loops">1</stringProp>
           <boolProp name="LoopController.continue_forever">false</boolProp>
         </elementProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">70</stringProp>
+        <stringProp name="ThreadGroup.delay">30</stringProp>
       </ThreadGroup>
       <hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config - Spike" enabled="true">
@@ -100,6 +102,7 @@
         <hashTree/>
         <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Spike_Admin_Import_Products" enabled="true">
           <boolProp name="TransactionController.includeTimers">false</boolProp>
+          <boolProp name="TransactionController.parent">false</boolProp>
         </TransactionController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/login (admin)" enabled="true">
@@ -115,8 +118,9 @@
               <collectionProp name="Arguments.arguments">
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&quot;email&quot;:&quot;${email}&quot;,&quot;password&quot;:&quot;${password}&quot;}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="Argument.value">{"email":"${email}","password":"${password}"}</stringProp>
+                  <stringProp name="HTTPArgument.use_equals">true</stringProp>
+                  <stringProp name="HTTPArgument.name"></stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
@@ -159,9 +163,6 @@
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
             <JSONPostProcessor guiclass="JSONPostProcessorGui" testclass="JSONPostProcessor" testname="JSON Extractor - category_id" enabled="true">
@@ -177,22 +178,22 @@
             <stringProp name="scriptLanguage">javascript</stringProp>
             <stringProp name="parameters"></stringProp>
             <stringProp name="filename"></stringProp>
-            <stringProp name="script">var count = parseInt(vars.get(&quot;product_count&quot;)) || 5;
-var prefix = vars.get(&quot;product_prefix&quot;) || &quot;ImportProduct&quot;;
-var categoryId = parseInt(vars.get(&quot;category_id&quot;)) || 1;
+            <stringProp name="script">var count = parseInt(vars.get("product_count")) || 5;
+var prefix = vars.get("product_prefix") || "ImportProduct";
+var categoryId = parseInt(vars.get("category_id")) || 1;
 
 var products = [];
 for (var i = 1; i &lt;= count; i++) {
     products.push({
-        &quot;name&quot;: prefix + &quot;_&quot; + i + &quot;_&quot; + System.currentTimeMillis(),
-        &quot;price&quot;: Math.floor(Math.random() * 900000) + 100000,
-        &quot;description&quot;: &quot;Spike test product &quot; + i,
-        &quot;imageUrl&quot;: &quot;&quot;,
-        &quot;category_id&quot;: categoryId
+        "name": prefix + "_" + i + "_" + System.currentTimeMillis(),
+        "price": Math.floor(Math.random() * 900000) + 100000,
+        "description": "Spike test product " + i,
+        "imageUrl": "",
+        "category_id": categoryId
     });
 }
 
-vars.put(&quot;products_json&quot;, JSON.stringify({&quot;products&quot;: products}));</stringProp>
+vars.put("products_json", JSON.stringify({"products": products}));</stringProp>
           </BSFPreProcessor>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/admin/import-products" enabled="true">
@@ -209,7 +210,8 @@ vars.put(&quot;products_json&quot;, JSON.stringify({&quot;products&quot;: produc
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">${products_json}</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
+                  <stringProp name="HTTPArgument.use_equals">true</stringProp>
+                  <stringProp name="HTTPArgument.name"></stringProp>
                 </elementProp>
               </collectionProp>
             </elementProp>
@@ -239,9 +241,6 @@ vars.put(&quot;products_json&quot;, JSON.stringify({&quot;products&quot;: produc
             <stringProp name="HTTPSampler.method">GET</stringProp>
             <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
             <boolProp name="HTTPSampler.postBodyRaw">false</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
-              <collectionProp name="Arguments.arguments"/>
-            </elementProp>
           </HTTPSamplerProxy>
           <hashTree>
             <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion - 200" enabled="true">

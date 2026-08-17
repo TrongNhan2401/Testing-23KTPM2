@@ -129,7 +129,7 @@
           <stringProp name="RandomTimer.range">2000</stringProp>
         </UniformRandomTimer>
         <hashTree/>
-        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Load_Orders_MyOrders">
+        <TransactionController guiclass="TransactionControllerGui" testclass="TransactionController" testname="Load_Orders_MyOrders" enabled="true">
           <boolProp name="TransactionController.includeTimers">true</boolProp>
         </TransactionController>
         <hashTree>
