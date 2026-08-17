@@ -71,7 +71,7 @@
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Spike Test - Admin Import (0→100→0)" enabled="true">
         <intProp name="ThreadGroup.num_threads">100</intProp>
         <intProp name="ThreadGroup.ramp_time">5</intProp>
-        <longProp name="ThreadGroup.duration">70</longProp>
+        <longProp name="ThreadGroup.duration">60</longProp>
         <longProp name="ThreadGroup.delay">30</longProp>
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
