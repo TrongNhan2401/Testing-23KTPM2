@@ -1430,3 +1430,60 @@ File: `HW05/docs/bug_reports.md`
 
 ---
 
+## [2026-08-18 00:55] Claude Sonnet 5 (Cursor) — Phase 4: AI Analysis, Critique & Continuous Performance Testing Proposal
+
+**Context:**
+Sau khi có bug reports và raw metrics, AI tiến hành 3 deliverables cuối: AI Analysis (Task 2), AI Critique (200-300 từ), và Continuous Performance Testing Proposal (Task 3 - G9.6 Disrupt).
+
+**Prompt:**
+User: *"Bây giờ bạn hãy thực hiện viết cho tôi AI analysis và critique. Sau đó thực hiện viết luôn continuous performance Testing. Hãy ghi logs lại phần này"*
+
+**Output — Files Created:**
+
+### 1. AI Analysis (`HW05/docs/ai-analysis.md`)
+Phân tích chi tiết 3 scenarios với raw metrics từ JTL logs, bao gồm:
+- Per-endpoint latency statistics (avg, p95, p99, max)
+- AI vs Human-Reviewed thresholds comparison
+- 12 optimization recommendations classified as: FEASIBLE+REQUIRED (4), FEASIBLE (4), HALLUCINATED (4)
+
+**Key findings:**
+- Load Test: 100% pass, p95 = 7ms (AI hallucinated p95 < 200ms threshold without checking raw data)
+- Stress Test: 13.4% pass, AI suggested "scaling solutions" for what is actually a logic bug
+- Spike Test: 27.3% pass, AI missed Bug #6 (admin import 100% fail)
+
+**AI misinterpretations caught:**
+- "Add connection pooling" → HALLUCINATED (latency p99 = 4ms, no pool exhaustion)
+- "Rate limiting with backoff" → HALLUCINATED (rate limiting already exists)
+- "Request queuing for burst" → HALLUCINATED (latency 1ms = immediate reject, no queue)
+- "Increase JWT expiry" → HALLUCINATED (no auth overhead evidence)
+
+### 2. AI Critique (`HW05/docs/ai-critique.md`)
+Bài phê bình 229 từ (trong khoảng yêu cầu 200-300) bao gồm:
+- 4 loại lỗi nghiêm trọng của AI
+- Ví dụ cụ thể với raw numbers
+- Bài học rút ra
+
+### 3. Continuous Performance Testing Proposal (`HW05/docs/continuous-performance-testing.md`)
+Task 3 - G9.6 Disrupt - đề xuất pipeline hoàn toàn mới:
+- Flow chart chi tiết 6 bước (từ PR trigger đến alert)
+- GitHub Actions YAML example
+- Baseline storage strategy (perf-baseline.json)
+- 8 trade-offs được phân tích
+- False alarm mitigation (cooldown, 3-strike, IQR)
+- 4-phase rollout roadmap
+
+**Innovation points (G9.6):**
+1. File-path heuristic (save 70% CI time)
+2. Soft-block + comment (better DX)
+3. Per-scenario thresholds (realistic)
+4. Release-tag baseline pinning (prevent drift)
+5. Variance-aware detection (IQR)
+
+**Files touched:**
+- `HW05/docs/ai-analysis.md` (created — comprehensive Task 2 deliverable)
+- `HW05/docs/ai-critique.md` (created — 229 words, within 200-300 requirement)
+- `HW05/docs/continuous-performance-testing.md` (created — Task 3 with flowchart + trade-offs)
+- `HW05/docs/ai-audit-log.md` (appended this entry)
+
+---
+
