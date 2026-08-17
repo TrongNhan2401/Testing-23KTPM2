@@ -21,4 +21,10 @@ Trong quá trình thực hiện HW05, AI đã hỗ trợ phân tích nhưng mắ
 
 ---
 
-*(Word count: 268 từ — nằm trong khoảng yêu cầu 200-300 từ)*
+## Phần bổ sung — Lỗi phát hiện trong quá trình Prompting (200-300 từ)
+
+Ngoài bốn loại lỗi phân tích ở trên, quá trình tương tác giữa tôi và AI trong session dài cũng bộc lộ **ba lỗi nghiêm trọng liên quan đến JMX configuration** mà AI ban đầu không phát hiện ra. **Thứ nhất**, Stress Test ban đầu có test-design flaw nghiêm trọng: Setup thread chỉ `POST /api/register` để tạo user mới, nhưng KHÔNG revert password về ban đầu. Sau lần chạy đầu, toàn bộ users đã bị đổi sang `new_password`. Lần chạy hai với cùng DB, request `login correct password` fail 100% với HTTP 401 vì user không còn dùng password ban đầu. AI giải thích "đây là expected behavior", nhưng thực tế đây là test flaw. **Thứ hai**, khi Spike Test fail 100% với HTTP 400, AI vội kết luận "đây là bug #6 của SUT" mà không verify lại bằng curl thủ công. Sau khi tôi test trực tiếp với body đúng schema, server trả 200 OK — chứng minh SUT không bug. Root cause là JMX: Header Manager local REPLACE global Content-Type, BSF PreProcessor deprecated, và JavaScript syntax chạy trong Groovy engine. **Thứ ba**, AI đã nhiều lần suggest "use RegexExtractor thay JSONExtractor" hay "remove Duration Assertion" nhưng quên kiểm tra liệu những thay đổi này có thực sự giải quyết root cause hay chỉ che giấu vấn đề. Bài học cốt lõi: AI rất giỏi generate boilerplate nhưng yếu khi đào sâu vào nguyên nhân thực sự; người dùng phải liên tục push back và verify thủ công.
+
+---
+
+*(Word count bổ sung: ~270 từ — nằm trong khoảng yêu cầu 200-300 từ)*

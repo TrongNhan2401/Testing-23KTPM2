@@ -8,7 +8,7 @@
 - Data-driven from CSV spike_import_products.csv
 - JSR223 PreProcessor (Groovy) generates dynamic product payload
 - Listener: View Results Tree
-- FIX: Header Manager local REPLACES global -> re-declare Content-Type
+- FIX: Header Manager local REPLACES global -&gt; re-declare Content-Type
 - FIX: Groovy script uses Groovy syntax (not JavaScript)</stringProp>
       <boolProp name="TestPlan.functional_mode">false</boolProp>
       <boolProp name="TestPlan.tearDown_on_shutdown">false</boolProp>
@@ -200,6 +200,7 @@ for (def i = 1; i &lt;= count; i++) {
 
 vars.put(&quot;products_json&quot;, JsonOutput.toJson([&quot;products&quot;: products]))</stringProp>
             <stringProp name="scriptLanguage">groovy</stringProp>
+            <stringProp name="filename"></stringProp>
           </JSR223PreProcessor>
           <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST /api/admin/import-products" enabled="true">

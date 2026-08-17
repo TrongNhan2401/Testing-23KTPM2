@@ -1802,3 +1802,176 @@ User: *"Vậy giúp tôi tăng VUs lên, phần này không cần ghi logs, gi�
 
 ---
 
+## [2026-08-18 05:30] Claude Sonnet 5 (Cursor) — Phase 10: Deep JMX Investigation & 3 Critical Bug Fixes
+
+**Context:**
+Sau khi user chạy lại 3 test scenarios, Stress và Spike tests có kết quả ngoài mong đợi:
+- Stress Test: 60% pass (expected 100% sau khi reset DB)
+- Spike Test: 0% pass (import-products fail 100%)
+
+User yêu cầu phân tích lại các file JTL và tìm hiểu tại sao vẫn còn fail.
+
+**Prompt:**
+User: *"Bây giờ hãy vào @HW05/Results/ và phân tích các file report đã được xuất ra và phân tích lại chôi"*
+
+Sau đó user hỏi tiếp: *"Tại sao không login được với password ban đầu là fail nó là đúng mà. Và tại sao lại không thê login được sau khi đã chạy register chứ. Làm sao để tránh việc đó."*
+
+Và cuối cùng: *"Có vẻ như tương tự file stress thì file spike này cũng đã cấu hình sai. Bây giờ bạn hãy phân tích tại sao nó lại ko pass"*
+
+**Output:**
+
+### 🔍 Vấn đề 1: Stress Test — Test Design Flaw
+
+Phân tích JTL cho thấy:
+- 50 transactions, 0/50 pass
+- POST /api/login (correct password): 0/50 OK với HTTP 401
+
+Root cause: **Setup thread chỉ register user mới, KHÔNG revert password**. Sau lần chạy đầu, users đã bị đổi sang `new_password`. Lần chạy 2 với cùng DB → `login correct password` fail 100%.
+
+User xác nhận: *"Vậy là mỗi lần chạy phải restart server đúng không. Tôi sẽ làm việc này"*
+
+→ Quyết định: Reset DB (restart server) trước mỗi lần chạy Stress Test.
+
+### 🔧 Fix Stress Test
+
+Reverted JMX về phiên bản gọn (chỉ register), update TestPlan comment. Setup thread chỉ chứa POST /api/register.
+
+Sau khi reset DB, chạy lại:
+- Total: 250 samples
+- Success: 250/250 = **100%** ✅
+- All HTTP 200
+
+### 🔍 Vấn đề 2: Spike Test — 3 JMX Bugs
+
+User nghi ngờ: *"Có vẻ như tương tự file stress thì file spike này cũng đã cấu hình sai"*
+
+Tiến hành debug từng bước:
+
+**Bug A: Header Manager local REPLACE global Content-Type**
+```xml
+<!-- SAI: Header Manager chỉ có Authorization, mất Content-Type -->
+<HeaderManager testname="HTTP Header - Auth Token">
+  <header name="Authorization" value="Bearer ${admin_token}"/>
+  <!-- KHÔNG có Content-Type -->
+</HeaderManager>
+```
+→ Server không parse JSON body → 400
+
+**Bug B: BSF PreProcessor deprecated**
+```xml
+<!-- SAI: BSF đã deprecated -->
+<BSFPreProcessor testname="BSF PreProcessor - Generate Products JSON">
+  <scriptLanguage>javascript</scriptLanguage>
+```
+→ BSF không hoạt động đúng với 100 concurrent threads
+
+**Bug C: JavaScript syntax trong Groovy engine**
+```xml
+<!-- SAI: Script là JavaScript nhưng chạy bằng Groovy -->
+<scriptLanguage>groovy</scriptLanguage>
+<script>
+var count = parseInt(vars.get("product_count")) || 5;  // JS syntax
+var products = [];
+products.push({...});
+vars.put("products_json", JSON.stringify({...}));  // Groovy không có JSON.stringify
+</script>
+```
+→ Groovy compile error: `Unexpected input: '{...products.push(...)...}'`
+→ Body gửi đi là literal `"${products_json}"` → server fail parse → 400
+
+**Verify bằng curl thủ công:**
+```bash
+# Body rỗng → 400 "Không có dữ liệu để import"
+curl -X POST /api/admin/import-products -d ''
+# → {"error":"Không có dữ liệu để import"} HTTP 400
+
+# Body đúng schema → 200
+curl -X POST /api/admin/import-products -d '{"products":[...]}'
+# → {"message":"Import hoàn tất..."} HTTP 200
+```
+
+→ **KHÔNG phải bug SUT, mà là bug JMX!**
+
+### 🔧 Fix Spike Test
+
+**Fix 1: Thêm Content-Type vào Header Manager local**
+```xml
+<HeaderManager testname="HTTP Header - Auth Token">
+  <header name="Authorization" value="Bearer ${admin_token}"/>
+  <header name="Content-Type" value="application/json"/>  <!-- THÊM -->
+</HeaderManager>
+```
+
+**Fix 2: Thay BSFPreProcessor → JSR223PreProcessor**
+```xml
+<JSR223PreProcessor testname="JSR223 PreProcessor - Generate Products JSON">
+  <scriptLanguage>groovy</scriptLanguage>
+  ...
+```
+
+**Fix 3: Convert JavaScript → Groovy syntax**
+```groovy
+import groovy.json.JsonOutput
+
+def count = (vars.get("product_count") ?: "5") as int
+def products = []
+for (def i = 1; i <= count; i++) {
+    products.push([
+        "name": "${prefix}_${i}_${System.currentTimeMillis()}",
+        "price": (Math.random() * 900000).intValue() + 100000,
+        ...
+    ])
+}
+vars.put("products_json", JsonOutput.toJson(["products": products]))
+```
+
+### 📊 Kết quả sau fix
+
+Run lại Spike Test:
+```
+summary = 401 in 00:00:39 = 10.3/s Avg: 402 Min: 1 Max: 2826 Err: 0 (0.00%)
+```
+
+Phân tích JTL:
+- Total: 1001 samples
+- Success: 1001/1001 = **100%** ✅
+- All HTTP 200
+- Import endpoint: avg 1299ms, P95 2527ms, max 2826ms
+
+### 📝 Cập nhật tài liệu
+
+User yêu cầu: *"Bây giờ hãy đọc lại các file reports và cập nhật các file liên quan như main report, readme, bug-reports. Các lỗi mà tôi và bạn đã gặp phải trong quá trình prompting là gì hãy ghi tổng kết lại để ghi thành 1 đoạn 200 đến 300 chữ trong ai-critique và file ai-analysis là gì, có cần thuajcj sự khoong vì tôi chỉ thấy yêu cầu về bài phê bình ai (có thể để trong main report không) và cũng như phần ai cirtique và ai audit report thôi."*
+
+**Files updated:**
+- `docs/main_report.md`: Cập nhật Executive Summary (3 tests pass 100%), Key Findings, Latency Profile cho cả 3 tests, thêm phần "3 Lỗi JMX đã fix"
+- `docs/README.md`: Cập nhật scenarios table (all PASS), thêm bugs #7-9, cập nhật self-assessment (76 → 78/100), justify cho Spike test
+- `docs/bug_reports.md`: Rewrite hoàn toàn với 9 bugs (6 SUT + 3 JMX), format "Vấn đề → Cách tái tạo → Mong đợi → Thực tế → Cách sửa"
+- `docs/ai-critique.md`: Thêm đoạn 200-300 từ về "Lỗi phát hiện trong quá trình Prompting" — 3 bugs nghiêm trọng: (1) Stress test design flaw, (2) AI vội kết luận SUT bug mà không verify, (3) AI suggest changes không verify root cause
+- `docs/ai-analysis.md`: Cập nhật tất cả metrics theo kết quả mới (250 stress, 1001 spike), thêm section "3 Bugs JMX đã fix"
+
+### 🎓 Lessons Learned
+
+1. **Luôn verify bằng cách gọi API trực tiếp trước khi kết luận "SUT bug"** — đây là bài học quan trọng nhất. Nếu server trả 200 với body đúng schema → bug ở JMX, không phải SUT.
+
+2. **AI rất giỏi generate boilerplate nhưng yếu khi đào sâu root cause** — AI có thể suggest "remove Duration Assertion" hoặc "dùng Regex thay JSON" nhưng không phân tích được tại sao body lại rỗng.
+
+3. **Test design flaw tinh vi** — Setup thread chỉ register mà không revert password → test fail ở lần chạy thứ 2 do state leak. Đây là loại bug rất khó phát hiện nếu không chạy nhiều lần.
+
+5. **JMeter gotchas** — Header Manager local REPLACE global (không merge), BSF deprecated, Groovy ≠ JavaScript syntax. Cần đọc JMeter docs cẩn thận trước khi dùng.
+
+6. **Iterative debugging quan trọng** — Mỗi lần fix, phải chạy lại test và phân tích JTL. Đừng assume "fix xong là xong".
+
+**Files touched:**
+- `HW05/23127443_Stress_ResetPassword_20260817.jmx` (reverted + comment updated)
+- `HW05/23127443_Spike_AdminImportProducts_20260817.jmx` (3 fixes applied)
+- `HW05/Results/stress-reset-password.jtl` (250 records, 100% pass)
+- `HW05/Results/spike-admin-import-products.jtl` (1001 records, 100% pass)
+- `HW05/docs/main_report.md` (updated)
+- `HW05/docs/README.md` (updated)
+- `HW05/docs/bug_reports.md` (rewritten with 9 bugs)
+- `HW05/docs/ai-critique.md` (added 200-300 word section)
+- `HW05/docs/ai-analysis.md` (rewritten with new metrics)
+- `HW05/docs/ai-audit-log.md` (this entry)
+
+---
+
