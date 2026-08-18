@@ -1,0 +1,265 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1787013367695,31,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,1,1,http://localhost:3000/api/categories,28,0,21
+1787013366563,31,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,1,1,null,28,1133,21
+1787013368406,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,1,1,http://localhost:3000/api/categories,2,0,0
+1787013367728,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,1,1,null,2,679,0
+1787013370012,1,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,2,2,http://localhost:3000/api/categories,1,0,0
+1787013368409,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,2,2,null,1,1604,0
+1787013370303,3,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,2,2,http://localhost:3000/api/categories,3,0,1
+1787013369559,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,2,2,null,3,744,1
+1787013371266,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,2,2,http://localhost:3000/api/categories,2,0,0
+1787013370014,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,2,2,null,2,1253,0
+1787013372181,3,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,2,2,http://localhost:3000/api/categories,3,0,0
+1787013370307,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,2,2,null,3,1875,0
+1787013373157,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,3,3,http://localhost:3000/api/categories,2,0,1
+1787013372556,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,3,3,null,2,601,1
+1787013373894,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,3,3,http://localhost:3000/api/categories,2,0,0
+1787013371269,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,3,3,null,2,2626,0
+1787013374963,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,3,3,http://localhost:3000/api/categories,2,0,0
+1787013372185,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,3,3,null,2,2779,0
+1787013376418,3,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,4,4,http://localhost:3000/api/categories,3,0,1
+1787013375554,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,4,4,null,3,864,1
+1787013376904,1,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,4,4,http://localhost:3000/api/categories,1,0,0
+1787013373159,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,4,4,null,1,3745,0
+1787013377072,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,4,4,http://localhost:3000/api/categories,2,0,0
+1787013373896,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,4,4,null,2,3175,0
+1787013377641,3,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,4,4,http://localhost:3000/api/categories,3,0,0
+1787013374966,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,4,4,null,3,2674,0
+1787013379181,4,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,5,5,http://localhost:3000/api/categories,4,0,1
+1787013378555,4,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,5,5,null,4,626,1
+1787013380523,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,5,5,http://localhost:3000/api/categories,2,0,0
+1787013376906,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,5,5,null,2,3617,0
+1787013380535,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,5,5,http://localhost:3000/api/categories,2,0,0
+1787013377074,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,5,5,null,2,3463,0
+1787013380612,1,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,5,5,http://localhost:3000/api/categories,1,0,0
+1787013376421,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,5,5,null,1,4191,0
+1787013381191,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,5,5,http://localhost:3000/api/categories,2,0,0
+1787013377644,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,5,5,null,2,3547,0
+1787013382341,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,6,6,http://localhost:3000/api/categories,2,0,1
+1787013381553,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,6,6,null,2,788,1
+1787013384260,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,6,6,http://localhost:3000/api/categories,3,0,1
+1787013379185,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,6,6,null,3,5076,1
+1787013385058,3,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,7,7,http://localhost:3000/api/categories,3,0,0
+1787013380525,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,7,7,null,3,4533,0
+1787013385131,3,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,7,7,http://localhost:3000/api/categories,3,0,0
+1787013384555,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,7,7,null,3,576,0
+1787013385229,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,7,7,http://localhost:3000/api/categories,2,0,0
+1787013380614,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,7,7,null,2,4615,0
+1787013386191,3,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,7,7,http://localhost:3000/api/categories,3,0,1
+1787013380539,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,7,7,null,3,5653,1
+1787013386412,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,7,7,http://localhost:3000/api/categories,1,0,0
+1787013381194,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,7,7,null,1,5218,0
+1787013388206,4,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,8,8,http://localhost:3000/api/categories,4,0,1
+1787013387554,4,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,8,8,null,4,652,1
+1787013388537,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,8,8,http://localhost:3000/api/categories,2,0,1
+1787013382344,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,8,8,null,2,6194,1
+1787013390492,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,8,8,http://localhost:3000/api/categories,3,0,1
+1787013384264,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,8,8,null,3,6228,1
+1787013391216,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,9,9,http://localhost:3000/api/categories,2,0,1
+1787013390554,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,9,9,null,2,662,1
+1787013392515,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,9,9,http://localhost:3000/api/categories,2,0,1
+1787013386195,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,9,9,null,2,6322,1
+1787013392538,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,9,9,http://localhost:3000/api/categories,2,0,1
+1787013385061,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,9,9,null,2,7479,1
+1787013392625,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,9,9,http://localhost:3000/api/categories,2,0,1
+1787013385134,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,9,9,null,2,7492,1
+1787013393027,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,9,9,http://localhost:3000/api/categories,2,0,1
+1787013385231,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,9,9,null,2,7798,1
+1787013393552,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013386414,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,7139,1
+1787013394830,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013393551,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,1279,0
+1787013396369,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013388210,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,8160,0
+1787013396456,3,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013388540,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,3,7917,1
+1787013398415,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013390496,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,3,7920,1
+1787013400993,3,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013391218,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,3,9776,1
+1787013401263,3,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013392541,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,3,8722,1
+1787013401534,3,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013393030,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,3,8504,1
+1787013401663,3,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,0
+1787013392628,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,3,9034,0
+1787013402206,3,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,0
+1787013392518,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,3,9687,0
+1787013403683,3,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,0
+1787013393555,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,3,10127,0
+1787013404379,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013394832,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,9546,0
+1787013406530,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013396371,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,10159,1
+1787013406759,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013396459,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,10300,1
+1787013408364,2,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013398419,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,2,9944,1
+1787013410968,1,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,1,0,0
+1787013400996,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,1,9972,0
+1787013411303,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013401266,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,2,10036,1
+1787013411312,3,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013401537,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,3,9774,1
+1787013411778,3,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013401666,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,3,10112,1
+1787013412040,3,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013402209,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,3,9831,1
+1787013413769,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013403686,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,10083,1
+1787013414877,3,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,0
+1787013404381,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,3,10496,0
+1787013416723,3,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013406762,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,9961,1
+1787013416784,3,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,2
+1787013406533,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,3,10251,2
+1787013418731,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,0
+1787013408367,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,3,10364,0
+1787013420256,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013410970,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,2,9286,1
+1787013421226,3,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013411315,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,3,9911,1
+1787013421557,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013411306,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,2,10251,1
+1787013421562,1,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,1,0,0
+1787013411781,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,1,9782,0
+1787013422032,3,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013412043,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,3,9989,1
+1787013423560,4,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,4,0,1
+1787013413771,4,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,4,9789,1
+1787013424601,3,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013414880,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,3,9721,1
+1787013426309,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013416726,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,9583,0
+1787013426765,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013416787,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,9979,1
+1787013428791,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013418734,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,3,10057,1
+1787013430329,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013420258,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,2,10072,1
+1787013431373,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013422035,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,2,9338,1
+1787013431417,3,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013421559,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,3,9858,1
+1787013431571,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013421229,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,2,10342,1
+1787013431980,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013421564,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,2,10416,1
+1787013433839,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013423565,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,10275,1
+1787013434928,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013424604,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,10325,1
+1787013436741,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013426768,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,9975,1
+1787013437015,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013426311,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,10705,1
+1787013438911,2,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013428794,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,2,10118,0
+1787013440390,3,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013430332,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,3,10059,1
+1787013441142,3,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013431573,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,3,9570,1
+1787013441448,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013431375,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,2,10074,1
+1787013441494,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013431982,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,2,9513,1
+1787013441986,3,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013431420,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,3,10567,1
+1787013443672,3,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,2
+1787013433842,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,3,9831,2
+1787013444259,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013434931,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,9329,1
+1787013446425,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013436744,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,9681,1
+1787013446470,3,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013437017,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,3,9452,1
+1787013448618,2,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013438913,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,2,9705,1
+1787013450543,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013440393,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,2,10149,1
+1787013451323,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013441145,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,2,10178,1
+1787013451339,1,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,1,0,0
+1787013441450,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,1,9889,0
+1787013451507,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013441496,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,2,10010,1
+1787013451846,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013441990,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,2,9857,1
+1787013453276,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013443676,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,9601,1
+1787013454409,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013444262,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,10148,1
+1787013456163,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013446428,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,9737,1
+1787013456346,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013446473,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,9874,1
+1787013458236,2,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013448621,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,2,9616,1
+1787013460177,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013450545,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,2,9633,1
+1787013461190,1,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,1,0,0
+1787013451326,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,1,9865,0
+1787013461553,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013451509,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,2,10045,1
+1787013461839,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013451341,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,2,10500,1
+1787013462034,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013451848,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,2,10186,0
+1787013463380,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013453278,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,10102,1
+1787013464993,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013454411,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,10582,1
+1787013466297,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013456348,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,10,10,null,2,9949,1
+1787013466971,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,0
+1787013456166,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,10805,0
+1787013468277,2,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013458238,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,10,10,null,2,10039,1
+1787013470717,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013460180,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,10,10,null,2,10537,1
+1787013471147,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013461192,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,10,10,null,2,9955,1
+1787013471239,3,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,1
+1787013461842,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,10,10,null,3,9397,1
+1787013471545,3,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,10,10,http://localhost:3000/api/categories,3,0,2
+1787013462036,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,10,10,null,3,9509,2
+1787013471682,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013461555,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,10,10,null,2,10127,1
+1787013473865,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013463382,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,10,10,null,2,10483,1
+1787013474142,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013464995,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,10,10,null,2,9147,1
+1787013476289,2,GET /api/categories,200,OK,Load Test - Categories 1-8,text,true,,358,191,10,10,http://localhost:3000/api/categories,2,0,1
+1787013466973,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-8,,true,,358,191,10,10,null,2,9316,1
+1787013476291,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013476808,3,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,9,9,http://localhost:3000/api/categories,3,0,1
+1787013466299,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,9,9,null,3,10509,1
+1787013478461,3,GET /api/categories,200,OK,Load Test - Categories 1-5,text,true,,358,191,9,9,http://localhost:3000/api/categories,3,0,2
+1787013468279,3,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-5,,true,,358,191,9,9,null,3,10182,2
+1787013478464,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1787013480158,2,GET /api/categories,200,OK,Load Test - Categories 1-9,text,true,,358,191,8,8,http://localhost:3000/api/categories,2,0,1
+1787013470719,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-9,,true,,358,191,8,8,null,2,9440,1
+1787013480161,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013481102,2,GET /api/categories,200,OK,Load Test - Categories 1-7,text,true,,358,191,7,7,http://localhost:3000/api/categories,2,0,1
+1787013471684,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-7,,true,,358,191,7,7,null,2,9418,1
+1787013481104,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1787013481635,2,GET /api/categories,200,OK,Load Test - Categories 1-4,text,true,,358,191,6,6,http://localhost:3000/api/categories,2,0,0
+1787013481635,2,GET /api/categories,200,OK,Load Test - Categories 1-1,text,true,,358,191,6,6,http://localhost:3000/api/categories,2,0,0
+1787013471149,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-4,,true,,358,191,6,6,null,2,10486,0
+1787013471242,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-1,,true,,358,191,6,6,null,2,10393,0
+1787013481637,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013481637,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013481971,2,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,4,4,http://localhost:3000/api/categories,2,0,1
+1787013471548,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,4,4,null,2,10424,1
+1787013483791,2,GET /api/categories,200,OK,Load Test - Categories 1-2,text,true,,358,191,4,4,http://localhost:3000/api/categories,2,0,1
+1787013473867,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-2,,true,,358,191,4,4,null,2,9924,1
+1787013483793,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,1,0
+1787013484233,2,GET /api/categories,200,OK,Load Test - Categories 1-10,text,true,,358,191,3,3,http://localhost:3000/api/categories,2,0,1
+1787013474144,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-10,,true,,358,191,3,3,null,2,10090,1
+1787013484236,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013485251,1,GET /api/categories,200,OK,Load Test - Categories 1-3,text,true,,358,191,2,2,http://localhost:3000/api/categories,1,0,0
+1787013481974,1,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-3,,true,,358,191,2,2,null,1,3278,0
+1787013485253,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0
+1787013485419,2,GET /api/categories,200,OK,Load Test - Categories 1-6,text,true,,358,191,1,1,http://localhost:3000/api/categories,2,0,1
+1787013476811,2,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",Load Test - Categories 1-6,,true,,358,191,1,1,null,2,8609,1
+1787013485422,0,Load_Categories,200,"Number of samples in transaction : 1, number of failing samples : 0",,,true,,0,0,0,0,null,0,0,0

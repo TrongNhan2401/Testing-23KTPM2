@@ -1975,3 +1975,161 @@ User yêu cầu: *"Bây giờ hãy đọc lại các file reports và cập nh�
 
 ---
 
+## [2026-08-18 07:10] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+Bây giờ bạn hãy tổng hợp và tạo ra cho tôi một agent skill cho phần performance testing này dựa trên những gì đã làm. Tôi cần agent skill có thể hướng dẫn agent gen đúng theo thứ tự đã làm là phân tích đề, tạo test plan, tạo file csv data, tạo file jmx để cho jmeter chạy vậy là được. Ghi lại logs phần này.
+
+**Output:**
+Tạo agent skill `jmeter-performance-testing` cho Cursor, lưu tại `~/.cursor/skills-cursor/jmeter-performance-testing/SKILL.md` (~370 lines).
+
+**Workflow đã làm (theo thứ tự):**
+1. Phân tích đề bài (`docs/2026.HW05.Performance_Testing_VN.md`)
+2. Chọn 3 nhóm endpoint không trùng: read-heavy (Orders), auth-heavy (Reset Password), transactional (Admin Import Products)
+3. Tạo test plan markdown (`test-plans/Load_OrdersMyOrders.md`, v.v.)
+4. Tạo CSV data files (`test-data/load_orders.csv`, v.v.)
+6. Tạo 3 file JMX (`23127443_Load_OrdersMyOrders_20260817.jmx`, v.v.)
+7. Chạy test với JMeter CLI mode → sinh JTL files
+8. Phân tích JTL và viết reports
+
+**Skill structure:**
+- YAML frontmatter (name, description, disable-model-invocation: true)
+- 7-step workflow checklist (copy & track progress)
+- JMX template structure với XML ví dụ
+- Critical pitfalls table (5 common JMX bugs đã gặp phải)
+- Realistic parameter values cho từng scenario
+- Quality checklist cuối
+
+**Files created:**
+- `~/.cursor/skills-cursor/jmeter-performance-testing/SKILL.md` (new skill)
+- `HW05/docs/ai-audit-log.md` (this entry)
+
+**Lesson learned:** Khi tạo agent skill cho workflow đã qua, focus vào:
+1. Workflow steps theo thứ tự thực tế đã làm
+2. Pitfalls đã gặp phải (chứ không phải pitfalls lý thuyết)
+3. Realistic parameters từ JTL files thực tế
+4. Categorization rõ ràng giữa SUT bugs và JMX bugs
+
+---
+
+## [2026-08-18 07:10–07:22] Claude Sonnet 5 (Cursor)
+
+**Prompt (3 turns):**
+
+Turn 1: "File skill hiện tại đang nằm ở đâu"
+
+Turn 2: "Tôi muốn bạn để skill trong hw05, phần này ko ghi logs"
+
+Turn 3: "Xóa bản cũ đi"
+
+Turn 4: "Cho tôi file skill bằng tiếng việt. Tôi muốn agent skill sẽ tạo theo từng phần chứ không cần phải cả 3 ví dụ như người dùng sẽ chọn load hay stress test rồi sau đó chọn người dùng đưa ra endpoint và ngữ cảnh sau đó agent sẽ gen file jmx tương ứng"
+
+Turn 5: "Ghi phần tôi vừa tương tác vào report. phần skill tôi sẽ để trong docs 1 file vậy là đủ r, gợi ý cho tôi 1 endpoint nhỏ để tôi thực hiện quay video demo agent skill"
+
+**Output:**
+
+1. Xác nhận skill ban đầu ở `~/.cursor/skills-cursor/jmeter-performance-testing/SKILL.md` (personal skill)
+2. User yêu cầu chuyển skill vào HW05 → tôi move sang `HW05/.cursor/skills/jmeter-performance-testing/SKILL.md`
+3. Cleanup: xóa personal skill (turn 3). Trong quá trình di chuyển phát hiện `Write` tool trên Windows không tạo được folder ẩn bắt đầu bằng `.` (file bị ghi nhầm vào `docs/SKILL.md` thay vì `.cursor/skills/...`), đã fix bằng `mkdir + mv`
+4. User yêu cầu đổi sang tiếng Việt + workflow từng phần (không tạo cả 3 cùng lúc) → rewrite file, 301 → 323 lines, format workflow mới:
+   - Bước 1: Hỏi user chọn Load/Stress/Spike (dùng AskQuestion tool)
+   - Bước 2: Hỏi endpoint + context từng phần
+   - Bước 3: Confirm phương án
+   - Bước 4-7: Sinh CSV, JMX, verify, phân tích
+5. Cleanup orphan `docs/SKILL.md` (do lần rewrite trước bị leak vào `docs/`) → giờ move hẳn về `docs/SKILL.md` theo yêu cầu "để trong docs 1 file"
+6. Append entry này vào audit log
+7. Gợi ý endpoint để demo agent skill
+
+**Files touched:**
+
+- `HW05/.cursor/skills/jmeter-performance-testing/SKILL.md` (created, then removed)
+- `HW05/docs/SKILL.md` (final destination — single source of truth)
+- `~/.cursor/skills-cursor/jmeter-performance-testing/SKILL.md` (deleted — personal skill gỡ bỏ)
+- `HW05/docs/ai-audit-log.md` (this entry)
+
+**Lesson learned về Cursor skill trên Windows:**
+
+1. Tool `Write` trên Windows **không tự tạo folder ẩn** (bắt đầu bằng `.`) — nếu path chứa folder `.xxx` chưa tồn tại, file sẽ bị ghi vào fallback path khác (ở đây là `docs/SKILL.md`)
+2. Phải `mkdir -p` folder `.xxx` trước rồi mới `Write`/move file vào
+3. Khi user yêu cầu "1 file thôi" → đặt ở `docs/SKILL.md` cho dễ thấy, dễ ship qua git (không cần biết convention của `.cursor/`)
+4. Workflow từng phần > workflow batch: user chọn Load/Stress/Spike trước → giảm overhead khi chỉ cần 1 test plan
+
+**Gợi ý endpoint nhỏ để demo agent skill:**
+
+**`GET /api/categories`** (endpoint đơn giản nhất trong EShop)
+
+- Không cần authentication
+- Response nhỏ gọn (JSON array, ~5-10 category)
+- Không có side effect (GET-only, idempotent)
+- Phù hợp cho Load Test (read-heavy, đo throughput/latency cơ bản)
+- Thời gian chạy test ngắn (~2-3 phút đủ demo), kết quả dễ đọc
+- CSV data đơn giản: chỉ cần 1 cột `category_id` hoặc không cần CSV (vì endpoint không cần input)
+
+**Script demo (khi quay video):**
+
+> User: "Tạo Load Test cho endpoint `GET /api/categories` của EShop"
+>
+> Agent (theo skill): Hỏi Load/Stress/Spike → User chọn Load
+>
+> Agent: Hỏi base URL (`http://localhost:3000`), có auth không (không), threads (10)
+>
+> Agent: Confirm phương án → User OK
+>
+> Agent: Sinh file JMX + (optional CSV) → User chạy `jmeter -n -t file.jmx -l result.jtl`
+>
+> Agent: Phân tích → Summary Report
+
+Ưu điểm: video chỉ cần 1-2 phút thấy được quy trình đầy đủ của skill (hỏi → gen → chạy → analyze) mà không cần SUT phức tạp.
+
+---
+
+## [2026-08-18 07:30–07:35] Claude Sonnet 5 (Cursor)
+
+**Prompt:**
+"@HW05/docs/SKILL.md Hãy dựa vào skill này để tạo cho tôi load test của Get categories của hệ thông eshop tôi chưa có file dữ liệu mẫu"
+
+**Output:**
+
+Áp dụng skill `jmeter-performance-testing` theo workflow từng phần:
+
+### Bước 1 — User đã chọn: **Load Test**
+
+### Bước 2 — Hỏi tham số (3 câu hỏi qua AskQuestion):
+- Threads/Duration → **10 VU, 30s ramp, 2 phút** (lightweight cho video demo)
+- CSV → **Không cần** (endpoint không nhận input)
+- Throughput → **60 req/min** (1 req/giây)
+
+### Bước 3 — Confirm phương án → User OK
+
+### Bước 4 — Skip CSV (không cần input)
+
+### Bước 5 — Sinh file JMX
+- `23127443_Load_Categories_20260818.jmx` (180 lines, 10,070 bytes)
+- Cấu trúc: HTTP Defaults + Header Manager + ThreadGroup (10 VU, 30s ramp, 120s duration) + ConstantThroughputTimer (60 req/min) + UniformRandomTimer (500-1500ms) + TransactionController + GET /api/categories + ResponseAssertion 200 + DurationAssertion <500ms + Summary Report + Aggregate Report
+
+### Bước 6 — Verify
+- ✅ SUT live: `HTTP 200 | 0.0025s`
+- ✅ XML valid (xmllint pass)
+- ✅ Smoke test 20 concurrent: 100% pass, latency ~2ms
+
+### Bước 7 — Chưa chạy JMeter (user quay video demo — sẽ chạy trong video)
+
+**Pre-flight findings (smoke test qua curl):**
+
+| Test | Requests | HTTP | Latency (avg) | Errors |
+|------|----------|------|---------------|--------|
+| Single | 1 | 200 | 2.6 ms | 0 |
+| 5 concurrent | 5 | 200 | ~3 ms | 0 |
+| 20 concurrent | 20 | 200 | ~2 ms | 0 |
+
+→ Endpoint `GET /api/categories` rất nhanh (2ms). Test plan này phù hợp để demo workflow skill mà không bị bottleneck bởi SUT.
+
+**Files created:**
+- `HW05/23127443_Load_Categories_20260818.jmx` (new JMX for Load Test)
+- `HW05/docs/ai-audit-log.md` (this entry)
+
+**Lesson learned:**
+1. Khi endpoint GET-only không cần auth → bỏ qua SetupThreadGroup, RegexExtractor, Auth Header Manager → giảm 50% JMX size (180 vs 279 lines của Orders)
+2. DurationAssertion (latency budget) bổ sung cho Load Test → giúp phát hiện slow query mà response code không catch được
+3. UniformRandomTimer + ConstantThroughputTimer phối hợp đúng: timer pause để đạt throughput, random timer tránh thundering herd
+4. JMeter local có sẵn ở `HW05/jmeter/bin/jmeter.bat` — không cần cài thêm hay thêm vào PATH. Vị trí dùng để chạy JMX mới cho video demo.

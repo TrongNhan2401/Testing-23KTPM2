@@ -1,28 +1,36 @@
 ================================================================
 GIT COMMIT LOG — HW05 Performance Testing
 ================================================================
-Student ID: 23127443
-Date generated: 2026-08-18
-Repository: Testing (HW05 branch)
-Total commits in repo: 68
-HW05-related commits: 10 (this log) + 1 (pending final commit)
+Student ID:      23127443
+Date generated:  2026-08-18
+Repository:      Testing (HW05 branch)
+Total commits in repo:    68
+HW05-related commits:     14 (this log)
 
 ----------------------------------------------------------------
 COMMIT HISTORY (chronological order)
 ----------------------------------------------------------------
 
 commit bf0372e
-Author:    23127443
-Date:      2026-08-17 (approx)
+Author:    23127443 (Tran Pham Trong Nhan <nhantm2401@gmail.com>)
+Date:      2026-08-17 15:24
 Message:   Structure for HW05
-Files:     HW05/ folder created with subdirectories (test-plans/, test-data/, Results/, Evidence/, docs/)
-Purpose:   Initial repository structure for the assignment
+Files:
+  - HW05/docs/2026.HW05.Performance Testing_En_1.0_LQVu.md
+  - HW05/docs/2026.HW05.Performance_Testing_VN.md
+  - HW05/docs/README.md
+  - HW05/docs/ai-audit-log.md
+  - HW05/docs/ai-audit-logger.md
+  - HW05/docs/main_report.md
+Purpose:   Initial repository structure for HW05-AI Performance Testing.
+           Created docs/ subfolder with assignment spec (VN + EN),
+           empty README, ai-audit-logger.md template, empty main_report.
 
 ----------------------------------------------------------------
 
 commit e460855
 Author:    23127443
-Date:      2026-08-17
+Date:      2026-08-17 16:12
 Message:   Test Plan docs and test data
 Files:
   - HW05/test-plans/Load_OrdersMyOrders.md
@@ -31,9 +39,11 @@ Files:
   - HW05/test-data/load_orders.csv
   - HW05/test-data/stress_reset_password.csv
   - HW05/test-data/spike_import_products.csv
+  - HW05/docs/ai-audit-log.md (updated)
 Purpose:   Step 1 of Task 1: AI-assisted test plan design with
            realistic parameters (think-time, ramp-up, thread counts)
-           and data-driven inputs.
+           and data-driven CSV inputs (one per endpoint group, NOT
+           shared — per Section 6 "Một CSV chung duy nhất là không đủ").
 
 ----------------------------------------------------------------
 
@@ -78,7 +88,7 @@ Message:   summary report, aggregate report, view results tree report
 Files:     (Updates to JMX files)
 Purpose:   Step 2d of Task 1: Added three distinct listeners across
            the three test plans (per Section 6 requirement:
-           "Use three different report views").
+           "Sử dụng ba view báo cáo khác nhau", no duplication).
            - Load:  Summary Report
            - Stress: Aggregate Report
            - Spike: View Results Tree
@@ -92,7 +102,8 @@ Message:   Tạo file html để xem report trực quan
 Files:
   - HW05/Results/load-orders-summary.html (and related)
 Purpose:   Generated HTML report folders for visual inspection of
-           JMeter results (Dashboard Report).
+           JMeter results (Dashboard Report) — per Section 14
+           requirement: "Ba raw `.jtl` logs và ba thư mục HTML report".
 
 ----------------------------------------------------------------
 
@@ -104,13 +115,14 @@ Files:
   - HW05/23127443_Load_OrdersMyOrders_20260817.jmx (fixed)
   - HW05/23127443_Stress_ResetPassword_20260817.jmx (fixed)
   - HW05/23127443_Spike_AdminImportProducts_20260817.jmx (fixed)
-  - HW05/docs/bug_reports.md (created with 6 bugs)
+  - HW05/docs/bug_reports.md (created with 3 JMX/test-design issues)
 Purpose:   Step 3 of Task 1: Human review of AI-generated test plans.
            Fixed issues:
-           - Load: includeTimers=true → false
+           - Load:  includeTimers=true → false
            - Stress: Added 403 to ResponseAssertion
            - Spike: DurationAssertion 5000ms → 15000ms
-           Also documented 6 bugs found during testing.
+           Also documented 3 JMX/test-design issues found during testing.
+           NOTE: Per Section 11 anti-cheat, AI bugs ≠ SUT bugs.
 
 ----------------------------------------------------------------
 
@@ -124,8 +136,9 @@ Files:
   - HW05/docs/continuous-performance-testing.md (created)
 Purpose:   Step 4: Task 2 (AI analysis + critique) and
            Task 3 (Continuous Performance Testing proposal, G9.6 Disrupt).
-           AI analyzed 3 JTL logs (3088 records total) and produced
-           12 recommendations classified as FEASIBLE/HALLUCINATED.
+           AI analyzed 3 JTL logs (1489+250+500 = 2239 records total)
+           and produced 12 recommendations classified as FEASIBLE/HALLUCINATED.
+           AI critique (229 words, within 200–300 word requirement).
 
 ----------------------------------------------------------------
 
@@ -141,32 +154,112 @@ Files:
   - HW05/Evidence/screenshots/02-task-manager-load.png
   - HW05/Evidence/screenshots/03-task-manager-stress.png
   - HW05/Evidence/screenshots/04-task-manager-spike.png
-Purpose:   Step 5: Hardware evidence (DxDiag + 3 Task Manager screenshots)
-           per Section 6: "a screenshot of the tool together with the
-           backend process's resource usage (htop / Task Manager / Activity
-           Monitor), plus a hardware report".
+Purpose:   Step 5: Hardware evidence (DxDiag + 4 Task Manager screenshots
+           one per scenario + dxdiag) per Section 6: "a screenshot of
+           the tool together with the backend process's resource usage
+           (htop / Task Manager / Activity Monitor), plus a hardware report".
 
 ----------------------------------------------------------------
 
-PENDING COMMIT (to be created by student)
-----------------------------------------------------------------
-
-commit [pending - will be created by student after recording video]
+commit d3489d4
 Author:    23127443
-Date:      TBD (after video upload)
-Message:   Main report, README, and video demo
+Date:      2026-08-18
+Message:   Shorten test duration to 1-2 min for faster demo recording
 Files:
-  - HW05/docs/main_report.md
-  - HW05/docs/README.md (with self-assessment 76/100)
-  - HW05/docs/video-script.md
-Purpose:   Final deliverables: Main report, README with self-assessment
-           table, and video script for YouTube demo recording.
+  - HW05/23127443_Load_OrdersMyOrders_20260817.jmx       (2 lines changed)
+  - HW05/23127443_Spike_AdminImportProducts_20260817.jmx (2 lines changed)
+  - HW05/23127443_Stress_ResetPassword_20260817.jmx      (2 lines changed)
+Purpose:   Reduce test duration from 5-10 min down to 1-2 min so the
+           YouTube demo recording fits within the 6-minute budget.
+           Endpoint groups and parameters unchanged — only ThreadGroup
+           duration shortened for video demo convenience.
+
+----------------------------------------------------------------
+
+commit 1b39e48
+Author:    23127443
+Date:      2026-08-18
+Message:   Update stress test
+Files:
+  - HW05/23127443_Load_OrdersMyOrders_20260817.jmx        (4 lines changed)
+  - HW05/23127443_Stress_ResetPassword_20260817.jmx       (107 lines changed)
+  - HW05/Evidence/screenshots/02-task-manager-load.png    (resaved)
+  - HW05/Evidence/screenshots/03-task-manager-stress.png  (resaved)
+  - HW05/Results/load-orders-summary.jtl                  (rewritten)
+  - HW05/Results/spike-admin-import-products.jtl          (rewritten)
+  - HW05/Results/stress-reset-password.jtl                (rewritten)
+  - HW05/docs/README.md                                   (211 lines added)
+  - HW05/docs/ai-audit-log.md                             (263 lines added)
+  - HW05/docs/bug_reports.md                              (rewritten)
+  - HW05/docs/git-commit-log.txt                          (213 lines added)
+  - HW05/docs/main_report.md                              (362 lines added)
+  - HW05/docs/video-script.md                             (325 lines added)
+  - HW05/jmeter/backups/23127443_Load_OrdersMyOrders_20260817-000003.jmx (backup)
+Purpose:   Major re-test + documentation milestone:
+           - Stress test re-run after fixing DB-reset between iterations
+           - All 3 scenarios re-run with shorter durations
+           - README.md populated with self-assessment table (78/100)
+             and test summary report (per Section 14 requirement)
+           - main_report.md fully populated (~17 KB)
+           - video-script.md created for YouTube demo recording
+           - bug_reports.md reorganized (3 JMX/test-design issues,
+             no SUT bugs per Section 11 anti-cheat)
+           - ai-audit-log.md expanded with multiple entries
+
+----------------------------------------------------------------
+
+commit 52a7a31
+Author:    23127443
+Date:      2026-08-18
+Message:   update Spike test and Stress test
+Files:
+  - HW05/23127443_Spike_AdminImportProducts_20260817.jmx                   (42 lines)
+  - HW05/23127443_Stress_ResetPassword_20260817.jmx                       (16 lines)
+  - HW05/Results/spike-admin-import-products.jtl                          (rewritten)
+  - HW05/Results/stress-reset-password.jtl                                (rewritten)
+  - HW05/jmeter.log                                                       (588 lines)
+  - HW05/jmeter/backups/23127443_Stress_ResetPassword_20260817-000002.jmx  (backup)
+Purpose:   Iterative fix on Spike + Stress test plans. Re-ran both
+           scenarios after JMX adjustments. Backed up the previous
+           version of Stress test plan for traceability. Verified
+           100% pass rate on both scenarios (250 + 500 samples).
+
+----------------------------------------------------------------
+
+commit d8cd46e
+Author:    23127443
+Date:      2026-08-18
+Message:   reports update
+Files:
+  - HW05/23127443_Spike_AdminImportProducts_20260817.jmx           (3 lines)
+  - HW05/Evidence/screenshots/02-task-manager-load02.png           (new)
+  - HW05/Evidence/screenshots/02-task-manager-load.png              (replaced by image.png)
+  - HW05/Evidence/screenshots/image.png                            (renamed)
+  - HW05/Results/spike-admin-import-products.jtl                   (rewritten)
+  - HW05/docs/README.md                                            (69 lines)
+  - HW05/docs/ai-analysis.md                                       (195 lines)
+  - HW05/docs/ai-audit-log.md                                      (173 lines)
+  - HW05/docs/ai-critique.md                                       (8 lines)
+  - HW05/docs/bug_reports.md                                       (341 lines)
+  - HW05/docs/main_report.md                                       (151 lines)
+Purpose:   Final documentation polish:
+           - Main report finalised (endurance threshold, bug table,
+             AI critique summary, conclusion)
+           - README.md finalised with self-assessment table
+           - ai-analysis.md expanded (FEASIBLE/HALLUCINATED classification)
+           - bug_reports.md rewritten with curl verification proofs
+             (no SUT bugs; 3 JMX/test-design issues documented)
+           - Captured additional Task Manager screenshot (02-task-manager-load02.png)
 
 ----------------------------------------------------------------
 
 RAW GIT LOG (output of `git log --oneline 422dc80..HEAD -- HW05/`)
 ----------------------------------------------------------------
 
+d8cd46e reports update
+52a7a31 update Spike test and Stress test
+1b39e48 Update stress test
+d3489d4 Shorten test duration to 1-2 min for faster demo recording
 7306bb0 Screenshots evidence
 1874c4a Ai Analysis, Cretique and Continuous Performance
 bbd1351 jmx fix, bugs reports
@@ -183,7 +276,7 @@ bf0372e Structure for HW05
 REPRODUCTION COMMAND
 ----------------------------------------------------------------
 
-To regenerate this log after creating the final commit:
+To regenerate this log:
 
   cd e:\Documents\HCMUS\Semester3_Year3\KTPM\Testing
   git log --oneline 422dc80..HEAD -- HW05/
@@ -194,20 +287,25 @@ To regenerate this log after creating the final commit:
 
 ----------------------------------------------------------------
 
-ANTI-AI-CHEAT NOTE
+ANTI-AI-CHEAT VERIFICATION (per Section 11)
 ----------------------------------------------------------------
 
-Per Section 11 of the assignment:
-  "The test-plan filenames, which must match
-   {StudentID}_{ScenarioType}_{YYYYMMDD}."
+Per Section 11 of the assignment, TAs will verify:
+  1. Filename convention {StudentID}_{ScenarioType}_{YYYYMMDD}
+  2. Raw `.jtl` logs (not just summary)
+  3. Video demo with tool + resource monitor in same frame
+  4. Hardware report with matching hostname
 
 Verified:
   - 23127443_Load_OrdersMyOrders_20260817.jmx ✅
   - 23127443_Stress_ResetPassword_20260817.jmx ✅
   - 23127443_Spike_AdminImportProducts_20260817.jmx ✅
+  - 4 Task Manager screenshots + dxdiag in Evidence/screenshots/ ✅
+  - 3 raw .jtl files in Results/ (1489 + 250 + 500 records) ✅
+  - Hardware report with hostname "NHANTRAN" ✅
 
-All JMX filenames match the required convention.
+All filenames match the required convention.
 
 ================================================================
-END OF GIT COMMIT LOG
+END OF GIT COMMIT LOG (14 commits)
 ================================================================

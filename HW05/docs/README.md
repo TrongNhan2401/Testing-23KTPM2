@@ -1,6 +1,6 @@
 # HW05 — Performance Testing
 
-**Student:** 23127443 — Nguyễn Hân Trần
+**Student:** 23127443 — Trần Phạm Trọng Nhân  
 **Course:** Software Testing (KTPM) — Semester 3, Year 3
 **Assignment:** HW05-AI Performance Testing
 **Date:** 2026-08-18
@@ -11,30 +11,36 @@ This repository contains the deliverables for **HW05 — Performance Testing** o
 
 ## 🎯 Test Summary Report
 
-| Item | Value |
-|------|-------|
-| **SUT** | EShop — Vietnamese e-commerce demo |
-| **SUT Repo** | https://github.com/ttbhanh/eshop-sut |
-| **Tool** | Apache JMeter 5.6.3 |
-| **AI Tool** | Claude Sonnet 5 (Cursor IDE) |
-| **Hostname** | NHANTRAN (ASUS TUF Gaming F15, i7-12700H, 16 GB RAM) |
+
+| Item         | Value                                                                        |
+| ------------ | ---------------------------------------------------------------------------- |
+| **SUT**      | EShop — Vietnamese e-commerce demo                                           |
+| **SUT Repo** | [https://github.com/ttbhanh/eshop-sut](https://github.com/ttbhanh/eshop-sut) |
+| **Tool**     | Apache JMeter 5.6.3                                                          |
+| **AI Tool**  | Claude Sonnet 5 (Cursor IDE)                                                 |
+| **Hostname** | NHANTRAN (ASUS TUF Gaming F15, i7-12700H, 16 GB RAM)                         |
+
 
 ### Scenarios Run
 
-| # | Scenario | Endpoint Group | Result | p95 Latency | Pass Rate |
-|---|----------|----------------|--------|-------------|-----------|
-| 1 | **Load** | Orders/MyOrders (read-heavy) | ✅ PASS | 7 ms | 100.0% |
-| 2 | **Stress** | Reset Password (auth-heavy) | ✅ PASS | 25 ms | 100.0% |
-| 3 | **Spike** | Admin Import Products (transactional) | ✅ PASS | 2866 ms | 100.0% |
+
+| #   | Scenario   | Endpoint Group                        | Result | p95 Latency | Pass Rate |
+| --- | ---------- | ------------------------------------- | ------ | ----------- | --------- |
+| 1   | **Load**   | Orders/MyOrders (read-heavy)          | PASS   | 7 ms        | 100.0%    |
+| 2   | **Stress** | Reset Password (auth-heavy)           | PASS   | 25 ms       | 100.0%    |
+| 3   | **Spike**  | Admin Import Products (transactional) | PASS   | 2866 ms     | 100.0%    |
+
 
 ### Endurance Threshold (Empirical)
 
-| Resource | Used | Available | Headroom |
-|----------|------|-----------|----------|
-| CPU | 6% | 100% (20 threads) | **94%** |
-| Memory | 6 GB | 16 GB | **10 GB** |
-| Max stable VUs (theoretical) | 100 tested | ~500-800 | High |
-| Max stable RPS (theoretical) | ~5 req/s | ~2000-3000 req/s | High |
+
+| Resource                     | Used       | Available         | Headroom  |
+| ---------------------------- | ---------- | ----------------- | --------- |
+| CPU                          | 6%         | 100% (20 threads) | **94%**   |
+| Memory                       | 6 GB       | 16 GB             | **10 GB** |
+| Max stable VUs (theoretical) | 100 tested | ~500-800          | High      |
+| Max stable RPS (theoretical) | ~5 req/s   | ~2000-3000 req/s  | High      |
+
 
 **Conclusion:** SUT is NOT hardware-bound; bottleneck is functional bugs.
 
@@ -44,11 +50,13 @@ This repository contains the deliverables for **HW05 — Performance Testing** o
 
 Trong quá trình phát triển tests, phát hiện 3 vấn đề JMX/test-design (không phải bug SUT):
 
-| # | Loại | File | Mô tả | Trạng thái |
-|---|------|------|-------|------------|
-| 1 | � Test Design | `Stress_ResetPassword.jmx` | Setup thread không revert password sau khi reset → cần reset DB giữa các lần chạy | ✅ Fixed |
-| 2 | 🔴 JMX Bug | `Spike_AdminImportProducts.jmx` | Header Manager local REPLACE global → mất Content-Type → body parse fail → HTTP 400 | ✅ Fixed |
-| 3 | 🔴 JMX Bug | `Spike_AdminImportProducts.jmx` | JavaScript syntax trong Groovy engine → compile error → body rỗng → HTTP 400 | ✅ Fixed |
+
+| #   | Loại        | File                            | Mô tả                                                                               | Trạng thái |
+| --- | ----------- | ------------------------------- | ----------------------------------------------------------------------------------- | ---------- |
+| 1   | Test Design | `Stress_ResetPassword.jmx`      | Setup thread không revert password sau khi reset → cần reset DB giữa các lần chạy   | Fixed      |
+| 2   | MX Bug      | `Spike_AdminImportProducts.jmx` | Header Manager local REPLACE global → mất Content-Type → body parse fail → HTTP 400 | Fixed      |
+| 3   | JMX Bug     | `Spike_AdminImportProducts.jmx` | JavaScript syntax trong Groovy engine → compile error → body rỗng → HTTP 400        | Fixed      |
+
 
 **GitHub Issues:** Không có bug nào được log vì không có bug SUT thực sự (verified qua curl).
 
@@ -59,6 +67,7 @@ Xem chi tiết: `docs/bug_reports.md` (file này chứa 3 vấn đề JMX/test-d
 ### Demo Video
 
 > **YouTube Link:** *(to be added after recording — see `docs/video-script.md` for the full script)*
+>
 > - **Duration:** ≥ 6 minutes total (will be split into 3 clips, one per scenario)
 > - **Content:** JMeter tool + Task Manager in the same frame + Vietnamese narration
 > - **Visibility:** Unlisted (required by Section 11)
@@ -109,20 +118,23 @@ HW05/
 
 ## 📊 Self-Assessment Table
 
-| No. | Criteria | Grade | **Self-Assessed Grade** |
-|-----|----------|-------|--------------------------|
-| 1 | Task 1 — Load testing | 20 | **18** |
-| 2 | Task 1 — Stress testing | 20 | **18** |
-| 3 | Task 1 — Spike testing | 20 | **18** |
-|   | (Re-test passed 100% after fixing 3 JMX bugs — Header Manager, BSF/JSR223, Groovy syntax) | | |
-| 4 | Task 2 — AI analysis + misinterpretation hunt (with correct values from raw logs) | 10 | **9** |
-| 5 | Task 3 — Continuous Performance Testing proposal (G9.6) | 10 | **8** |
-| 6 | Agent Skills | 10 | **6** |
-|   | **Total** | **100** | **78** |
+
+| No. | Criteria                                                                                  | Grade   | **Self-Assessed Grade** |
+| --- | ----------------------------------------------------------------------------------------- | ------- | ----------------------- |
+| 1   | Task 1 — Load testing                                                                     | 20      | **18**                  |
+| 2   | Task 1 — Stress testing                                                                   | 20      | **18**                  |
+| 3   | Task 1 — Spike testing                                                                    | 20      | **18**                  |
+|     | (Re-test passed 100% after fixing 3 JMX bugs — Header Manager, BSF/JSR223, Groovy syntax) |         |                         |
+| 4   | Task 2 — AI analysis + misinterpretation hunt (with correct values from raw logs)         | 10      | **9**                   |
+| 5   | Task 3 — Continuous Performance Testing proposal (G9.6)                                   | 10      | **8**                   |
+| 6   | Agent Skills                                                                              | 10      | **6**                   |
+|     | **Total**                                                                                 | **100** | **78**                  |
+
 
 ### Self-Assessment Justification
 
 #### 1. Load Testing — **18/20** (deducted 2 points)
+
 - ✅ Complete test plan with realistic parameters (10 VUs, 30s ramp-up, 5 min duration).
 - ✅ Distinct listener used (Summary Report + Aggregate Report + View Results Tree across all 3 plans).
 - ✅ Data-driven via `load_orders.csv`.
@@ -131,6 +143,7 @@ HW05/
 - ⚠️ Missing: endurance/soak test (relied on existing 5-min run as endurance proxy).
 
 #### 2. Stress Testing — **18/20** (deducted 2 points)
+
 - ✅ Correctly ramped 20→80 VUs over 10 minutes.
 - ✅ Account lockout handling documented (DB reset between iterations).
 - ✅ After DB reset between runs, achieved 100% pass rate (250/250).
@@ -139,6 +152,7 @@ HW05/
 - ⚠️ AI's initial suggestion was not strong; required significant human review.
 
 #### 3. Spike Testing — **18/20** (deducted 2 points)
+
 - ✅ Correct instant-ramp spike profile (0→100→0 in 4 seconds).
 - ✅ Peak throughput 275 req/s measured.
 - ✅ After fixing 2 critical JMX bugs (Header Manager, Groovy syntax), achieved 100% pass rate (500/500).
@@ -146,12 +160,14 @@ HW05/
 - ✅ p95 latency for import endpoint (2527ms) is acceptable for bulk operation.
 
 #### 4. AI Analysis + Misinterpretation Hunt — **9/10** (deducted 1 point)
+
 - ✅ Comprehensive analysis with 12 recommendations classified into FEASIBLE/HALLUCINATED.
 - ✅ Each misinterpretation cited with correct value from raw JTL.
 - ✅ AI critique is 229 words (within 200-300 range).
 - ⚠️ Deduction: AI critique could discuss more about prompt quality vs model limitations.
 
 #### 5. Continuous Performance Testing Proposal — **8/10** (deducted 2 points)
+
 - ✅ G9.6 (Disrupt) level — proposes a genuinely new approach, not just applying existing tools.
 - ✅ Includes flow chart, trade-offs table, GitHub Actions YAML.
 - ✅ 5 innovation points identified.
@@ -159,6 +175,7 @@ HW05/
 - ⚠️ Could have provided sample `perf-baseline.json` with real numbers.
 
 #### 6. Agent Skills — **6/10** (deducted 4 points)
+
 - ⚠️ **Partial credit only**: Provided `ai-audit-logger.md` template, but did NOT create a fully working Cursor Agent Skill.
 - ⚠️ No demo video of the skill on a different endpoint group.
 - ⚠️ AI audit logging was done manually, not via a reusable skill.
@@ -168,13 +185,15 @@ HW05/
 
 ## 🔗 Quick Links to Key Documents
 
-| Document | Purpose |
-|----------|---------|
-| [Main Report](docs/main_report.md) | Complete assignment report |
-| [Bug Reports](docs/bug_reports.md) | Performance issues summary (no SUT bugs found) |
-| [AI Critique](docs/ai-critique.md) | Task 2 — Critique (~270 words after Phase 10 update) |
-| [Continuous Testing Proposal](docs/continuous-performance-testing.md) | Task 3 — G9.6 Disrupt proposal |
-| [AI Audit Log](docs/ai-audit-log.md) | All AI interactions logged (10+ entries) |
+
+| Document                                                              | Purpose                                              |
+| --------------------------------------------------------------------- | ---------------------------------------------------- |
+| [Main Report](docs/main_report.md)                                    | Complete assignment report                           |
+| [Bug Reports](docs/bug_reports.md)                                    | Performance issues summary (no SUT bugs found)       |
+| [AI Critique](docs/ai-critique.md)                                    | Task 2 — Critique (~270 words after Phase 10 update) |
+| [Continuous Testing Proposal](docs/continuous-performance-testing.md) | Task 3 — G9.6 Disrupt proposal                       |
+| [AI Audit Log](docs/ai-audit-log.md)                                  | All AI interactions logged (10+ entries)             |
+
 
 ---
 
@@ -203,14 +222,3 @@ jmeter.bat     # Windows
 
 ---
 
-## 📞 Contact
-
-- **Student:** 23127443
-- **Email:** *(see Moodle profile)*
-- **Submission Date:** 2026-08-18
-
----
-
-**Self-Assessed Grade:** **78/100**
-
-*This README satisfies the assignment's Section 14 requirement: "A README.md containing the self-assessment table and a test summary report: scenarios run; endpoint groups covered; the endurance threshold (with numbers); number of bugs / performance issues; and the demo video link."*
