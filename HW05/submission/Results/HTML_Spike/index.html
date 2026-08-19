@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spike Test Report — Admin Import Products (23127443)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f5f7fa; color: #2d3748; line-height: 1.5; }
+  header { background: linear-gradient(135deg, #d69e2e 0%, #b7791f 100%); color: white; padding: 24px 32px; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+  header h1 { font-size: 24px; font-weight: 600; margin-bottom: 4px; }
+  header .meta { font-size: 13px; opacity: .92; }
+  main { max-width: 1280px; margin: 24px auto; padding: 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); border-left: 4px solid #d69e2e; }
+  .card .label { font-size: 12px; color: #718096; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; color: #2d3748; }
+  .card .unit { font-size: 13px; color: #a0aec0; margin-left: 4px; }
+  .card.success { border-left-color: #48bb78; }
+  .card.warning { border-left-color: #ed8936; }
+  .card.danger { border-left-color: #f56565; }
+  section { background: white; padding: 20px 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 20px; }
+  section h2 { font-size: 16px; font-weight: 600; color: #2d3748; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #edf2f7; }
+  .chart-box { position: relative; height: 340px; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #edf2f7; }
+  th { background: #f7fafc; font-weight: 600; color: #4a5568; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  tr:hover { background: #f7fafc; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.green { color: #38a169; font-weight: 600; }
+  td.warn { color: #dd6b20; font-weight: 600; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge.ok { background: #c6f6d5; color: #22543d; }
+  .badge.fail { background: #fed7d7; color: #742a2a; }
+  .badge.warn { background: #feebc8; color: #7b341e; }
+  .summary { background: #fef5e7; border-left: 4px solid #d69e2e; padding: 14px 18px; border-radius: 6px; margin-bottom: 16px; font-size: 14px; }
+  footer { text-align: center; padding: 20px; color: #a0aec0; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚡ Spike Test Report — Admin Import Products</h1>
+  <div class="meta">MSSV: <b>23127443</b> &nbsp;|&nbsp; Ngày: 2026-08-17 &nbsp;|&nbsp; JMeter 5.6.3 &nbsp;|&nbsp; Single-file Dashboard (Chart.js CDN)</div>
+</header>
+
+<main>
+  <div class="summary">
+    <b>Tóm tắt:</b> spike 0→100 VU trong 10s · ramp-down 1s · duration 60s · 5 sampler (login admin → import CSV → verify products) · <b>K�T QUẢ: CHẤP NHẬN ĐƯỢC</b> — error 0% nhưng latency tăng cao dưới spike (p95 = 3.6s).
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="label">Tổng samples</div><div class="value">400<span class="unit">req</span></div></div>
+    <div class="card success"><div class="label">Error</div><div class="value">0.00<span class="unit">%</span></div></div>
+    <div class="card success"><div class="label">Throughput</div><div class="value">48.0<span class="unit">req/s</span></div></div>
+    <div class="card warning"><div class="label">p95 (Total)</div><div class="value">2.46<span class="unit">s</span></div></div>
+  </div>
+
+  <section>
+    <h2>1. Response Time theo từng Transaction (log scale)</h2>
+    <div class="chart-box"><canvas id="rtChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>2. Throughput theo từng Transaction (req/s)</h2>
+    <div class="chart-box"><canvas id="tpChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>3. Chi tiết số liệu (từ statistics.json)</h2>
+    <table>
+      <thead>
+        <tr><th>Transaction</th><th class="num">Samples</th><th class="num">Error %</th><th class="num">Mean (ms)</th><th class="num">Median</th><th class="num">p90</th><th class="num">p95</th><th class="num">p99</th><th class="num">Min</th><th class="num">Max</th><th class="num">Throughput</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>POST /api/login (admin)</td><td class="num">100</td><td class="num green">0.00%</td><td class="num warn">111.4</td><td class="num">137.5</td><td class="num warn">218.3</td><td class="num warn">254.5</td><td class="num warn">288.8</td><td class="num">2</td><td class="num warn">289</td><td class="num">21.27</td></tr>
+        <tr><td>POST /api/admin/import-products</td><td class="num">100</td><td class="num green">0.00%</td><td class="num warn">1650.4</td><td class="num warn">1604</td><td class="num warn">2955.5</td><td class="num warn">3264.8</td><td class="num warn">3637.7</td><td class="num">137</td><td class="num warn">3638</td><td class="num">14.68</td></tr>
+        <tr><td>GET /api/products (verify)</td><td class="num">100</td><td class="num green">0.00%</td><td class="num warn">150.3</td><td class="num">160</td><td class="num warn">255.7</td><td class="num warn">293.4</td><td class="num warn">333.9</td><td class="num">8</td><td class="num warn">334</td><td class="num">14.97</td></tr>
+        <tr><td>GET /api/categories</td><td class="num">100</td><td class="num green">0.00%</td><td class="num warn">130.6</td><td class="num">142</td><td class="num warn">241.9</td><td class="num warn">255.9</td><td class="num warn">299.9</td><td class="num">0</td><td class="num warn">300</td><td class="num">20.06</td></tr>
+        <tr><td>Spike_Admin_Import_Products (T)</td><td class="num">100</td><td class="num green">0.00%</td><td class="num warn">2042.7</td><td class="num warn">2057</td><td class="num warn">3318.6</td><td class="num warn">3645.2</td><td class="num warn">3968.8</td><td class="num warn">257</td><td class="num warn">3969</td><td class="num">13.65</td></tr>
+        <tr><td><b>Total</b></td><td class="num"><b>400</b></td><td class="num green"><b>0.00%</b></td><td class="num warn"><b>510.7</b></td><td class="num"><b>172</b></td><td class="num warn"><b>1888</b></td><td class="num warn"><b>2462.6</b></td><td class="num warn"><b>3303.6</b></td><td class="num"><b>0</b></td><td class="num warn"><b>3638</b></td><td class="num"><b>48.00</b></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Đánh giá SLA</h2>
+    <table>
+      <thead><tr><th>Tiêu chí</th><th>Ngưỡng</th><th>Thực tế</th><th>Kết quả</th></tr></thead>
+      <tbody>
+        <tr><td>Error rate</td><td>≤ 1%</td><td>0.00%</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>p95 import-products</td><td>≤ 5000 ms</td><td>3.26 s</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>p99 import-products</td><td>≤ 8000 ms</td><td>3.64 s</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>Recovery (ramp-down)</td><td>latency giảm sau spike</td><td>Có</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>Import thành công</td><td>100%</td><td>100% (100/100)</td><td><span class="badge ok">PASS</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. Nhận xét</h2>
+    <ul style="padding-left: 20px; line-height: 1.8;">
+      <li><b>Endpoint import-products</b> chậm hơn rõ rệt dưới spike: mean = 1.65s, p95 = 3.26s (vs 137ms khi ít tải) → bottleneck ở DB write/CSV parse.</li>
+      <li>Latency cao nhưng <b>vẫn dưới SLA 5s</b> cho p95 → chấp nhận được.</li>
+      <li><b>0% error</b> dù có 100 VU đồng thời → hệ thống không crash.</li>
+      <li>Get products/categories chậm hơn 2-3 lần (130-150ms) → do shared connection pool bị spike "chiếm" bởi import.</li>
+      <li><b>Khuyến nghị</b>: cân nhắc <code>queue</code> hoặc <code>async job</code> cho import-products khi spike xảy ra.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>Generated t� <code>spike-admin-import-products.jtl</code> · Chart.js 4.4 · Self-contained HTML · © 2026 23127443</footer>
+
+<script>
+const labels = ['Login admin', 'Import CSV', 'GET products', 'GET categories', 'Full flow', 'Total'];
+const meanRT = [111.4, 1650.4, 150.3, 130.6, 2042.7, 510.7];
+const p95RT  = [254.5, 3264.8, 293.4, 255.9, 3645.2, 2462.6];
+const p99RT  = [288.8, 3637.7, 333.9, 299.9, 3968.8, 3303.6];
+const tp     = [21.27, 14.68, 14.97, 20.06, 13.65, 48.00];
+
+new Chart(document.getElementById('rtChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [
+      { label: 'Mean (ms)', data: meanRT, backgroundColor: 'rgba(214,158,46,0.8)' },
+      { label: 'p95 (ms)',  data: p95RT,  backgroundColor: 'rgba(237,137,54,0.8)' },
+      { label: 'p99 (ms)',  data: p99RT,  backgroundColor: 'rgba(245,101,101,0.8)' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y.toLocaleString()} ms` } } },
+    scales: { y: { type: 'logarithmic', beginAtZero: false, title: { display: true, text: 'Response Time (ms, log scale)' } } }
+  }
+});
+
+new Chart(document.getElementById('tpChart'), {
+  type: 'bar',
+  data: { labels, datasets: [{ label: 'Throughput', data: tp, backgroundColor: 'rgba(72,187,120,0.8)' }] },
+  options: {
+    responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `${c.parsed.x.toFixed(2)} req/s` } } },
+    scales: { x: { beginAtZero: true, title: { display: true, text: 'req/s' } } }
+  }
+});
+</script>
+</body>
+</html>

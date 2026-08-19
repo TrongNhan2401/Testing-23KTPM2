@@ -1,0 +1,38 @@
+================================================================
+GIT COMMIT LOG — HW05 Performance Testing
+================================================================
+Student ID:      23127443
+Date generated:  2026-08-18
+Repository:      Testing (HW05 branch)
+Total commits:   15
+
+----------------------------------------------------------------
+COMMIT HISTORY (chronological order)
+----------------------------------------------------------------
+
+b93192b | 2026-08-18 | video
+d8cd46e | 2026-08-18 | reports update
+52a7a31 | 2026-08-18 | update Spike test and Stress test
+1b39e48 | 2026-08-18 | Update stress test
+d3489d4 | 2026-08-18 | Shorten test duration to 1-2 min for faster demo recording
+7306bb0 | 2026-08-18 | Screenshots evidence
+1874c4a | 2026-08-18 | Ai Analysis, Cretique and Continuous Performance
+bbd1351 | 2026-08-18 | jmx fix, bugs reports
+a237008 | 2026-08-17 | Tạo file html để xem report trực quan
+4433acd | 2026-08-17 | summary report, aggregate report, view results tree report
+a7065d5 | 2026-08-17 | spike test
+8746e58 | 2026-08-17 | Stress Testing
+6e19a0a | 2026-08-17 | load testing
+e460855 | 2026-08-17 | Test Plan docs and test data
+bf0372e | 2026-08-17 | Structure for HW05
+
+----------------------------------------------------------------
+REPRODUCTION COMMAND
+----------------------------------------------------------------
+
+  cd e:\Documents\HCMUS\Semester3_Year3\KTPM\Testing
+  git log --pretty=format:"%h|%ad|%s" --date=short 422dc80..HEAD -- HW05/
+
+================================================================
+END OF GIT COMMIT LOG
+================================================================

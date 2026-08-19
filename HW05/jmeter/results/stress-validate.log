@@ -1,0 +1,30 @@
+2026-08-17 20:43:48,020 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2026-08-17 20:43:48,028 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2026-08-17 20:43:48,028 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2026-08-17 20:43:48,033 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-08-17 20:43:48,033 INFO o.a.j.JMeter: Version 5.6.3
+2026-08-17 20:43:48,033 INFO o.a.j.JMeter: java.version=1.8.0_491
+2026-08-17 20:43:48,033 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-08-17 20:43:48,033 INFO o.a.j.JMeter: os.name=Windows 11
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: os.arch=amd64
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: os.version=10.0
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: file.encoding=Cp1258
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: java.awt.headless=true
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: Max memory     =3730309120
+2026-08-17 20:43:48,036 INFO o.a.j.JMeter: Available Processors =20
+2026-08-17 20:43:48,039 INFO o.a.j.JMeter: Default Locale=English (United States)
+2026-08-17 20:43:48,039 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2026-08-17 20:43:48,039 INFO o.a.j.JMeter: JMeterHome=E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter
+2026-08-17 20:43:48,039 INFO o.a.j.JMeter: user.dir  =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-17 20:43:48,040 INFO o.a.j.JMeter: PWD       =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-17 20:43:48,041 INFO o.a.j.JMeter: IP: 192.168.1.157 Name: NhanTran FullName: NhanTran
+2026-08-17 20:43:48,051 ERROR o.a.j.JMeter: An error occurred: 
+org.apache.jmeter.report.config.ConfigurationException: The file E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin\..\23127443_Stress_ResetPassword_20260817.jmx doesn't exist or can't be opened
+	at org.apache.jmeter.JMeter.runNonGui(JMeter.java:950) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter.startNonGui(JMeter.java:940) ~[ApacheJMeter_core.jar:5.6.3]
+	at org.apache.jmeter.JMeter.start(JMeter.java:508) [ApacheJMeter_core.jar:5.6.3]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_491]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_491]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_491]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_491]
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:259) [ApacheJMeter.jar:5.6.3]

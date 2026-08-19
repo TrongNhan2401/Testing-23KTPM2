@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Load Test Report — Orders/MyOrders (23127443)</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: #f5f7fa; color: #2d3748; line-height: 1.5; }
+  header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 24px 32px; box-shadow: 0 2px 4px rgba(0,0,0,.1); }
+  header h1 { font-size: 24px; font-weight: 600; margin-bottom: 4px; }
+  header .meta { font-size: 13px; opacity: .92; }
+  main { max-width: 1280px; margin: 24px auto; padding: 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .card { background: white; padding: 18px 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); border-left: 4px solid #667eea; }
+  .card .label { font-size: 12px; color: #718096; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+  .card .value { font-size: 22px; font-weight: 700; color: #2d3748; }
+  .card .unit { font-size: 13px; color: #a0aec0; margin-left: 4px; }
+  .card.success { border-left-color: #48bb78; }
+  .card.warning { border-left-color: #ed8936; }
+  .card.danger { border-left-color: #f56565; }
+  section { background: white; padding: 20px 24px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 20px; }
+  section h2 { font-size: 16px; font-weight: 600; color: #2d3748; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #edf2f7; }
+  .chart-box { position: relative; height: 320px; margin-bottom: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #edf2f7; }
+  th { background: #f7fafc; font-weight: 600; color: #4a5568; font-size: 12px; text-transform: uppercase; letter-spacing: .3px; }
+  tr:hover { background: #f7fafc; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  td.green { color: #38a169; font-weight: 600; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; }
+  .badge.ok { background: #c6f6d5; color: #22543d; }
+  .badge.fail { background: #fed7d7; color: #742a2a; }
+  .summary { background: #ebf8ff; border-left: 4px solid #4299e1; padding: 14px 18px; border-radius: 6px; margin-bottom: 16px; font-size: 14px; }
+  footer { text-align: center; padding: 20px; color: #a0aec0; font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📊 Load Test Report — Orders/MyOrders</h1>
+  <div class="meta">MSSV: <b>23127443</b> &nbsp;|&nbsp; Ngày: 2026-08-17 &nbsp;|&nbsp; JMeter 5.6.3 &nbsp;|&nbsp; Single-file Dashboard (Chart.js CDN)</div>
+</header>
+
+<main>
+  <div class="summary">
+    <b>Tóm tắt:</b> 20 VU · ramp 30s · duration 120s · 3 sampler (login + load-orders + get-my-orders) · <b>KẾT QUẢ: ĐẠT SLA</b> — error 0%, p95 &lt; 10ms, throughput ổn định.
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="label">Tổng samples</div><div class="value">377<span class="unit">req</span></div></div>
+    <div class="card success"><div class="label">Error</div><div class="value">0.00<span class="unit">%</span></div></div>
+    <div class="card success"><div class="label">Throughput</div><div class="value">3.18<span class="unit">req/s</span></div></div>
+    <div class="card success"><div class="label">p95 (Total)</div><div class="value">4<span class="unit">ms</span></div></div>
+  </div>
+
+  <section>
+    <h2>1. Response Time theo từng Transaction</h2>
+    <div class="chart-box"><canvas id="rtChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>2. Throughput theo từng Transaction (req/s)</h2>
+    <div class="chart-box"><canvas id="tpChart"></canvas></div>
+  </section>
+
+  <section>
+    <h2>3. Chi tiết số liệu (từ statistics.json)</h2>
+    <table>
+      <thead>
+        <tr><th>Transaction</th><th class="num">Samples</th><th class="num">Error %</th><th class="num">Mean (ms)</th><th class="num">Median</th><th class="num">p90</th><th class="num">p95</th><th class="num">p99</th><th class="num">Min</th><th class="num">Max</th><th class="num">Throughput</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>POST /api/login</td><td class="num">214</td><td class="num green">0.00%</td><td class="num">2.70</td><td class="num">3</td><td class="num">3</td><td class="num">4</td><td class="num">4</td><td class="num">2</td><td class="num">5</td><td class="num">1.81</td></tr>
+        <tr><td>Load_Orders_MyOrders (transaction)</td><td class="num">214</td><td class="num green">0.00%</td><td class="num">4.79</td><td class="num">5</td><td class="num">6</td><td class="num">7</td><td class="num">8</td><td class="num">2</td><td class="num">8</td><td class="num">2.23</td></tr>
+        <tr><td>GET /api/orders/my-orders</td><td class="num">163</td><td class="num green">0.00%</td><td class="num">2.74</td><td class="num">3</td><td class="num">3</td><td class="num">3.8</td><td class="num">5</td><td class="num">1</td><td class="num">5</td><td class="num">1.39</td></tr>
+        <tr><td><b>Total</b></td><td class="num"><b>377</b></td><td class="num green"><b>0.00%</b></td><td class="num"><b>2.72</b></td><td class="num"><b>3</b></td><td class="num"><b>3</b></td><td class="num"><b>4</b></td><td class="num"><b>4.22</b></td><td class="num"><b>1</b></td><td class="num"><b>5</b></td><td class="num"><b>3.18</b></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>4. Đánh giá SLA</h2>
+    <table>
+      <thead><tr><th>Tiêu chí</th><th>Ngưỡng</th><th>Thực tế</th><th>Kết quả</th></tr></thead>
+      <tbody>
+        <tr><td>Error rate</td><td>≤ 1%</td><td>0.00%</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>p95 latency (load-orders)</td><td>≤ 500 ms</td><td>7 ms</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>p99 latency (load-orders)</td><td>≤ 1500 ms</td><td>8 ms</td><td><span class="badge ok">PASS</span></td></tr>
+        <tr><td>Throughput ổn định</td><td>≥ 1 req/s</td><td>2.23 req/s</td><td><span class="badge ok">PASS</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>5. Nhận xét</h2>
+    <ul style="padding-left: 20px; line-height: 1.8;">
+      <li>Hệ thống đáp ứng <b>rất tốt</b> dưới tải Load Test 20 VU — response time trung bình chỉ 2.7ms, p95 = 4ms.</li>
+      <li>Endpoint <code>GET /api/orders/my-orders</code> có throughput thấp nhất (1.39 req/s) — do VU phải login trước, nhưng latency vẫn ổn định.</li>
+      <li><b>0 lỗi</b> trong suốt 120s test → ổn định tuyệt đối.</li>
+      <li>Headroom lớn: có thể tăng tải gấp 5-10 lần trước khi latency vượt ngưỡng 500ms.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>Generated từ <code>load-orders-summary.jtl</code> · Chart.js 4.4 · Self-contained HTML · © 2026 23127443</footer>
+
+<script>
+const labels = ['POST /api/login', 'Load_Orders (T)', 'GET my-orders', 'Total'];
+const meanRT = [2.70, 4.79, 2.74, 2.72];
+const p95RT  = [4.00, 7.00, 3.80, 4.00];
+const p99RT  = [4.00, 8.00, 5.00, 4.22];
+const tp     = [1.81, 2.23, 1.39, 3.18];
+
+new Chart(document.getElementById('rtChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [
+      { label: 'Mean', data: meanRT, backgroundColor: 'rgba(102,126,234,0.8)' },
+      { label: 'p95',  data: p95RT,  backgroundColor: 'rgba(237,137,54,0.8)' },
+      { label: 'p99',  data: p99RT,  backgroundColor: 'rgba(245,101,101,0.8)' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { position: 'top' }, tooltip: { callbacks: { label: c => `${c.dataset.label}: ${c.parsed.y} ms` } } },
+    scales: { y: { beginAtZero: true, title: { display: true, text: 'Response Time (ms)' } } }
+  }
+});
+
+new Chart(document.getElementById('tpChart'), {
+  type: 'bar',
+  data: { labels, datasets: [{ label: 'Throughput', data: tp, backgroundColor: 'rgba(72,187,120,0.8)' }] },
+  options: {
+    responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+    plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => `${c.parsed.x.toFixed(2)} req/s` } } },
+    scales: { x: { beginAtZero: true, title: { display: true, text: 'req/s' } } }
+  }
+});
+</script>
+</body>
+</html>

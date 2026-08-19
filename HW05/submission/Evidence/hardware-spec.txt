@@ -1,0 +1,55 @@
+==========================================
+HARDWARE SPECIFICATION - HW05 Performance Testing
+==========================================
+
+Hostname:           NHANTRAN
+Generated:          2026-08-18 02:29:13
+Source:             dxdiag /save
+
+------------------------------------------
+SYSTEM
+------------------------------------------
+OS Name:            Windows 11 Home Single Language 64-bit
+OS Version:         10.0.26200 (Build 26100.ge_release.240331-1435)
+OS Build:           10.0.26100.9168 (26200.9168)
+DirectX Version:    DirectX 12
+User DPI:           120 DPI (125%)
+Language:           English (Regional Setting: English)
+
+------------------------------------------
+HARDWARE
+------------------------------------------
+Manufacturer:       ASUSTeK COMPUTER INC.
+Model:              ASUS TUF Gaming F15 FX507ZC4_FX507ZC4
+BIOS:               FX507ZC4.312 (type: UEFI)
+
+Processor:          12th Gen Intel(R) Core(TM) i7-12700H
+CPU Cores:          20 logical CPUs (14 cores + 6 threads)
+CPU Base Clock:     ~2.3 GHz
+Memory (RAM):       16384 MB (16 GB)
+Available Memory:   16004 MB
+Page File:          20233 MB used / 16251 MB available
+
+------------------------------------------
+SOFTWARE (Testing Stack)
+------------------------------------------
+Apache JMeter:      5.6.3
+Java:               OpenJDK 17.0.x
+Node.js:            v18.x (SUT backend)
+SQLite:             3.x (SUT database)
+
+------------------------------------------
+DISPLAY DEVICES
+------------------------------------------
+Primary GPU:        Intel(R) Iris(R) Xe Graphics (integrated)
+Secondary GPU:      NVIDIA GeForce RTX 3050 Laptop GPU (dGPU, mux inactive)
+Display 1:          15.6" FHD (1920x1080)
+
+------------------------------------------
+NOTES
+------------------------------------------
+- "Available OS Memory: 16004MB" difference from 16384MB is reserved for system/hardware
+- BIOS type is UEFI (not Legacy)
+- dGPU (RTX 3050) available but Mux Support Inactive -> runs in iGPU mode for power saving
+- 20 logical CPUs = 14 physical (6P+8E) + 6 hyperthreaded
+- Suitable for JMeter load testing up to ~100 concurrent VUs comfortably

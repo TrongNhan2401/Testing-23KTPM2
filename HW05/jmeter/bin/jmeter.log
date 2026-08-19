@@ -1,0 +1,369 @@
+2026-08-18 09:19:30,171 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2026-08-18 09:19:30,184 INFO o.a.j.JMeter: Loading user properties from: user.properties
+2026-08-18 09:19:30,184 INFO o.a.j.JMeter: Loading system properties from: system.properties
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: Copyright (c) 1998-2024 The Apache Software Foundation
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: Version 5.6.3
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: java.version=1.8.0_491
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: os.name=Windows 11
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: os.arch=amd64
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: os.version=10.0
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: file.encoding=Cp1258
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: java.awt.headless=null
+2026-08-18 09:19:30,192 INFO o.a.j.JMeter: Max memory     =1073741824
+2026-08-18 09:19:30,193 INFO o.a.j.JMeter: Available Processors =20
+2026-08-18 09:19:30,198 INFO o.a.j.JMeter: Default Locale=English (EN)
+2026-08-18 09:19:30,198 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2026-08-18 09:19:30,198 INFO o.a.j.JMeter: JMeterHome=E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter
+2026-08-18 09:19:30,198 INFO o.a.j.JMeter: user.dir  =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-18 09:19:30,198 INFO o.a.j.JMeter: PWD       =E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin
+2026-08-18 09:19:30,199 INFO o.a.j.JMeter: IP: 192.168.1.157 Name: NhanTran FullName: NhanTran
+2026-08-18 09:19:30,214 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2026-08-18 09:19:30,403 INFO o.a.j.JMeterGuiLauncher: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2026-08-18 09:20:05,363 INFO o.a.j.s.FileServer: Default base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\jmeter\bin'
+2026-08-18 09:20:05,365 INFO o.a.j.g.a.Load: Loading file: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\23127443_Spike_AdminImportProducts_20260817.jmx
+2026-08-18 09:20:05,365 INFO o.a.j.s.FileServer: Set new base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05'
+2026-08-18 09:20:05,476 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2026-08-18 09:20:05,496 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2026-08-18 09:20:05,497 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2026-08-18 09:20:05,498 INFO o.a.j.s.SaveService: Loading file: E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05\23127443_Spike_AdminImportProducts_20260817.jmx
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2026-08-18 09:20:05,520 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2026-08-18 09:20:05,929 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2026-08-18 09:20:05,929 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to UTF-8
+2026-08-18 09:20:05,929 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2026-08-18 09:20:05,929 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2026-08-18 09:20:06,051 INFO o.a.j.s.FileServer: Set new base='E:\Documents\HCMUS\Semester3_Year3\KTPM\Testing\HW05'
+2026-08-18 09:20:12,431 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2026-08-18 09:20:12,432 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-08-18 09:20:12,432 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2026-08-18 09:20:12,433 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2026-08-18 09:20:12,433 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2026-08-18 09:20:12,637 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2026-08-18 09:20:12,638 INFO o.a.j.e.StandardJMeterEngine: Starting setUp thread groups
+2026-08-18 09:20:12,638 INFO o.a.j.e.StandardJMeterEngine: Starting setUp ThreadGroup: 1 : Setup - Register Admin 
+2026-08-18 09:20:12,638 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group Setup - Register Admin.
+2026-08-18 09:20:12,638 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-08-18 09:20:12,638 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2026-08-18 09:20:12,641 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-08-18 09:20:12,641 INFO o.a.j.e.StandardJMeterEngine: Waiting for all setup thread groups to exit
+2026-08-18 09:20:12,642 INFO o.a.j.t.JMeterThread: Thread started: Setup - Register Admin 1-1
+2026-08-18 09:20:12,651 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = NhanTran
+2026-08-18 09:20:12,656 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2026-08-18 09:20:12,773 INFO o.a.j.t.JMeterThread: Thread is done: Setup - Register Admin 1-1
+2026-08-18 09:20:12,773 INFO o.a.j.t.JMeterThread: Thread finished: Setup - Register Admin 1-1
+2026-08-18 09:20:12,774 INFO o.a.j.e.StandardJMeterEngine: All Setup Threads have ended
+2026-08-18 09:20:12,877 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : Spike Test - Admin Import (0?100?0)
+2026-08-18 09:20:12,877 INFO o.a.j.e.StandardJMeterEngine: Starting 100 threads for group Spike Test - Admin Import (0?100?0).
+2026-08-18 09:20:12,877 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2026-08-18 09:20:12,877 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=100 ramp-up=5 delayedStart=false
+2026-08-18 09:20:12,922 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2026-08-18 09:20:12,922 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2026-08-18 09:20:42,877 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-1
+2026-08-18 09:20:42,878 INFO o.a.j.s.FileServer: Stored: E:/Documents/HCMUS/Semester3_Year3/KTPM/Testing/HW05/test-data/spike_import_products.csv
+2026-08-18 09:20:42,953 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-2
+2026-08-18 09:20:43,000 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-3
+2026-08-18 09:20:43,048 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-4
+2026-08-18 09:20:43,094 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-5
+2026-08-18 09:20:43,141 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-6
+2026-08-18 09:20:43,188 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-7
+2026-08-18 09:20:43,235 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-8
+2026-08-18 09:20:43,282 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-9
+2026-08-18 09:20:43,345 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-10
+2026-08-18 09:20:43,391 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-11
+2026-08-18 09:20:43,436 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-12
+2026-08-18 09:20:43,483 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-13
+2026-08-18 09:20:43,545 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-14
+2026-08-18 09:20:43,592 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-15
+2026-08-18 09:20:43,638 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-16
+2026-08-18 09:20:43,686 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-17
+2026-08-18 09:20:43,732 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-18
+2026-08-18 09:20:43,779 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-19
+2026-08-18 09:20:43,841 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-20
+2026-08-18 09:20:43,903 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-21
+2026-08-18 09:20:43,940 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-22
+2026-08-18 09:20:43,989 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-23
+2026-08-18 09:20:44,035 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-24
+2026-08-18 09:20:44,084 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-25
+2026-08-18 09:20:44,135 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-26
+2026-08-18 09:20:44,184 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-27
+2026-08-18 09:20:44,234 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-28
+2026-08-18 09:20:44,282 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-29
+2026-08-18 09:20:44,332 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-30
+2026-08-18 09:20:44,383 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-31
+2026-08-18 09:20:44,431 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-32
+2026-08-18 09:20:44,482 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-33
+2026-08-18 09:20:44,530 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-34
+2026-08-18 09:20:44,581 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-35
+2026-08-18 09:20:44,630 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-36
+2026-08-18 09:20:44,680 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-37
+2026-08-18 09:20:44,729 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-38
+2026-08-18 09:20:44,779 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-39
+2026-08-18 09:20:44,829 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-40
+2026-08-18 09:20:44,879 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-41
+2026-08-18 09:20:44,933 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-42
+2026-08-18 09:20:44,979 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-43
+2026-08-18 09:20:45,039 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-44
+2026-08-18 09:20:45,100 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-45
+2026-08-18 09:20:45,147 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-46
+2026-08-18 09:20:45,192 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-47
+2026-08-18 09:20:45,253 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-48
+2026-08-18 09:20:45,300 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-49
+2026-08-18 09:20:45,345 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-50
+2026-08-18 09:20:45,390 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-51
+2026-08-18 09:20:45,452 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-52
+2026-08-18 09:20:45,497 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-53
+2026-08-18 09:20:45,542 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-54
+2026-08-18 09:20:45,589 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-55
+2026-08-18 09:20:45,652 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-56
+2026-08-18 09:20:45,698 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-57
+2026-08-18 09:20:45,745 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-58
+2026-08-18 09:20:45,791 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-59
+2026-08-18 09:20:45,838 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-60
+2026-08-18 09:20:45,899 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-61
+2026-08-18 09:20:45,946 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-62
+2026-08-18 09:20:45,993 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-63
+2026-08-18 09:20:46,038 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-64
+2026-08-18 09:20:46,099 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-65
+2026-08-18 09:20:46,145 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-66
+2026-08-18 09:20:46,167 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-11
+2026-08-18 09:20:46,167 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-11
+2026-08-18 09:20:46,191 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-67
+2026-08-18 09:20:46,238 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-68
+2026-08-18 09:20:46,241 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-1
+2026-08-18 09:20:46,241 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-1
+2026-08-18 09:20:46,300 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-69
+2026-08-18 09:20:46,346 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-70
+2026-08-18 09:20:46,391 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-71
+2026-08-18 09:20:46,438 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-72
+2026-08-18 09:20:46,468 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-12
+2026-08-18 09:20:46,468 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-12
+2026-08-18 09:20:46,499 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-73
+2026-08-18 09:20:46,545 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-74
+2026-08-18 09:20:46,592 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-75
+2026-08-18 09:20:46,629 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-2
+2026-08-18 09:20:46,629 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-2
+2026-08-18 09:20:46,639 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-76
+2026-08-18 09:20:46,657 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-21
+2026-08-18 09:20:46,657 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-21
+2026-08-18 09:20:46,685 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-77
+2026-08-18 09:20:46,746 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-78
+2026-08-18 09:20:46,793 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-79
+2026-08-18 09:20:46,839 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-80
+2026-08-18 09:20:46,876 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-3
+2026-08-18 09:20:46,876 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-3
+2026-08-18 09:20:46,886 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-81
+2026-08-18 09:20:46,934 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-82
+2026-08-18 09:20:46,964 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-13
+2026-08-18 09:20:46,965 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-13
+2026-08-18 09:20:46,997 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-83
+2026-08-18 09:20:47,008 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-22
+2026-08-18 09:20:47,009 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-22
+2026-08-18 09:20:47,044 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-84
+2026-08-18 09:20:47,089 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-85
+2026-08-18 09:20:47,136 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-86
+2026-08-18 09:20:47,144 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-14
+2026-08-18 09:20:47,145 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-14
+2026-08-18 09:20:47,182 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-87
+2026-08-18 09:20:47,243 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-88
+2026-08-18 09:20:47,265 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-4
+2026-08-18 09:20:47,265 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-4
+2026-08-18 09:20:47,288 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-89
+2026-08-18 09:20:47,335 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-90
+2026-08-18 09:20:47,348 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-31
+2026-08-18 09:20:47,349 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-31
+2026-08-18 09:20:47,381 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-91
+2026-08-18 09:20:47,396 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-23
+2026-08-18 09:20:47,396 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-23
+2026-08-18 09:20:47,443 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-92
+2026-08-18 09:20:47,489 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-93
+2026-08-18 09:20:47,536 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-94
+2026-08-18 09:20:47,581 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-95
+2026-08-18 09:20:47,594 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-5
+2026-08-18 09:20:47,594 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-5
+2026-08-18 09:20:47,627 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-15
+2026-08-18 09:20:47,627 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-15
+2026-08-18 09:20:47,643 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-96
+2026-08-18 09:20:47,690 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-97
+2026-08-18 09:20:47,736 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-98
+2026-08-18 09:20:47,782 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-99
+2026-08-18 09:20:47,828 INFO o.a.j.t.JMeterThread: Thread started: Spike Test - Admin Import (0?100?0) 1-100
+2026-08-18 09:20:47,829 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-32
+2026-08-18 09:20:47,829 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-32
+2026-08-18 09:20:47,930 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-24
+2026-08-18 09:20:47,930 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-24
+2026-08-18 09:20:48,003 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-6
+2026-08-18 09:20:48,003 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-6
+2026-08-18 09:20:48,092 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-16
+2026-08-18 09:20:48,093 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-16
+2026-08-18 09:20:48,109 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-41
+2026-08-18 09:20:48,110 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-41
+2026-08-18 09:20:48,292 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-33
+2026-08-18 09:20:48,292 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-33
+2026-08-18 09:20:48,349 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-25
+2026-08-18 09:20:48,349 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-25
+2026-08-18 09:20:48,507 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-17
+2026-08-18 09:20:48,507 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-17
+2026-08-18 09:20:48,559 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-7
+2026-08-18 09:20:48,560 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-7
+2026-08-18 09:20:48,580 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-42
+2026-08-18 09:20:48,580 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-42
+2026-08-18 09:20:48,744 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-26
+2026-08-18 09:20:48,745 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-26
+2026-08-18 09:20:48,823 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-34
+2026-08-18 09:20:48,823 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-34
+2026-08-18 09:20:48,892 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-51
+2026-08-18 09:20:48,893 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-51
+2026-08-18 09:20:48,988 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-8
+2026-08-18 09:20:48,988 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-8
+2026-08-18 09:20:49,010 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-18
+2026-08-18 09:20:49,010 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-18
+2026-08-18 09:20:49,037 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-43
+2026-08-18 09:20:49,037 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-43
+2026-08-18 09:20:49,157 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-35
+2026-08-18 09:20:49,157 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-35
+2026-08-18 09:20:49,189 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-9
+2026-08-18 09:20:49,190 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-9
+2026-08-18 09:20:49,208 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-52
+2026-08-18 09:20:49,208 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-52
+2026-08-18 09:20:49,233 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-61
+2026-08-18 09:20:49,233 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-61
+2026-08-18 09:20:49,303 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-27
+2026-08-18 09:20:49,303 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-27
+2026-08-18 09:20:49,466 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-44
+2026-08-18 09:20:49,467 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-44
+2026-08-18 09:20:49,615 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-19
+2026-08-18 09:20:49,615 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-19
+2026-08-18 09:20:49,655 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-10
+2026-08-18 09:20:49,655 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-10
+2026-08-18 09:20:49,671 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-36
+2026-08-18 09:20:49,671 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-36
+2026-08-18 09:20:49,749 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-53
+2026-08-18 09:20:49,749 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-53
+2026-08-18 09:20:49,863 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-71
+2026-08-18 09:20:49,864 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-71
+2026-08-18 09:20:49,874 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-62
+2026-08-18 09:20:49,874 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-62
+2026-08-18 09:20:50,124 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-28
+2026-08-18 09:20:50,124 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-28
+2026-08-18 09:20:50,147 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-20
+2026-08-18 09:20:50,147 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-20
+2026-08-18 09:20:50,158 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-45
+2026-08-18 09:20:50,159 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-45
+2026-08-18 09:20:50,236 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-37
+2026-08-18 09:20:50,237 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-37
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-72
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-54
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-63
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-54
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-63
+2026-08-18 09:20:50,364 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-72
+2026-08-18 09:20:50,401 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-81
+2026-08-18 09:20:50,401 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-81
+2026-08-18 09:20:50,515 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-46
+2026-08-18 09:20:50,515 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-46
+2026-08-18 09:20:50,619 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-29
+2026-08-18 09:20:50,619 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-29
+2026-08-18 09:20:50,783 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-55
+2026-08-18 09:20:50,783 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-55
+2026-08-18 09:20:50,875 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-38
+2026-08-18 09:20:50,875 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-82
+2026-08-18 09:20:50,875 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-38
+2026-08-18 09:20:50,875 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-82
+2026-08-18 09:20:50,899 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-91
+2026-08-18 09:20:50,899 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-91
+2026-08-18 09:20:50,929 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-64
+2026-08-18 09:20:50,929 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-64
+2026-08-18 09:20:51,023 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-73
+2026-08-18 09:20:51,023 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-73
+2026-08-18 09:20:51,074 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-30
+2026-08-18 09:20:51,074 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-30
+2026-08-18 09:20:51,140 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-47
+2026-08-18 09:20:51,140 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-47
+2026-08-18 09:20:51,192 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-56
+2026-08-18 09:20:51,192 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-56
+2026-08-18 09:20:51,255 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-74
+2026-08-18 09:20:51,255 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-74
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-65
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-83
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-39
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-65
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-83
+2026-08-18 09:20:51,394 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-39
+2026-08-18 09:20:51,462 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-92
+2026-08-18 09:20:51,462 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-92
+2026-08-18 09:20:51,473 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-48
+2026-08-18 09:20:51,473 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-48
+2026-08-18 09:20:51,653 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-40
+2026-08-18 09:20:51,653 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-40
+2026-08-18 09:20:51,712 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-66
+2026-08-18 09:20:51,712 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-66
+2026-08-18 09:20:51,739 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-57
+2026-08-18 09:20:51,739 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-57
+2026-08-18 09:20:51,766 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-84
+2026-08-18 09:20:51,766 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-84
+2026-08-18 09:20:51,782 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-75
+2026-08-18 09:20:51,782 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-75
+2026-08-18 09:20:51,798 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-93
+2026-08-18 09:20:51,798 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-93
+2026-08-18 09:20:51,877 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-49
+2026-08-18 09:20:51,877 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-49
+2026-08-18 09:20:51,968 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-76
+2026-08-18 09:20:51,968 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-76
+2026-08-18 09:20:51,994 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-85
+2026-08-18 09:20:51,994 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-85
+2026-08-18 09:20:52,028 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-58
+2026-08-18 09:20:52,028 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-58
+2026-08-18 09:20:52,058 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-67
+2026-08-18 09:20:52,058 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-67
+2026-08-18 09:20:52,071 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-94
+2026-08-18 09:20:52,071 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-94
+2026-08-18 09:20:52,148 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-95
+2026-08-18 09:20:52,148 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-95
+2026-08-18 09:20:52,173 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-77
+2026-08-18 09:20:52,174 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-77
+2026-08-18 09:20:52,198 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-59
+2026-08-18 09:20:52,198 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-59
+2026-08-18 09:20:52,230 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-50
+2026-08-18 09:20:52,230 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-50
+2026-08-18 09:20:52,256 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-86
+2026-08-18 09:20:52,257 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-86
+2026-08-18 09:20:52,269 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-68
+2026-08-18 09:20:52,269 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-68
+2026-08-18 09:20:52,407 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-60
+2026-08-18 09:20:52,407 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-60
+2026-08-18 09:20:52,420 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-96
+2026-08-18 09:20:52,420 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-96
+2026-08-18 09:20:52,455 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-69
+2026-08-18 09:20:52,455 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-69
+2026-08-18 09:20:52,469 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-87
+2026-08-18 09:20:52,469 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-87
+2026-08-18 09:20:52,493 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-78
+2026-08-18 09:20:52,493 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-78
+2026-08-18 09:20:52,548 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-70
+2026-08-18 09:20:52,548 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-70
+2026-08-18 09:20:52,578 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-88
+2026-08-18 09:20:52,578 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-88
+2026-08-18 09:20:52,610 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-79
+2026-08-18 09:20:52,610 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-79
+2026-08-18 09:20:52,640 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-97
+2026-08-18 09:20:52,640 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-97
+2026-08-18 09:20:52,660 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-80
+2026-08-18 09:20:52,660 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-80
+2026-08-18 09:20:52,678 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-98
+2026-08-18 09:20:52,678 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-98
+2026-08-18 09:20:52,696 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-89
+2026-08-18 09:20:52,696 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-89
+2026-08-18 09:20:52,731 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-90
+2026-08-18 09:20:52,731 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-90
+2026-08-18 09:20:52,792 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-99
+2026-08-18 09:20:52,792 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-99
+2026-08-18 09:20:52,904 INFO o.a.j.t.JMeterThread: Thread is done: Spike Test - Admin Import (0?100?0) 1-100
+2026-08-18 09:20:52,904 INFO o.a.j.t.JMeterThread: Thread finished: Spike Test - Admin Import (0?100?0) 1-100
+2026-08-18 09:20:52,904 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2026-08-18 09:20:52,905 INFO o.a.j.s.FileServer: Close: E:/Documents/HCMUS/Semester3_Year3/KTPM/Testing/HW05/test-data/spike_import_products.csv
+2026-08-18 09:20:52,907 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)

@@ -1,0 +1,501 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1787019644148,38,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,640,269,27,27,http://localhost:3000/api/login,38,0,0
+1787019644134,49,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,640,269,26,26,http://localhost:3000/api/login,49,0,2
+1787019644135,42,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,640,269,26,26,http://localhost:3000/api/login,42,0,1
+1787019644135,38,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,640,269,26,26,http://localhost:3000/api/login,38,0,1
+1787019644136,42,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,640,269,26,26,http://localhost:3000/api/login,42,0,0
+1787019644135,44,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,640,269,26,26,http://localhost:3000/api/login,44,0,1
+1787019644135,39,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,640,269,26,26,http://localhost:3000/api/login,39,0,1
+1787019644135,50,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,640,269,27,27,http://localhost:3000/api/login,50,0,1
+1787019644134,41,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,640,269,26,26,http://localhost:3000/api/login,41,0,2
+1787019644134,33,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,640,269,26,26,http://localhost:3000/api/login,33,0,1
+1787019644135,37,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,640,269,26,26,http://localhost:3000/api/login,37,0,1
+1787019644134,47,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,640,269,26,26,http://localhost:3000/api/login,47,0,2
+1787019644134,36,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,640,269,26,26,http://localhost:3000/api/login,36,0,2
+1787019644135,47,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,640,269,26,26,http://localhost:3000/api/login,47,0,1
+1787019644134,37,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,640,269,26,26,http://localhost:3000/api/login,37,0,2
+1787019644135,45,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,640,269,26,26,http://localhost:3000/api/login,45,0,1
+1787019644193,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,640,269,27,27,http://localhost:3000/api/login,5,0,2
+1787019644238,6,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,640,269,28,28,http://localhost:3000/api/login,6,0,1
+1787019644282,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,640,269,29,29,http://localhost:3000/api/login,4,0,1
+1787019644343,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,640,269,30,30,http://localhost:3000/api/login,4,0,1
+1787019644408,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,640,269,31,31,http://localhost:3000/api/login,4,0,1
+1787019644443,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,640,269,32,32,http://localhost:3000/api/login,4,0,1
+1787019644491,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,640,269,33,33,http://localhost:3000/api/login,3,0,1
+1787019644536,7,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,640,269,34,34,http://localhost:3000/api/login,7,0,1
+1787019644587,7,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,640,269,35,35,http://localhost:3000/api/login,7,0,1
+1787019644636,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,640,269,36,36,http://localhost:3000/api/login,5,0,1
+1787019644686,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,640,269,37,37,http://localhost:3000/api/login,5,0,0
+1787019644694,6,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,358,324,37,37,http://localhost:3000/api/categories,6,0,0
+1787019644694,6,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,358,324,37,37,http://localhost:3000/api/categories,6,0,0
+1787019644694,6,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,358,324,37,37,http://localhost:3000/api/categories,6,0,0
+1787019644695,8,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,358,324,37,37,http://localhost:3000/api/categories,8,0,0
+1787019644695,8,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,358,324,37,37,http://localhost:3000/api/categories,8,0,0
+1787019644695,9,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,358,324,37,37,http://localhost:3000/api/categories,9,0,0
+1787019644695,10,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,358,324,37,37,http://localhost:3000/api/categories,9,0,0
+1787019644695,10,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,358,324,37,37,http://localhost:3000/api/categories,10,0,0
+1787019644695,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644695,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644695,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644697,10,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,358,324,37,37,http://localhost:3000/api/categories,10,0,0
+1787019644697,10,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,358,324,37,37,http://localhost:3000/api/categories,10,0,0
+1787019644699,9,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,358,324,37,37,http://localhost:3000/api/categories,9,0,0
+1787019644697,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644697,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644697,11,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,358,324,37,37,http://localhost:3000/api/categories,11,0,0
+1787019644735,6,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,640,269,38,38,http://localhost:3000/api/login,6,0,1
+1787019644745,5,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,358,324,38,38,http://localhost:3000/api/categories,5,0,0
+1787019644785,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,640,269,39,39,http://localhost:3000/api/login,3,0,0
+1787019644787,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,358,324,39,39,http://localhost:3000/api/categories,2,0,0
+1787019644834,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,640,269,40,40,http://localhost:3000/api/login,3,0,1
+1787019644850,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,358,324,40,40,http://localhost:3000/api/categories,1,0,0
+1787019644887,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,640,269,41,41,http://localhost:3000/api/login,4,0,1
+1787019644918,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,358,324,41,41,http://localhost:3000/api/categories,2,0,0
+1787019644934,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,640,269,42,42,http://localhost:3000/api/login,3,0,1
+1787019644963,2,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,358,324,42,42,http://localhost:3000/api/categories,1,0,0
+1787019644994,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,640,269,43,43,http://localhost:3000/api/login,3,0,1
+1787019645009,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,358,324,43,43,http://localhost:3000/api/categories,4,0,0
+1787019645040,5,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,640,269,44,44,http://localhost:3000/api/login,5,0,1
+1787019645055,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,358,324,44,44,http://localhost:3000/api/categories,1,0,0
+1787019645086,3,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,640,269,44,44,http://localhost:3000/api/login,3,0,1
+1787019645101,1,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,358,324,45,45,http://localhost:3000/api/categories,1,0,0
+1787019645132,4,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,640,269,45,45,http://localhost:3000/api/login,4,0,1
+1787019645147,4,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,358,324,46,46,http://localhost:3000/api/categories,4,0,0
+1787019645193,6,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,640,269,47,47,http://localhost:3000/api/login,6,0,1
+1787019645207,29,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,358,324,47,47,http://localhost:3000/api/categories,29,0,0
+1787019645238,118,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,640,269,50,50,http://localhost:3000/api/login,118,0,1
+1787019645253,146,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,358,324,51,51,http://localhost:3000/api/categories,146,0,0
+1787019645207,227,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,357,986,51,51,http://localhost:3000/api/admin/import-products,227,0,0
+1787019645299,139,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,358,324,51,51,http://localhost:3000/api/categories,139,0,0
+1787019645207,246,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,357,986,52,52,http://localhost:3000/api/admin/import-products,246,0,0
+1787019645345,109,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,358,324,52,52,http://localhost:3000/api/categories,109,0,0
+1787019645345,161,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,640,269,53,53,http://localhost:3000/api/login,161,0,1
+1787019645285,229,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,640,269,53,53,http://localhost:3000/api/login,229,0,0
+1787019645391,139,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,640,269,53,53,http://localhost:3000/api/login,139,0,1
+1787019645406,152,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,358,324,54,54,http://localhost:3000/api/categories,152,0,0
+1787019645452,177,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,358,324,55,55,http://localhost:3000/api/categories,177,0,0
+1787019645482,151,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,640,269,55,55,http://localhost:3000/api/login,151,0,1
+1787019645437,233,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,640,269,56,56,http://localhost:3000/api/login,232,0,2
+1787019645512,173,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,358,324,56,56,http://localhost:3000/api/categories,173,0,0
+1787019645543,163,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,640,269,57,57,http://localhost:3000/api/login,162,0,1
+1787019645207,498,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,360,1604,57,57,http://localhost:3000/api/admin/import-products,498,0,0
+1787019645558,158,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,358,324,57,57,http://localhost:3000/api/categories,158,0,0
+1787019645605,138,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,640,269,57,57,http://localhost:3000/api/login,138,0,0
+1787019645604,176,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,358,324,58,58,http://localhost:3000/api/categories,176,0,0
+1787019645207,627,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,360,1604,59,59,http://localhost:3000/api/admin/import-products,627,0,0
+1787019645652,183,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,640,269,59,59,http://localhost:3000/api/login,183,0,1
+1787019645652,185,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,358,324,59,59,http://localhost:3000/api/categories,185,0,0
+1787019645437,425,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,357,986,60,60,http://localhost:3000/api/admin/import-products,425,0,0
+1787019645698,165,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,640,269,60,60,http://localhost:3000/api/login,165,0,1
+1787019645713,169,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,358,324,60,60,http://localhost:3000/api/categories,169,0,0
+1787019645760,191,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,640,269,62,62,http://localhost:3000/api/login,191,0,1
+1787019645807,211,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,640,269,63,63,http://localhost:3000/api/login,211,0,1
+1787019645207,843,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,360,2229,64,64,http://localhost:3000/api/admin/import-products,843,0,0
+1787019645868,207,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,358,324,64,64,http://localhost:3000/api/categories,207,0,0
+1787019645854,243,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,640,269,64,64,http://localhost:3000/api/login,243,0,0
+1787019645207,946,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,360,2229,66,66,http://localhost:3000/api/admin/import-products,946,0,0
+1787019645946,220,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-11,text,true,,410851,322,66,66,http://localhost:3000/api/products,219,0,0
+1787019643395,500,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-11,,true,,412206,1901,66,66,null,499,2271,2
+1787019645900,320,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,640,269,66,66,http://localhost:3000/api/login,320,0,2
+1787019645467,752,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,360,1604,66,66,http://localhost:3000/api/admin/import-products,752,0,0
+1787019645962,279,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-1,text,true,,413809,322,67,67,http://localhost:3000/api/products,278,0,0
+1787019642891,573,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-1,,true,,415164,1901,67,67,null,572,2777,1
+1787019646009,234,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,640,269,66,66,http://localhost:3000/api/login,234,0,0
+1787019646008,235,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,358,324,66,66,http://localhost:3000/api/categories,235,0,0
+1787019645962,286,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,640,269,66,66,http://localhost:3000/api/login,286,0,1
+1787019646023,276,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,358,324,66,66,http://localhost:3000/api/categories,276,0,0
+1787019646038,278,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,358,324,67,67,http://localhost:3000/api/categories,278,0,0
+1787019646054,330,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,640,269,68,68,http://localhost:3000/api/login,330,0,0
+1787019646145,249,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,358,324,69,69,http://localhost:3000/api/categories,249,0,0
+1787019646100,300,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,640,269,69,69,http://localhost:3000/api/login,300,0,1
+1787019646161,240,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,640,269,69,69,http://localhost:3000/api/login,240,0,1
+1787019645207,1204,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,360,2854,69,69,http://localhost:3000/api/admin/import-products,1204,0,0
+1787019646176,236,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,358,324,69,69,http://localhost:3000/api/categories,236,0,0
+1787019646223,244,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-12,text,true,,423491,322,70,70,http://localhost:3000/api/products,243,0,0
+1787019643437,789,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-12,,true,,424849,2519,70,70,null,788,2241,2
+1787019646223,253,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,358,324,69,69,http://localhost:3000/api/categories,253,0,0
+1787019645207,1325,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,360,2854,70,70,http://localhost:3000/api/admin/import-products,1325,0,0
+1787019646254,297,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,358,324,71,71,http://localhost:3000/api/categories,297,0,0
+1787019646254,309,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,640,269,71,71,http://localhost:3000/api/login,309,0,1
+1787019646300,269,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,640,269,71,71,http://localhost:3000/api/login,269,0,1
+1787019646208,408,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,640,269,72,72,http://localhost:3000/api/login,408,0,0
+1787019646069,552,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,357,986,72,72,http://localhost:3000/api/admin/import-products,552,0,0
+1787019646346,283,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-2,text,true,,429947,322,72,72,http://localhost:3000/api/products,282,0,0
+1787019642954,962,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-2,,true,,431305,2519,72,72,null,961,2713,0
+1787019646376,263,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,358,324,72,72,http://localhost:3000/api/categories,263,0,0
+1787019646346,298,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,358,324,72,72,http://localhost:3000/api/categories,298,0,0
+1787019646376,281,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-21,text,true,,430620,322,72,72,http://localhost:3000/api/products,281,0,0
+1787019643904,712,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-21,,true,,431975,1901,72,72,null,712,2041,1
+1787019646346,314,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,640,269,71,71,http://localhost:3000/api/login,314,0,1
+1787019645527,1148,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,360,2229,71,71,http://localhost:3000/api/admin/import-products,1148,0,0
+1787019646453,222,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,358,324,71,71,http://localhost:3000/api/categories,222,0,0
+1787019646408,282,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,640,269,72,72,http://localhost:3000/api/login,282,0,1
+1787019646530,229,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,358,324,73,73,http://localhost:3000/api/categories,229,0,0
+1787019646499,273,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,640,269,73,73,http://localhost:3000/api/login,273,0,1
+1787019646454,320,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,640,269,73,73,http://localhost:3000/api/login,320,0,0
+1787019645207,1612,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,360,3479,74,74,http://localhost:3000/api/admin/import-products,1612,0,0
+1787019646561,315,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-3,text,true,,439363,322,75,75,http://localhost:3000/api/products,314,0,0
+1787019643001,1200,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-3,,true,,440721,3144,75,75,null,1199,2675,1
+1787019646609,268,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,640,269,74,74,http://localhost:3000/api/login,268,0,0
+1787019646545,333,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,640,269,74,74,http://localhost:3000/api/login,333,0,1
+1787019646608,292,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,358,324,75,75,http://localhost:3000/api/categories,292,0,0
+1787019645207,1715,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,360,3479,75,75,http://localhost:3000/api/admin/import-products,1715,0,0
+1787019646654,311,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-13,text,true,,442728,322,76,76,http://localhost:3000/api/products,310,0,0
+1787019643484,1305,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-13,,true,,444086,3144,76,76,null,1304,2176,1
+1787019646654,312,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,640,269,75,75,http://localhost:3000/api/login,312,0,1
+1787019646731,248,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,358,324,75,75,http://localhost:3000/api/categories,248,0,0
+1787019646731,277,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-22,text,true,,445416,322,76,76,http://localhost:3000/api/products,277,0,0
+1787019643940,1035,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-22,,true,,446774,2519,76,76,null,1034,2034,1
+1787019646762,257,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,358,324,75,75,http://localhost:3000/api/categories,257,0,0
+1787019646747,285,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,640,269,75,75,http://localhost:3000/api/login,285,0,0
+1787019646701,338,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,640,269,75,75,http://localhost:3000/api/login,338,0,1
+1787019646746,297,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,358,324,75,75,http://localhost:3000/api/categories,297,0,0
+1787019646855,192,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,640,269,76,76,http://localhost:3000/api/login,192,0,0
+1787019646809,292,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,640,269,77,77,http://localhost:3000/api/login,292,0,0
+1787019646886,243,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,358,324,77,77,http://localhost:3000/api/categories,243,0,0
+1787019646145,991,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,360,1604,77,77,http://localhost:3000/api/admin/import-products,991,0,0
+1787019646902,234,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,358,324,77,77,http://localhost:3000/api/categories,234,0,0
+1787019646917,227,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-14,text,true,,451334,322,78,78,http://localhost:3000/api/products,226,0,0
+1787019643545,1484,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-14,,true,,452692,3769,78,78,null,1483,2115,1
+1787019646903,242,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,640,269,78,78,http://localhost:3000/api/login,242,0,0
+1787019646902,243,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,358,324,77,77,http://localhost:3000/api/categories,243,0,0
+1787019645557,1606,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,360,2854,77,77,http://localhost:3000/api/admin/import-products,1606,0,0
+1787019646950,239,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,640,269,78,78,http://localhost:3000/api/login,239,0,1
+1787019645207,2051,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,360,4104,79,79,http://localhost:3000/api/admin/import-products,2051,0,0
+1787019647012,225,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,640,269,78,78,http://localhost:3000/api/login,225,0,1
+1787019647044,187,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-4,text,true,,456847,322,78,78,http://localhost:3000/api/products,186,0,0
+1787019643048,1559,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-4,,true,,458205,3769,78,78,null,1558,2658,2
+1787019647074,192,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,358,324,78,78,http://localhost:3000/api/categories,192,0,0
+1787019647074,223,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,358,324,79,79,http://localhost:3000/api/categories,223,0,0
+1787019647060,238,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,640,269,79,79,http://localhost:3000/api/login,238,0,1
+1787019647106,193,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,640,269,79,79,http://localhost:3000/api/login,193,0,1
+1787019647121,193,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,358,324,79,79,http://localhost:3000/api/categories,193,0,0
+1787019647136,212,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-31,text,true,,463166,322,80,80,http://localhost:3000/api/products,211,0,0
+1787019644384,920,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-31,,true,,464521,1901,80,80,null,919,2044,1
+1787019647152,209,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,640,269,79,79,http://localhost:3000/api/login,209,0,0
+1787019645223,2145,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,360,4104,79,79,http://localhost:3000/api/admin/import-products,2145,0,0
+1787019647167,201,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,358,324,79,79,http://localhost:3000/api/categories,201,0,0
+1787019646823,553,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,357,986,79,79,http://localhost:3000/api/admin/import-products,553,0,0
+1787019647182,213,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-23,text,true,,466660,322,80,80,http://localhost:3000/api/products,212,0,0
+1787019643989,1368,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-23,,true,,468018,3144,80,80,null,1367,2038,1
+1787019647197,219,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,358,324,79,79,http://localhost:3000/api/categories,219,0,0
+1787019647198,236,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,640,269,79,79,http://localhost:3000/api/login,236,0,0
+1787019647258,217,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,640,269,80,80,http://localhost:3000/api/login,217,0,1
+1787019647288,216,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,358,324,81,81,http://localhost:3000/api/categories,216,0,0
+1787019647288,223,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,358,324,81,81,http://localhost:3000/api/categories,223,0,0
+1787019646191,1351,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,360,2229,82,82,http://localhost:3000/api/admin/import-products,1351,0,0
+1787019645604,1980,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,360,3479,83,83,http://localhost:3000/api/admin/import-products,1980,0,0
+1787019647335,259,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-5,text,true,,475941,322,83,83,http://localhost:3000/api/products,258,0,0
+1787019643094,1920,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-5,,true,,477299,4394,83,83,null,1919,2580,1
+1787019647351,244,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,640,269,82,82,http://localhost:3000/api/login,244,0,1
+1787019647305,295,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,640,269,82,82,http://localhost:3000/api/login,295,0,0
+1787019647428,199,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-15,text,true,,479437,322,82,82,http://localhost:3000/api/products,198,0,0
+1787019643592,1971,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-15,,true,,480795,4394,82,82,null,1969,2064,1
+1787019647380,277,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,358,324,82,82,http://localhost:3000/api/categories,277,0,0
+1787019647444,216,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,640,269,82,82,http://localhost:3000/api/login,216,0,1
+1787019647380,285,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,358,324,82,82,http://localhost:3000/api/categories,285,0,0
+1787019647397,269,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,640,269,82,82,http://localhost:3000/api/login,269,0,1
+1787019647473,198,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,358,324,82,82,http://localhost:3000/api/categories,198,0,0
+1787019647505,274,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,640,269,84,84,http://localhost:3000/api/login,274,0,1
+1787019646917,836,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,360,1604,84,84,http://localhost:3000/api/admin/import-products,836,0,0
+1787019647535,219,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,358,324,84,84,http://localhost:3000/api/categories,219,0,0
+1787019645223,2521,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,360,4729,84,84,http://localhost:3000/api/admin/import-products,2521,0,0
+1787019647551,239,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,640,269,85,85,http://localhost:3000/api/login,239,0,1
+1787019647551,244,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,358,324,85,85,http://localhost:3000/api/categories,244,0,0
+1787019645223,2575,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,360,4729,85,85,http://localhost:3000/api/admin/import-products,2575,0,0
+1787019647551,255,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,358,324,85,85,http://localhost:3000/api/categories,255,0,0
+1787019647597,219,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,640,269,85,85,http://localhost:3000/api/login,219,0,1
+1787019647643,186,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-32,text,true,,492202,322,86,86,http://localhost:3000/api/products,186,0,0
+1787019644432,1357,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-32,,true,,493560,2519,86,86,null,1357,2040,1
+1787019647659,210,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,358,324,85,85,http://localhost:3000/api/categories,210,0,0
+1787019647644,227,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,640,269,85,85,http://localhost:3000/api/login,227,0,0
+1787019647612,260,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,358,324,85,85,http://localhost:3000/api/categories,260,0,0
+1787019647705,224,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,358,324,85,85,http://localhost:3000/api/categories,224,0,0
+1787019647675,254,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-24,text,true,,495829,322,85,85,http://localhost:3000/api/products,253,0,0
+1787019644035,1868,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-24,,true,,497187,3769,85,85,null,1867,2027,1
+1787019647690,240,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,640,269,85,85,http://localhost:3000/api/login,240,0,1
+1787019645667,2295,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,360,4104,84,84,http://localhost:3000/api/admin/import-products,2294,0,0
+1787019646223,1739,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,360,2854,84,84,http://localhost:3000/api/admin/import-products,1739,0,0
+1787019647488,503,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,357,986,84,84,http://localhost:3000/api/admin/import-products,503,0,0
+1787019647767,235,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-6,text,true,,500129,322,84,84,http://localhost:3000/api/products,234,0,0
+1787019643142,2338,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-6,,true,,501487,5019,84,84,null,2337,2522,1
+1787019647751,253,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,640,269,83,83,http://localhost:3000/api/login,253,0,1
+1787019647767,251,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,358,324,83,83,http://localhost:3000/api/categories,251,0,0
+1787019647812,211,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,358,324,83,83,http://localhost:3000/api/categories,211,0,0
+1787019647797,235,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,640,269,83,83,http://localhost:3000/api/login,235,0,1
+1787019647812,226,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,358,324,83,83,http://localhost:3000/api/categories,226,0,0
+1787019645223,2858,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,360,5354,83,83,http://localhost:3000/api/admin/import-products,2858,0,0
+1787019647876,216,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-16,text,true,,505106,322,83,83,http://localhost:3000/api/products,215,0,0
+1787019643639,2410,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-16,,true,,506464,5019,83,83,null,2409,2043,0
+1787019647876,221,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,358,324,82,82,http://localhost:3000/api/categories,221,0,0
+1787019647845,254,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,640,269,82,82,http://localhost:3000/api/login,254,0,0
+1787019647891,218,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-41,text,true,,508868,322,82,82,http://localhost:3000/api/products,218,0,0
+1787019644881,1188,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-41,,true,,510223,1901,82,82,null,1188,2041,1
+1787019647936,222,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,358,324,81,81,http://localhost:3000/api/categories,222,0,0
+1787019647891,274,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,640,269,81,81,http://localhost:3000/api/login,274,0,1
+1787019645253,2928,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,360,5354,81,81,http://localhost:3000/api/admin/import-products,2928,0,0
+1787019646902,1294,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,360,2229,81,81,http://localhost:3000/api/admin/import-products,1294,0,0
+1787019647997,200,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,640,269,81,81,http://localhost:3000/api/login,200,0,2
+1787019647982,246,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,358,324,81,81,http://localhost:3000/api/categories,246,0,0
+1787019647951,286,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,640,269,81,81,http://localhost:3000/api/login,286,0,1
+1787019648057,199,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-33,text,true,,516928,322,81,81,http://localhost:3000/api/products,198,0,0
+1787019644482,1727,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-33,,true,,518286,3144,81,81,null,1725,2083,1
+1787019648042,250,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,640,269,81,81,http://localhost:3000/api/login,250,0,1
+1787019648088,230,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,640,269,80,80,http://localhost:3000/api/login,230,0,1
+1787019646285,2045,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,360,3479,80,80,http://localhost:3000/api/admin/import-products,2045,0,0
+1787019645223,3116,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,360,5979,80,80,http://localhost:3000/api/admin/import-products,3116,0,0
+1787019648088,261,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-25,text,true,,520690,322,80,80,http://localhost:3000/api/products,260,0,0
+1787019644085,2249,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-25,,true,,522048,4394,80,80,null,2248,2015,1
+1787019648103,280,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,358,324,79,79,http://localhost:3000/api/categories,280,0,0
+1787019648103,284,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,358,324,79,79,http://localhost:3000/api/categories,284,0,0
+1787019648166,221,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,358,324,79,79,http://localhost:3000/api/categories,221,0,0
+1787019648151,247,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,640,269,79,79,http://localhost:3000/api/login,247,0,1
+1787019647535,875,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,360,1604,79,79,http://localhost:3000/api/admin/import-products,875,0,0
+1787019647921,532,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,357,986,79,79,http://localhost:3000/api/admin/import-products,532,0,0
+1787019648182,271,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,358,324,79,79,http://localhost:3000/api/categories,271,0,0
+1787019648198,282,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,640,269,79,79,http://localhost:3000/api/login,282,0,1
+1787019645744,2751,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,360,4729,79,79,http://localhost:3000/api/admin/import-products,2751,0,0
+1787019648287,220,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-17,text,true,,531714,322,79,79,http://localhost:3000/api/products,219,0,0
+1787019643686,2755,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-17,,true,,533072,5644,79,79,null,2754,2067,2
+1787019648303,256,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-7,text,true,,531849,322,78,78,http://localhost:3000/api/products,255,0,0
+1787019643189,2892,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-7,,true,,533207,5644,78,78,null,2891,2478,1
+1787019648303,257,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,358,324,77,77,http://localhost:3000/api/categories,257,0,0
+1787019648287,273,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,358,324,77,77,http://localhost:3000/api/categories,273,0,0
+1787019648288,276,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,640,269,77,77,http://localhost:3000/api/login,275,0,0
+1787019648287,292,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-42,text,true,,532792,322,77,77,http://localhost:3000/api/products,291,0,0
+1787019644933,1597,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-42,,true,,534150,2519,77,77,null,1595,2049,2
+1787019648243,344,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,640,269,76,76,http://localhost:3000/api/login,344,0,0
+1787019648381,252,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,358,324,76,76,http://localhost:3000/api/categories,252,0,0
+1787019648335,331,POST /api/login (admin),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,640,269,76,76,http://localhost:3000/api/login,331,0,1
+1787019648319,351,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,358,324,76,76,http://localhost:3000/api/categories,351,0,0
+1787019646982,1707,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,360,2854,76,76,http://localhost:3000/api/admin/import-products,1707,0,0
+1787019648444,245,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,358,324,76,76,http://localhost:3000/api/categories,245,0,0
+1787019648475,269,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-26,text,true,,542734,322,76,76,http://localhost:3000/api/products,268,0,0
+1787019644136,2573,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-26,,true,,544092,5019,76,76,null,2571,2035,1
+1787019645223,3574,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,360,6604,75,75,http://localhost:3000/api/admin/import-products,3574,0,0
+1787019648475,307,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-34,text,true,,543407,322,75,75,http://localhost:3000/api/products,306,0,0
+1787019645300,3464,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,360,5979,75,75,http://localhost:3000/api/admin/import-products,3464,0,0
+1787019644531,2209,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-34,,true,,544765,3769,75,75,null,2208,2084,1
+1787019646346,2507,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,360,4104,74,74,http://localhost:3000/api/admin/import-products,2507,0,0
+1787019648505,368,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,358,324,74,74,http://localhost:3000/api/categories,368,0,0
+1787019648505,387,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-51,text,true,,547433,322,74,74,http://localhost:3000/api/products,386,0,0
+1787019645392,1458,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-51,,true,,548788,1901,74,74,null,1457,2043,2
+1787019648536,361,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,358,324,73,73,http://localhost:3000/api/categories,361,0,0
+1787019647551,1427,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,360,2229,73,73,http://localhost:3000/api/admin/import-products,1427,0,0
+1787019648673,315,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,358,324,73,73,http://localhost:3000/api/categories,315,0,0
+1787019648596,392,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-8,text,true,,552138,322,73,73,http://localhost:3000/api/products,390,0,0
+1787019643236,3310,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-8,,true,,553496,6269,73,73,null,3308,2443,2
+1787019648612,380,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,358,324,72,72,http://localhost:3000/api/categories,380,0,0
+1787019648688,322,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-18,text,true,,554961,322,72,72,http://localhost:3000/api/products,320,0,0
+1787019643733,3261,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-18,,true,,556319,6269,72,72,null,3259,2016,1
+1787019648702,335,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-43,text,true,,554961,322,71,71,http://localhost:3000/api/products,334,0,0
+1787019644979,2029,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-43,,true,,556319,3144,71,71,null,2028,2029,1
+1787019648702,336,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,358,324,70,70,http://localhost:3000/api/categories,336,0,0
+1787019648381,657,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,357,986,70,70,http://localhost:3000/api/admin/import-products,657,0,0
+1787019648027,1049,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,360,1604,70,70,http://localhost:3000/api/admin/import-products,1049,0,0
+1787019648749,327,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,358,324,70,70,http://localhost:3000/api/categories,327,0,0
+1787019648795,313,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,358,324,70,70,http://localhost:3000/api/categories,313,0,0
+1787019648826,288,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,358,324,70,70,http://localhost:3000/api/categories,288,0,0
+1787019648842,315,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-35,text,true,,563031,322,70,70,http://localhost:3000/api/products,314,0,0
+1787019644581,2539,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-35,,true,,564389,4394,70,70,null,2538,2037,1
+1787019648842,347,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-9,text,true,,563031,322,69,69,http://localhost:3000/api/products,346,0,0
+1787019643283,3512,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-9,,true,,564389,6894,69,69,null,3511,2394,1
+1787019648903,286,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,358,324,68,68,http://localhost:3000/api/categories,286,0,0
+1787019648919,289,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-52,text,true,,564778,322,68,68,http://localhost:3000/api/products,288,0,0
+1787019645453,1707,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-52,,true,,566136,2519,68,68,null,1706,2048,1
+1787019648965,268,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-61,text,true,,567470,322,67,67,http://localhost:3000/api/products,267,0,0
+1787019645901,1301,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-61,,true,,568825,1901,67,67,null,1300,2032,1
+1787019645360,3940,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,360,6604,66,66,http://localhost:3000/api/admin/import-products,3940,0,0
+1787019648996,300,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-27,text,true,,569080,322,66,66,http://localhost:3000/api/products,299,0,0
+1787019648981,283,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,358,324,66,66,http://localhost:3000/api/categories,283,0,0
+1787019645914,3373,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,360,5354,66,66,http://localhost:3000/api/admin/import-products,3372,0,0
+1787019644184,3085,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-27,,true,,570438,5644,66,66,null,3084,2034,0
+1787019647059,2264,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,360,3479,65,65,http://localhost:3000/api/admin/import-products,2264,0,0
+1787019649088,235,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,358,324,65,65,http://localhost:3000/api/categories,235,0,0
+1787019646391,3017,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,360,4729,65,65,http://localhost:3000/api/admin/import-products,3017,0,0
+1787019649180,228,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,358,324,65,65,http://localhost:3000/api/categories,228,0,0
+1787019649196,270,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-44,text,true,,579165,322,65,65,http://localhost:3000/api/products,269,0,0
+1787019649073,393,GET /api/categories,200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,358,324,65,65,http://localhost:3000/api/categories,393,0,0
+1787019645040,2393,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-44,,true,,580523,3769,65,65,null,2391,2033,1
+1787019647643,1848,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,360,2854,64,64,http://localhost:3000/api/admin/import-products,1848,0,0
+1787019648012,1501,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,360,2229,64,64,http://localhost:3000/api/admin/import-products,1501,0,0
+1787019648965,629,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,357,986,64,64,http://localhost:3000/api/admin/import-products,629,0,0
+1787019648444,1160,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,360,1604,64,64,http://localhost:3000/api/admin/import-products,1160,0,0
+1787019649336,279,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-19,text,true,,590991,322,64,64,http://localhost:3000/api/products,278,0,0
+1787019643780,3749,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-19,,true,,592349,6894,64,64,null,3748,2086,1
+1787019649336,319,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-10,text,true,,590991,322,63,63,http://localhost:3000/api/products,318,0,0
+1787019643346,3940,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-10,,true,,592349,7519,63,63,null,3939,2369,2
+1787019649367,304,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-36,text,true,,592875,322,62,62,http://localhost:3000/api/products,303,0,0
+1787019644630,3000,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-36,,true,,594233,5019,62,62,null,2999,2041,1
+1787019647151,2582,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,360,4104,61,61,http://localhost:3000/api/admin/import-products,2582,0,0
+1787019649491,257,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-53,text,true,,598118,322,61,61,http://localhost:3000/api/products,257,0,0
+1787019645497,2215,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-53,,true,,599476,3144,61,61,null,2215,2037,0
+1787019645946,3907,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,360,5979,60,60,http://localhost:3000/api/admin/import-products,3907,0,0
+1787019649553,310,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-71,text,true,,602958,322,60,60,http://localhost:3000/api/products,309,0,0
+1787019646393,1419,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-71,,true,,604313,1901,60,60,null,1418,2052,0
+1787019649584,290,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-62,text,true,,603093,322,59,59,http://localhost:3000/api/products,289,0,0
+1787019645948,1882,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-62,,true,,604451,2519,59,59,null,1881,2044,0
+1787019647659,2334,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,360,3479,58,58,http://localhost:3000/api/admin/import-products,2334,0,0
+1787019648888,1136,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,360,1604,58,58,http://localhost:3000/api/admin/import-products,1136,0,0
+1787019649491,613,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,357,986,58,58,http://localhost:3000/api/admin/import-products,613,0,0
+1787019646577,3536,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,360,5354,58,58,http://localhost:3000/api/admin/import-products,3536,0,0
+1787019649814,310,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-28,text,true,,619620,322,58,58,http://localhost:3000/api/products,309,0,0
+1787019644234,3835,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-28,,true,,620978,6269,58,58,null,3833,2055,1
+1787019649814,332,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-20,text,true,,619620,322,57,57,http://localhost:3000/api/products,331,0,0
+1787019643842,4277,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-20,,true,,620978,7519,57,57,null,4276,2027,1
+1787019649830,328,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-45,text,true,,619755,322,56,56,http://localhost:3000/api/products,327,0,0
+1787019645101,3027,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-45,,true,,621113,4394,56,56,null,3026,2030,0
+1787019648166,2002,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,360,2854,55,55,http://localhost:3000/api/admin/import-products,2002,0,0
+1787019648521,1700,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,360,2229,55,55,http://localhost:3000/api/admin/import-products,1700,0,0
+1787019649923,313,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-37,text,true,,627551,322,55,55,http://localhost:3000/api/products,312,0,0
+1787019644680,3505,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-37,,true,,628909,5644,55,55,null,3504,2051,1
+1787019650105,252,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-72,text,true,,634684,322,54,54,http://localhost:3000/api/products,251,0,0
+1787019646439,1875,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-72,,true,,636042,2519,54,54,null,1874,2050,1
+1787019650015,327,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-63,text,true,,629844,322,54,54,http://localhost:3000/api/products,326,0,0
+1787019647151,3195,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,360,4729,54,54,http://localhost:3000/api/admin/import-products,3195,0,0
+1787019650000,320,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-54,text,true,,629844,322,54,54,http://localhost:3000/api/products,319,0,0
+1787019645994,2317,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-63,,true,,631202,3144,54,54,null,2316,2053,1
+1787019645962,4346,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,360,6604,54,54,http://localhost:3000/api/admin/import-products,4346,0,0
+1787019645543,2741,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-54,,true,,631202,3769,54,54,null,2740,2080,0
+1787019650105,296,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-81,text,true,,635089,322,51,51,http://localhost:3000/api/products,271,0,0
+1787019646887,1465,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-81,,true,,636444,1901,51,51,null,1440,2049,1
+1787019647643,2810,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,360,4104,50,50,http://localhost:3000/api/admin/import-products,2810,0,0
+1787019650244,270,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-46,text,true,,645573,322,50,50,http://localhost:3000/api/products,269,0,0
+1787019645147,3333,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-46,,true,,646931,5019,50,50,null,3332,2035,1
+1787019648550,2047,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,360,2854,49,49,http://localhost:3000/api/admin/import-products,2047,0,0
+1787019648166,2439,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,360,3479,49,49,http://localhost:3000/api/admin/import-products,2439,0,0
+1787019650368,250,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-29,text,true,,650542,322,49,49,http://localhost:3000/api/products,249,0,0
+1787019644283,4299,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-29,,true,,651900,6894,49,49,null,4298,2036,0
+1787019646808,3871,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,360,5979,48,48,http://localhost:3000/api/admin/import-products,3871,0,0
+1787019649073,1615,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,360,2229,48,48,http://localhost:3000/api/admin/import-products,1615,0,0
+1787019649584,1165,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,360,1604,48,48,http://localhost:3000/api/admin/import-products,1165,0,0
+1787019647182,3590,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,360,5354,48,48,http://localhost:3000/api/admin/import-products,3590,0,0
+1787019650508,275,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-55,text,true,,658743,322,48,48,http://localhost:3000/api/products,274,0,0
+1787019645589,3152,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-55,,true,,660101,4394,48,48,null,3151,2042,1
+1787019650617,247,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-38,text,true,,664389,322,47,47,http://localhost:3000/api/products,222,0,0
+1787019650540,263,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-82,text,true,,658743,322,47,47,http://localhost:3000/api/products,262,0,0
+1787019644729,4108,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-38,,true,,665747,6269,47,47,null,4083,2037,1
+1787019646934,1836,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-82,,true,,660101,2519,47,47,null,1835,2104,1
+1787019650617,282,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-91,text,true,,664524,322,45,45,http://localhost:3000/api/products,281,0,0
+1787019647382,1484,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-91,,true,,665879,1901,45,45,null,1483,2033,1
+1787019650678,251,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-64,text,true,,665463,322,44,44,http://localhost:3000/api/products,249,0,0
+1787019646038,2871,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-64,,true,,666821,3769,44,44,null,2869,2020,1
+1787019646746,4265,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,360,6604,43,43,http://localhost:3000/api/admin/import-products,4265,0,0
+1787019650725,298,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-73,text,true,,671234,322,43,43,http://localhost:3000/api/products,297,0,0
+1787019646499,2474,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-73,,true,,672592,3144,43,43,null,2473,2051,1
+1787019648182,2880,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,360,4104,42,42,http://localhost:3000/api/admin/import-products,2879,0,0
+1787019650878,195,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-30,text,true,,675532,322,42,42,http://localhost:3000/api/products,194,0,0
+1787019644332,4653,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-30,,true,,676890,7519,42,42,null,4652,2089,1
+1787019648536,2566,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,360,3479,41,41,http://localhost:3000/api/admin/import-products,2566,0,0
+1787019647828,3281,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,360,4729,41,41,http://localhost:3000/api/admin/import-products,3281,0,0
+1787019649073,2041,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,360,2854,41,41,http://localhost:3000/api/admin/import-products,2041,0,0
+1787019650878,262,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-47,text,true,,677547,322,41,41,http://localhost:3000/api/products,247,0,0
+1787019645192,3885,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-47,,true,,678905,5644,41,41,null,3870,2063,1
+1787019649553,1616,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,360,2229,40,40,http://localhost:3000/api/admin/import-products,1616,0,0
+1787019650969,223,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-56,text,true,,681849,322,40,40,http://localhost:3000/api/products,212,0,0
+1787019645652,3507,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-56,,true,,683207,5019,40,40,null,3496,2033,1
+1787019647273,3930,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,360,5979,39,39,http://localhost:3000/api/admin/import-products,3930,0,0
+1787019651108,147,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-74,text,true,,688158,322,39,39,http://localhost:3000/api/products,146,0,0
+1787019646545,2658,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-74,,true,,689516,3769,39,39,null,2657,2052,1
+1787019651190,197,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-39,text,true,,693389,322,38,38,http://localhost:3000/api/products,196,0,0
+1787019651202,172,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-83,text,true,,692182,322,38,38,http://localhost:3000/api/products,171,0,0
+1787019649180,2181,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,360,3479,38,38,http://localhost:3000/api/admin/import-products,2181,0,0
+1787019646997,2334,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-83,,true,,693540,3144,38,38,null,2333,2063,1
+1787019644779,4573,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-39,,true,,694747,6894,38,38,null,4572,2042,0
+1787019648612,2736,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,360,4104,38,38,http://localhost:3000/api/admin/import-products,2736,0,0
+1787019651108,203,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-65,text,true,,690034,322,38,38,http://localhost:3000/api/products,202,0,0
+1787019646100,3187,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-65,,true,,691392,4394,38,38,null,3186,2107,0
+1787019648303,3116,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,360,4729,35,35,http://localhost:3000/api/admin/import-products,3116,0,0
+1787019647812,3623,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,360,5354,35,35,http://localhost:3000/api/admin/import-products,3623,0,0
+1787019649614,1836,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,360,2854,35,35,http://localhost:3000/api/admin/import-products,1836,0,0
+1787019651263,198,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-92,text,true,,697149,322,35,35,http://localhost:3000/api/products,198,0,0
+1787019647444,1976,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-92,,true,,698507,2519,35,35,null,1976,2041,1
+1787019651278,195,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-48,text,true,,697149,322,34,34,http://localhost:3000/api/products,195,0,0
+1787019645253,4198,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-48,,true,,698507,6269,34,34,null,4198,2023,1
+1787019649628,1983,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,360,3479,33,33,http://localhost:3000/api/admin/import-products,1983,0,0
+1787019648673,2946,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,360,4729,33,33,http://localhost:3000/api/admin/import-products,2946,0,0
+1787019647782,3849,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,360,5979,33,33,http://localhost:3000/api/admin/import-products,3849,0,0
+1787019651512,142,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-40,text,true,,707087,322,33,33,http://localhost:3000/api/products,118,0,0
+1787019644829,4803,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-40,,true,,708445,7519,33,33,null,4779,2022,1
+1787019649134,2556,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,360,4104,32,32,http://localhost:3000/api/admin/import-products,2556,0,0
+1787019648287,3408,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,360,5354,32,32,http://localhost:3000/api/admin/import-products,3408,0,0
+1787019647412,4285,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,360,6604,32,32,http://localhost:3000/api/admin/import-products,4285,0,0
+1787019651574,137,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-66,text,true,,712850,322,32,32,http://localhost:3000/api/products,136,0,0
+1787019646145,3527,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-66,,true,,714208,5019,32,32,null,3525,2040,1
+1787019651621,118,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-57,text,true,,714329,322,31,31,http://localhost:3000/api/products,117,0,0
+1787019645698,4000,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-57,,true,,715687,5644,31,31,null,3999,2041,0
+1787019651621,145,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-84,text,true,,714464,322,30,30,http://localhost:3000/api/products,144,0,0
+1787019647045,2682,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-84,,true,,715822,3769,30,30,null,2681,2039,1
+1787019651605,177,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-75,text,true,,714867,322,29,29,http://localhost:3000/api/products,176,0,0
+1787019646593,3147,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-75,,true,,716225,4394,29,29,null,3146,2042,1
+1787019651683,115,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-93,text,true,,716880,322,28,28,http://localhost:3000/api/products,115,0,0
+1787019647489,2267,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-93,,true,,718238,3144,28,28,null,2267,2043,2
+1787019649691,2163,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,360,4104,27,27,http://localhost:3000/api/admin/import-products,2163,0,0
+1787019651714,123,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-49,text,true,,718218,322,27,27,http://localhost:3000/api/products,122,0,0
+1787019645300,4493,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-49,,true,,719576,6894,27,27,null,4492,2084,1
+1787019647876,4012,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,360,6604,26,26,http://localhost:3000/api/admin/import-products,4012,0,0
+1787019649196,2724,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,360,4729,26,26,http://localhost:3000/api/admin/import-products,2723,0,0
+1787019648381,3552,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,360,5979,26,26,http://localhost:3000/api/admin/import-products,3552,0,0
+1787019648734,3213,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,360,5354,26,26,http://localhost:3000/api/admin/import-products,3213,0,0
+1787019651898,70,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-76,text,true,,727322,322,26,26,http://localhost:3000/api/products,69,0,0
+1787019646639,3236,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-76,,true,,728680,5019,26,26,null,3235,2093,0
+1787019651898,96,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-85,text,true,,727322,322,25,25,http://localhost:3000/api/products,95,0,0
+1787019647090,2847,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-85,,true,,728680,4394,25,25,null,2846,2057,1
+1787019648319,3697,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,360,6604,24,24,http://localhost:3000/api/admin/import-products,3697,0,0
+1787019651944,84,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-58,text,true,,729059,322,24,24,http://localhost:3000/api/products,83,0,0
+1787019645745,4239,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-58,,true,,730417,6269,24,24,null,4238,2044,1
+1787019649383,2664,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,360,5354,23,23,http://localhost:3000/api/admin/import-products,2664,0,0
+1787019651929,129,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-67,text,true,,730127,322,23,23,http://localhost:3000/api/products,129,0,0
+1787019646192,3827,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-67,,true,,731485,5644,23,23,null,3827,2039,1
+1787019651960,110,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-94,text,true,,730262,322,22,22,http://localhost:3000/api/products,110,0,0
+1787019647536,2509,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-94,,true,,731620,3769,22,22,null,2509,2026,1
+1787019648888,3193,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,360,5979,21,21,http://localhost:3000/api/admin/import-products,3193,0,0
+1787019649814,2302,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,360,4729,21,21,http://localhost:3000/api/admin/import-products,2302,0,0
+1787019648903,3221,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,360,6604,21,21,http://localhost:3000/api/admin/import-products,3221,0,0
+1787019649830,2307,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,360,5354,21,21,http://localhost:3000/api/admin/import-products,2307,0,0
+1787019652113,35,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-95,text,true,,734804,322,21,21,http://localhost:3000/api/products,34,0,0
+1787019647581,2536,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-95,,true,,736162,4394,21,21,null,2535,2031,1
+1787019649398,2754,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,360,5979,20,20,http://localhost:3000/api/admin/import-products,2754,0,0
+1787019652129,44,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-77,text,true,,735743,322,20,20,http://localhost:3000/api/products,43,0,0
+1787019646685,3448,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-77,,true,,737101,5644,20,20,null,3447,2040,0
+1787019652144,54,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-59,text,true,,736545,322,19,19,http://localhost:3000/api/products,53,0,0
+1787019645791,4364,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-59,,true,,737903,6894,19,19,null,4363,2043,1
+1787019649506,2701,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,360,6604,18,18,http://localhost:3000/api/admin/import-products,2701,0,0
+1787019652206,23,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-50,text,true,,737748,322,18,18,http://localhost:3000/api/products,23,0,0
+1787019645345,4843,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-50,,true,,739106,7519,18,18,null,4843,2042,0
+1787019652206,50,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-86,text,true,,738280,322,17,17,http://localhost:3000/api/products,49,0,0
+1787019647136,3085,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-86,,true,,739638,5019,17,17,null,3084,2035,0
+1787019652206,62,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-68,text,true,,738280,322,16,16,http://localhost:3000/api/products,60,0,0
+1787019649969,2299,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,360,5979,16,16,http://localhost:3000/api/admin/import-products,2299,0,0
+1787019646238,3974,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-68,,true,,739638,6269,16,16,null,3972,2056,0
+1787019649923,2359,POST /api/admin/import-products,200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,360,6604,15,15,http://localhost:3000/api/admin/import-products,2359,0,0
+1787019652389,19,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-60,text,true,,739211,322,15,15,http://localhost:3000/api/products,18,0,0
+1787019645838,4546,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-60,,true,,740569,7519,15,15,null,4545,2024,1
+1787019652389,31,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-96,text,true,,739211,322,14,14,http://localhost:3000/api/products,30,0,0
+1787019647644,2727,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-96,,true,,740569,5019,14,14,null,2726,2049,1
+1787019652435,20,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-69,text,true,,739211,322,13,13,http://localhost:3000/api/products,19,0,0
+1787019646300,4124,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-69,,true,,740569,6894,13,13,null,4123,2031,0
+1787019652435,34,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-87,text,true,,739211,322,12,12,http://localhost:3000/api/products,32,0,0
+1787019647182,3243,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-87,,true,,740569,5644,12,12,null,3240,2044,1
+1787019652450,42,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-78,text,true,,739211,322,11,11,http://localhost:3000/api/products,41,0,0
+1787019646747,3718,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-78,,true,,740569,6269,11,11,null,3717,2028,1
+1787019652528,19,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-70,text,true,,739211,322,10,10,http://localhost:3000/api/products,18,0,0
+1787019646346,4163,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-70,,true,,740569,7519,10,10,null,4162,2038,0
+1787019652559,18,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-88,text,true,,739211,322,9,9,http://localhost:3000/api/products,18,0,0
+1787019647243,3303,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-88,,true,,740569,6269,9,9,null,3303,2032,1
+1787019652591,18,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-79,text,true,,739211,322,8,8,http://localhost:3000/api/products,17,0,0
+1787019646793,3786,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-79,,true,,740569,6894,8,8,null,3785,2031,0
+1787019652621,18,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-97,text,true,,739211,322,7,7,http://localhost:3000/api/products,18,0,0
+1787019647690,2885,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-97,,true,,740569,5644,7,7,null,2885,2065,1
+1787019652637,23,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-80,text,true,,739211,322,6,6,http://localhost:3000/api/products,22,0,0
+1787019646839,3772,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-80,,true,,740569,7519,6,6,null,3771,2049,1
+1787019652652,26,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-98,text,true,,739211,322,5,5,http://localhost:3000/api/products,25,0,0
+1787019647737,2912,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-98,,true,,740569,6269,5,5,null,2911,2029,0
+1787019652667,29,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-89,text,true,,739211,322,4,4,http://localhost:3000/api/products,28,0,0
+1787019647288,3379,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-89,,true,,740569,6894,4,4,null,3378,2030,1
+1787019652713,18,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-90,text,true,,739211,322,3,3,http://localhost:3000/api/products,17,0,0
+1787019647335,3353,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-90,,true,,740569,7519,3,3,null,3352,2043,0
+1787019652774,18,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-99,text,true,,739211,322,2,2,http://localhost:3000/api/products,17,0,0
+1787019647782,2986,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-99,,true,,740569,6894,2,2,null,2984,2024,0
+1787019652789,31,GET /api/products (verify),200,OK,Spike Test - Admin Import (0→100→0) 1-100,text,true,,739211,322,1,1,http://localhost:3000/api/products,20,0,0
+1787019647828,2949,Spike_Admin_Import_Products,200,"Number of samples in transaction : 4, number of failing samples : 0",Spike Test - Admin Import (0→100→0) 1-100,,true,,740569,7519,1,1,null,2938,2127,1
