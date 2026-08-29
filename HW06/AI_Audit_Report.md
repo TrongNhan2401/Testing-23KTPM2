@@ -193,24 +193,6 @@
 
 ---
 
-### 📌 Tương tác 16: Hướng dẫn các bước tiếp theo & Tạo các file báo cáo phụ trợ
-- **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
-- **Thời gian:** `2026-08-29 17:34:01 (UTC+07:00)`
-- **Prompt của sinh viên:**
-  > `Vậy bước tiếp theo tôi phải làm gì`
-- **Đầu ra của AI (Tóm tắt Output):**
-  > AI tạo sẵn file `.github/workflows/api-testing.yml`, `Agent_Skill_Design.md` và `AI_Critique.md`.
-
----
-
-### 📌 Tương tác 17: Hướng dẫn cài đặt Newman & Newman HTML Extra Reporter
-- **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
-- **Thời gian:** `2026-08-29 17:39:42 (UTC+07:00)`
-- **Prompt của sinh viên:**
-  > `Hiện tại tôi chỉ mới xong bước cấu hình trên postman thôi, hướng dẫn tôi bước tiếp theo`
-- **Đầu ra của AI (Tóm tắt Output):**
-  > AI hướng dẫn export file JSON và chạy `npm install -g newman newman-reporter-htmlextra`.
-
 ---
 
 ### 📌 Tương tác 18: Giải đáp vị trí đứng cài đặt Newman & Cập nhật MSSV 23127443
