@@ -1,0 +1,46 @@
+name: EShop API Automated Testing (HW06)
+
+on:
+  push:
+    branches: [ "HW06", "main", "master" ]
+  pull_request:
+    branches: [ "HW06", "main", "master" ]
+
+jobs:
+  api-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js environment
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: Install Backend Dependencies
+      run: |
+        cd eshop/backend
+        npm install
+
+    - name: Start EShop Backend Server
+      run: |
+        cd eshop/backend
+        node server.js &
+        sleep 5
+
+    - name: Install Newman & Reporters
+      run: |
+        npm install -g newman newman-reporter-htmlextra
+
+    - name: Run Newman API Tests
+      run: |
+        newman run ./HW06/HW06_EShop_Collection.json -e ./HW06/EShop_Environment.json -r cli,htmlextra --reporter-htmlextra-export ./HW06/newman_report.html
+
+    - name: Upload Newman HTML Test Report Artifact
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: newman-html-report
+        path: ./HW06/newman_report.html
