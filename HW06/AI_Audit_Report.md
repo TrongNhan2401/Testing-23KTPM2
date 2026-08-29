@@ -120,3 +120,31 @@
   > 2. Có cột **Đánh Giá Audit** (`VALID`, `INVALID`, `INCOMPLETE`) và cột **Ghi Chú Audit / Sửa Đổi** theo đúng quy định kiểm toán.
   > 3. Bảng **5 Test Cases mở rộng (EXT01 - EXT05)** do con người thiết kế bổ sung (Wildcard SQL `%`, HTTP Accept-Encoding gzip, JSON Payload Query, HPP, Race Condition) kèm phân tích lý do AI bỏ sót.
 
+---
+
+### 📌 Tương tác 11: Sinh danh sách 35 Test Cases và Audit Log cho API 2 (`GET /api/orders/my-orders`)
+* **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+* **Thời gian:** `2026-08-29 14:22:54 (UTC+07:00)`
+* **Prompt của sinh viên:**
+  > `Vậy bây giờ hãy hướng dẫn tôi sang giai đoạn tiếp theo`
+* **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã hỗ trợ chuyển sang API 2 (Pool B - FR-11: `GET /api/orders/my-orders`) và khởi tạo file `API2_Orders_TestCases.md` bao gồm:
+  > 1. Danh sách **35 Test Cases** bao phủ xác thực Token (SEC-01/02), kiểm thử IDOR (SEC-03), lọc trạng thái đơn hàng (pending, confirmed, shipping, delivered, canceled), Dataflow chuyển đổi trạng thái và JSON Schema Validation.
+  > 2. Bảng **Audit Log** gán nhãn `VALID`, `INVALID`, `INCOMPLETE` cùng lý do sửa đổi.
+  > 3. Bảng **5 Test Cases mở rộng (EXT01 - EXT05)** do con người thiết kế (Revoked Token IDOR, Header `X-User-Id` giả mạo, JWT Signature Tampering, Lọc theo khoảng ngày `fromDate`/`toDate`, Multi-device Session Invalidation) kèm lý do AI bỏ sót.
+
+---
+
+### 📌 Tương tác 12: Sinh danh sách 35 Test Cases và Audit Log cho API 3 (`POST /api/categories`)
+* **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+* **Thời gian:** `2026-08-29 14:23:16 (UTC+07:00)`
+* **Prompt của sinh viên:**
+  > `Hoàn thiện toàn bộ bộ 3 API và lưu các file test cases liên quan`
+* **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã khởi tạo file `API3_Categories_TestCases.md` bao gồm:
+  > 1. Danh sách **35 Test Cases** bao phủ tạo mới danh mục Admin, Leo thang quyền (SEC-04), xác thực Admin Token (SEC-01/02), Phân vùng miền cho tên danh mục (độ dài, rỗng, null, trùng tên) và JSON Schema Validation.
+  > 2. Bảng **Audit Log** gán nhãn `VALID`, `INVALID`, `INCOMPLETE` cùng lý do sửa đổi.
+  > 3. Bảng **5 Test Cases mở rộng (EXT01 - EXT05)** do con người thiết kế (Control Characters `\u0000`, Unique Name Concurrency, Case-Insensitive Unique Index, Massive Payload 413, Revoked Admin Privileges) kèm lý do AI bỏ sót.
+
+
+
