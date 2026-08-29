@@ -1,0 +1,381 @@
+{
+  "info": {
+    "_postman_id": "5d6949b9-99bc-4a51-a717-d7d24e6c5575",
+    "name": "HW06_EShop_API_Testing.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47745502",
+    "_collection_link": "https://go.postman.co/collection/47745502-5d6949b9-99bc-4a51-a717-d7d24e6c5575?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth Setup",
+      "item": [
+        {
+          "name": "New Request",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login User thành công\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property(\"token\");\r",
+                  "    \r",
+                  "    // Tự động lưu Token vào Environment Variable user_token\r",
+                  "    pm.environment.set(\"user_token\", jsonData.token);\r",
+                  "    console.log(\"--> Đã tự động lưu user_token vào Environment!\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"test@eshop.com\",\r\n  \"password\": \"Test1234!\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login Admin thành công\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property(\"token\");\r",
+                  "    \r",
+                  "    // Tự động lưu Token vào Environment Variable admin_token\r",
+                  "    pm.environment.set(\"admin_token\", jsonData.token);\r",
+                  "    console.log(\"--> Đã tự động lưu admin_token vào Environment!\");\r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"admin@eshop.com\",\r\n  \"password\": \"Admin123!\"\r\n}\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/api/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// ==========================================\r",
+              "// TEST SCRIPT CHO API 1: GET /api/products\r",
+              "// ==========================================\r",
+              "\r",
+              "// 1. Kiểm tra Status Code thành công (200 OK hoặc 400 Bad Request cho input sai)\r",
+              "pm.test(\"[API1-01] Status code is 200 OK\", function () {\r",
+              "    pm.expect([200, 400]).to.include(pm.response.code);\r",
+              "});\r",
+              "\r",
+              "// 2. Kiểm tra Thời gian phản hồi (Response Time < 500ms)\r",
+              "pm.test(\"[API1-02] Response time is below 500ms\", function () {\r",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);\r",
+              "});\r",
+              "\r",
+              "// 3. Kiểm tra Header Content-Type trả về là JSON\r",
+              "pm.test(\"[API1-03] Content-Type is application/json\", function () {\r",
+              "    pm.response.to.have.header(\"Content-Type\");\r",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+              "});\r",
+              "\r",
+              "// 4. Kiểm tra Dữ liệu trả về là Mảng Sản phẩm (Array)\r",
+              "pm.test(\"[API1-04] Verify response is an array of products\", function () {\r",
+              "    if (pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        pm.expect(jsonData).to.be.an(\"array\");\r",
+              "    }\r",
+              "});\r",
+              "\r",
+              "// 5. Kiểm tra JSON Schema cho từng đối tượng Sản phẩm trong Mảng\r",
+              "pm.test(\"[API1-05] Validate JSON Schema of product item\", function () {\r",
+              "    if (pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        if (jsonData.length > 0) {\r",
+              "            const item = jsonData[0];\r",
+              "            pm.expect(item).to.have.property(\"id\").that.is.a(\"number\").and.to.be.above(0);\r",
+              "            pm.expect(item).to.have.property(\"name\").that.is.a(\"string\");\r",
+              "            pm.expect(item).to.have.property(\"price\").that.is.a(\"number\").and.to.be.at.least(0);\r",
+              "            pm.expect(item).to.have.property(\"description\");\r",
+              "            pm.expect(item).to.have.property(\"imageUrl\");\r",
+              "        }\r",
+              "    }\r",
+              "});\r",
+              "\r",
+              "// 6. Kiểm tra Bảo mật: Không rò rỉ lỗi SQL Server Error 500\r",
+              "pm.test(\"[API1-06] Security check: No raw SQL syntax error leak\", function () {\r",
+              "    const responseText = pm.response.text().toLowerCase();\r",
+              "    pm.expect(responseText).to.not.include(\"sqlite error\");\r",
+              "    pm.expect(responseText).to.not.include(\"syntax error in sql\");\r",
+              "    pm.expect(pm.response.code).to.not.equal(500);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "/api/products",
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "My-Orders",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// ==================================================\r",
+              "// TEST SCRIPT CHO API 2: GET /api/orders/my-orders\r",
+              "// ==================================================\r",
+              "\r",
+              "// 1. Kiểm tra Status Code (200 OK cho Auth hợp lệ, 401 cho Unauth)\r",
+              "pm.test(\"[API2-01] Status code validation (200 or 401)\", function () {\r",
+              "    pm.expect([200, 401]).to.include(pm.response.code);\r",
+              "});\r",
+              "\r",
+              "// 2. Kiểm tra Header Content-Type\r",
+              "pm.test(\"[API2-02] Content-Type is application/json\", function () {\r",
+              "    pm.response.to.have.header(\"Content-Type\");\r",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");\r",
+              "});\r",
+              "\r",
+              "// 3. Kiểm tra Cấu trúc danh sách đơn hàng & Enum Trạng thái hợp lệ\r",
+              "pm.test(\"[API2-03] Validate Order List & Order Status Enum\", function () {\r",
+              "    if (pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        pm.expect(jsonData).to.be.an(\"array\");\r",
+              "\r",
+              "        const validStatuses = ['pending', 'confirmed', 'shipping', 'delivered', 'canceled'];\r",
+              "        jsonData.forEach(order => {\r",
+              "            pm.expect(order).to.have.property(\"id\").that.is.a(\"number\");\r",
+              "            pm.expect(order).to.have.property(\"total_amount\").that.is.a(\"number\").and.to.be.at.least(0);\r",
+              "            pm.expect(order).to.have.property(\"status\");\r",
+              "            pm.expect(validStatuses).to.include(order.status);\r",
+              "        });\r",
+              "    }\r",
+              "});\r",
+              "\r",
+              "// 4. Kiểm tra Bảo mật IDOR (SEC-03): Không lộ dữ liệu của người dùng khác\r",
+              "pm.test(\"[API2-04] Security IDOR check: Verify user isolation\", function () {\r",
+              "    if (pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        const currentUserId = pm.environment.get(\"user_id\");\r",
+              "        if (currentUserId && jsonData.length > 0) {\r",
+              "            jsonData.forEach(order => {\r",
+              "                if (order.user_id) {\r",
+              "                    pm.expect(String(order.user_id)).to.eql(String(currentUserId));\r",
+              "                }\r",
+              "            });\r",
+              "        }\r",
+              "    }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "/api/orders/my-orders",
+          "path": [
+            "api",
+            "orders",
+            "my-orders"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Categories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// ==============================================\r",
+              "// TEST SCRIPT CHO API 3: POST /api/categories\r",
+              "// ==============================================\r",
+              "\r",
+              "// 1. Kiểm tra Status Code (201 Created/200 OK cho Admin, 403 cho User, 400 cho Bad Input)\r",
+              "pm.test(\"[API3-01] Status code validation\", function () {\r",
+              "    pm.expect([200, 201, 400, 401, 403, 409]).to.include(pm.response.code);\r",
+              "});\r",
+              "\r",
+              "// 2. Kiểm tra Kết quả khi Admin tạo thành công\r",
+              "pm.test(\"[API3-02] Admin category creation verification\", function () {\r",
+              "    if (pm.response.code === 201 || pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        pm.expect(jsonData).to.have.property(\"id\").that.is.a(\"number\");\r",
+              "        pm.expect(jsonData).to.have.property(\"name\").that.is.a(\"string\");\r",
+              "        \r",
+              "        // Lưu lại category_id vừa tạo vào Environment để dùng cho các request tiếp theo\r",
+              "        pm.environment.set(\"last_created_category_id\", jsonData.id);\r",
+              "    }\r",
+              "});\r",
+              "\r",
+              "// 3. Kiểm tra Bảo mật Leo thang quyền (SEC-04): Cấm User thường truy cập API Admin\r",
+              "pm.test(\"[API3-03] Security Privilege Escalation check (User role blocked)\", function () {\r",
+              "    const isUserToken = pm.environment.get(\"current_role\") === \"user\";\r",
+              "    if (isUserToken) {\r",
+              "        pm.expect(pm.response.code).to.equal(403);\r",
+              "    }\r",
+              "});\r",
+              "\r",
+              "// 4. Kiểm tra JSON Schema đối tượng Danh mục trả về\r",
+              "pm.test(\"[API3-04] Validate JSON Schema of created Category\", function () {\r",
+              "    if (pm.response.code === 201 || pm.response.code === 200) {\r",
+              "        const jsonData = pm.response.json();\r",
+              "        const schema = {\r",
+              "            \"type\": \"object\",\r",
+              "            \"required\": [\"id\", \"name\"],\r",
+              "            \"properties\": {\r",
+              "                \"id\": { \"type\": \"number\" },\r",
+              "                \"name\": { \"type\": \"string\" }\r",
+              "            }\r",
+              "        };\r",
+              "        pm.response.to.have.jsonSchema(schema);\r",
+              "    }\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "/api/categories ",
+          "path": [
+            "api",
+            "categories "
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          "// Pre-request Script cấp Collection\r",
+          "// Tự động kiểm tra và gán Custom Header X-Student-Id cho tất cả Request\r",
+          "const studentId = pm.environment.get(\"student_id\") || \"23127443\";\r",
+          "\r",
+          "pm.request.headers.upsert({\r",
+          "    key: \"X-Student-Id\",\r",
+          "    value: studentId\r",
+          "});\r",
+          "\r",
+          "console.log(`[Pre-request Script] Set Header X-Student-Id: ${studentId}`);\r",
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ]
+}
