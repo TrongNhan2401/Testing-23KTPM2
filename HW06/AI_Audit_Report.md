@@ -106,3 +106,17 @@
   > `Tôi đã cấu hình xong, bạn có thể trích xuất và tạo 1 file ai-audit log ghi lại những gì tôi và bạn đã trao đổi như prompt hay output, có đầy đủ thời gian được hay không.`
 * **Đầu ra của AI (Tóm tắt Output):**
   > AI đã tổng hợp và xuất ra file `AI_Audit_Report.md` lưu trữ toàn bộ nhật ký tương tác kèm thời gian chính xác để nộp bài.
+
+---
+
+### 📌 Tương tác 10: Sinh danh sách 35 Test Cases và Audit Log cho API 1 (`GET /api/products`)
+* **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+* **Thời gian:** `2026-08-29 11:39:36 (UTC+07:00)`
+* **Prompt của sinh viên:**
+  > `Bây giờ bạn hãy tạo giúp tôi danh sách 35 test case cho API 1 GET/api/products bao phủ các kỹ thuật, có một cột để tôi đánh giá , ghi prompt cũng như output đầy đủ của phần này vào file audit log cho tôi`
+* **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã khởi tạo file `API1_Products_TestCases.md` bao gồm:
+  > 1. Danh sách **35 Test Cases** bao phủ 4 kỹ thuật (Domain Partitions/BVA, Dataflow/State Transitions, Security SEC-05 SQLi/XSS, và JSON Schema Validation).
+  > 2. Có cột **Đánh Giá Audit** (`VALID`, `INVALID`, `INCOMPLETE`) và cột **Ghi Chú Audit / Sửa Đổi** theo đúng quy định kiểm toán.
+  > 3. Bảng **5 Test Cases mở rộng (EXT01 - EXT05)** do con người thiết kế bổ sung (Wildcard SQL `%`, HTTP Accept-Encoding gzip, JSON Payload Query, HPP, Race Condition) kèm phân tích lý do AI bỏ sót.
+
