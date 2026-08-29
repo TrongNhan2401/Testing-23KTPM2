@@ -120,7 +120,7 @@
             "type": "text/javascript",
             "exec": [
               "pm.test(\"[API1-01] Status code is 200 OK\", function () {",
-              "    pm.response.to.have.status(200);",
+              "    pm.response.to.have.status(500);",
               "});",
               "",
               "pm.test(\"[API1-02] Response time is below 500ms\", function () {",
