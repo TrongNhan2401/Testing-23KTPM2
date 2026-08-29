@@ -146,5 +146,19 @@
   > 2. Bảng **Audit Log** gán nhãn `VALID`, `INVALID`, `INCOMPLETE` cùng lý do sửa đổi.
   > 3. Bảng **5 Test Cases mở rộng (EXT01 - EXT05)** do con người thiết kế (Control Characters `\u0000`, Unique Name Concurrency, Case-Insensitive Unique Index, Massive Payload 413, Revoked Admin Privileges) kèm lý do AI bỏ sót.
 
+---
+
+### 📌 Tương tác 13: Xây dựng Bộ mã Postman Test Scripts (Assertions Chai.js) cho 3 API
+* **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+* **Thời gian:** `2026-08-29 15:13:26 (UTC+07:00)`
+* **Prompt của sinh viên:**
+  > `Vậy bây giờ hãy hướng dẫn tôi viết scripts trong postman và viết logs đầy đủ giúp tôi`
+* **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã hỗ trợ xây dựng file `Postman_Scripts_Guide.md` cung cấp toàn bộ đoạn mã JavaScript sử dụng thư viện Chai.js assertions cho 3 API:
+  > 1. **API 1 (`GET /api/products`):** Test Status Code 200, Response Time < 500ms, Header Content-Type JSON, JSON Schema cho mảng sản phẩm, kiểm thử SQLi không bị crash lỗi 500.
+  > 2. **API 2 (`GET /api/orders/my-orders`):** Test Status Code 200/401, Enum trạng thái đơn hàng (`pending`, `confirmed`, `shipping`, `delivered`, `canceled`), kiểm thử bảo mật cách ly người dùng IDOR (SEC-03).
+  > 3. **API 3 (`POST /api/categories`):** Test Status Code 201/200/403, kiểm thử Leo thang quyền SEC-04 (chặn User thường), kiểm tra JSON Schema đối tượng Danh mục tạo mới.
+
+
 
 
