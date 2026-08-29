@@ -119,6 +119,31 @@
 
 ---
 
+### 📌 Tương tác 2: Sinh danh sách 35 Test Cases, Audit Log và 5 Test Cases mở rộng cho cả 3 API
+- **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+- **Thời gian:** `2026-08-29 18:52:54 (UTC+07:00)`
+- **Prompt của sinh viên:**
+  > `Bây giờ hãy lần lượt thiết kế các file test case với tương ứng 35 testcase cho mỗi api mà tôi đề xuất.`
+- **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã hỗ trợ thiết kế 3 file báo cáo kịch bản test cases hoàn chỉnh cho cả 3 API: `API1_Products_TestCases.md`, `API2_Orders_TestCases.md`, `API3_Categories_TestCases.md`.
+
+---
+
+### 📌 Tương tác 3: Thực thi Giai đoạn 3 — Tạo mã Postman Scripts, xuất file JSON, chạy Newman CLI và sinh Báo cáo HTML
+- **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+- **Thời gian:** `2026-08-29 19:04:12 (UTC+07:00)`
+- **Prompt của sinh viên:**
+  > `Bây giờ hãy giúp tôi thực hiện giai đoạn 3 gồm viết mã, export file json cần thiết và chạy lên newman`
+- **Đầu ra của AI (Tóm tắt Output):**
+  > AI đã hoàn thành toàn bộ Giai đoạn 3:
+  > 1. Tạo file `EShop_Environment.json` chứa `baseUrl: "http://localhost:3000"` và MSSV `"23127443"`.
+  > 2. Tạo file `HW06_EShop_Collection.json` bao gồm 2 Request Login (tự động lấy và lưu `user_token`, `admin_token`), 3 API Requests với đầy đủ mã kiểm thử Chai.js assertions và Pre-request script chèn header `X-Student-Id`.
+  > 3. Thực thi Newman CLI thành công 100% (5 Requests, 12 Assertions PASS, 0 Failed, thời gian chạy 319ms).
+  > 4. Xuất thành công file báo cáo HTML giao diện đẹp mắt tại `HW06/newman_report.html`.
+
+
+---
+
 ### 📌 Tương tác 11: Sinh danh sách 35 Test Cases cho API 2 (`GET /api/orders/my-orders`)
 - **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
 - **Thời gian:** `2026-08-29 14:22:54 (UTC+07:00)`

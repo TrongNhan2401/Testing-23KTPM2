@@ -1,0 +1,262 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "HW06_EShop_API_Testing",
+    "description": "Collection kiểm thử API hệ thống EShop SUT cho HW06 - MSSV 23127443",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "// Pre-request Script cấp Collection - Anti-AI-Cheat Header",
+          "const studentId = pm.environment.get(\"student_id\") || \"23127443\";",
+          "pm.request.headers.upsert({",
+          "    key: \"X-Student-Id\",",
+          "    value: studentId",
+          "});",
+          "console.log(`[Pre-request Script] Set Header X-Student-Id: ${studentId}`);"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "0. Auth Setup - Login User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"[Auth] Login User thành công 200 OK\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"token\");",
+              "    pm.environment.set(\"user_token\", jsonData.token);",
+              "    console.log(\"--> Saved user_token successfully!\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test@eshop.com\",\n  \"password\": \"Test1234!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "0. Auth Setup - Login Admin",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"[Auth] Login Admin thành công 200 OK\", function () {",
+              "    pm.response.to.have.status(200);",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"token\");",
+              "    pm.environment.set(\"admin_token\", jsonData.token);",
+              "    console.log(\"--> Saved admin_token successfully!\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"admin@eshop.com\",\n  \"password\": \"Admin123!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "login"]
+        }
+      }
+    },
+    {
+      "name": "API 1: GET /api/products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"[API1-01] Status code is 200 OK\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"[API1-02] Response time is below 500ms\", function () {",
+              "    pm.expect(pm.response.responseTime).to.be.below(500);",
+              "});",
+              "",
+              "pm.test(\"[API1-03] Content-Type is application/json\", function () {",
+              "    pm.response.to.have.header(\"Content-Type\");",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+              "});",
+              "",
+              "pm.test(\"[API1-04] Verify response is an array of products\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.be.an(\"array\");",
+              "});",
+              "",
+              "pm.test(\"[API1-05] Validate JSON Schema of product item\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    if (jsonData.length > 0) {",
+              "        const item = jsonData[0];",
+              "        pm.expect(item).to.have.property(\"id\").that.is.a(\"number\");",
+              "        pm.expect(item).to.have.property(\"name\").that.is.a(\"string\");",
+              "        pm.expect(item).to.have.property(\"price\").that.is.a(\"number\").and.to.be.at.least(0);",
+              "    }",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/products",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "products"]
+        }
+      }
+    },
+    {
+      "name": "API 2: GET /api/orders/my-orders",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"[API2-01] Status code is 200 OK\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test(\"[API2-02] Content-Type is application/json\", function () {",
+              "    pm.response.to.have.header(\"Content-Type\");",
+              "    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+              "});",
+              "",
+              "pm.test(\"[API2-03] Validate Order List & Order Status Enum\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.be.an(\"array\");",
+              "    const validStatuses = ['pending', 'confirmed', 'shipping', 'delivered', 'canceled'];",
+              "    jsonData.forEach(order => {",
+              "        pm.expect(order).to.have.property(\"id\");",
+              "        pm.expect(order).to.have.property(\"status\");",
+              "        pm.expect(validStatuses).to.include(order.status);",
+              "    });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{user_token}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/orders/my-orders",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "orders", "my-orders"]
+        }
+      }
+    },
+    {
+      "name": "API 3: POST /api/categories",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"[API3-01] Status code is 201 Created or 200 OK\", function () {",
+              "    pm.expect([200, 201]).to.include(pm.response.code);",
+              "});",
+              "",
+              "pm.test(\"[API3-02] Category created successfully\", function () {",
+              "    const jsonData = pm.response.json();",
+              "    pm.expect(jsonData).to.have.property(\"id\").that.is.a(\"number\");",
+              "    pm.expect(jsonData).to.have.property(\"message\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{admin_token}}",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Danh Mục Thực Hành\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "categories"]
+        }
+      }
+    }
+  ]
+}
