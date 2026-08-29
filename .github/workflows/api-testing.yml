@@ -21,18 +21,22 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        npm install -g newman newman-reporter-htmlextra
         cd eshop/backend
         npm install
-        npm install -g newman newman-reporter-htmlextra
 
-    - name: Start EShop Server & Run Newman Tests
+    - name: Start EShop Server
       run: |
         cd eshop/backend
         nohup node server.js > server.log 2>&1 &
         sleep 5
         cat server.log
-        cd "$GITHUB_WORKSPACE"
-        newman run ./HW06/HW06_EShop_Collection.json -e ./HW06/EShop_Environment.json -r cli,htmlextra --reporter-htmlextra-export ./HW06/newman_report.html
+        curl -i http://localhost:3000/api/products || echo "Server check completed"
+
+    - name: Run Newman API Tests
+      run: |
+        export NODE_PATH=$(npm root -g)
+        npx newman run ./HW06/HW06_EShop_Collection.json -e ./HW06/EShop_Environment.json -r cli,htmlextra --reporter-htmlextra-export ./HW06/newman_report.html
 
     - name: Upload Newman HTML Test Report Artifact
       uses: actions/upload-artifact@v4
