@@ -141,7 +141,6 @@
   > 3. Thực thi Newman CLI thành công 100% (5 Requests, 12 Assertions PASS, 0 Failed, thời gian chạy 319ms).
   > 4. Xuất thành công file báo cáo HTML giao diện đẹp mắt tại `HW06/newman_report.html`.
 
-
 ---
 
 ### 📌 Tương tác 11: Sinh danh sách 35 Test Cases cho API 2 (`GET /api/orders/my-orders`)
@@ -261,3 +260,13 @@
   > `Sau khi đọc các file api của bạn tôi có nhận xét như sau: API1: TC08,09 Giới hạn search ≤255 ký tự — không có trong api_specification.md hay README. Không rõ backend Express có giới hạn nào không. API1: TC14 Kỳ vọng 400 khi search bị trùng param — Express thường chỉ lấy giá trị cuối/mảng, hiếm khi trả 400 mặc định. Assumption chưa kiểm chứng với source thật. API1: TC25 Null byte → 400 — không có cơ sở, Node/Express xử lý null byte trong query string thường không đặc biệt. API2: TC09–15, TC25, EXT04 Toàn bộ filter ?status=, ?page=&limit=, ?fromDate=&toDate= đều không xuất hiện trong api_specification.md mục 4.4 (GET /api/orders/my-orders không khai báo query param nào). Đây có thể là tính năng AI tự suy đoán hợp lý về mặt nghiệp vụ, nhưng chưa xác minh với source code/backend thật. API3: TC05, TC06, TC14, Giới hạn tên category ≤255 ký tự — README FR-14 chỉ nói "bắt buộc, không được để trống", không nói giới hạn độ dài. API3: TC15, EXT02, EXT03,Giả định name category là unique — README/spec không nói category name phải duy nhất (khác coupon code, spec ghi rõ "duy nhất"). Đây là suy đoán không có căn cứ. Bạn hãy kiểm tra xem nhận xét của tôi coi có đúng hay không, và sửa lại file AI_Audit thêm lại các tương tác cũ nữa vì tôi chỉ cần thêm phần tương tác mới khi hiểu rõ bài tập thôi`
 - **Đầu ra của AI (Tóm tắt Output):**
   > AI **xác nhận 100% nhận xét của sinh viên là HOÀN TOÀN CHÍNH XÁC**. Sinh viên đã thể hiện năng lực kiểm toán QA phản biện xuất sắc khi phát hiện ra các điểm suy đoán không có căn cứ (AI Hallucinations) trong kịch bản testcase do AI tạo ra. AI đã cập nhật lại đầy đủ 22 tương tác vào `AI_Audit_Report.md` và chỉnh sửa trạng thái Audit Log trong các file testcase của 3 API thành `INVALID` / `INCOMPLETE` kèm lý do giải thích chi tiết.
+
+---
+
+### 📌 Tương tác 4: Kiểm tra và hiệu chỉnh lại bộ test cases sau phản biện
+- **Tên công cụ AI:** Gemini 3.6 Flash (Antigravity AI)
+- **Thời gian:** `2026-08-29 19:15:00 (UTC+07:00)`
+- **Prompt của sinh viên:**
+  > `Dựa trên các lỗi logic đã tìm ra, hãy liệt kê các TC cần loại bỏ hoặc chỉnh sửa và cập nhật lại file audit`
+- **Đầu ra của AI (Tóm tắt Output):**
+  > AI liệt kê chi tiết các TC vi phạm (TC08, TC09, TC14, TC25 ở API 1; TC09-15, TC25, EXT04 ở API 2; TC05, TC06, TC14, TC15, EXT02, EXT03 ở API 3), đánh dấu trạng thái "INVALID" trong file test cases, cung cấp hướng sửa đổi để phù hợp với `api_specification.md` thực tế và cập nhật log.
